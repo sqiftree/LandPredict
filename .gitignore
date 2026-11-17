@@ -17,3 +17,7 @@ docs/backups/
 docs/* - sebelum revisi.docx
 *.tmp
 *.tmp.docx
+
+# Local reference PDFs: source access and personal appendices are not published.
+docs/Lampiran_Salim Aziz.pdf
+docs/referensi/

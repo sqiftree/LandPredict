@@ -1,0 +1,32 @@
+{
+  "file_lokal": "docs/Lampiran_Salim Aziz.pdf",
+  "asal_berkas": "Disediakan pengguna pada 2026-11-17; bukan unduhan langsung sesi audit",
+  "url_rujukan": "https://digilib.uns.ac.id/dokumen/download/111483/NzEwODU3/Potensi-Struktur-Ruang-Wilayah-Polisentris-Lampiran_Salim-Aziz.pdf",
+  "sha256_pdf": "2f4fdde26edc609c4cc15b4caf3e9ea25c8bda6791b490e7ae06b7ee73db7393",
+  "sha256_ekstraksi": "d30b03f238e391395a423b0ede8c9d3fa6754896cfdff589d960537fa09342c1",
+  "jumlah_halaman_pdf": 11,
+  "halaman_tabel": [
+    {
+      "halaman_pdf": 1,
+      "nomor_cetak": "A-1",
+      "baris": 30
+    },
+    {
+      "halaman_pdf": 2,
+      "nomor_cetak": "A-2",
+      "baris": 38
+    },
+    {
+      "halaman_pdf": 3,
+      "nomor_cetak": "A-3",
+      "baris": 38
+    },
+    {
+      "halaman_pdf": 4,
+      "nomor_cetak": "B-1",
+      "baris": 21
+    }
+  ],
+  "extractor": "pypdf 5.9.0; extract_text default (Form XObjects)",
+  "cakupan": "Hanya Lampiran A, 127 baris; bagian biografi dan wawancara tidak diekspor"
+}

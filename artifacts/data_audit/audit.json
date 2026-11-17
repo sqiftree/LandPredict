@@ -5,8 +5,10 @@
   "sel_cocok": 381,
   "wilayah_fasum_berbeda": 7,
   "wilayah_penduduk_berbeda": 3,
-  "jenis_bukti": "Ekstraksi indeks publik Lampiran A; PDF asli belum diperoleh",
-  "status": "Transkripsi cocok; validitas primer dan perbedaan fasum belum terselesaikan",
+  "jenis_bukti": "Ekstraksi langsung PDF lampiran yang disediakan pengguna; empat halaman tabel diperiksa visual",
+  "rujukan_halaman_lama_berbeda": 21,
+  "sha256_pdf": "2f4fdde26edc609c4cc15b4caf3e9ea25c8bda6791b490e7ae06b7ee73db7393",
+  "status": "381 nilai cocok dengan PDF; 21 rujukan halaman lama berbeda; validitas primer dan perbedaan antarsumber belum terselesaikan",
   "sha256_csv": "b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66",
-  "sha256_snapshot": "b05351e5fc2c14e362fef16f6cca1bdf0ee35f754838be134477b4d756e76647"
+  "sha256_snapshot": "d30b03f238e391395a423b0ede8c9d3fa6754896cfdff589d960537fa09342c1"
 }

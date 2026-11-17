@@ -6,7 +6,7 @@ Tanggal pemeriksaan: 17 November 2026. Dataset: `harga_tanah_2020.csv`, 127 keca
 
 | Komponen | Sumber yang benar-benar dipakai | Bukti dan batas verifikasi |
 | --- | --- | --- |
-| Tiga kolom numerik CSV | Lampiran A penelitian Salim Aziz, Repositori UNS, dokumen 111483 | 127 kunci dan 381 nilai cocok dengan ekstraksi indeks publik. Belum dibandingkan visual dengan PDF asli. |
+| Tiga kolom numerik CSV | Lampiran A penelitian Salim Aziz, Repositori UNS, dokumen 111483 | 127 kunci dan 381 nilai cocok dengan ekstraksi langsung PDF yang diberikan pengguna. Empat halaman tabel telah diperiksa secara visual; 21 rujukan halaman lama memerlukan koreksi. |
 | Harga rata-rata kecamatan | Lampiran tersebut; artikel Aziz, Rahayu, Istanabi (2023) menyebut Bhumi ATR-BPN 2020 pada Gambar 4–5, hlm.147 | Atribusi primer masih melalui penulis sumber; arsip layer harga, jenis harga, sampel dan rumus perataan belum tersedia. |
 | Jumlah penduduk | Lampiran tersebut | Artikel mengacu BPS; belum ada pencocokan langsung seluruh 127 angka ke tabel BPS. Lima angka Surakarta cocok dengan Gambar 1.10 laporan pemerintah kota. |
 | Fasilitas regional | Lampiran tersebut | Artikel Tabel 3 hlm.149 menyebut observasi peneliti 2023 menggunakan data tahun 2020. Total antarsumber tidak konsisten. |
@@ -14,13 +14,13 @@ Tanggal pemeriksaan: 17 November 2026. Dataset: `harga_tanah_2020.csv`, 127 keca
 
 Sumber langsung dan lokasi bukti:
 
-- [Lampiran UNS](https://digilib.uns.ac.id/dokumen/download/111483/NzEwODU3/Potensi-Struktur-Ruang-Wilayah-Polisentris-Lampiran_Salim-Aziz.pdf): judul tabel Lampiran A, tahun 2020. Akses unduhan langsung saat audit mengembalikan HTML permintaan login, bukan PDF. Snapshot `sumber/lampiran_uns_index.txt` menyimpan hanya baris data faktual dari indeks pencarian; bukan salinan PDF asli. Penomoran halaman pada CSV belum diaudit visual.
+- [Lampiran UNS](https://digilib.uns.ac.id/dokumen/download/111483/NzEwODU3/Potensi-Struktur-Ruang-Wilayah-Polisentris-Lampiran_Salim-Aziz.pdf): judul tabel Lampiran A, tahun 2020. Unduhan langsung sebelumnya meminta login. Pengguna kemudian memberikan `docs/Lampiran_Salim Aziz.pdf` (11 halaman) pada 17 November 2026. Lampiran A terdapat di halaman PDF 1–4; nomor cetaknya A-1, A-2, A-3, B-1. Berkas diekstrak langsung dengan pypdf 5.9.0 dan keempat halaman tabel dirender untuk pemeriksaan visual. SHA-256 PDF: `2f4fdde26edc609c4cc15b4caf3e9ea25c8bda6791b490e7ae06b7ee73db7393`. Snapshot indeks lama disimpan sebagai riwayat, bukan lagi bukti utama audit. Hash mengidentifikasi berkas yang diperiksa, bukan sertifikasi keaslian oleh UNS.
 - [Artikel Aziz dkk. (2023), DOI 10.14710/jpk.11.2.140-154](https://ejournal2.undip.ac.id/index.php/jpk/article/download/21331/pdf): PDF penerbit dapat diunduh. Tabel 1 hlm.145, Gambar 4–5 hlm.147, Tabel 3 hlm.149. Artikel merupakan pembanding, bukan otomatis versi yang identik dengan lampiran.
 - [Laporan Pemerintah Kota Surakarta](https://dlh.surakarta.go.id/web/file/20220714104304.pdf): Gambar 1.10, hlm.i-20, kolom 2020, mencantumkan BPS Kota Surakarta 2021. Angka Laweyan 88.524, Serengan 47.778, Pasar Kliwon 78.517, Jebres 138.775, Banjarsari 168.770; jumlah 522.364. Ini pemeriksaan terbatas atas grafik tersebut, bukan pengesahan seluruh tabel dalam laporan.
 
 ## 2. Temuan yang harus disampaikan
 
-Pencocokan transkripsi lulus: harga, penduduk, dan fasum pada seluruh 127 kecamatan sama dengan indeks lampiran. Ini memperkecil kemungkinan salah salin, tetapi tidak membuktikan pengukuran awalnya benar. Seluruh hasil komputasi tetap memakai CSV asli, SHA-256 `b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66`.
+Pencocokan transkripsi lulus: harga, penduduk, dan fasum pada seluruh 127 kecamatan sama dengan PDF lampiran yang diberikan pengguna. Pemeriksaan visual juga memastikan judul tabel tahun 2020, tata letak kolom, ejaan, dan nomor halaman. Ini memperkecil kemungkinan salah salin, tetapi tidak membuktikan pengukuran awalnya benar. Seluruh hasil komputasi tetap memakai CSV asli, SHA-256 `b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66`.
 
 Total fasilitas berbeda di semua wilayah. Penjumlahan enam kategori pada Tabel 3 artikel memperlakukan tanda minus sebagai nol.
 
@@ -38,13 +38,19 @@ Total penduduk juga berbeda untuk Surakarta (CSV 522.364; artikel 576.412), Suko
 
 Untuk harga, rata-rata sederhana CSV Surakarta dan Boyolali, dibulatkan ke rupiah, cocok dengan angka yang dibahas artikel. Kecocokan agregat ini belum memvalidasi metode pembentukan harga tiap kecamatan. Jangan menyebut label sebagai harga transaksi, NJOP, harga penawaran, atau nilai zona tertentu sebelum memperoleh metadata primernya.
 
-Ejaan Sidoarjo pada Wonogiri memang muncul pada indeks lampiran, sehingga bukan kesalahan transkripsi CSV. Pemadanan ke Sidoharjo di geometri harus tetap dijelaskan sebagai alias yang memerlukan dukungan identitas administratif; keberadaan satu padanan nama saja bukan bukti batas historis.
+Ejaan Sidoarjo pada Wonogiri memang tercetak pada PDF halaman 2 (A-2), sehingga bukan kesalahan transkripsi CSV. Pemadanan ke Sidoharjo di geometri harus tetap dijelaskan sebagai alias yang memerlukan dukungan identitas administratif; keberadaan satu padanan nama saja bukan bukti batas historis.
 
-Kolom tambahan luas terbangun pada indeks perlu audit sebelum digunakan. Contohnya Jebres 1.391,1 dibanding luas kecamatan 1.258, dan Laweyan 892,2 dibanding 864. Luas terbangun melebihi luas kecamatan jika unit dan cakupannya sama. Ada pula luas terbangun sangat kecil pada beberapa kecamatan. Ini tanda untuk memeriksa unit, delimiter, cakupan dan PDF asli; bukan alasan mengoreksi angka dengan tebakan. Kolom tersebut belum dipakai sebagai prediktor eksperimen.
+Kolom tambahan luas terbangun pada PDF perlu validasi pengukuran sebelum digunakan. Contohnya Jebres 1.391,1 dibanding luas kecamatan 1.258, dan Laweyan 892,2 dibanding 864. Luas terbangun melebihi luas kecamatan jika unit dan cakupannya sama. Ada pula luas terbangun sangat kecil pada beberapa kecamatan. Angka tersebut memang tercetak pada PDF halaman 1, sehingga bukan sekadar kesalahan ekstraksi indeks. Ini tanda untuk memeriksa unit dan cakupan; bukan alasan mengoreksi angka dengan tebakan. Kolom tersebut belum dipakai sebagai prediktor eksperimen.
+
+### Koreksi rujukan halaman, tanpa mengubah angka eksperimen
+
+Distribusi baris pada halaman PDF 1–4 adalah 30, 38, 38, dan 21. Pada halaman ke-4, lanjutan Lampiran A berada di atas awal Lampiran B; nomor cetak yang terlihat adalah **B-1**, bukan A-4. Rujukan A-4 pada 21 baris CSV lama adalah label urutan yang keliru bila dianggap nomor cetak. Baris tersebut adalah Jogonalan sampai Kebonarum di Kabupaten Klaten.
+
+CSV eksperimen asli dipertahankan untuk menjaga jejak reproduksi hasil lama. Gunakan `artifacts/data_audit/dataset_2020_rujukan_terverifikasi.csv` untuk dataset dengan metadata halaman yang diperbaiki: `halaman_lampiran` berisi nomor cetak, `halaman_pdf` berisi nomor halaman berkas, dan `halaman_csv_lama` mempertahankan label sebelumnya. Seluruh angka model identik dengan CSV acuan. Tabel koreksi lengkap tersedia di `perbandingan_halaman.csv`.
 
 ## 3. Jawaban yang aman saat presentasi
 
-**Dari mana datasetnya?** Dataset sekunder tingkat kecamatan ditranskripsi dari Lampiran A penelitian Salim Aziz di UNS, tahun acuan 2020. Kami mengaudit 127 identitas dan 381 nilai terhadap indeks publik lampiran. Artikel pendukung tersedia di jurnal penerbit. Verifikasi ke seluruh data primer belum selesai.
+**Dari mana datasetnya?** Dataset sekunder tingkat kecamatan ditranskripsi dari Lampiran A penelitian Salim Aziz di UNS, tahun acuan 2020. Kami mengaudit 127 identitas dan 381 nilai langsung terhadap PDF lampiran yang disediakan pengguna, serta memeriksa tampilan empat halaman tabel. Artikel pendukung tersedia di jurnal penerbit. Verifikasi ke seluruh data primer belum selesai.
 
 **Apakah titik ditentukan oleh harga tanah?** Tidak. Program menggabungkan poligon tiap kecamatan, memproyeksikan ke UTM 49S, lalu mengambil point-on-surface dan mengekspor longitude/latitude WGS84. Harga tidak dipakai dalam konstruksi titik. Nilai harga adalah label agregat kecamatan, bukan harga sebidang tanah pada titik itu. Semua 127 titik berada dalam poligon padanannya; poligon yang lebih baru belum terbukti sama dengan batas 2020.
 
@@ -54,14 +60,16 @@ Kolom tambahan luas terbangun pada indeks perlu audit sebelum digunakan. Contohn
 
 ## 4. Bukti yang masih perlu dilengkapi tim
 
-1. Dapatkan PDF asli Lampiran A melalui akses sah UNS/penulis, simpan hash dan tanggal akses, lalu cocokkan tabel dan halaman secara visual.
+1. Pemeriksaan PDF lampiran sudah selesai untuk 127 baris dan 381 nilai. Gunakan rujukan halaman terverifikasi di `artifacts/data_audit/perbandingan_halaman.csv` dan simpan berkas sumber lokal beserta hash; dokumen lengkap tidak dipublikasikan otomatis.
 2. Minta atau temukan metadata/arsip harga 2020 yang dipakai penulis: nama layer, definisi nilai, unit, cakupan, metode agregasi ke kecamatan dan pembobotan. Akses Bhumi saat ini saja tidak membuktikan kondisi 2020.
 3. Rekonsiliasi fasum dengan daftar objek, kategori, tahun dan identitas kecamatan. Konfirmasi tiga selisih penduduk dengan tabel resmi BPS 2020; jangan mencampur SP2020, registrasi penduduk, dan proyeksi tanpa penjelasan.
 4. Validasi batas administratif 2020, termasuk kecamatan hasil pemekaran Boyolali dan kedua alias nama. Untuk eksperimen pengembangan, jalankan ulang seluruh model setelah dataset tervalidasi; jangan menimpa versi acuan.
 
 ## 5. Reproduksi audit
 
-Jalankan `python3 scripts/audit_dataset.py` dari akar repositori. Tidak memerlukan jaringan atau pustaka tambahan. Hasil disimpan di `artifacts/data_audit/`: perbandingan 381 sel, perbandingan fasum, perbandingan penduduk, serta JSON ringkasan dan hash. Skrip menguji konsistensi terhadap snapshot yang diarsipkan; tidak mengautentikasi dokumen primer dan tidak menyelesaikan perbedaan definisi antarsumber.
+Jalankan `python3 scripts/audit_dataset.py` dari akar repositori. Tidak memerlukan jaringan atau pustaka tambahan. Hasil disimpan di `artifacts/data_audit/`: perbandingan 381 sel, perbandingan fasum, perbandingan penduduk, serta JSON ringkasan dan hash. Skrip membandingkan CSV eksperimen dengan ekstraksi PDF yang diarsipkan dalam `data/sumber/lampiran_a_pdf.csv`, memeriksa hash ekstraksi dan hash PDF jika berkas lokal tersedia, serta menghasilkan pemetaan halaman yang benar. Skrip tidak mengautentikasi dokumen atas nama UNS dan tidak menyelesaikan perbedaan definisi antarsumber.
+
+Untuk mengekstrak ulang dari PDF, pasang dependensi opsional `pypdf==5.9.0`, lalu jalankan `python3 scripts/extract_appendix.py` dan `python3 scripts/audit_dataset.py`. Manifest merekam hash, versi alat, jumlah halaman dan jumlah baris per halaman. Mode ekstraksi teks standar digunakan karena isi tabel berada dalam Form XObjects; mode layout pypdf pada berkas ini menghasilkan teks kosong.
 
 ## 6. Koreksi referensi pada draf terbaru
 
