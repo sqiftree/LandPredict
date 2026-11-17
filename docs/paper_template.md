@@ -156,6 +156,21 @@ Pengembangan yang direncanakan mencakup penggantian jumlah penduduk dengan kepad
 
 {{CANDIDATE_SOURCES}}
 
+### 6.1. Perluasan kandidat berbasis literatur
+
+Sebanyak 25 kandidat dirumuskan, termasuk dua prediktor baseline; sebagian merupakan alternatif operasionalisasi konsep yang sama. Daftar ini merupakan agenda pengumpulan dan pengujian, bukan dataset tambahan yang telah lengkap. Berawi dkk. (2018) mendukung pengujian akses stasiun, Huang dan Hewings (2021) mendukung pengujian kemiringan lereng, serta Zhang dkk. (2021) mendukung penggunaan POI dan cahaya malam untuk pemodelan harga tanah. Arafah dkk. (2026) menguji 14 prediktor pada NJOP 2025 di Banda Aceh dan tidak menemukan signifikansi pada seluruh kandidat; konteks tersebut tidak disamakan dengan target Solo Raya 2020.
+
+{{CANDIDATE_REGISTRY}}
+
+Kode sumber: R1 Aziz dkk. (2023); R2 Saefuddin dkk. (2012); R3 Syahar dkk. (2020); R4 Arumingtyas dkk. (2019); R5 Berawi dkk. (2018); R6 Huang dan Hewings (2021); R7 Zhang dkk. (2021); R8 Arafah dkk. (2026). Kode menunjukkan landasan konsep; definisi tingkat kecamatan dan sejumlah variabel turunan merupakan adaptasi penelitian ini, bukan variabel yang semuanya telah terbukti signifikan. Rincian dukungan langsung/adaptasi, satuan, tahun dan status data tersedia dalam data/kandidat_variabel.csv dan docs/PENGEMBANGAN_VARIABEL.md.
+
+### 6.2. Rencana pemeriksaan korelasi dan seleksi
+
+Spearman direncanakan sebagai layar eksplorasi utama dan Pearson sebagai pemeriksaan sensitivitas; arah, besar koefisien, jumlah observasi, outlier dan kestabilan antarwilayah dilaporkan. Apabila p-value eksploratif dihitung, seluruh keluarga uji yang ditetapkan dilaporkan beserta koreksi Benjamini–Hochberg (1995). Koreksi pengujian berganda tidak memperbaiki asumsi independensi yang dilanggar oleh ketergantungan spasial. P-value standar diperlakukan sebagai nominal/eksploratif sampai prosedur inferensi spasial yang sesuai ditetapkan. Korelasi bukan pengaruh kausal, dan p-value terkecil bukan ukuran manfaat prediksi terbaik.
+
+Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya memakai bagian fit setiap lipatan dalam; pilihan fitur serta parameter dinilai pada validasi dalam, kemudian prosedur dipasang kembali pada seluruh data latih luar. Matriks antarprediktor, VIF dan rank desain lokal diperiksa. Jumlah penduduk dan kepadatan, jumlah fasilitas dan kepadatan fasilitas, serta beberapa ukuran urbanisasi diperlakukan sebagai kandidat yang berpotensi redundan. Semua 25 kandidat tidak dimasukkan sekaligus ke GWR. Belum ada korelasi, p-value atau hasil eksperimen tambahan yang dilaporkan pada tahap ini.
+
+
 {{FUTURE_EXPERIMENTS}}
 
 Pusat kegiatan harus ditetapkan dari dokumen independen, bukan dari harga tanah tertinggi. Untuk menguji efek representasi lokasi saja, prediktor aksesibilitas dipertahankan saat titik pembobotan GWR diganti. Jika aksesibilitas turut dihitung ulang, perubahan tersebut dilaporkan sebagai skenario gabungan. Penambahan variabel perlu mempertimbangkan kolinearitas serta jumlah observasi efektif pada regresi lokal.

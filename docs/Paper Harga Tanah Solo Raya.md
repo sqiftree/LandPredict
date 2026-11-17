@@ -245,6 +245,47 @@ Pengembangan yang direncanakan mencakup penggantian jumlah penduduk dengan kepad
 | Akses jalan utama (km) | BIG / Peta Rupabumi Indonesia (RBI) dan dinas terkait | Periksa klasifikasi jalan arteri/kolektor dan tahun data jaringan jalan. |
 | Proporsi permukaan terbangun (%) | European Commission JRC — GHSL GHS-BUILT-S R2023A epoch 2020 (100 m) | Mengukur permukaan terbangun agregat per poligon kecamatan; tidak disamakan langsung dengan luas kawasan permukiman RTRW. |
 
+### 6.1. Perluasan kandidat berbasis literatur
+
+Sebanyak 25 kandidat dirumuskan, termasuk dua prediktor baseline; sebagian merupakan alternatif operasionalisasi konsep yang sama. Daftar ini merupakan agenda pengumpulan dan pengujian, bukan dataset tambahan yang telah lengkap. Berawi dkk. (2018) mendukung pengujian akses stasiun, Huang dan Hewings (2021) mendukung pengujian kemiringan lereng, serta Zhang dkk. (2021) mendukung penggunaan POI dan cahaya malam untuk pemodelan harga tanah. Arafah dkk. (2026) menguji 14 prediktor pada NJOP 2025 di Banda Aceh dan tidak menemukan signifikansi pada seluruh kandidat; konteks tersebut tidak disamakan dengan target Solo Raya 2020.
+
+| No. | Kandidat variabel | Landasan konsep | Prioritas pengumpulan |
+| --- | --- | --- | --- |
+| 1 | Jumlah penduduk | R1 | baseline |
+| 2 | Kepadatan penduduk | R1 | utama |
+| 3 | Jumlah fasum regional | R1 | baseline |
+| 4 | Kepadatan fasum | R1 | alternatif |
+| 5 | Jarak ke pusat kegiatan utama Solo | R3 | utama |
+| 6 | Jarak ke subpusat kegiatan terdekat | R1;R3 | alternatif |
+| 7 | Jarak ke jalan arteri/kolektor | R2;R3 | utama |
+| 8 | Jarak ke gerbang tol | R2 | lanjutan |
+| 9 | Kepadatan jaringan jalan | R2 | alternatif |
+| 10 | Jarak ke pasar | R4 | utama |
+| 11 | Jarak ke rumah sakit | R2;R8 | utama |
+| 12 | Jarak ke sekolah menengah | R2;R7 | lanjutan |
+| 13 | Jarak ke perguruan tinggi | R1;R7 | lanjutan |
+| 14 | Jarak ke stasiun penumpang | R5 | utama |
+| 15 | Jarak ke terminal bus | R1;R5 | lanjutan |
+| 16 | Proporsi permukaan terbangun | R1;R7 | utama |
+| 17 | Proporsi tutupan pertanian | R1;R3 | lanjutan |
+| 18 | Proporsi tutupan pohon | R7 | lanjutan |
+| 19 | Intensitas cahaya malam | R7 | utama |
+| 20 | Kemiringan lereng rata-rata | R6 | utama |
+| 21 | Proporsi lahan berlereng curam | R6 | alternatif |
+| 22 | Elevasi rata-rata | R6 | lanjutan |
+| 23 | Proporsi wilayah rawan banjir | R3;R8 | lanjutan |
+| 24 | Jarak ke taman publik | R7 | lanjutan |
+| 25 | Proporsi kawasan industri | R1;R3 | lanjutan |
+
+Kode sumber: R1 Aziz dkk. (2023); R2 Saefuddin dkk. (2012); R3 Syahar dkk. (2020); R4 Arumingtyas dkk. (2019); R5 Berawi dkk. (2018); R6 Huang dan Hewings (2021); R7 Zhang dkk. (2021); R8 Arafah dkk. (2026). Kode menunjukkan landasan konsep; definisi tingkat kecamatan dan sejumlah variabel turunan merupakan adaptasi penelitian ini, bukan variabel yang semuanya telah terbukti signifikan. Rincian dukungan langsung/adaptasi, satuan, tahun dan status data tersedia dalam data/kandidat_variabel.csv dan docs/PENGEMBANGAN_VARIABEL.md.
+
+### 6.2. Rencana pemeriksaan korelasi dan seleksi
+
+Spearman direncanakan sebagai layar eksplorasi utama dan Pearson sebagai pemeriksaan sensitivitas; arah, besar koefisien, jumlah observasi, outlier dan kestabilan antarwilayah dilaporkan. Apabila p-value eksploratif dihitung, seluruh keluarga uji yang ditetapkan dilaporkan beserta koreksi Benjamini–Hochberg (1995). Koreksi pengujian berganda tidak memperbaiki asumsi independensi yang dilanggar oleh ketergantungan spasial. P-value standar diperlakukan sebagai nominal/eksploratif sampai prosedur inferensi spasial yang sesuai ditetapkan. Korelasi bukan pengaruh kausal, dan p-value terkecil bukan ukuran manfaat prediksi terbaik.
+
+Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya memakai bagian fit setiap lipatan dalam; pilihan fitur serta parameter dinilai pada validasi dalam, kemudian prosedur dipasang kembali pada seluruh data latih luar. Matriks antarprediktor, VIF dan rank desain lokal diperiksa. Jumlah penduduk dan kepadatan, jumlah fasilitas dan kepadatan fasilitas, serta beberapa ukuran urbanisasi diperlakukan sebagai kandidat yang berpotensi redundan. Semua 25 kandidat tidak dimasukkan sekaligus ke GWR. Belum ada korelasi, p-value atau hasil eksperimen tambahan yang dilaporkan pada tahap ini.
+
+
 | Tahap | Spesifikasi | Status |
 | --- | --- | --- |
 | A | Jumlah penduduk + fasilitas regional | Sudah dijalankan; hasil paper ini |
@@ -269,6 +310,16 @@ Tiga keluaran utama adalah metrik.csv, per_wilayah.csv, dan prediksi_uji.csv. Ca
 Lingkungan uji menggunakan Python 3.12 dan dependensi yang dicatat pada hasil/requirements-resolved.txt. Reproduksi dijalankan dengan python scripts/reproduce.py setelah dependensi Python dan GDAL tersedia, atau melalui container Docker sesuai README. Pipeline memulihkan geometri, menghitung ulang titik, menjalankan baseline dan GWR, memverifikasi hasil, lalu membuat peta dan diagnostik. Pipeline berhenti ketika pemeriksaan gagal.
 
 ## Referensi
+
+Arafah, Y., Hanifah, W., Sabila, F., Asra, H., & Djamaluddin, M. (2026). Land Price Variation in the Urban Fringe of Banda Aceh: A Hedonic Analysis of Syiah Kuala District. The Journal of Indonesia Sustainable Development Planning, 7(2), 290–304. https://doi.org/10.46456/jisdep.v7i2.971
+
+Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society: Series B, 57(1), 289–300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
+
+Berawi, M. A., Suwartha, N., Kurnia, K., Gunawan, Miraj, P., & Berawi, A. R. B. (2018). Forecasting the Land Value around Commuter Rail Stations using Hedonic Price Modeling. International Journal of Technology, 9(7), 1329–1337. https://doi.org/10.14716/ijtech.v9i7.2589
+
+Huang, Y., & Hewings, G. (2021). More Reliable Land Price Index: Is There a Slope Effect? Land, 10(3), 261. https://doi.org/10.3390/land10030261
+
+Zhang, P., Hu, S., Li, W., Zhang, C., Yang, S., & Qu, S. (2021). Modeling fine-scale residential land price distribution: An experimental study using open data and machine learning. Applied Geography, article 102442. https://doi.org/10.1016/j.apgeog.2021.102442
 
 Arumingtyas, O., Subiyanto, S., & Firdaus, H. (2019). Analisis faktor aksesibilitas, fasum dan fasos terhadap harga bidang tanah serta visualisasi berbasis WebGIS (Studi kasus: Kelurahan Tlogosari Kulon, Kecamatan Pedurungan, Kota Semarang). Jurnal Geodesi Undip, 8(4), 165–174. https://doi.org/10.14710/jgundip.2019.25155
 

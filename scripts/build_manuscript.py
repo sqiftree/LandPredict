@@ -240,6 +240,13 @@ def main():
         'perbandingan dapat diulang dengan scripts/audit_dataset.py.'
     )
 
+    candidates = read_csv(ROOT / 'data/kandidat_variabel.csv')
+    values['CANDIDATE_REGISTRY'] = table(
+        ['No.', 'Kandidat variabel', 'Landasan konsep', 'Prioritas pengumpulan'],
+        [[i, row['variabel'], row['referensi'], row['prioritas']]
+         for i, row in enumerate(candidates, 1)],
+    )
+
     solo = 'Kota Surakarta'
     shares = diagnostics['surakarta_share_squared_error']
     values['SURAKARTA_DISCUSSION'] = (

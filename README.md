@@ -148,3 +148,7 @@ harga ke tahun lain. Paper melaporkan hasil prediksi deskriptif, bukan inferensi
 Lihat [SUMBER_DATASET.md](data/SUMBER_DATASET.md) untuk rantai sumber, keterbatasan dan jawaban presentasi. Jalankan `python3 scripts/audit_dataset.py` untuk mengulang pencocokan snapshot. Sebanyak 381/381 nilai cocok langsung dengan PDF lampiran yang diberikan pengguna; empat halaman tabel telah diperiksa visual. Sebanyak 21 label A-4 pada CSV lama sebenarnya menunjuk halaman PDF ke-4 bernomor cetak B-1. Dataset dengan rujukan halaman yang diperbaiki tersedia di `artifacts/data_audit/dataset_2020_rujukan_terverifikasi.csv`. Validasi pengukuran primer tetap belum selesai. Fasum berbeda terhadap artikel pada 7 wilayah dan penduduk pada 3 wilayah. Hasil eksperimen tetap menggunakan CSV asli, bukan angka koreksi yang diasumsikan.
 
 Audit ulang 18 November 2026 dan koreksi klaim: [laporan pemeriksaan](docs/AUDIT_ULANG_2026-11-18.md). Status audit dataset sekarang dihitung dari pemeriksaan aktual; kegagalan mengganti status lama menjadi `failed`. Generator paper menghitung ulang metrik sebelum menulis naskah.
+
+## Kandidat variabel tambahan
+
+[Registry 25 kandidat](data/kandidat_variabel.csv) dan [rancangan berbasis jurnal](docs/PENGEMBANGAN_VARIABEL.md) memisahkan dukungan konsep, adaptasi tingkat kecamatan, prioritas pengumpulan, dan status data. Daftar kandidat bukan 25 kolom observasi yang telah terkumpul; hasil eksperimen saat ini tetap dua prediktor. Rencana seleksi fitur menggunakan validasi bersarang dan tidak menjanjikan semua variabel signifikan.
