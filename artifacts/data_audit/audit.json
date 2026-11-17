@@ -1,14 +1,17 @@
 {
-  "tanggal_audit": "2026-11-17",
+  "tanggal_audit": "2026-11-18",
+  "status_kode": "passed_transcription",
+  "pdf_lokal_diperiksa": true,
+  "pemeriksaan_visual_terakhir": "2026-11-17",
   "jumlah_kunci": 127,
   "sel_numerik_dibandingkan": 381,
   "sel_cocok": 381,
   "wilayah_fasum_berbeda": 7,
   "wilayah_penduduk_berbeda": 3,
-  "jenis_bukti": "Ekstraksi langsung PDF lampiran yang disediakan pengguna; empat halaman tabel diperiksa visual",
+  "jenis_bukti": "Perbandingan dengan ekstraksi PDF yang diarsipkan; pemeriksaan visual merupakan catatan audit sebelumnya",
   "rujukan_halaman_lama_berbeda": 21,
   "sha256_pdf": "2f4fdde26edc609c4cc15b4caf3e9ea25c8bda6791b490e7ae06b7ee73db7393",
-  "status": "381 nilai cocok dengan PDF; 21 rujukan halaman lama berbeda; validitas primer dan perbedaan antarsumber belum terselesaikan",
+  "status": "381/381 nilai cocok dengan ekstraksi PDF; 21 rujukan halaman lama berbeda; validitas primer dan perbedaan antarsumber belum terselesaikan",
   "sha256_csv": "b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66",
   "sha256_snapshot": "d30b03f238e391395a423b0ede8c9d3fa6754896cfdff589d960537fa09342c1"
 }

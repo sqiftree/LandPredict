@@ -1,5 +1,7 @@
 """Audit factual source snapshots; matching transcription is not primary validation."""
 import csv
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import hashlib
 import json
 from pathlib import Path
@@ -7,18 +9,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main():
+def _run(root):
     if not __debug__:
         raise RuntimeError('Jalankan audit tanpa python -O.')
-    path = ROOT / 'data/harga_tanah_2020.csv'
-    rows = list(csv.DictReader(path.open(encoding='utf-8')))
-    snapshot = ROOT / 'data/sumber/lampiran_a_pdf.csv'
-    manifest = json.loads((ROOT / 'data/sumber/lampiran_a_pdf_manifest.json').read_text())
+    path = root / 'data/harga_tanah_2020.csv'
+    with path.open(encoding='utf-8') as stream:
+        rows = list(csv.DictReader(stream))
+    snapshot = root / 'data/sumber/lampiran_a_pdf.csv'
+    manifest = json.loads((root / 'data/sumber/lampiran_a_pdf_manifest.json').read_text())
     assert hashlib.sha256(snapshot.read_bytes()).hexdigest() == manifest['sha256_ekstraksi']
-    pdf = ROOT / manifest['file_lokal']
+    pdf = root / manifest['file_lokal']
     if pdf.exists():
         assert hashlib.sha256(pdf.read_bytes()).hexdigest() == manifest['sha256_pdf']
-    extracted = list(csv.DictReader(snapshot.open(encoding='utf-8')))
+    with snapshot.open(encoding='utf-8') as stream:
+        extracted = list(csv.DictReader(stream))
     locations = {(r['kab_kota'], r['kecamatan']): r for r in extracted}
     fields = ['jumlah_fasum_regional', 'jumlah_penduduk', 'harga_tanah_rata_rata_rp_m2']
     source = {key: {field: int(row[field]) for field in fields} for key, row in locations.items()}
@@ -60,7 +64,8 @@ def main():
                        penduduk_artikel=v) for k, v in journal_population.items()]
     for row in populations:
         row['selisih_csv_minus_artikel'] = row['penduduk_csv'] - row['penduduk_artikel']
-    folder = ROOT / 'artifacts/data_audit'
+    assert all(r['cocok'] for r in checks), 'Transcription mismatch'
+    folder = root / 'artifacts/data_audit'
     folder.mkdir(parents=True, exist_ok=True)
     for name, values in [('perbandingan_lampiran.csv', checks), ('perbandingan_fasum.csv', totals),
                          ('perbandingan_penduduk.csv', populations), ('perbandingan_halaman.csv', page_checks),
@@ -69,19 +74,35 @@ def main():
             writer = csv.DictWriter(stream, fieldnames=list(values[0]), lineterminator='\n')
             writer.writeheader()
             writer.writerows(values)
-    result = dict(tanggal_audit='2026-11-17', jumlah_kunci=len(keys),
+    result = dict(tanggal_audit=datetime.now(ZoneInfo('Asia/Bangkok')).date().isoformat(),
+                  status_kode='passed_transcription', pdf_lokal_diperiksa=pdf.exists(),
+                  pemeriksaan_visual_terakhir='2026-11-17', jumlah_kunci=len(keys),
                   sel_numerik_dibandingkan=len(checks), sel_cocok=sum(r['cocok'] for r in checks),
                   wilayah_fasum_berbeda=sum(r['selisih_csv_minus_artikel'] != 0 for r in totals),
                   wilayah_penduduk_berbeda=sum(r['selisih_csv_minus_artikel'] != 0 for r in populations),
-                  jenis_bukti='Ekstraksi langsung PDF lampiran yang disediakan pengguna; empat halaman tabel diperiksa visual',
+                  jenis_bukti='Perbandingan dengan ekstraksi PDF yang diarsipkan; pemeriksaan visual merupakan catatan audit sebelumnya',
                   rujukan_halaman_lama_berbeda=sum(not r['cocok'] for r in page_checks),
                   sha256_pdf=manifest['sha256_pdf'],
-                  status='381 nilai cocok dengan PDF; 21 rujukan halaman lama berbeda; validitas primer dan perbedaan antarsumber belum terselesaikan',
+                  status=f"{sum(r['cocok'] for r in checks)}/{len(checks)} nilai cocok dengan ekstraksi PDF; {sum(not r['cocok'] for r in page_checks)} rujukan halaman lama berbeda; validitas primer dan perbedaan antarsumber belum terselesaikan",
                   sha256_csv=hashlib.sha256(path.read_bytes()).hexdigest(),
                   sha256_snapshot=hashlib.sha256(snapshot.read_bytes()).hexdigest())
     (folder / 'audit.json').write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n')
     print(json.dumps(result, indent=2, ensure_ascii=False))
-    assert all(r['cocok'] for r in checks), 'Transcription mismatch'
+
+
+def main(root=ROOT):
+    """Fail closed: a failed recheck must not leave a successful audit status."""
+    folder = root / 'artifacts/data_audit'
+    folder.mkdir(parents=True, exist_ok=True)
+    audit = folder / 'audit.json'
+    audit.write_text(json.dumps({'status_kode': 'running'}))
+    try:
+        _run(root)
+    except Exception as exc:
+        audit.write_text(json.dumps({'status_kode': 'failed',
+                                    'tanggal_audit': datetime.now(ZoneInfo('Asia/Bangkok')).date().isoformat(),
+                                    'error': f'{type(exc).__name__}: {exc}'}, indent=2) + '\n')
+        raise
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 # Eksperimen harga tanah kecamatan Solo Raya 2020
 
-Audit ulang 17 November 2026. Status: eksperimen komputasional selesai dan dapat direproduksi; geometri historis 2020 belum terbukti. Judul kerja paper: **Evaluasi GWR dan Model Nonspasial untuk Prediksi Harga Tanah Rata-rata Kecamatan di Solo Raya dengan Validasi Lintas Kabupaten/Kota**.
+Audit ulang 18 November 2026. Status: eksperimen komputasional selesai dan dapat direproduksi; geometri historis 2020 belum terbukti. Judul kerja paper: **Evaluasi GWR dan Model Nonspasial untuk Prediksi Harga Tanah Rata-rata Kecamatan di Solo Raya dengan Validasi Lintas Kabupaten/Kota**.
 
 Pertanyaan: apakah kedekatan geografis membantu memperkirakan rata-rata harga tanah kecamatan ketika seluruh kabupaten/kotanya tidak ikut dilatih?
 
@@ -19,7 +19,7 @@ GWR memilih bandwidth 40 km pada enam kabupaten dan 10 km pada Surakarta. Karena
 
 ## Data dan metode yang dapat ditulis di paper
 
-Satu observasi adalah satu kecamatan pada 2020. Target adalah harga tanah rata-rata dalam Rp/m²; kedua prediktor identik untuk semua model, yaitu jumlah penduduk dan jumlah fasilitas umum regional. Sumber transkripsi tercantum di README dan kolom halaman_lampiran pada CSV. Tidak ada penggantian nilai harga, interpolasi ke bidang tanah, atau proyeksi harga ke tahun mendatang.
+Satu observasi adalah satu kecamatan pada 2020. Target adalah harga tanah rata-rata dalam Rp/m²; kedua prediktor identik untuk semua model, yaitu jumlah penduduk dan jumlah fasilitas umum regional. Sumber transkripsi tercantum di README; gunakan artifacts/data_audit/perbandingan_halaman.csv untuk koreksi 21 label halaman lama A-4 menjadi nomor cetak B-1. Tidak ada penggantian nilai harga, interpolasi ke bidang tanah, atau proyeksi harga ke tahun mendatang.
 
 Keempat model memakai tujuh lipatan luar leave-one-kabupaten/kota-out yang sama. Pada setiap lipatan, enam kabupaten/kota melatih model dan satu kabupaten/kota menguji. Pemilihan parameter memakai enam lipatan wilayah di dalam bagian latih saja, dengan MAE gabungan validasi sebagai kriteria. StandardScaler dipasang ulang pada bagian latih setiap pemanggilan model, termasuk lipatan dalam. Tidak ada standardisasi atau pemilihan parameter dari target uji luar.
 
@@ -30,10 +30,10 @@ Semua 127 kunci unik, 127 prediksi finite per model, tujuh blok per model, dan 2
 ## Keterbatasan sebelum publikasi
 
 - Padanan dan uji containment terhadap arsip BIG berhasil 127/127; peta audit dan peta perbandingan diperiksa visual. Ini tidak mengesahkan garis batas tahun 2020. Metadata fitur BIG berpenanda 20230928, sementara deskripsi layanan menyebut edisi 2022. Seluruh 127 kecamatan masih memerlukan konfirmasi kesetaraan batas historis. Rincian sumber dan wilayah prioritas di data/SUMBER_KOORDINAT.md. Hasil GWR harus diberi status eksploratif sampai tahap itu selesai.
-- Dua padanan eksplisit: Kebakkramat → Kebakramat dan Sidoharjo → Sidoarjo. Nama asli CSV tidak diubah. Padanan kedua masih perlu dicocokkan kembali ke lampiran harga, meskipun nama administratif Sidoharjo didukung BPS SP2020.
+- Dua padanan eksplisit: Kebakkramat → Kebakramat dan Sidoharjo → Sidoarjo. Nama asli CSV tidak diubah. PDF lampiran memang menulis Sidoarjo; identitas administratif padanannya masih perlu konfirmasi, meskipun nama Sidoharjo didukung BPS SP2020.
 - Linear menghasilkan 17 dan GWR 15 prediksi negatif. Prediksi tidak dipotong menjadi nol agar baseline tetap sebanding. Nilai negatif merupakan keterbatasan regresi tanpa kendala, bukan harga tanah yang masuk akal. Transformasi log atau kendala nonnegatif perlu menjadi eksperimen terpisah.
 - Satu titik mewakili wilayah, tidak mewakili lokasi seluruh transaksi. Hanya dua prediktor dan 127 observasi; tujuh blok tidak memberi dasar untuk klaim generalisasi nasional atau kausalitas. Tidak ada interval ketidakpastian atau pengujian autokorelasi residual dalam eksperimen ini.
-- Angka harga dan prediktor memakai transkripsi yang tersedia; audit ulang seluruh angka terhadap lampiran sumber belum dilakukan pada sesi ini. Kesimpulan terbatas pada rata-rata kecamatan tahun 2020, bukan nilai per bidang atau harga saat ini.
+- Ekstraksi langsung PDF diulang pada 18 November 2026: 127 kunci dan 381 nilai cocok. Ini membuktikan konsistensi transkripsi, bukan validitas pengukuran primer. Fasum berbeda dari artikel pada 7 wilayah dan penduduk pada 3 wilayah. Kesimpulan terbatas pada rata-rata kecamatan tahun 2020, bukan nilai per bidang atau harga saat ini.
 
 ## Berkas hasil
 
@@ -61,7 +61,7 @@ python verifikasi_hasil.py hasil/spasial --spasial
 python siapkan_paper.py
 ```
 
-Sesi ini memakai image lokal gwr-solo-raya:local (ID e979288ea0c0), Python 3.12.16, numpy 2.3.5, pandas 2.2.3, scikit-learn 1.8.0. Untuk menjalankan perintah di atas dalam Docker, build image lalu awali setiap perintah dengan:
+Reproduksi awal 17 November 2026 memakai image lokal gwr-solo-raya:local (ID e979288ea0c0), Python 3.12.16, numpy 2.3.5, pandas 2.2.3, scikit-learn 1.8.0. Untuk menjalankan perintah di atas dalam Docker, build image lalu awali setiap perintah dengan:
 
 ```bash
 docker build -t gwr-solo-raya:local .
@@ -69,3 +69,5 @@ docker run --rm --network none --user "$(id -u):$(id -g)" -v "$PWD:/app" -w /app
 ```
 
 Ganti bagian `python siapkan_paper.py` dengan masing-masing perintah sesuai urutan. Mount direktori proyek memastikan kode terkini dan keluaran tersedia di host. Build membutuhkan jaringan; eksekusi memakai arsip lokal dan tidak membutuhkan jaringan. Dependensi transitif dapat berubah saat rebuild; gunakan hasil/requirements-resolved.txt untuk mereplikasi versi sesi ini.
+
+Audit 18 November 2026 menggunakan Python 3.12.16 terisolasi dan versi pustaka sesuai artifacts/requirements-resolved.txt, karena Docker/GDAL tidak tersedia pada sesi tersebut. Baseline dan empat model dijalankan ulang; koordinat arsip diperiksa kembali dengan Shapely terhadap geometri BIG, tanpa mengklaim pengulangan langkah ekspor GDAL. Rincian: docs/AUDIT_ULANG_2026-11-18.md.

@@ -98,7 +98,7 @@ Metode tersebut menghasilkan titik yang berada di dalam wilayah, tetapi tidak me
 
 Sebagai contoh, nilai Rp7.678.425/m² pada baris Banjarsari merupakan harga rata-rata kecamatan menurut dataset, bukan hasil pengukuran harga tepat di titik point-on-surface Banjarsari. Koordinat pengamatan transaksi yang mendasari rata-rata tersebut belum tersedia dalam CSV.
 
-Audit komputasional menunjukkan 127 dari 127 titik berada di dalam poligon padanannya. Namun, pemeriksaan tersebut tidak membuktikan kesetaraan batas dengan tahun 2020 atau keterwakilan titik terhadap lokasi sampel harga. Padanan eksplisit diterapkan pada Kebakkramat–Kebakramat dan Sidoharjo–Sidoarjo; padanan terakhir masih perlu dikonfirmasi kembali terhadap lampiran harga.
+Audit komputasional menunjukkan 127 dari 127 titik berada di dalam poligon padanannya. Namun, pemeriksaan tersebut tidak membuktikan kesetaraan batas dengan tahun 2020 atau keterwakilan titik terhadap lokasi sampel harga. Padanan eksplisit diterapkan pada Kebakkramat–Kebakramat dan Sidoharjo–Sidoarjo; PDF lampiran telah mengonfirmasi ejaan Sidoarjo; identitas administratif padanan terakhir masih perlu dikonfirmasi.
 
 Uji sensitivitas direncanakan dengan membandingkan titik administratif yang digunakan saat ini dengan titik pusat berbobot penduduk atau permukaan terbangun, apabila data pendukung tersedia. Aturan penentuan titik dan penanganan titik yang berada di luar poligon harus ditetapkan sebelum evaluasi. Harga aktual tidak digunakan untuk menentukan atau menggeser titik.
 
@@ -173,7 +173,7 @@ Hasil ini merupakan baseline dengan geometri yang kesesuaian historisnya masih p
 
 Penelitian menggunakan data agregat kecamatan tahun 2020. Hasilnya tidak digunakan untuk menaksir harga satu bidang tanah atau perubahan harga pada tahun berikutnya. Hubungan pada tingkat kecamatan tidak otomatis berlaku pada tingkat bidang.
 
-Definisi dan cara pembentukan harga rata-rata pada sumber masih memerlukan penelusuran. Kelengkapan transkripsi, jenis harga, serta distribusi sampel pembentuk rata-rata perlu dikonfirmasi sebelum publikasi.
+Definisi dan cara pembentukan harga rata-rata pada sumber masih memerlukan penelusuran. Transkripsi 127 baris dan 381 nilai sudah cocok dengan PDF lampiran; jenis harga serta distribusi sampel pembentuk rata-rata tetap perlu dikonfirmasi sebelum publikasi.
 
 Geometri yang digunakan memiliki metadata lebih baru daripada tahun observasi. Kecocokan nama dan containment titik telah diperiksa, tetapi kesetaraan garis batas historis belum dibuktikan untuk seluruh 127 kecamatan.
 

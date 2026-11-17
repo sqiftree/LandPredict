@@ -1,6 +1,6 @@
 # Sumber dan Verifikasi Data Koordinat Kecamatan Solo Raya 2020
 
-Tanggal audit ulang: 17 November 2026.
+Tanggal audit ulang: 18 November 2026.
 Status: **127/127 padanan dan titik terverifikasi terhadap geometri arsip BIG; kesesuaian batas historis 2020 belum terverifikasi.**
 
 Tanggal pengambilan arsip menurut catatan sesi sebelumnya: 15 November 2026; tidak tersedia log unduhan bertimestamp untuk pembuktian independen. Metadata layanan diperiksa ulang melalui URL pada 17 November 2026. Arsip lokal digunakan kembali tanpa mengganti geometri.
@@ -46,8 +46,8 @@ Sebanyak **127 kecamatan** dalam dataset harga tanah 2020 (`data/harga_tanah_202
   Berdasarkan Perda Kabupaten Boyolali No. 18 Tahun 2018, terjadi pemekaran 3 kecamatan baru:
   1. *Gladagsari* (pemekaran dari Ampel)
   2. *Tamansari* (pemekaran dari Musuk)
-  3. *Wonosamodro* (pemekaran dari Wonosegoro)  
-  Jumlah kecamatan di Boyolali bertambah dari 19 menjadi 22. Dataset penelitian Salim Aziz (2020) mencatat seluruh 22 kecamatan ini secara lengkap. Poligon BIG juga memuat 22 poligon definitif tersebut, sehingga daftar nama dapat dipadankan. Kesamaan jumlah dan nama tidak membuktikan kesamaan garis batas tahun 2020.
+  3. *Wonosamodro* (wilayah asal Wonosegoro dan Kemusu; menurut berita resmi Pemprov Jawa Tengah 11 Februari 2019)
+  Jumlah kecamatan di Boyolali bertambah dari 19 menjadi 22. Dataset penelitian Salim Aziz (tahun data 2020) mencatat seluruh 22 kecamatan ini secara lengkap. Poligon BIG juga memuat 22 poligon definitif tersebut, sehingga daftar nama dapat dipadankan. Kesamaan jumlah dan nama tidak membuktikan kesamaan garis batas tahun 2020.
 * **Wilayah Lain**:  
   Jumlah padanan Klaten (26), Sukoharjo (12), Karanganyar (17), Wonogiri (25), Sragen (20), dan Surakarta (5) sesuai CSV. Pemeriksaan ini belum membuktikan tidak adanya perubahan batas 2020–2023.
 
@@ -63,7 +63,7 @@ Dua (2) kecamatan memiliki perbedaan variasi ejaan dan dipadankan secara eksplis
 | Karanganyar | Kebakkramat | Kabupaten Karanganyar | Kebakramat | Variasi ejaan huruf `k` tunggal vs dobel. Publikasi BPS Karanganyar 2020 menggunakan `Kebakkramat`. |
 | Wonogiri | Sidoharjo | Kabupaten Wonogiri | Sidoarjo | Ejaan pada CSV memakai `Sidoarjo`; satu-satunya kecamatan yang berpadanan di Wonogiri adalah `Sidoharjo` sesuai BPS Wonogiri 2020. |
 
-Tidak ada benturan kunci dalam padanan yang dipilih; interpretasi Sidoarjo → Sidoharjo tetap perlu dikonfirmasi ke tabel sumber harga; setiap pasangan `(kab_kota, kecamatan)` memetakan tepat ke satu kode Kemendagri (`kdcpum`) dan poligon unik.
+Tidak ada benturan kunci dalam padanan yang dipilih; PDF lampiran halaman 2 telah mengonfirmasi ejaan Sidoarjo; interpretasi identitas administratif Sidoarjo → Sidoharjo masih perlu dikonfirmasi; setiap pasangan `(kab_kota, kecamatan)` memetakan tepat ke satu kode Kemendagri (`kdcpum`) dan poligon unik.
 
 ---
 
@@ -78,7 +78,7 @@ Titik representatif dihasilkan menggunakan script `siapkan_koordinat.py` dengan 
 ### Hasil Audit Spasial (`audit_spasial.py`)
 * **In-Polygon Check**: **127 dari 127 titik (100%)** berada di dalam poligon kecamatan masing-masing.
 * **Jarak Minimum ke Batas Poligon**: **383,02 meter** (Kecamatan Serengan, Kota Surakarta; luas wilayah 3,06 km²).
-* **Selisih Point-on-Surface**: < 1e-9 meter (konsisten numerik).
+* **Selisih Point-on-Surface**: audit ulang 18 November 2026 menghasilkan maksimum sekitar 3,26e-9 meter, di bawah 1e-8 meter (konsisten numerik). Klaim lama <1e-9 meter telah dikoreksi.
 * **Peta Audit**: Visualisasi visual 127 titik dan batas administratif tersimpan di `hasil/audit_spasial/peta_audit.png` dan `hasil/audit_spasial/peta_audit.pdf`.
 
 ## 5. Koreksi audit 17 November 2026 dan batas penggunaan

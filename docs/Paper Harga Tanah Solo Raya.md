@@ -78,7 +78,7 @@ Geometri berasal dari arsip BIG KSP Satu Peta, layer Peta Wilayah Administrasi K
 
 Penetapan koordinat titik untuk pembobotan GWR didasarkan pada empat landasan metodologis dan teknis berikut.
 
-Pertama, landasan representasi unit areal (areal unit point representation). Dalam GWR, setiap observasi membutuhkan koordinat titik untuk menghitung jarak geografis antarunit dalam kernel Gaussian. Karena dataset menyajikan harga tanah sebagai atribut agregat tingkat kecamatan (poligon areal) dan bukan lokasi persil transaksi tunggal, setiap kecamatan harus diwakili oleh satu koordinat titik representatif wilayah administratif.
+Pertama, landasan representasi unit areal (areal unit point representation). Dalam implementasi GWR yang diuji, setiap observasi direpresentasikan dengan koordinat titik untuk menghitung jarak geografis antarunit dalam kernel Gaussian. Karena dataset menyajikan harga tanah sebagai atribut agregat tingkat kecamatan (poligon areal) dan bukan lokasi persil transaksi tunggal, penelitian ini memilih satu titik representatif untuk setiap kecamatan. Pilihan ini merupakan penyederhanaan implementasi, bukan satu-satunya representasi wilayah yang mungkin.
 
 Kedua, landasan geometris dan GIS melalui algoritma ST_PointOnSurface dibandingkan centroid biasa. Poligon kecamatan yang berbentuk cekung (concave), memanjang, atau terdiri atas beberapa bagian dapat menyebabkan pusat massa geometris biasa (centroid) jatuh di luar batas kecamatan tersebut. Sebaliknya, algoritma ST_PointOnSurface(ST_Union(geom)) secara matematis memilih titik interior yang dijamin berada di dalam gabungan poligon kecamatan masing-masing.
 
@@ -86,7 +86,7 @@ Ketiga, landasan geodetik melalui proyeksi metrik planar UTM Zona 49S (EPSG:3274
 
 Keempat, konstruksi koordinat tidak menggunakan target harga. Koordinat titik ditentukan semata-mata oleh geometri batas administratif BIG tanpa membaca nilai harga tanah aktual. Dengan demikian, harga pada baris Banjarsari sebesar Rp7.678.425/m² tidak berarti harga bidang tepat pada koordinat point-on-surface Banjarsari bernilai demikian, melainkan nilai rata-rata kecamatan yang dilekatkan pada simpul koordinat wilayahnya. Titik ini bukan jaminan lokasi kantor kecamatan, pusat penduduk, pusat perdagangan, atau titik transaksi, dan satu titik menyederhanakan variasi internal wilayah yang rata-rata seluas 47,54 km².
 
-Audit spasial pada 127 kecamatan menunjukkan seluruh 127 titik (100%) berada di dalam poligon padanannya (`di_dalam_poligon = True`), dengan jarak titik ke batas berkisar antara 383,02 m hingga 4.572,15 m (median 1.650,59 m; rata-rata 1.755,75 m) dan selisih numerik point-on-surface terhadap Shapely kurang dari 3.26e-09 m.
+Audit spasial pada 127 kecamatan menunjukkan seluruh 127 titik (100%) berada di dalam poligon padanannya (`di_dalam_poligon = True`), dengan jarak titik ke batas berkisar antara 383,02 m hingga 4.572,15 m (median 1.650,59 m; rata-rata 1.755,75 m) dan selisih numerik maksimum point-on-surface terhadap Shapely sekitar 3.26e-09 m.
 
 | Kasus ekstrem jarak ke batas | Kabupaten/kota | Kecamatan | Jarak ke batas (m) | Luas kecamatan (km²) |
 | --- | --- | --- | --- | --- |
@@ -229,7 +229,7 @@ Keterbatasan utama adalah definisi harga dan pembentuk rata-ratanya belum sepenu
 
 | Komponen | Status saat ini | Bukti di repositori / tindakan audit lanjutan |
 | --- | --- | --- |
-| Konsistensi komputasional 4 model & 7 lipatan | Terverifikasi | 127 prediksi uji, 7 blok, 28 baris per_wilayah, 7/7 tes protokol lulus, 25/25 hash sha256.json cocok. |
+| Konsistensi komputasional 4 model & 7 lipatan | Terverifikasi | 127 prediksi uji, 7 blok, 28 baris per_wilayah; metrik dihitung ulang oleh verifier sebelum naskah dibuat. Hasil tes terpisah dicatat pada laporan audit. |
 | Ketercakupan interior titik GWR (ST_PointOnSurface) | Terverifikasi secara geometris | 127/127 titik di dalam poligon BIG; jarak ke batas 383,02–4.572,15 m (padanan_dan_titik.csv). |
 | Padanan nama wilayah (padanan_nama.csv) | 125 otomatis + 2 eksplisit; identitas historis perlu konfirmasi | Kebakkramat–Kebakramat dan Sidoharjo–Sidoarjo unik tanpa benturan kunci; ejaan Sidoarjo cocok dengan PDF lampiran halaman 2; konfirmasi identitas administratif masih diperlukan. |
 | Kesesuaian garis batas historis tahun 2020 | Belum terverifikasi historis | Arsip BIG memiliki penanda fitur 20230928 (layanan edisi 2022); perlu audit batas khususnya pemekaran Boyolali 2018–2019 (Gladagsari, Tamansari, Wonosamodro). |

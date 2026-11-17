@@ -3,6 +3,7 @@ import csv
 import json
 import math
 import statistics
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -55,7 +56,10 @@ def describe_column(rows, col):
 
 def main():
     audit_dataset()
+    sys.path.insert(0, str(ROOT))
+    from tanah.verification import verify
     folder = ROOT / 'hasil/spasial'
+    verify(folder, spatial=True)
     scores = read_csv(folder / 'metrik.csv')
     folds = read_csv(folder / 'per_wilayah.csv')
     predictions = read_csv(folder / 'prediksi_uji.csv')
@@ -136,7 +140,7 @@ def main():
         f"padanannya (`di_dalam_poligon = True`), dengan jarak titik ke batas berkisar antara "
         f"{decimal_id(closest['jarak_ke_batas_m'], 2)} m hingga {decimal_id(farthest['jarak_ke_batas_m'], 2)} m "
         f"(median {decimal_id(dist_s['median'], 2)} m; rata-rata {decimal_id(dist_s['mean'], 2)} m) "
-        f"dan selisih numerik point-on-surface terhadap Shapely kurang dari {max_pos_diff:.2e} m."
+        f"dan selisih numerik maksimum point-on-surface terhadap Shapely sekitar {max_pos_diff:.2e} m."
     )
     coord_audit_table = table(
         ['Kasus ekstrem jarak ke batas', 'Kabupaten/kota', 'Kecamatan', 'Jarak ke batas (m)', 'Luas kecamatan (km²)'],
@@ -200,7 +204,7 @@ def main():
         ]),
         'AUDIT_STATUS': table(['Komponen', 'Status saat ini', 'Bukti di repositori / tindakan audit lanjutan'], [
             ['Konsistensi komputasional 4 model & 7 lipatan', 'Terverifikasi',
-             '127 prediksi uji, 7 blok, 28 baris per_wilayah, 7/7 tes protokol lulus, 25/25 hash sha256.json cocok.'],
+             '127 prediksi uji, 7 blok, 28 baris per_wilayah; metrik dihitung ulang oleh verifier sebelum naskah dibuat. Hasil tes terpisah dicatat pada laporan audit.'],
             ['Ketercakupan interior titik GWR (ST_PointOnSurface)', 'Terverifikasi secara geometris',
              '127/127 titik di dalam poligon BIG; jarak ke batas 383,02–4.572,15 m (padanan_dan_titik.csv).'],
             ['Padanan nama wilayah (padanan_nama.csv)', '125 otomatis + 2 eksplisit; identitas historis perlu konfirmasi',
