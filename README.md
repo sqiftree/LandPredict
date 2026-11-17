@@ -142,3 +142,7 @@ karena tidak dipakai pipeline utama; metadata dan catatan keterbatasannya tetap 
 
 Tidak ada koordinat tebakan, imputasi harga, interpolasi ke bidang, atau proyeksi
 harga ke tahun lain. Paper melaporkan hasil prediksi deskriptif, bukan inferensi kausal.
+
+## Audit kredibilitas dataset
+
+Lihat [SUMBER_DATASET.md](data/SUMBER_DATASET.md) untuk rantai sumber, keterbatasan dan jawaban presentasi. Jalankan `python3 scripts/audit_dataset.py` untuk mengulang pencocokan snapshot. Sebanyak 381/381 nilai cocok dengan indeks lampiran UNS; PDF asli dan data primer belum sepenuhnya divalidasi. Fasum berbeda terhadap artikel pada 7 wilayah dan penduduk pada 3 wilayah. Hasil eksperimen tetap menggunakan CSV asli, bukan angka koreksi yang diasumsikan.

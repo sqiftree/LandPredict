@@ -64,7 +64,9 @@ def table(rows):
     margins = node(props, 'tblCellMar')
     for edge in ('top', 'left', 'bottom', 'right'):
         node(margins, edge, {'w': 75, 'type': 'dxa'})
-    if n == 6:
+    if n == 7:
+        widths = [1950, 420, 1250, 1956, 1250, 950, 1250]
+    elif n == 6:
         widths = [2600, 550, 1469, 1469, 1469, 1469]
     elif n == 3:
         widths = [2100, 3463, 3463]
@@ -131,6 +133,10 @@ def render(source: Path, markdown: Path, output: Path):
     with ZipFile(source) as archive:
         entries = [(info, archive.read(info.filename)) for info in archive.infolist()]
     content = {info.filename: data for info, data in entries}
+    # Public manuscript omits student identifiers; source archive is untouched.
+    for name, data in content.items():
+        if name.endswith('.xml'):
+            content[name] = re.sub(rb'\b[A-Z][0-9]{7,}\b', b'[NIM dihapus]', data)
     raw = content['word/document.xml']
     for _, (prefix, uri) in E.iterparse(io.BytesIO(raw), events=['start-ns']):
         if not re.fullmatch(r'ns\d+', prefix):

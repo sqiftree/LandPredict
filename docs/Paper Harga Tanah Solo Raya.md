@@ -2,7 +2,7 @@
 
 ## Abstrak
 
-Penelitian ini mengevaluasi manfaat pembobotan geografis untuk memperkirakan harga tanah rata-rata kecamatan pada kabupaten/kota yang tidak dilibatkan dalam pelatihan. Dataset mencakup 127 kecamatan di tujuh kabupaten/kota Solo Raya tahun 2020, dengan jumlah penduduk dan jumlah fasilitas umum regional sebagai prediktor. Geographically Weighted Regression (GWR) Gaussian dibandingkan dengan regresi linear, K-Nearest Neighbors (KNN), dan Decision Tree menggunakan tujuh lipatan luar leave-one-kabupaten/kota-out. Standardisasi dan pemilihan parameter dilakukan pada bagian latih melalui validasi internal antarkabupaten/kota. Koordinat dihitung sebagai point-on-surface dari poligon kecamatan BIG dan digunakan untuk menghitung jarak haversine. KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Dengan demikian, pembobotan geografis pada spesifikasi yang diuji belum memberi keunggulan konsisten. Seluruh model menghasilkan 127 prediksi uji dan hasilnya dapat direproduksi melalui pipeline modular. Interpretasi dibatasi pada rata-rata kecamatan tahun 2020, dengan ketidakpastian definisi harga sumber serta kesesuaian batas historis yang masih perlu dikonfirmasi.
+Penelitian ini mengevaluasi manfaat pembobotan geografis untuk memperkirakan harga tanah rata-rata kecamatan pada kabupaten/kota yang tidak dilibatkan dalam pelatihan. Dataset mencakup 127 kecamatan di tujuh kabupaten/kota Solo Raya tahun 2020, dengan jumlah penduduk dan jumlah fasilitas umum regional sebagai prediktor. Geographically Weighted Regression (GWR) Gaussian dibandingkan dengan regresi linear, K-Nearest Neighbors (KNN), dan Decision Tree menggunakan tujuh lipatan luar leave-one-kabupaten/kota-out. Standardisasi dan pemilihan parameter dilakukan pada bagian latih melalui validasi internal antarkabupaten/kota. Koordinat dihitung sebagai point-on-surface dari poligon kecamatan BIG setelah proyeksi ke UTM 49S dan digunakan untuk menghitung jarak haversine. KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Dengan demikian, pembobotan geografis pada spesifikasi yang diuji belum memberi keunggulan konsisten. Seluruh model menghasilkan 127 prediksi uji dan hasilnya dapat direproduksi melalui pipeline modular. Interpretasi dibatasi pada rata-rata kecamatan tahun 2020, dengan ketidakpastian definisi harga, perbedaan fasum dan penduduk antarsumber, serta kesesuaian batas historis yang masih perlu dikonfirmasi.
 
 Kata kunci: harga tanah; GWR; KNN; validasi spasial; Solo Raya; kecamatan.
 
@@ -12,29 +12,43 @@ Harga tanah memiliki variasi spasial yang dapat berkaitan dengan karakter pendud
 
 Aziz, Rahayu, dan Istanabi (2023) mengkaji struktur pusat aktivitas Surakarta Raya melalui karakteristik penggunaan lahan, harga lahan, penduduk, dan fasilitas umum. Penelitian tersebut memberi konteks regional, tetapi menggunakan analisis klaster dan bukan evaluasi prediksi lintas kabupaten/kota. Selain itu, jumlah penduduk pada eksperimen ini berbeda dari konsep kepadatan penduduk yang digunakan dalam kajian pusat aktivitas.
 
-Saefuddin dkk. (2012) mengkaji harga tanah Tangerang Selatan melalui OLS dan GWR, dengan akses terhadap jalan dan fasilitas sebagai variabel relevan. Syahar dkk. (2020) membahas keterkaitan nilai tanah dengan pusat kegiatan, fasilitas, penggunaan lahan, dan bencana pada konteks Padang. Bukti tersebut mendukung pengujian heterogenitas spasial dan pengembangan prediktor, tetapi tidak menjamin hubungan yang sama pada rata-rata kecamatan Solo Raya. Perbedaan unit observasi harus diperhatikan ketika mengadaptasi hasil penelitian tingkat bidang atau titik menjadi model tingkat wilayah.
+Berbagai kajian empiris nilai tanah di Indonesia menguatkan peran aksesibilitas, fasilitas pelayanan, dan lingkungan dalam membentuk variasi spasial harga tanah. Saefuddin dkk. (2012) mengkaji harga tanah Tangerang Selatan melalui OLS dan GWR, dengan akses terhadap jalan arteri, gerbang tol, dan fasilitas umum sebagai variabel relevan. Syahar dkk. (2020) membahas keterkaitan nilai tanah dengan pusat kegiatan, fasilitas pelayanan, perubahan penggunaan lahan, dan bencana pada konteks Padang. Pada konteks Jawa Tengah, Arumingtyas, Subiyanto, dan Firdaus (2019) menganalisis pengaruh aksesibilitas serta keberadaan fasilitas umum dan fasilitas sosial terhadap harga bidang tanah di Kelurahan Tlogosari Kulon, Semarang, serta membedakan harga pasar dan Nilai Jual Objek Pajak (NJOP). Sementara itu, Janssen, Mulder, dan Yudhistira (2022) mengkaji pemilahan spasial kelompok pendapatan di Jakarta. Kajian tersebut menjadi konteks struktur perkotaan, bukan bukti langsung bahwa tiap kandidat prediktor meningkatkan akurasi harga tanah Solo Raya. Bukti-bukti tersebut mendukung pengujian heterogenitas spasial dan pengembangan prediktor, tetapi tidak menjamin hubungan yang sama berlaku pada rata-rata kecamatan Solo Raya. Perbedaan unit observasi harus diperhatikan ketika mengadaptasi hasil penelitian tingkat bidang atau titik menjadi model tingkat wilayah.
 
 GWR memungkinkan koefisien hubungan prediktor dengan target berubah menurut lokasi (Brunsdon dkk., 1996). Namun, fleksibilitas lokal tidak dengan sendirinya menjamin prediksi yang lebih baik pada wilayah baru. Penelitian ini membandingkan GWR dengan regresi linear, KNN, dan Decision Tree pada prediktor serta pembagian data yang sama. Evaluasi menahan satu kabupaten/kota penuh agar tujuan pengujian sesuai dengan penggunaan model pada kelompok wilayah yang tidak dilibatkan dalam pelatihan.
 
-Kontribusi penelitian adalah evaluasi prediksi lintas tujuh kabupaten/kota dengan pemilihan parameter di dalam data latih, audit pemadanan data harga dengan geometri kecamatan, serta penyediaan kode, prediksi uji, dan catatan parameter yang dapat direproduksi. Penelitian tidak berangkat dari asumsi bahwa GWR harus menjadi model terbaik.
+Kontribusi penelitian adalah evaluasi prediksi lintas tujuh kabupaten/kota dengan pemilihan parameter di dalam data latih, audit pemadanan data harga dengan geometri kecamatan beserta landasan penentuan titik representatifnya, serta penyediaan kode, prediksi uji, dan catatan parameter yang dapat direproduksi. Penelitian tidak berangkat dari asumsi bahwa GWR harus menjadi model terbaik.
 
 ## 2. Data dan Wilayah Penelitian
 
 ### 2.1. Cakupan dan sumber data
 
-Wilayah penelitian meliputi Kota Surakarta serta Kabupaten Boyolali, Karanganyar, Klaten, Sragen, Sukoharjo, dan Wonogiri. Dataset merupakan transkripsi Lampiran A penelitian Salim Aziz di Repositori UNS. Satu baris menyatakan satu kecamatan pada tahun 2020. Kolom halaman_lampiran memungkinkan penelusuran kembali ke halaman tabel asal. Dataset yang digunakan memuat 127 pasangan unik kabupaten/kota–kecamatan.
+Wilayah penelitian meliputi Kota Surakarta serta Kabupaten Boyolali, Karanganyar, Klaten, Sragen, Sukoharjo, dan Wonogiri. Dataset merupakan transkripsi Lampiran A penelitian Salim Aziz di Repositori UNS. Satu baris menyatakan satu kecamatan pada tahun 2020. Kolom halaman_lampiran memungkinkan penelusuran kembali ke halaman tabel asal. Dataset yang digunakan memuat 127 pasangan unik kabupaten/kota–kecamatan dengan distribusi wilayah, rata-rata harga tanah, rentang harga, total penduduk, total fasilitas regional, dan total luas poligon sebagai berikut.
 
-| Kabupaten/kota | Jumlah kecamatan |
-| --- | --- |
-| Kabupaten Boyolali | 22 |
-| Kabupaten Karanganyar | 17 |
-| Kabupaten Klaten | 26 |
-| Kabupaten Sragen | 20 |
-| Kabupaten Sukoharjo | 12 |
-| Kabupaten Wonogiri | 25 |
-| Kota Surakarta | 5 |
+| Kabupaten/kota | n | Rata-rata harga (Rp/m²) | Rentang harga (Rp/m²) | Total penduduk | Total fasum | Total luas (km²) |
+| --- | --- | --- | --- | --- | --- | --- |
+| Kabupaten Boyolali | 22 | 749.194 | 105.400–5.025.000 | 1.062.713 | 9 | 1.095,76 |
+| Kabupaten Karanganyar | 17 | 1.509.848 | 145.000–5.214.285 | 938.808 | 13 | 802,38 |
+| Kabupaten Klaten | 26 | 631.602 | 45.299–3.811.000 | 1.260.506 | 17 | 700,98 |
+| Kabupaten Sragen | 20 | 383.456 | 50.112–3.442.857 | 976.951 | 10 | 993,78 |
+| Kabupaten Sukoharjo | 12 | 2.266.921 | 121.534–7.789.431 | 911.966 | 14 | 493,14 |
+| Kabupaten Wonogiri | 25 | 261.464 | 40.187–3.285.714 | 1.043.177 | 9 | 1.904,26 |
+| Kota Surakarta | 5 | 8.312.399 | 6.269.466–11.800.794 | 522.364 | 26 | 46,68 |
 
-Target diperlakukan mengikuti label sumber sebagai harga tanah rata-rata per meter persegi. Dataset belum dapat diklaim sebagai pengumpulan langsung transaksi tanah. Jenis harga, metode penghitungan rata-rata, distribusi sampel, dan sumber primer setiap kolom masih perlu dikonfirmasi terhadap dokumen sumber. Seluruh angka belum diaudit ulang satu per satu terhadap lampiran pada pengembangan program ini.
+Target diperlakukan mengikuti label sumber sebagai harga tanah rata-rata per meter persegi. Dataset belum dapat diklaim sebagai pengumpulan langsung transaksi tanah. Jenis harga, metode penghitungan rata-rata, distribusi sampel, dan sumber primer setiap kolom masih perlu dikonfirmasi terhadap dokumen sumber. Audit 17 November 2026 mencocokkan 127 kunci dan seluruh 381 nilai pada tiga kolom numerik dengan ekstraksi indeks publik Lampiran A. PDF asli masih memerlukan login UNS, sehingga kecocokan ini merupakan verifikasi transkripsi terhadap indeks, bukan validasi pengukuran primer. Artikel Aziz dkk. (2023), Gambar 4–5 hlm.147, mengatribusikan harga ke Bhumi ATR-BPN 2020; arsip layer dan metode agregasinya belum diperoleh.
+
+Total fasilitas pada lampiran berbeda dari penjumlahan kategori Tabel 3 artikel Aziz dkk. (2023), hlm.149, pada seluruh tujuh wilayah. Artikel menyebut observasi peneliti 2023 dengan data 2020. Perbedaan belum dapat ditentukan sebagai salah ketik, beda versi, atau beda cakupan. CSV acuan dipertahankan agar hasil eksperimen dapat ditelusuri.
+
+| Wilayah | Fasum CSV/lampiran | Fasum artikel | Selisih CSV − artikel |
+| --- | --- | --- | --- |
+| Kota Surakarta | 26 | 25 | 1 |
+| Kabupaten Boyolali | 9 | 11 | -2 |
+| Kabupaten Sukoharjo | 14 | 11 | 3 |
+| Kabupaten Karanganyar | 13 | 12 | 1 |
+| Kabupaten Wonogiri | 9 | 8 | 1 |
+| Kabupaten Sragen | 10 | 11 | -1 |
+| Kabupaten Klaten | 17 | 15 | 2 |
+
+Jumlah penduduk CSV juga berbeda dari total urban dan rural Tabel 1 artikel pada Surakarta (522.364 dibanding 576.412), Sukoharjo (911.966 dibanding 907.587), dan Karanganyar (938.808 dibanding 931.963). Empat wilayah lainnya cocok. Lima angka kecamatan Surakarta cocok dengan Gambar 1.10 laporan Pemerintah Kota Surakarta, hlm.i-20, yang mengutip BPS 2021 untuk tahun data 2020. Pemeriksaan ini tidak menggantikan verifikasi seluruh kecamatan ke BPS. Rincian bukti, URL, dan kebutuhan rekonsiliasi tersedia di data/SUMBER_DATASET.md; perbandingan dapat diulang dengan scripts/audit_dataset.py.
 
 ### 2.2. Variabel yang benar-benar diuji
 
@@ -48,17 +62,38 @@ Target diperlakukan mengikuti label sumber sebagai harga tanah rata-rata per met
 
 Jumlah penduduk dan fasilitas digunakan karena tersedia bersama target pada tabel sumber. Jumlah penduduk mewakili ukuran populasi, sedangkan jumlah fasilitas menggambarkan layanan regional menurut klasifikasi sumber. Penggunaan keduanya bersifat prediktif; tidak dimaksudkan mengidentifikasi dampak kausal. Kategori fasilitas perlu dipastikan sebelum replikasi dengan sumber lain. Tidak ada prediktor kepadatan penduduk, akses jalan, atau permukaan terbangun dalam hasil eksperimen yang dilaporkan pada bagian 4.
 
-Harga target minimum 40.187, median 200.965, rata-rata 1.114.505, dan maksimum 11.800.794 Rp/m². Statistik ini bersifat deskriptif dan tidak digunakan untuk memasang standardisasi pada data uji.
+| Variabel / Atribut | Minimum | Median | Rata-rata | Maksimum | Simpangan baku |
+| --- | --- | --- | --- | --- | --- |
+| Harga tanah rata-rata (Rp/m²) | 40.187 | 200.965 | 1.114.504,86 | 11.800.794 | 2.044.263,94 |
+| Jumlah penduduk (jiwa) | 17.760 | 47.773 | 52.885,71 | 168.770 | 23.188,90 |
+| Jumlah fasum regional (unit) | 0 | 0 | 0,77 | 9 | 1,83 |
+| Luas poligon kecamatan (km²) | 3,06 | 46,33 | 47,54 | 144,40 | 24,21 |
+| Jarak titik ke batas (m) | 383,02 | 1.650,59 | 1.755,75 | 4.572,15 | 815,64 |
 
-### 2.3. Geometri dan penentuan koordinat
+Kuartil harga tanah rata-rata pada 127 kecamatan adalah Q1 Rp89.345/m², median Rp200.965/m², dan Q3 Rp943.656/m². Lima kecamatan dengan nilai tertinggi adalah Laweyan (Kota Surakarta: Rp11.800.794/m², penduduk 88.524, fasum 5); Pasar Kliwon (Kota Surakarta: Rp9.463.310/m², penduduk 78.517, fasum 2); Grogol (Kabupaten Sukoharjo: Rp7.789.431/m², penduduk 121.414, fasum 2); Banjarsari (Kota Surakarta: Rp7.678.425/m², penduduk 168.770, fasum 9); Serengan (Kota Surakarta: Rp6.350.000/m², penduduk 47.778, fasum 1). Tiga kecamatan dengan nilai terendah adalah Kismantoro (Kabupaten Wonogiri: Rp40.187/m², penduduk 40.200, fasum 0); Puhpelem (Kabupaten Wonogiri: Rp43.011/m², penduduk 21.144, fasum 0); Kalikotes (Kabupaten Klaten: Rp45.299/m², penduduk 37.051, fasum 0). Seluruh statistik ini bersifat deskriptif dan tidak digunakan untuk memasang standardisasi pada data uji.
+
+### 2.3. Geometri dan Landasan Penentuan Titik Koordinat GWR
 
 Geometri berasal dari arsip BIG KSP Satu Peta, layer Peta Wilayah Administrasi Kecamatan. Ekspor Jawa Tengah memuat 576 kecamatan. Sebanyak 127 kecamatan penelitian dipilih melalui pasangan nama kabupaten/kota dan kecamatan. Dua padanan eksplisit digunakan: Kebakkramat pada BIG dengan Kebakramat pada CSV, serta Sidoharjo pada BIG dengan Sidoarjo pada CSV. Nama CSV dipertahankan. Padanan Sidoarjo–Sidoharjo masih memerlukan konfirmasi ke lampiran harga meskipun tidak ada benturan kunci dalam pemetaan.
 
-Poligon diproyeksikan ke UTM 49S (EPSG:32749), digabungkan per kecamatan, dan diwakili satu titik melalui ST_PointOnSurface. Titik kemudian ditransformasikan kembali ke WGS84 (EPSG:4326). Koordinat ditentukan oleh geometri, bukan oleh nilai harga. Titik ini bukan jaminan lokasi kantor kecamatan, pusat penduduk, pusat perdagangan, atau titik transaksi.
+Penetapan koordinat titik untuk pembobotan GWR didasarkan pada empat landasan metodologis dan teknis berikut.
 
-Harga merupakan atribut wilayah kecamatan. Misalnya, nilai Banjarsari Rp7.678.425/m² tidak berarti harga bidang tepat pada koordinat representatifnya memiliki nilai tersebut. Koordinat digunakan untuk mengukur kedekatan antarkecamatan dalam GWR. Titik yang berada di dalam wilayah tidak otomatis merepresentasikan distribusi sampel pembentuk harga rata-rata.
+Pertama, landasan representasi unit areal (areal unit point representation). Dalam GWR, setiap observasi membutuhkan koordinat titik untuk menghitung jarak geografis antarunit dalam kernel Gaussian. Karena dataset menyajikan harga tanah sebagai atribut agregat tingkat kecamatan (poligon areal) dan bukan lokasi persil transaksi tunggal, setiap kecamatan harus diwakili oleh satu koordinat titik representatif wilayah administratif.
 
-Audit menghasilkan 127 padanan berkode unik dan 127 titik di dalam poligon masing-masing; jarak minimum titik ke batas sekitar 383,02 meter. Peta audit turut tersedia. Metadata fitur arsip BIG berpenanda 20230928, sedangkan deskripsi layanan menyebut edisi 2022. Kesamaan batas dengan tahun 2020 belum dibuktikan untuk seluruh kecamatan. Status ini membatasi interpretasi hasil spasial sebagai eksperimen dengan proksi geometri administratif yang lebih baru.
+Kedua, landasan geometris dan GIS melalui algoritma ST_PointOnSurface dibandingkan centroid biasa. Poligon kecamatan yang berbentuk cekung (concave), memanjang, atau terdiri atas beberapa bagian dapat menyebabkan pusat massa geometris biasa (centroid) jatuh di luar batas kecamatan tersebut. Sebaliknya, algoritma ST_PointOnSurface(ST_Union(geom)) secara matematis memilih titik interior yang dijamin berada di dalam gabungan poligon kecamatan masing-masing.
+
+Ketiga, landasan geodetik melalui proyeksi metrik planar UTM Zona 49S (EPSG:32749). Sebelum penggabungan poligon dan penghitungan ST_PointOnSurface, geometri WGS84 diproyeksikan ke UTM 49S agar operasi spasial berlangsung pada bidang datar bersatuan meter sesuai posisi geografis Solo Raya. Titik kemudian ditransformasikan kembali ke WGS84 (EPSG:4326) untuk menghitung jarak lingkaran besar haversine dengan radius bumi 6.371,0088 km.
+
+Keempat, konstruksi koordinat tidak menggunakan target harga. Koordinat titik ditentukan semata-mata oleh geometri batas administratif BIG tanpa membaca nilai harga tanah aktual. Dengan demikian, harga pada baris Banjarsari sebesar Rp7.678.425/m² tidak berarti harga bidang tepat pada koordinat point-on-surface Banjarsari bernilai demikian, melainkan nilai rata-rata kecamatan yang dilekatkan pada simpul koordinat wilayahnya. Titik ini bukan jaminan lokasi kantor kecamatan, pusat penduduk, pusat perdagangan, atau titik transaksi, dan satu titik menyederhanakan variasi internal wilayah yang rata-rata seluas 47,54 km².
+
+Audit spasial pada 127 kecamatan menunjukkan seluruh 127 titik (100%) berada di dalam poligon padanannya (`di_dalam_poligon = True`), dengan jarak titik ke batas berkisar antara 383,02 m hingga 4.572,15 m (median 1.650,59 m; rata-rata 1.755,75 m) dan selisih numerik point-on-surface terhadap Shapely kurang dari 3.26e-09 m.
+
+| Kasus ekstrem jarak ke batas | Kabupaten/kota | Kecamatan | Jarak ke batas (m) | Luas kecamatan (km²) |
+| --- | --- | --- | --- | --- |
+| Terdekat ke batas | Kota Surakarta | Serengan | 383,02 | 3,06 |
+| Terjauh dari batas | Kabupaten Wonogiri | Pracimantoro | 4.572,15 | 144,40 |
+
+Metadata fitur arsip BIG berpenanda 20230928, sedangkan deskripsi layanan menyebut edisi 2022. Kesamaan batas dengan tahun 2020 belum dibuktikan untuk seluruh kecamatan. Status ini membatasi interpretasi hasil spasial sebagai eksperimen dengan proksi geometri administratif yang lebih baru.
 
 ![Gambar 1. Harga aktual dan prediksi out-of-fold; skala warna sama, batas BIG lebih baru daripada 2020.](../artifacts/figures/peta_harga_dan_prediksi.png)
 
@@ -135,7 +170,19 @@ KNN memberi MAE terbaik, sedangkan regresi linear memberi RMSE terbaik. MAE GWR 
 
 Seluruh MAE pada tabel dalam Rp/m²; n adalah jumlah kecamatan uji.
 
-GWR memiliki MAE lebih kecil daripada regresi linear pada Karanganyar dan Sukoharjo, serta lebih kecil daripada KNN pada Karanganyar dan Surakarta. Dengan demikian, peningkatan lokal tidak merata. Seluruh wilayah tetap disertakan pada hasil gabungan.
+| Wilayah | n | Linear | KNN | Tree | GWR |
+| --- | --- | --- | --- | --- | --- |
+| Kabupaten Boyolali | 22 | 439.799 | 521.109 | 898.205 | 485.127 |
+| Kabupaten Karanganyar | 17 | 1.084.197 | 1.300.834 | 1.867.771 | 1.060.699 |
+| Kabupaten Klaten | 26 | 808.729 | 882.024 | 807.489 | 870.106 |
+| Kabupaten Sragen | 20 | 786.345 | 759.633 | 716.957 | 844.890 |
+| Kabupaten Sukoharjo | 12 | 1.550.099 | 1.542.724 | 1.608.852 | 1.491.076 |
+| Kabupaten Wonogiri | 25 | 668.108 | 680.649 | 776.887 | 683.980 |
+| Kota Surakarta | 5 | 5.286.238 | 6.176.307 | 4.823.843 | 5.581.001 |
+
+Seluruh RMSE pada tabel dalam Rp/m²; n adalah jumlah kecamatan uji.
+
+GWR memiliki MAE lebih kecil daripada regresi linear pada Karanganyar dan Sukoharjo, serta lebih kecil daripada KNN pada Karanganyar dan Surakarta. GWR juga mengungguli Decision Tree dalam MAE pada Boyolali, Karanganyar, dan Sukoharjo. Dengan demikian, peningkatan lokal tidak merata. Seluruh wilayah tetap disertakan pada hasil gabungan.
 
 Surakarta hanya memuat lima kecamatan, tetapi memiliki MAE GWR 5.393.705 dan KNN 5.779.800 Rp/m². Lima kecamatan ini menyumbang sekitar 61.7% jumlah kuadrat galat GWR dan 64.1% jumlah kuadrat galat KNN. Besarnya galat Surakarta membantu menjelaskan perbedaan peringkat MAE dan RMSE. Ini merupakan diagnostik setelah evaluasi; wilayah tersebut tidak dikeluarkan dari perhitungan atau digunakan untuk menyetel ulang model.
 
@@ -176,11 +223,27 @@ Representasi satu titik untuk wilayah luas juga menyederhanakan variasi spasial 
 
 Selisih skor yang dilaporkan bersifat deskriptif. Belum dilakukan uji signifikansi perbedaan model, interval ketidakpastian berbasis blok, atau pengujian autokorelasi residual. Penelitian berfokus pada prediksi, sehingga koefisien atau korelasi tidak ditafsirkan sebagai dampak kausal.
 
-## 6. Keterbatasan dan Pengembangan Lanjutan
+## 6. Keterbatasan, Status Audit, dan Pengembangan Lanjutan
 
-Keterbatasan utama adalah definisi harga dan pembentuk rata-ratanya belum sepenuhnya diaudit, geometri BIG lebih baru daripada tahun data, dan padanan Sidoarjo–Sidoharjo memerlukan konfirmasi sumber harga. Kesamaan nama dan keberadaan titik di dalam poligon tidak membuktikan kesamaan batas tahun 2020. Seluruh hasil tetap dibatasi pada rata-rata kecamatan tahun 2020.
+Keterbatasan utama adalah definisi harga dan pembentuk rata-ratanya belum sepenuhnya diaudit, geometri BIG lebih baru daripada tahun data, dan identitas administratif padanan Sidoarjo–Sidoharjo masih memerlukan konfirmasi. Ejaan Sidoarjo telah cocok dengan indeks lampiran, tetapi hal itu belum membuktikan kesesuaian batas historis. Kesamaan nama dan keberadaan titik di dalam poligon tidak membuktikan kesamaan batas tahun 2020. Seluruh hasil tetap dibatasi pada rata-rata kecamatan tahun 2020. Rangkuman status audit seluruh komponen penelitian disajikan pada tabel berikut.
 
-Pengembangan yang direncanakan mencakup penggantian jumlah penduduk dengan kepadatan penduduk, kemudian penambahan akses pusat kegiatan, akses jalan utama, dan proporsi permukaan terbangun. Sumber calon meliputi BPS/SP2020, publikasi dalam angka dengan tahun tabel yang diperiksa, dokumen perencanaan yang berlaku, arsip jaringan jalan, serta GHSL GHS-BUILT-S epoch 2020. Produk GHSL mengukur permukaan terbangun dan tidak boleh otomatis disebut luas kawasan permukiman. Data tersebut belum menjadi bagian hasil pada bagian 4.
+| Komponen | Status saat ini | Bukti di repositori / tindakan audit lanjutan |
+| --- | --- | --- |
+| Konsistensi komputasional 4 model & 7 lipatan | Terverifikasi | 127 prediksi uji, 7 blok, 28 baris per_wilayah, 7/7 tes protokol lulus, 25/25 hash sha256.json cocok. |
+| Ketercakupan interior titik GWR (ST_PointOnSurface) | Terverifikasi secara geometris | 127/127 titik di dalam poligon BIG; jarak ke batas 383,02–4.572,15 m (padanan_dan_titik.csv). |
+| Padanan nama wilayah (padanan_nama.csv) | 125 otomatis + 2 eksplisit; identitas historis perlu konfirmasi | Kebakkramat–Kebakramat dan Sidoharjo–Sidoarjo unik tanpa benturan kunci; ejaan Sidoarjo cocok dengan indeks lampiran; konfirmasi identitas administratif masih diperlukan. |
+| Kesesuaian garis batas historis tahun 2020 | Belum terverifikasi historis | Arsip BIG memiliki penanda fitur 20230928 (layanan edisi 2022); perlu audit batas khususnya pemekaran Boyolali 2018–2019 (Gladagsari, Tamansari, Wonosamodro). |
+| Definisi & angka primer harga tanah 2020 | 381/381 nilai cocok dengan indeks; primer belum tervalidasi | Perlu konfirmasi jenis harga (transaksi, penawaran, NJOP, atau ZNT), cara perataan, dan pemeriksaan visual PDF asli UNS. Perbedaan fasum pada 7 wilayah dan penduduk pada 3 wilayah belum terselesaikan. |
+
+Pengembangan yang direncanakan mencakup penggantian jumlah penduduk dengan kepadatan penduduk, kemudian penambahan akses pusat kegiatan, akses jalan utama, dan proporsi permukaan terbangun. Kandidat sumber resmi dan kebutuhan verifikasinya dirangkum berikut ini; seluruh data tersebut belum menjadi bagian hasil pada bagian 4.
+
+| Variabel pengembangan | Kandidat sumber resmi | Catatan verifikasi & tahun data |
+| --- | --- | --- |
+| Kepadatan penduduk (jiwa/km²) | BPS (SP2020 / Publikasi Dalam Angka) dan luas poligon UTM 49S (luas_km2) | Periksa tahun tabel penduduk agar mewakili 2020 dan cocok untuk 22 kecamatan Boyolali. |
+| Fasilitas umum regional | Lampiran Aziz (tahun data 2020; tahun publikasi belum dipastikan), BPS/Podes, dan instansi penyedia | Definisikan kategori fasum secara konsisten; Podes 2021 bukan data 2020 sehingga hanya dipakai jika dinyatakan sebagai pendekatan. |
+| Akses pusat kegiatan (km) | Dokumen RTRW Provinsi Jawa Tengah / RTRW Kabupaten/Kota | Tetapkan pusat kegiatan secara independen tanpa memakai nilai harga tanah tertinggi pada dataset. |
+| Akses jalan utama (km) | BIG / Peta Rupabumi Indonesia (RBI) dan dinas terkait | Periksa klasifikasi jalan arteri/kolektor dan tahun data jaringan jalan. |
+| Proporsi permukaan terbangun (%) | European Commission JRC — GHSL GHS-BUILT-S R2023A epoch 2020 (100 m) | Mengukur permukaan terbangun agregat per poligon kecamatan; tidak disamakan langsung dengan luas kawasan permukiman RTRW. |
 
 | Tahap | Spesifikasi | Status |
 | --- | --- | --- |
@@ -207,6 +270,8 @@ Lingkungan uji menggunakan Python 3.12 dan dependensi yang dicatat pada hasil/re
 
 ## Referensi
 
+Arumingtyas, O., Subiyanto, S., & Firdaus, H. (2019). Analisis faktor aksesibilitas, fasum dan fasos terhadap harga bidang tanah serta visualisasi berbasis WebGIS (Studi kasus: Kelurahan Tlogosari Kulon, Kecamatan Pedurungan, Kota Semarang). Jurnal Geodesi Undip, 8(4), 165–174. https://doi.org/10.14710/jgundip.2019.25155
+
 Aziz, S. (t.t.). Potensi Struktur Ruang Wilayah Polisentris. Repositori UNS, Lampiran A. Tahun publikasi perlu dikonfirmasi; 2020 merupakan tahun data. https://digilib.uns.ac.id/dokumen/download/111483/NzEwODU3/Potensi-Struktur-Ruang-Wilayah-Polisentris-Lampiran_Salim-Aziz.pdf
 
 Aziz, S., Rahayu, P., & Istanabi, T. (2023). Potensi wilayah perkotaan polisentris pada Surakarta Raya ditinjau dari perspektif pusat aktivitas. Jurnal Pengembangan Kota, 11(2), 140–154. https://doi.org/10.14710/jpk.11.2.140-154
@@ -217,7 +282,11 @@ Brunsdon, C., Fotheringham, A. S., & Charlton, M. E. (1996). Geographically weig
 
 European Commission, Joint Research Centre. GHS-BUILT-S R2023A: Built-up surface grid. Kandidat sumber variabel pengembangan; belum digunakan pada hasil baseline. https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php
 
+Janssen, K. M. J., Mulder, P., & Yudhistira, M. H. (2022). Spatial sorting of rich versus poor people in Jakarta. Bulletin of Indonesian Economic Studies, 58(2), 167–194. https://doi.org/10.1080/00074918.2021.1876209
+
 Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., … Duchesnay, É. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830.
+
+Pemerintah Kota Surakarta. Laporan pada portal Dinas Lingkungan Hidup, Gambar 1.10, hlm. i-20: penduduk per kecamatan tahun 2020, sumber BPS Kota Surakarta 2021. Diakses 17 November 2026. https://dlh.surakarta.go.id/web/file/20220714104304.pdf
 
 Roberts, D. R., Bahn, V., Ciuti, S., Boyce, M. S., Elith, J., Guillera-Arroita, G., … Dormann, C. F. (2017). Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography, 40(8), 913–929. https://doi.org/10.1111/ecog.02881
 
@@ -231,7 +300,7 @@ Naskah ini merupakan draf empiris berdasarkan eksperimen dua prediktor yang tela
 
 | Anggota | Rencana kontribusi; konfirmasi aktual oleh tim |
 | --- | --- |
-| Yashif Victoriawan (L0124124) | Integrasi program dan reproduksi eksperimen |
+| Yashif Victoriawan | Integrasi program dan reproduksi eksperimen |
 | [Nama anggota 2] | Audit sumber harga dan variabel |
 | [Nama anggota 3] | Audit geometri dan data tambahan |
 | [Nama anggota 4] | Analisis galat dan penulisan pembahasan |

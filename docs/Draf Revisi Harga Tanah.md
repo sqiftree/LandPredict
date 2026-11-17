@@ -10,6 +10,8 @@ Pemilihan karakteristik wilayah sebagai prediktor didukung oleh penelitian terda
 
 Dalam penelitian harga tanah di Tangerang Selatan, Saefuddin dkk. (2012) menggunakan karakteristik aksesibilitas dan lingkungan serta membandingkan regresi global dengan GWR. Jarak terhadap gerbang tol, jalan arteri, dan fasilitas umum menjadi faktor yang relevan dalam penelitian tersebut. Sementara itu, Syahar, Ramadhan, dan Putri (2020) menunjukkan relevansi jarak ke pusat kegiatan, fasilitas pelayanan, perubahan penggunaan lahan, dan kondisi bencana dalam pola nilai tanah di Padang. Temuan tersebut menjadi dasar untuk menguji variabel aksesibilitas dan pembangunan wilayah pada konteks Solo Raya; bukan jaminan bahwa hubungan yang sama berlaku pada skala kecamatan.
 
+Selain kedua kajian tersebut, Arumingtyas, Subiyanto, dan Firdaus (2019) menganalisis pengaruh aksesibilitas serta keberadaan fasilitas umum dan fasilitas sosial terhadap harga bidang tanah di Kelurahan Tlogosari Kulon, Kota Semarang, sekaligus membedakan harga pasar dan Nilai Jual Objek Pajak (NJOP) sebagai rujukan operasionalisasi target di Jawa Tengah. Pada skala kota besar di Indonesia, Janssen, Mulder, dan Yudhistira (2022) mengkaji pemilahan spasial kelompok pendapatan di Jakarta; kajian ini digunakan sebagai konteks struktur perkotaan, bukan pengesahan langsung prediktor harga tanah Solo Raya.
+
 Eksperimen awal menggunakan jumlah penduduk dan jumlah fasilitas umum regional. Pengembangan penelitian direncanakan melalui pengujian kepadatan penduduk, akses terhadap pusat kegiatan, akses jalan utama, dan proporsi permukaan terbangun. Penambahan tersebut bertujuan memperluas informasi penjelas harga tanah, bukan menjamin peningkatan kinerja model.
 
 GWR digunakan untuk mengevaluasi hubungan lokal antara karakteristik wilayah dan harga tanah. Regresi linear, K-Nearest Neighbors, dan Decision Tree menjadi pembanding dengan prediktor yang sama. Pertanyaan utama penelitian adalah: apakah pembobotan berdasarkan kedekatan geografis membantu memperkirakan harga tanah rata-rata kecamatan ketika seluruh kabupaten/kotanya dikeluarkan dari data latih?
@@ -85,11 +87,14 @@ Eksperimen B–D belum dijalankan. Semua model pada setiap eksperimen akan mengg
 
 ### ii. Penentuan Koordinat dan Keterkaitannya dengan Harga Tanah
 
-Koordinat kecamatan ditentukan dari geometri wilayah administratif. Poligon dipadankan menggunakan pasangan identitas kabupaten/kota dan kecamatan, diproyeksikan ke UTM zona 49S (EPSG:32749), kemudian digabungkan per kecamatan. Satu titik di dalam gabungan poligon dihitung menggunakan metode point-on-surface dan ditransformasikan kembali ke WGS84 (EPSG:4326).
+Penetapan titik koordinat untuk GWR berdiri di atas empat landasan metodologis dan teknis:
 
-Metode tersebut menghasilkan titik yang berada di dalam wilayah, tetapi tidak menjamin titik itu merupakan pusat penduduk, pusat perdagangan, kantor kecamatan, atau lokasi transaksi tanah. Titik tidak dihitung berdasarkan nilai harga tanah.
+1. **Representasi Unit Areal**: GWR mengestimasi koefisien regresi lokal menggunakan pembobot kernel Gaussian wᵢ(s) = exp[−dᵢ(s)² / (2h²)] yang membutuhkan jarak antarlokasi dᵢ(s) berbasis titik. Karena observasi pada dataset berupa agregat wilayah kecamatan (poligon areal) dan bukan titik persil transaksi tunggal, setiap kecamatan diwakili oleh satu koordinat titik representatif.
+2. **Jaminan Ketercakupan Interior (`ST_PointOnSurface` vs Centroid Biasa)**: Berbeda dengan pusat massa geometris biasa (centroid) yang dapat jatuh di luar batas wilayah pada poligon kecamatan yang berbentuk cekung (concave) atau tidak beraturan, algoritma `ST_PointOnSurface(ST_Union(geom))` menjamin titik wakil selalu berada di bagian dalam poligon kecamatan masing-masing. Hasil audit spasial menunjukkan 127 dari 127 titik berada di dalam poligon kecamatannya, dengan jarak terdekat ke batas sebesar 383,02 m (Kecamatan Serengan, Kota Surakarta; luas 3,06 km²) dan jarak terjauh ke batas sebesar 4.572,15 m (Kecamatan Pracimantoro, Kabupaten Wonogiri; luas 144,40 km²).
+3. **Konsistensi Geodetik (UTM Zona 49S EPSG:32749 dan Jarak Haversine WGS84)**: Poligon dipadankan menggunakan pasangan identitas kabupaten/kota dan kecamatan, diproyeksikan terlebih dahulu ke sistem metrik planar UTM zona 49S (EPSG:32749) agar penggabungan dan penentuan titik berlangsung pada bidang datar bersatuan meter, kemudian ditransformasikan kembali ke WGS84 (EPSG:4326) untuk menghitung jarak lingkaran besar Haversine (radius bumi 6.371,0088 km).
+4. **Konstruksi koordinat tanpa target harga**: Titik ditentukan murni dari geometri poligon administratif BIG tanpa menggunakan informasi harga tanah (`harga_tanah_rata_rata_rp_m2`).
 
-Harga pada dataset merupakan atribut kecamatan. Dengan demikian, harga rata-rata kecamatan yang dilekatkan pada titik representatif tidak ditafsirkan sebagai harga bidang tanah tepat pada koordinat tersebut. Titik hanya digunakan untuk merepresentasikan lokasi wilayah dalam penghitungan jarak geografis.
+Metode tersebut menghasilkan titik yang berada di dalam wilayah, tetapi tidak menjamin titik itu merupakan pusat penduduk, pusat perdagangan, kantor kecamatan, atau lokasi transaksi tanah. Harga pada dataset merupakan atribut kecamatan. Dengan demikian, harga rata-rata kecamatan yang dilekatkan pada titik representatif tidak ditafsirkan sebagai harga bidang tanah tepat pada koordinat tersebut. Titik hanya digunakan untuk merepresentasikan lokasi wilayah dalam penghitungan jarak geografis.
 
 Sebagai contoh, nilai Rp7.678.425/m² pada baris Banjarsari merupakan harga rata-rata kecamatan menurut dataset, bukan hasil pengukuran harga tepat di titik point-on-surface Banjarsari. Koordinat pengamatan transaksi yang mendasari rata-rata tersebut belum tersedia dalam CSV.
 
@@ -180,6 +185,8 @@ Evaluasi penelitian berfokus pada prediksi. Hubungan yang ditemukan tidak otomat
 
 ## e. Referensi
 
+Arumingtyas, O., Subiyanto, S., & Firdaus, H. (2019). Analisis faktor aksesibilitas, fasum dan fasos terhadap harga bidang tanah serta visualisasi berbasis WebGIS (Studi kasus: Kelurahan Tlogosari Kulon, Kecamatan Pedurungan, Kota Semarang). Jurnal Geodesi Undip, 8(4), 165–174. https://doi.org/10.14710/jgundip.2019.25155
+
 Aziz, S. (t.t.). Potensi Struktur Ruang Wilayah Polisentris. Repositori UNS, Lampiran A. Tahun publikasi perlu dikonfirmasi; 2020 merupakan tahun data. https://digilib.uns.ac.id/dokumen/download/111483/NzEwODU3/Potensi-Struktur-Ruang-Wilayah-Polisentris-Lampiran_Salim-Aziz.pdf
 
 Aziz, S., Rahayu, P., & Istanabi, T. (2023). Potensi wilayah perkotaan polisentris pada Surakarta Raya ditinjau dari perspektif pusat aktivitas. Jurnal Pengembangan Kota, 11(2), 140–154. https://doi.org/10.14710/jpk.11.2.140-154
@@ -190,7 +197,11 @@ Brunsdon, C., Fotheringham, A. S., & Charlton, M. E. (1996). Geographically weig
 
 European Commission, Joint Research Centre. GHS-BUILT-S R2023A: Built-up surface grid. Kandidat sumber variabel pengembangan; belum digunakan pada hasil baseline. https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php
 
+Janssen, K. M. J., Mulder, P., & Yudhistira, M. H. (2022). Spatial sorting of rich versus poor people in Jakarta. Bulletin of Indonesian Economic Studies, 58(2), 167–194. https://doi.org/10.1080/00074918.2021.1876209
+
 Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., … Duchesnay, É. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830.
+
+Pemerintah Kota Surakarta. Laporan pada portal Dinas Lingkungan Hidup, Gambar 1.10, hlm. i-20: penduduk per kecamatan tahun 2020, sumber BPS Kota Surakarta 2021. Diakses 17 November 2026. https://dlh.surakarta.go.id/web/file/20220714104304.pdf
 
 Roberts, D. R., Bahn, V., Ciuti, S., Boyce, M. S., Elith, J., Guillera-Arroita, G., … Dormann, C. F. (2017). Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography, 40(8), 913–929. https://doi.org/10.1111/ecog.02881
 

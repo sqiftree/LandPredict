@@ -1,0 +1,12 @@
+{
+  "tanggal_audit": "2026-11-17",
+  "jumlah_kunci": 127,
+  "sel_numerik_dibandingkan": 381,
+  "sel_cocok": 381,
+  "wilayah_fasum_berbeda": 7,
+  "wilayah_penduduk_berbeda": 3,
+  "jenis_bukti": "Ekstraksi indeks publik Lampiran A; PDF asli belum diperoleh",
+  "status": "Transkripsi cocok; validitas primer dan perbedaan fasum belum terselesaikan",
+  "sha256_csv": "b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66",
+  "sha256_snapshot": "b05351e5fc2c14e362fef16f6cca1bdf0ee35f754838be134477b4d756e76647"
+}
