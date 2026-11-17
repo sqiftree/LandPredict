@@ -1,0 +1,21 @@
+services:
+  eksperimen:
+    build: .
+    image: gwr-solo-raya:local
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    init: true
+    network_mode: none
+    volumes:
+      - ./data:/app/data:ro
+      - ./hasil:/app/hasil
+  koordinat:
+    profiles: [spasial]
+    build: .
+    image: gwr-solo-raya:local
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    init: true
+    network_mode: none
+    volumes:
+      - ./data:/app/data
+    entrypoint: ["python", "siapkan_koordinat.py"]
+    command: ["--help"]

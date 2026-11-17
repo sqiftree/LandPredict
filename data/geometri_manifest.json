@@ -1,0 +1,11 @@
+{
+  "source_url": "https://kspservices.big.go.id/satupeta/rest/services/PUBLIK/BATAS_WILAYAH/MapServer/3",
+  "archive_recorded_date": "2026-11-15",
+  "date_note": "Tanggal menurut catatan sesi terdahulu; log unduhan bertimestamp tidak tersedia.",
+  "feature_metadata": "TASWIL1000020230928_DATA_BATAS_DESAKELURAHAN",
+  "historical_2020_verified": false,
+  "crs": "EPSG:4326",
+  "features": 576,
+  "uncompressed_sha256": "32225cee3e3b72a1f942b533abebfa582d05b1a0f9556bda0d9ed7cbfbd9dacb",
+  "compressed_sha256": "d318448f33af7a08db858a02f69b70169937d48468781a69db0a8db169f461af"
+}

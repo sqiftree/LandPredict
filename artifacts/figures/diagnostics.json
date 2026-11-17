@@ -1,0 +1,43 @@
+{
+  "n": 127,
+  "regions": 7,
+  "target": {
+    "count": 127.0,
+    "mean": 1114504.8582677166,
+    "std": 2044263.938910666,
+    "min": 40187.0,
+    "25%": 89345.0,
+    "50%": 200965.0,
+    "75%": 943656.0,
+    "max": 11800794.0
+  },
+  "negative_predictions": {
+    "Linear": 17,
+    "KNN": 0,
+    "Decision Tree": 0,
+    "GWR": 15
+  },
+  "gwr_vs_knn_mae_percent": 9.582871399462523,
+  "gwr_vs_knn_rmse_percent": -7.877320609501504,
+  "gwr_mae_wins": {
+    "Linear": [
+      "Kabupaten Karanganyar",
+      "Kabupaten Sukoharjo"
+    ],
+    "KNN": [
+      "Kabupaten Karanganyar",
+      "Kota Surakarta"
+    ],
+    "Decision Tree": [
+      "Kabupaten Boyolali",
+      "Kabupaten Karanganyar",
+      "Kabupaten Sukoharjo"
+    ]
+  },
+  "surakarta_share_squared_error": {
+    "Linear": 0.5988285033818238,
+    "KNN": 0.6413701951688294,
+    "Decision Tree": 0.43610849927712464,
+    "GWR": 0.6170809744995238
+  }
+}

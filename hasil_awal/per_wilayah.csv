@@ -1,0 +1,22 @@
+model,wilayah_uji,n,parameter,MAE_Rp_m2
+Linear,Kabupaten Boyolali,22,,311864.28920382226
+Linear,Kabupaten Karanganyar,17,,638761.3560633744
+Linear,Kabupaten Klaten,26,,641869.0835883624
+Linear,Kabupaten Sragen,20,,574464.2730135659
+Linear,Kabupaten Sukoharjo,12,,975563.4661182998
+Linear,Kabupaten Wonogiri,25,,535644.0290893419
+Linear,Kota Surakarta,5,,4571968.383755149
+KNN,Kabupaten Boyolali,22,15.0,328378.4974551599
+KNN,Kabupaten Karanganyar,17,15.0,705238.8199358436
+KNN,Kabupaten Klaten,26,7.0,621292.5842274512
+KNN,Kabupaten Sragen,20,7.0,454792.24939448416
+KNN,Kabupaten Sukoharjo,12,15.0,931183.0016413056
+KNN,Kabupaten Wonogiri,25,15.0,337491.4659398869
+KNN,Kota Surakarta,5,15.0,5779800.285650444
+Decision Tree,Kabupaten Boyolali,22,4.0,462845.8655200655
+Decision Tree,Kabupaten Karanganyar,17,4.0,1133977.8879551822
+Decision Tree,Kabupaten Klaten,26,2.0,546210.4312810478
+Decision Tree,Kabupaten Sragen,20,2.0,427747.77061403496
+Decision Tree,Kabupaten Sukoharjo,12,2.0,1201583.0833333333
+Decision Tree,Kabupaten Wonogiri,25,4.0,374437.197939394
+Decision Tree,Kota Surakarta,5,4.0,4014821.616666667

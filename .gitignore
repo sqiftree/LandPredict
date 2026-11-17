@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+*:Zone.Identifier
+.env
+.env.*
+!.env.example
+.agents/
+.codex/
+.aws/
+hasil/
+hasil_spasial/
+data/jawa_tengah_big.geojson
+data/sumber/hdx/
+docs/~$*
+docs/backups/
+docs/* - sebelum revisi.docx
+*.tmp
+*.tmp.docx

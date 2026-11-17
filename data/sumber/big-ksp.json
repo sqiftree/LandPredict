@@ -1,0 +1,4821 @@
+{
+ "layers": [
+  {
+   "currentVersion": 10.81,
+   "id": 0,
+   "name": "Peta Batas Administrasi Provinsi",
+   "type": "Feature Layer",
+   "description": "Batas wilayah kerja perangkat Pemerintah Pusat dalam melaksanakan urusan pemerintahan umum di Daerah.",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "stsbts",
+     "field2": null,
+     "field3": null,
+     "defaultSymbol": null,
+     "defaultLabel": null,
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "1",
+       "label": "Definitif (Sudah Ditegaskan; Referensi Resmi)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "2",
+       "label": "Definitif (Sudah Ditegaskan; Referensi Resmi)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         230,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "4",
+       "label": "Indikatif (Belum Ditegaskan; Belum Referensi Resmi; Lainnya)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         230,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "3",
+       "label": "Indikatif (Belum Ditegaskan; Belum Referensi Resmi; Lainnya)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         230,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "999",
+       "label": "Indikatif (Belum Ditegaskan; Belum Referensi Resmi; Lainnya)",
+       "description": ""
+      }
+     ],
+     "fieldDelimiter": ","
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 97.80046983600005,
+    "ymin": -8.212923829999966,
+    "xmax": 135.8310094080001,
+    "ymax": 4.301804557000025,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "fcode",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "karktr",
+     "type": "esriFieldTypeInteger",
+     "alias": "karktr",
+     "domain": null
+    },
+    {
+     "name": "stsbts",
+     "type": "esriFieldTypeInteger",
+     "alias": "stsbts",
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kelas",
+     "type": "esriFieldTypeInteger",
+     "alias": "kelas",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lokasi",
+     "type": "esriFieldTypeInteger",
+     "alias": "lokasi",
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "admin1",
+     "type": "esriFieldTypeString",
+     "alias": "admin1",
+     "length": 20,
+     "domain": null
+    },
+    {
+     "name": "admin2",
+     "type": "esriFieldTypeString",
+     "alias": "admin2",
+     "length": 20,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakld1",
+     "type": "esriFieldTypeString",
+     "alias": "wakld1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakld2",
+     "type": "esriFieldTypeString",
+     "alias": "wakld2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadkc1",
+     "type": "esriFieldTypeString",
+     "alias": "wadkc1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadkc2",
+     "type": "esriFieldTypeString",
+     "alias": "wadkc2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakbk1",
+     "type": "esriFieldTypeString",
+     "alias": "wakbk1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakbk2",
+     "type": "esriFieldTypeString",
+     "alias": "wakbk2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wapro1",
+     "type": "esriFieldTypeString",
+     "alias": "wapro1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wapro2",
+     "type": "esriFieldTypeString",
+     "alias": "wapro2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tiptbt",
+     "type": "esriFieldTypeInteger",
+     "alias": "tiptbt",
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeString",
+     "alias": "pjgbts",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "klbadm",
+     "type": "esriFieldTypeInteger",
+     "alias": "klbadm",
+     "domain": null
+    },
+    {
+     "name": "tiplok",
+     "type": "esriFieldTypeInteger",
+     "alias": "tiplok",
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 1,
+   "name": "Peta Batas Administrasi Kabupaten/Kota (Garis)",
+   "type": "Feature Layer",
+   "description": "Batas wilayah kerja perangkat Pemerintah Pusat dalam melaksanakan urusan pemerintahan umum di Daerah.",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "stsbts",
+     "field2": null,
+     "field3": null,
+     "defaultSymbol": null,
+     "defaultLabel": null,
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDotDot",
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "1",
+       "label": "Definitif (Sudah Ditegaskan; Referensi Resmi)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDotDot",
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "2",
+       "label": "Definitif (Sudah Ditegaskan; Referensi Resmi)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDotDot",
+        "color": [
+         255,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "4",
+       "label": "Indikatif (Belum Ditegaskan; Belum Referensi Resmi; Lainnya)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDotDot",
+        "color": [
+         255,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "3",
+       "label": "Indikatif (Belum Ditegaskan; Belum Referensi Resmi; Lainnya)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDotDot",
+        "color": [
+         255,
+         0,
+         0,
+         255
+        ],
+        "width": 1.3
+       },
+       "value": "999",
+       "label": "Indikatif (Belum Ditegaskan; Belum Referensi Resmi; Lainnya)",
+       "description": ""
+      }
+     ],
+     "fieldDelimiter": ","
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 95.27240527800006,
+    "ymin": -10.29285000699997,
+    "xmax": 141.00273535700012,
+    "ymax": 5.6119646150000335,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "fcode",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "admin1",
+     "type": "esriFieldTypeString",
+     "alias": "admin1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "admin2",
+     "type": "esriFieldTypeString",
+     "alias": "admin2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "karktr",
+     "type": "esriFieldTypeInteger",
+     "alias": "karktr",
+     "domain": null
+    },
+    {
+     "name": "klbadm",
+     "type": "esriFieldTypeInteger",
+     "alias": "klbadm",
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "stsbts",
+     "type": "esriFieldTypeInteger",
+     "alias": "stsbts",
+     "domain": null
+    },
+    {
+     "name": "tiplok",
+     "type": "esriFieldTypeInteger",
+     "alias": "tiplok",
+     "domain": null
+    },
+    {
+     "name": "tiptbt",
+     "type": "esriFieldTypeInteger",
+     "alias": "tiptbt",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadkc1",
+     "type": "esriFieldTypeString",
+     "alias": "wadkc1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadkc2",
+     "type": "esriFieldTypeString",
+     "alias": "wadkc2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakbk1",
+     "type": "esriFieldTypeString",
+     "alias": "wakbk1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakbk2",
+     "type": "esriFieldTypeString",
+     "alias": "wakbk2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakld1",
+     "type": "esriFieldTypeString",
+     "alias": "wakld1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wakld2",
+     "type": "esriFieldTypeString",
+     "alias": "wakld2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wapro1",
+     "type": "esriFieldTypeString",
+     "alias": "wapro1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wapro2",
+     "type": "esriFieldTypeString",
+     "alias": "wapro2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "ruleid",
+     "type": "esriFieldTypeInteger",
+     "alias": "ruleid",
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 2,
+   "name": "Peta Wilayah Administrasi Kabupaten/Kota (Area)",
+   "type": "Feature Layer",
+   "description": "Geodatabase data batas wilayah administrasi kabupaten/kota edisi tahun 2022 (revisi edisi Desember 2022) merupakan pemutakhiran dari geodatabase batas wilayah administrasi kabupaten/kota bulan Mei tahun 2021 revisi 1 . Proses pemutakhiran yang dilakukan antara lain pemutakhiran segmen batas daerah hasil kesepakatan dan yang telah ditetapkan melalui Permendagri, pemutakhiran garis pantai, penyesuaian alokasi wilayah administrasi di wilayah Papua. Sumber data yang digunakan untuk fitur batas wilayah administrasi polyline antara lain:(1) Data batas wilayah provinsi dan kabupaten/kota yang belum ditegaskan dari data peta Rupabumi Indonesia skala 1:25.000 dan 1:50.000; (2) Data batas wilayah administrasi kabupaten/kota yang belum ditegaskan hasil kegiatan ajudikasi batas kabupaten/kota tahun 2013 dan 2014; (3) Data batas daerah hasil kesepakatan yang bersumber dari data digital Kemendagri edisi April-Meil 2022 untuk wilayah Kalimantan, Jawa, Bali Nusa Tenggara, Maluku, dan Papua. Untuk wilayah Sumatera dan Sulawesi sampai dengan September 2022; (4) Data batas daerah yang telah ditetapkan dalam Peraturan Menteri Dalam Negeri. Sumber data yang digunakan untuk fitur wilayah administrasi antara lain: (1) Unsur batas wilayah administrasi kabupaten/kota (ADMINISTRASI_LN); (2) IGD Garis Pantai dari Pusat Pemetaan Kelautan dan Lingkungan Pantai edisi Tahun 2022, yang merupakan pemutakhiran garis pantai penetapan tahun 2021; (2) Data batas negara edisi Agustus 2018Data ini masih terdapat kesalahan topologi pada fitur ADMINISTRASI_LN yang disebabkan oleh garis batas wilayah yang telah ditetapkan dalam Permendagri saling overshoot.",
+   "geometryType": "esriGeometryPolygon",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "width": 0.4
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 94.97191104600006,
+    "ymin": -11.00761537699998,
+    "xmax": 141.02004178900006,
+    "ymax": 6.076832204000027,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "namobj",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdbbps",
+     "type": "esriFieldTypeString",
+     "alias": "kdbbps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdcbps",
+     "type": "esriFieldTypeString",
+     "alias": "kdcbps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdcpum",
+     "type": "esriFieldTypeString",
+     "alias": "kdcpum",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdebps",
+     "type": "esriFieldTypeString",
+     "alias": "kdebps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdepum",
+     "type": "esriFieldTypeString",
+     "alias": "kdepum",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdpbps",
+     "type": "esriFieldTypeString",
+     "alias": "kdpbps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdpkab",
+     "type": "esriFieldTypeString",
+     "alias": "kdpkab",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdppum",
+     "type": "esriFieldTypeString",
+     "alias": "kdppum",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "luaswh",
+     "type": "esriFieldTypeDouble",
+     "alias": "luaswh",
+     "domain": null
+    },
+    {
+     "name": "tipadm",
+     "type": "esriFieldTypeInteger",
+     "alias": "tipadm",
+     "domain": null
+    },
+    {
+     "name": "wadmkc",
+     "type": "esriFieldTypeString",
+     "alias": "wadmkc",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadmkd",
+     "type": "esriFieldTypeString",
+     "alias": "wadmkd",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadmkk",
+     "type": "esriFieldTypeString",
+     "alias": "wadmkk",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadmpr",
+     "type": "esriFieldTypeString",
+     "alias": "wadmpr",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadkc",
+     "type": "esriFieldTypeString",
+     "alias": "wiadkc",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadkk",
+     "type": "esriFieldTypeString",
+     "alias": "wiadkk",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadpr",
+     "type": "esriFieldTypeString",
+     "alias": "wiadpr",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadkd",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "wiadkd",
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 3,
+   "name": "Peta Wilayah Administrasi Kecamatan",
+   "type": "Feature Layer",
+   "description": "Geodatabase data batas wilayah administrasi desa/kelurahan edisi tahun 2022 (revisi edisi 27 Desember 2022) merupakan pemutakhiran dari Geodatabase data batas wilayah administrasi desa/kelurahan edisi bulan Mei tahun 2021. Proses pemutakhiran yang dilakukan antara lain: (1) Pemuktahiran data batas administrasi desa/kelurahan hasil Kesepakatan Teknis Batas Wilayah Administrasi Desa/Kelurahan Tahun 2021; (2) Penyelarasan batas desa/kelurahan pada batas kabupaten/kota; (3) Penyelarasan area saling klaim dan tidak terdefinisi dengan metode thiessen polygon, dan dibagi berdasarkan prinsip sama jarak lalu digabungkan dengan desa/kelurahan di sekitarnya; (4) Sinkronisasi data wilayah administrasi desa/kelurahan berdasarkan Kepmendagri 050-145 Tahun 2022 tentang Pemberian dan Pemutakhiran Kode, Data Wilayah Administrasi Pemerintahan dan Pulau Tahun 2021; (5) Pemutakhiran garis pantai menggunakan data garis pantai dari PPKLP tahun 2022; (6) Penyesuaian alokasi wilayah administrasi provinsi baru di Papua Barat; (7) Perubahan kodewil Desa Botain dari 92.04.22.2010 menjadi 92.01.54.2005 sesuai Kepmendagri 100.1.1-6117; (8) Perubahan geometri batas desa/kelurahan mengikuti Permendagri Kabupaten/Kota terbaru.Sumber data pada geodatabase ini antara lain data batas desa/kelurahan hasil kegiatan Ajudikasi Batas Desa tahun 2013 - 2015, Delineasi Batas Wilayah Administrasi desa secara kartometrik tahun 2016 - 2017, Delineasi batas wilayah administrasi desa secara kartometrik tanpa kesepakatan tahun 2018 - 2019, sinkronisasi data batas desa hasil penetapan Pemerintah Daerah mengacu pada standar nasional Katalog Unsur Geografi Indonesia (KUGI) tahun 2019, Kesepakatan Teknis batas wilayah administrasi desa tahun 2020, Kesepakatan Teknis Batas Wilayah Administrasi Desa/Kelurahan Tahun 2021, Delineasi batas wilayah administrasi desa melalui kegiatan perjanjian Kerja Sama antara BIG dengan Pemerintah Daerah baik melalui PKS maupun PNBP, data batas wilayah administrasi desa/kelurahan dari Pemerintah Daerah, dan data batas wilayah administrasi desa dari Peta Rupa Bumi Indonesia. Geodatabase ini dibuat menggunakan Garis Pantai Edisi Tahun 2022. Beberapa catatan tambahan dalam Geodatabase data batas wilayah administrasi desa/kelurahan tahun 2022 ini diantaranya adalah : (1) Masih terdapat area tidak terdefinisi untuk wilayah pulau dan danau; (2) Masih terdapat beberapa desa/kelurahan yang tidak ada dalam data spasial karena merupakan hasil pemekaran, rekap daftar desa yang belum ada dalam database ini terlampir dalam tabel rekapitulasi indeks desa berdasarkan Kepmendagri 050-145 Tahun 2022 tentang Pemberian dan Pemutakhiran Kode, Data Wilayah Administrasi Pemerintahan dan Pulau Tahun 2021; (3) Masih terdapat kondisi desa yang memiliki perbedaan cakupan wilayah administrasi Kecamatan antara data spasial dengan Kepmendagri 050-145 Tahun 2022 di wilayah Papua; (5) Terdapat beberapa wilayah desa yang belum dapat disesuaikan ke batas kabupaten/kota; (6) Terdapat wilayah desa terapung yang tidak tergambarkan pada data garis pantai namun terdefinisi dalam kode dan data wilayah administrasi.",
+   "geometryType": "esriGeometryPolygon",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "width": 0.4
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 94.97191104600006,
+    "ymin": -11.00761537699998,
+    "xmax": 141.02004178900006,
+    "ymax": 6.076832204000027,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "namobj",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdbbps",
+     "type": "esriFieldTypeString",
+     "alias": "kdbbps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdcbps",
+     "type": "esriFieldTypeString",
+     "alias": "kdcbps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdcpum",
+     "type": "esriFieldTypeString",
+     "alias": "kdcpum",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdebps",
+     "type": "esriFieldTypeString",
+     "alias": "kdebps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdepum",
+     "type": "esriFieldTypeString",
+     "alias": "kdepum",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdpbps",
+     "type": "esriFieldTypeString",
+     "alias": "kdpbps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdpkab",
+     "type": "esriFieldTypeString",
+     "alias": "kdpkab",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdppum",
+     "type": "esriFieldTypeString",
+     "alias": "kdppum",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "luaswh",
+     "type": "esriFieldTypeDouble",
+     "alias": "luaswh",
+     "domain": null
+    },
+    {
+     "name": "tipadm",
+     "type": "esriFieldTypeInteger",
+     "alias": "tipadm",
+     "domain": null
+    },
+    {
+     "name": "wadmkc",
+     "type": "esriFieldTypeString",
+     "alias": "wadmkc",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadmkd",
+     "type": "esriFieldTypeString",
+     "alias": "wadmkd",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadmkk",
+     "type": "esriFieldTypeString",
+     "alias": "wadmkk",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wadmpr",
+     "type": "esriFieldTypeString",
+     "alias": "wadmpr",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadkc",
+     "type": "esriFieldTypeString",
+     "alias": "wiadkc",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadkk",
+     "type": "esriFieldTypeString",
+     "alias": "wiadkk",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadpr",
+     "type": "esriFieldTypeString",
+     "alias": "wiadpr",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wiadkd",
+     "type": "esriFieldTypeString",
+     "alias": "wiadkd",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 150,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 4,
+   "name": "Peta Batas Administrasi Desa",
+   "type": "Feature Layer",
+   "description": "Geodatabase data batas wilayah administrasi desa/kelurahan edisi bulan Mei tahun 2021 merupakan pemutakhiran dari Geodatabase data batas wilayah administrasi desa/kelurahan edisi bulan Oktober tahun 2020. Proses pemutakhiran yang dilakukan antara lain: (1) Penyelarasan batas wilayah desa pada area tidak terdefinisi dengan metode thiessen polygon, dan dibagi berdasarkan prinsip sama luas lalu digabungkan dengan desa/kelurahan di sekitarnya; (2) Penyelarasan dengan data garis pantai edisi pemutakhiran KSP tahun 2021; (3) penggabungan desa persiapan kedalam wilayah administrasi desa induk; dan (4) Perbaikan pengisian atribut antara lain informasi nama wilayah administrasi beserta kode wilayahnya berdasarkan Permendagri nomor 72 tahun 2019 tentang Kode dan Data Wilayah Administrasi Pemerintahan; Sumber data pada geodatabase ini antara lain data batas desa/kelurahan hasil kegiatan Ajudikasi Batas Desa tahun 2013 - 2015, Delineasi Batas Wilayah Administrasi desa secara kartometrik tahun 2016 - 2017, Delineasi batas wilayah administrasi desa secara kartometrik tanpa kesepakatan tahun 2018 - 2019, sinkronisasi data batas desa hasil penetapan Pemerintah Daerah mengacu pada standar nasional Katalog Unsur Geografi Indonesia (KUGI) tahun 2019, Kesepakatan Teknis batas wilayah administrasi desa tahun 2020, Delineasi batas wilayah administrasi desa melalui kegiatan perjanjian Kerja Sama antara BIG dengan Pemerintah Daerah baik melalui PKS maupun PNBP, data batas wilayah administrasi desa/kelurahan dari Pemerintah Daerah, dan data batas wilayah administrasi desa dari Peta Rupa Bumi Indonesia. Geodatabase ini dibuat menggunakan Garis Pantai Edisi Kebijakan Satu Peta. Beberapa catatan tambahan dalam Geodatabase data batas wilayah administrasi desa/kelurahan edisi bulan Mei tahun 2021 ini diantaranya adalah : (1) Masih terdapat area tidak terdefinisi untuk wilayah pulau; (2) Masih terdapat beberapa desa/kelurahan yang tidak ada dalam data spasial karena merupakan hasil pemekaran, rekap daftar desa yang belum ada dalam database ini terlampir dalam tabel rekapitulasi indeks desa berdasarkan Permendagri No. 72 Tahun 2019 tentang Kode Data dan Wilayah Administrasi Pemerintahan; (3) Masih terdapat kondisi desa yang memiliki perbedaan cakupan wilayah administrasi Kecamatan antara data spasial dengan Permendagri No. 72 Tahun 2019 tentang Kode dan Data Wilayah Administrasi Pemerintahan di wilayah Papua; (4) Masih terdapat polygon desa persiapan dan desa yang tidak masuk di Permendagri No. 72 Tahun 2019 tentang Kode dan Data Wilayah Administrasi Pemerintahan; (5) Belum dilakukan penyesuaian terhadap data batas kabupaten/kota definitif, sehingga terdapat perbedaan pada segmen batas desa/kelurahan yang menjadi batas Kabupaten/Kota/Provinsi; Geodatabase ini masih terdapat error topology yang disebabkan adanya ketidaksesuaian dengan garis pantai di Wilayah Sulawesi dikarenakan jika dilakukan penyesuaian dengan data garis pantai akan menghilangkan wilayah administrasi desa/kelurahan.",
+   "geometryType": "esriGeometryPolygon",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        255,
+        255,
+        255,
+        255
+       ],
+       "width": 2
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 99.16718317200008,
+    "ymin": -8.917278898999939,
+    "xmax": 139.233721456,
+    "ymax": 3.25565739700005,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "namobj",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 250,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdbbps",
+     "type": "esriFieldTypeString",
+     "alias": "kdbbps",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kdpumdes",
+     "type": "esriFieldTypeString",
+     "alias": "kdpumdes",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "kdpumkec",
+     "type": "esriFieldTypeString",
+     "alias": "kdpumkec",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "kdpumkab",
+     "type": "esriFieldTypeString",
+     "alias": "kdpumkab",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "kdpumprov",
+     "type": "esriFieldTypeString",
+     "alias": "kdpumprov",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "luaswh",
+     "type": "esriFieldTypeString",
+     "alias": "luaswh",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "tipadm",
+     "type": "esriFieldTypeString",
+     "alias": "tipadm",
+     "length": 50,
+     "domain": null
+    }
+   ],
+   "geometryField": {},
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "hasZ": true,
+   "hasM": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 5,
+   "name": "Peta Batas Darat Negara",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       170,
+       170,
+       170,
+       255
+      ],
+      "width": 4
+     },
+     "label": "Garis Batas Negara",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 109.53803525700005,
+    "ymin": -9.503748895999934,
+    "xmax": 141.02004178900006,
+    "ymax": 4.408461695000028,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "fcode",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 150,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "stsbts",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "stsbts",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "siskoas",
+     "type": "esriFieldTypeString",
+     "alias": "siskoas",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "btsngr",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "btsngr",
+     "domain": null
+    },
+    {
+     "name": "lksikec",
+     "type": "esriFieldTypeString",
+     "alias": "lksikec",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lksikab",
+     "type": "esriFieldTypeString",
+     "alias": "lksikab",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "nopeta",
+     "type": "esriFieldTypeString",
+     "alias": "nopeta",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "nmapeta",
+     "type": "esriFieldTypeString",
+     "alias": "nmapeta",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tiptbx",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "tiptbx",
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 6,
+   "name": "Peta Batas Laut Negara",
+   "type": "Group Layer",
+   "description": "",
+   "geometryType": null,
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [
+    {
+     "id": 7,
+     "name": "Peta Batas Landas Kontinen"
+    },
+    {
+     "id": 8,
+     "name": "Peta Batas Laut MOU Fisheries"
+    },
+    {
+     "id": 9,
+     "name": "Peta Batas Teritorial"
+    },
+    {
+     "id": 10,
+     "name": "Peta Batas ZEE"
+    },
+    {
+     "id": 11,
+     "name": "Peta Garis Pangkal"
+    },
+    {
+     "id": 12,
+     "name": "Peta Zona Tambahan"
+    },
+    {
+     "id": 13,
+     "name": "Peta Sebaran Titik Dasar"
+    },
+    {
+     "id": 14,
+     "name": "Peta Sebaran Titik Perjanjian Maritim"
+    }
+   ],
+   "minScale": 0,
+   "maxScale": 0,
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 91.64043056000008,
+    "ymin": -13.942688997999937,
+    "xmax": 141.4000000000001,
+    "ymax": 8.210225968000032,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeNone",
+   "displayField": "",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": null,
+   "geometryField": {},
+   "indexes": [],
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": false,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query",
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsHavingClause": false,
+    "supportsCountDistinct": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": false,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": false
+   },
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 7,
+   "name": "Peta Batas Landas Kontinen",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "stslat",
+     "field2": null,
+     "field3": null,
+     "defaultSymbol": null,
+     "defaultLabel": null,
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         168,
+         56,
+         0,
+         255
+        ],
+        "width": 1
+       },
+       "value": "1",
+       "label": "Kesepakatan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         168,
+         56,
+         0,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "3",
+       "label": "Kesepakatan Belum Diratifikasi",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         168,
+         56,
+         0,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "4",
+       "label": "Perlu Kesepakatan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+         168,
+         56,
+         0,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "2",
+       "label": "Unilateral",
+       "description": ""
+      }
+     ],
+     "fieldDelimiter": ","
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 91.64043056000008,
+    "ymin": -13.942138888999978,
+    "xmax": 141.4000000000001,
+    "ymax": 7.783333334000076,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "srs_id",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "stslat",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "stslat",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "btsngr",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "btsngr",
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 75,
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 8,
+   "name": "Peta Batas Laut MOU Fisheries",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       255,
+       127,
+       127,
+       255
+      ],
+      "width": 1.2
+     },
+     "label": "Garis Batas MOU Fisheries",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 120.01672363300008,
+    "ymin": -13.93328857399996,
+    "xmax": 139.20007324200003,
+    "ymax": -8.883300780999946,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "fcode",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srsid",
+     "type": "esriFieldTypeString",
+     "alias": "srsid",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "stslat",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "stslat",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "btsngr",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "btsngr",
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 75,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 9,
+   "name": "Peta Batas Teritorial",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "stslat",
+     "field2": null,
+     "field3": null,
+     "defaultSymbol": null,
+     "defaultLabel": null,
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         255,
+         170,
+         0,
+         255
+        ],
+        "width": 1
+       },
+       "value": "1",
+       "label": "Kesepakatan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         255,
+         170,
+         0,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "3",
+       "label": "Kesepakatan Belum Diratifikasi",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         255,
+         170,
+         0,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "4",
+       "label": "Perlu Kesepakatan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+         255,
+         170,
+         0,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "2",
+       "label": "Unilateral",
+       "description": ""
+      }
+     ],
+     "fieldDelimiter": ","
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 94.77170294100006,
+    "ymin": -11.211049904999982,
+    "xmax": 141.0194444440001,
+    "ymax": 6.2775574550000215,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "lcode",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "stslat",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "stslat",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "btsngr",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "btsngr",
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 10,
+   "name": "Peta Batas ZEE",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "stslat",
+     "field2": null,
+     "field3": null,
+     "defaultSymbol": null,
+     "defaultLabel": null,
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         0,
+         112,
+         255,
+         255
+        ],
+        "width": 1
+       },
+       "value": "1",
+       "label": "Kesepakatan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         0,
+         112,
+         255,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "3",
+       "label": "Kesepakatan Belum Diratifikasi",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSDashDot",
+        "color": [
+         0,
+         112,
+         255,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "4",
+       "label": "Perlu Kesepakatan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+         0,
+         112,
+         255,
+         255
+        ],
+        "width": 1.2
+       },
+       "value": "2",
+       "label": "Unilateral",
+       "description": ""
+      }
+     ],
+     "fieldDelimiter": ","
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 92.03816466300003,
+    "ymin": -13.942688997999937,
+    "xmax": 140.80972222200012,
+    "ymax": 8.210225968000032,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "srs_id",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "stslat",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "stslat",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "btsngr",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "btsngr",
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 75,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 11,
+   "name": "Peta Garis Pangkal",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       255
+      ],
+      "width": 4
+     },
+     "label": "Garis Pangkal",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 94.97250000000008,
+    "ymin": -11.009999999999934,
+    "xmax": 141.0194444440001,
+    "ymax": 6.076497000000074,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "srs_id",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tipgpl",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "tipgpl",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "pjggpl",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjggpl",
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 12,
+   "name": "Peta Zona Tambahan",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       197,
+       0,
+       255,
+       255
+      ],
+      "width": 9
+     },
+     "label": "Garis Zona Tambahan",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 94.57090589400008,
+    "ymin": -11.412097107999955,
+    "xmax": 141.023016836,
+    "ymax": 6.478639329000032,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "srs_id",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "stslat",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "stslat",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "btsngr",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "btsngr",
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 13,
+   "name": "Peta Sebaran Titik Dasar",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPoint",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSMS",
+      "style": "esriSMSCircle",
+      "color": [
+       0,
+       82,
+       153,
+       255
+      ],
+      "size": 4,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0,
+      "outline": {
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 94.97250000000001,
+    "ymin": -11.01,
+    "xmax": 141.019444444,
+    "ymax": 6.07499999999999,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "srs_id",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "OBJECTID",
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "Spatial Reference System Identifier",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "identf",
+     "type": "esriFieldTypeString",
+     "alias": "ID Objek",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "Layer Code",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "Feature Code",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "Nama Objek",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "prrn",
+     "type": "esriFieldTypeString",
+     "alias": "Perairan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "Referensi Peraturan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "korx",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat_X",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kory",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat_Y",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "Metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "Catatan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lksi",
+     "type": "esriFieldTypeString",
+     "alias": "Lokasi",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "SHAPE",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "SHAPE"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 14,
+   "name": "Peta Sebaran Titik Perjanjian Maritim",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPoint",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 6,
+    "name": "Peta Batas Laut Negara"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSMS",
+      "style": "esriSMSCircle",
+      "color": [
+       0,
+       128,
+       77,
+       255
+      ],
+      "size": 4,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0,
+      "outline": {
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 92.398611111,
+    "ymin": -13.942138888999999,
+    "xmax": 141.4,
+    "ymax": 7.78333333299997,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "srs_id",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "OBJECTID",
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "Spatial Reference System Identifier",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "identf",
+     "type": "esriFieldTypeString",
+     "alias": "ID Objek",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "Layer Code",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "Nama Objek",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "koperx",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat Perjanjian_X",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kopery",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat Perjanjian_Y",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "Referensi Peraturan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "Metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "Catatan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "btsngr",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "Batas Negara",
+     "domain": null
+    },
+    {
+     "name": "jns_bts",
+     "type": "esriFieldTypeSmallInteger",
+     "alias": "Jenis Batas",
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "Feature Code",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "SHAPE",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "SHAPE"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 15,
+   "name": "Peta Wilayah Kerja dan Pengoperasian Pelabuhan Perikanan (Area)",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolygon",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "wilker",
+     "field2": null,
+     "field3": null,
+     "defaultSymbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       249,
+       250,
+       197,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.4
+      }
+     },
+     "defaultLabel": "<all other values>",
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         230,
+         0,
+         0,
+         255
+        ],
+        "outline": null
+       },
+       "value": "1",
+       "label": "Wilayah Kerja Daratan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSHorizontal",
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "outline": null
+       },
+       "value": "2",
+       "label": "Wilayah Kerja Perairan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSBackwardDiagonal",
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 1
+        }
+       },
+       "value": "3",
+       "label": "Wilayah Pengoperasian Daratan",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSDiagonalCross",
+        "color": [
+         0,
+         0,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 1
+        }
+       },
+       "value": "4",
+       "label": "Wilayah Pengoperasian Perairan",
+       "description": ""
+      }
+     ],
+     "fieldDelimiter": ","
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 98.69749444400009,
+    "ymin": -8.30212222199998,
+    "xmax": 132.75972856300007,
+    "ymax": 3.7905750000000467,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "wilker",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "wilker",
+     "type": "esriFieldTypeString",
+     "alias": "wilker",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "no_wilker",
+     "type": "esriFieldTypeString",
+     "alias": "no_wilker",
+     "length": 10,
+     "domain": null
+    },
+    {
+     "name": "id_plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "id_plbhn",
+     "length": 20,
+     "domain": null
+    },
+    {
+     "name": "plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "plbhn",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "nm_pngl",
+     "type": "esriFieldTypeString",
+     "alias": "nm_pngl",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "kode_plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "kode_plbhn",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "id_ktgr",
+     "type": "esriFieldTypeString",
+     "alias": "id_ktgr",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kls_plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "kls_plbhn",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "no_kep",
+     "type": "esriFieldTypeString",
+     "alias": "no_kep",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tahun",
+     "type": "esriFieldTypeString",
+     "alias": "tahun",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "fcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "lcode",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "namaobj",
+     "type": "esriFieldTypeString",
+     "alias": "namaobj",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "referensi",
+     "type": "esriFieldTypeString",
+     "alias": "referensi",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "luas_ha",
+     "type": "esriFieldTypeDouble",
+     "alias": "luas_ha",
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "provinsi",
+     "type": "esriFieldTypeString",
+     "alias": "provinsi",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "kabupaten",
+     "type": "esriFieldTypeString",
+     "alias": "kabupaten",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "kecamatan",
+     "type": "esriFieldTypeString",
+     "alias": "kecamatan",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "pngl",
+     "type": "esriFieldTypeString",
+     "alias": "pngl",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 16,
+   "name": "Peta Wilayah Kerja dan Pengoperasian Pelabuhan Perikanan (Titik)",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPoint",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSMS",
+      "style": "esriSMSCircle",
+      "color": [
+       166,
+       108,
+       0,
+       255
+      ],
+      "size": 4,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0,
+      "outline": {
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 98.69749444400009,
+    "ymin": -8.30212222199998,
+    "xmax": 132.75972856300007,
+    "ymax": 3.7905750000000467,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "wilker",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "OBJECTID",
+     "domain": null
+    },
+    {
+     "name": "wilker",
+     "type": "esriFieldTypeString",
+     "alias": "Wilayah Kerja dan Pengoperasian",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "no_wilker",
+     "type": "esriFieldTypeString",
+     "alias": "Nomor Urut Wilayah Kerja/Pengoperasian",
+     "length": 10,
+     "domain": null
+    },
+    {
+     "name": "kode",
+     "type": "esriFieldTypeString",
+     "alias": "Kode Wilayah Kerja/Pengoperasian",
+     "length": 10,
+     "domain": null
+    },
+    {
+     "name": "bujur",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat Bujur (X)",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "lintang",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat Lintang (Y)",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "bujur_x",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat Bujur (X)",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "lintang_y",
+     "type": "esriFieldTypeString",
+     "alias": "Koordinat Lintang (Y)",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "id_plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "ID Pelabuhan Perikanan",
+     "length": 20,
+     "domain": null
+    },
+    {
+     "name": "plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "Nama Pelabuhan",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "pngl",
+     "type": "esriFieldTypeString",
+     "alias": "Pengelola Pelabuhan Perikanan",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "nm_pngl",
+     "type": "esriFieldTypeString",
+     "alias": "Nama Pengelola Pelabuhan",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "kode_plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "Kode Pelabuhan Perikanan/ID RIPPN",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "id_ktgr",
+     "type": "esriFieldTypeString",
+     "alias": "Kategori Pelabuhan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kls_plbhn",
+     "type": "esriFieldTypeString",
+     "alias": "Kelas Pelabuhan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "no_kep",
+     "type": "esriFieldTypeString",
+     "alias": "Nomor Dokumen Penetapan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tahun",
+     "type": "esriFieldTypeString",
+     "alias": "Tahun Penetapan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "fcode",
+     "type": "esriFieldTypeString",
+     "alias": "Feature Code",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "lcode",
+     "type": "esriFieldTypeString",
+     "alias": "Layer Code",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "namaobj",
+     "type": "esriFieldTypeString",
+     "alias": "Nama Objek",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "referensi",
+     "type": "esriFieldTypeString",
+     "alias": "Referensi",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "Catatan",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "provinsi",
+     "type": "esriFieldTypeString",
+     "alias": "Provinsi",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "kabupaten",
+     "type": "esriFieldTypeString",
+     "alias": "Kabupaten",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "kecamatan",
+     "type": "esriFieldTypeString",
+     "alias": "Kecamatan",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "SHAPE",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "SHAPE"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 17,
+   "name": "Peta Wilayah Adat di Perairan Laut",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolygon",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       221,
+       194,
+       252,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.4
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 122.42398139800002,
+    "ymin": -8.261474731999954,
+    "xmax": 136.51970007400007,
+    "ymax": 4.644857043000059,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "provinsi",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "provinsi",
+     "type": "esriFieldTypeString",
+     "alias": "provinsi",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kab_kota",
+     "type": "esriFieldTypeString",
+     "alias": "kab_kota",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kecamatan",
+     "type": "esriFieldTypeString",
+     "alias": "kecamatan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "desa",
+     "type": "esriFieldTypeString",
+     "alias": "desa",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "nama_mha",
+     "type": "esriFieldTypeString",
+     "alias": "nama_mha",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "kategori",
+     "type": "esriFieldTypeString",
+     "alias": "kategori",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "luas_ha",
+     "type": "esriFieldTypeDouble",
+     "alias": "luas_ha",
+     "domain": null
+    },
+    {
+     "name": "no_sk",
+     "type": "esriFieldTypeString",
+     "alias": "no_sk",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tgl_sk",
+     "type": "esriFieldTypeDate",
+     "alias": "tgl_sk",
+     "length": 8,
+     "domain": null
+    },
+    {
+     "name": "no_perbup",
+     "type": "esriFieldTypeString",
+     "alias": "no_perbup",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tgl_perbup",
+     "type": "esriFieldTypeDate",
+     "alias": "tgl_perbup",
+     "length": 8,
+     "domain": null
+    },
+    {
+     "name": "hal_perbup",
+     "type": "esriFieldTypeString",
+     "alias": "hal_perbup",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wpp_nri",
+     "type": "esriFieldTypeString",
+     "alias": "wpp_nri",
+     "length": 3,
+     "domain": null
+    },
+    {
+     "name": "keterangan",
+     "type": "esriFieldTypeString",
+     "alias": "keterangan",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "dateFieldsTimeReference": null,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 18,
+   "name": "Peta Wilayah Kerja dan Wilayah Penugasan Panas Bumi Indonesia skala 1:50.000",
+   "type": "Group Layer",
+   "description": "",
+   "geometryType": null,
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [
+    {
+     "id": 19,
+     "name": "Wilayah Kerja Panas Bumi"
+    },
+    {
+     "id": 20,
+     "name": "Wilayah Penugasan Survei Pendahuluan dan Eksplorasi"
+    }
+   ],
+   "minScale": 0,
+   "maxScale": 0,
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 95.25725500000004,
+    "ymin": -8.911878766999962,
+    "xmax": 128.34927800000003,
+    "ymax": 5.8781320000000505,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeNone",
+   "displayField": "",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": null,
+   "geometryField": {},
+   "indexes": [],
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": false,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query",
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsHavingClause": false,
+    "supportsCountDistinct": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": false,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": false
+   },
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 19,
+   "name": "Wilayah Kerja Panas Bumi",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolygon",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 18,
+    "name": "Peta Wilayah Kerja dan Wilayah Penugasan Panas Bumi Indonesia skala 1:50.000"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       231,
+       252,
+       194,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.4
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 95.25725500000004,
+    "ymin": -8.911878766999962,
+    "xmax": 128.34927800000003,
+    "ymax": 5.8781320000000505,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "namaobj",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "namaobj",
+     "type": "esriFieldTypeString",
+     "alias": "namaobj",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "luas",
+     "type": "esriFieldTypeDouble",
+     "alias": "luas",
+     "domain": null
+    },
+    {
+     "name": "statuswil",
+     "type": "esriFieldTypeString",
+     "alias": "statuswil",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tahapwil",
+     "type": "esriFieldTypeString",
+     "alias": "tahapwil",
+     "length": 20,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 150,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 20,
+   "name": "Wilayah Penugasan Survei Pendahuluan dan Eksplorasi",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolygon",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": {
+    "id": 18,
+    "name": "Peta Wilayah Kerja dan Wilayah Penugasan Panas Bumi Indonesia skala 1:50.000"
+   },
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       201,
+       184,
+       242,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.4
+      }
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 96.65550000000007,
+    "ymin": -8.88465999999994,
+    "xmax": 127.94367000000011,
+    "ymax": 4.922914000000048,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "namobj",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "luas",
+     "type": "esriFieldTypeDouble",
+     "alias": "luas",
+     "domain": null
+    },
+    {
+     "name": "statuswil",
+     "type": "esriFieldTypeString",
+     "alias": "statuswil",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 150,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 150,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 100,
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  },
+  {
+   "currentVersion": 10.81,
+   "id": 21,
+   "name": "Peta Batas Wilayah Administrasi Kewenangan Pengelolaan Sumberdaya Laut Provinsi Skala 1:250.000 - 1:25.000*",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolyline",
+   "sourceSpatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+   },
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       0,
+       130,
+       153,
+       255
+      ],
+      "width": 1
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": false,
+   "extent": {
+    "xmin": 98.39667996000009,
+    "ymin": -11.208656117999965,
+    "xmax": 141.0104424860001,
+    "ymax": 5.767015953000055,
+    "spatialReference": {
+     "wkid": 4326,
+     "latestWkid": 4326,
+     "vcsWkid": 115700,
+     "latestVcsWkid": 115700
+    }
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "uupp",
+   "typeIdField": null,
+   "subtypeFieldName": null,
+   "subtypeField": null,
+   "defaultSubtypeCode": null,
+   "fields": [
+    {
+     "name": "objectid",
+     "type": "esriFieldTypeOID",
+     "alias": "objectid",
+     "domain": null
+    },
+    {
+     "name": "uupp",
+     "type": "esriFieldTypeString",
+     "alias": "uupp",
+     "length": 200,
+     "domain": null
+    },
+    {
+     "name": "namobj",
+     "type": "esriFieldTypeString",
+     "alias": "namobj",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "admin1",
+     "type": "esriFieldTypeString",
+     "alias": "admin1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "admin2",
+     "type": "esriFieldTypeString",
+     "alias": "admin2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "srs_id",
+     "type": "esriFieldTypeString",
+     "alias": "srs_id",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "metadata",
+     "type": "esriFieldTypeString",
+     "alias": "metadata",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wapro1",
+     "type": "esriFieldTypeString",
+     "alias": "wapro1",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "wapro2",
+     "type": "esriFieldTypeString",
+     "alias": "wapro2",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tipbt",
+     "type": "esriFieldTypeString",
+     "alias": "tipbt",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "klbadm",
+     "type": "esriFieldTypeString",
+     "alias": "klbadm",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "tiplok",
+     "type": "esriFieldTypeString",
+     "alias": "tiplok",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "remark",
+     "type": "esriFieldTypeString",
+     "alias": "remark",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "stsbts",
+     "type": "esriFieldTypeString",
+     "alias": "stsbts",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "pjgbts",
+     "type": "esriFieldTypeDouble",
+     "alias": "pjgbts",
+     "domain": null
+    },
+    {
+     "name": "shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "shape",
+     "domain": null
+    }
+   ],
+   "geometryField": {
+    "name": "shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "shape"
+   },
+   "indexes": null,
+   "subtypes": [],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": true,
+   "supportsAdvancedQueries": true,
+   "supportedQueryFormats": "JSON, geoJSON",
+   "isDataVersioned": false,
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsHavingClause": true,
+    "supportsCountDistinct": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true
+   },
+   "supportsDatumTransformation": true,
+   "supportsCoordinatesQuantization": true,
+   "serviceItemId": "1649965d18ac4871bfabff6a60975342"
+  }
+ ],
+ "tables": []
+}

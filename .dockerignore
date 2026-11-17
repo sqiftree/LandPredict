@@ -1,0 +1,15 @@
+**
+!requirements.txt
+!eksperimen_tanah.py
+!siapkan_koordinat.py
+!verifikasi_hasil.py
+!*.py
+!data/
+!data/harga_tanah_2020.csv
+
+!tanah/
+!tanah/**
+!tests/
+!tests/**
+!scripts/
+!scripts/**
