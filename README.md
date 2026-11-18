@@ -162,3 +162,5 @@ Lima variabel pendukung kini tersedia untuk 127 kecamatan: proporsi terbangun, c
 Salinan peta untuk GitHub: `web/landpredict`. Jalankan `python3 -m http.server 8000 --directory web/landpredict`, lalu buka `http://localhost:8000`. Checkout penerbitan Sites terpisah dari repository penelitian.
 
 Atlas terbit (privat pemilik): https://landpredict-solo-raya-2020.alikecoil4.chatgpt.site
+
+Hosting GitHub Pages disiapkan melalui [workflow deployment](.github/workflows/pages.yml). Sumber: `web/landpredict`; URL tujuan setelah deployment berhasil: https://sqiftree.github.io/LandPredict/. Lihat [aktivasi dan deployment](docs/DEPLOYMENT_PAGES.md).
