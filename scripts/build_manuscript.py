@@ -54,12 +54,87 @@ def describe_column(rows, col):
     }
 
 
+def verify_stdlib(folder):
+    """Fallback verifier using only stdlib when numpy/pandas are absent."""
+    if not __debug__:
+        raise RuntimeError('Jalankan verifikasi tanpa python -O agar assertions aktif.')
+    audit_path = folder / 'audit.json'
+    if not audit_path.is_file():
+        raise FileNotFoundError('audit.json wajib tersedia untuk memverifikasi keluaran eksperimen.')
+    audit = json.loads(audit_path.read_text(encoding='utf-8'))
+    if audit is not None:
+        assert audit['status'] == 'complete', 'Eksperimen gagal/belum selesai; CSV lama tidak boleh dipakai.'
+    source = read_csv(ROOT / 'data/harga_tanah_2020.csv')
+    predictions = read_csv(folder / 'prediksi_uji.csv')
+    metrics = read_csv(folder / 'metrik.csv')
+    folds = read_csv(folder / 'per_wilayah.csv')
+    assert len(source) == len(predictions) == 127, 'Harus ada 127 kecamatan'
+    src_by_key = {(r['kab_kota'], r['kecamatan']): r for r in source}
+    pred_by_key = {(r['kab_kota'], r['kecamatan']): r for r in predictions}
+    assert len(src_by_key) == 127 and len(pred_by_key) == 127
+    assert set(src_by_key) == set(pred_by_key)
+    for key, src_row in src_by_key.items():
+        pred_row = pred_by_key[key]
+        for col, val in src_row.items():
+            assert pred_row[col] == val, f'Ketidakcocokan sumber pada {key}: {col}'
+    regions = {r['kab_kota'] for r in predictions}
+    assert len(regions) == 7
+    assert len(metrics) == len(MODELS) and {r['model'] for r in metrics} == set(MODELS)
+    assert len(folds) == 7 * len(MODELS) and {r['model'] for r in folds} == set(MODELS)
+    assert len({(r['model'], r['wilayah_uji']) for r in folds}) == 7 * len(MODELS)
+    metrics_by_model = {r['model']: r for r in metrics}
+    expected = {'Linear': 739020, 'KNN': 732073, 'Decision Tree': 756462}
+    target_mean = sum(float(r['harga_tanah_rata_rata_rp_m2']) for r in predictions) / len(predictions)
+    ss_tot = sum((float(r['harga_tanah_rata_rata_rp_m2']) - target_mean) ** 2 for r in predictions)
+    by_region = defaultdict(list)
+    for r in predictions:
+        by_region[r['kab_kota']].append(r)
+    for model in MODELS:
+        preds = [float(r[model]) for r in predictions]
+        assert all(math.isfinite(v) for v in preds), f'Prediksi tidak valid: {model}'
+        errors = [float(r['harga_tanah_rata_rata_rp_m2']) - float(r[model]) for r in predictions]
+        mae = sum(abs(e) for e in errors) / len(errors)
+        rmse = math.sqrt(sum(e ** 2 for e in errors) / len(errors))
+        r2 = 1.0 - sum(e ** 2 for e in errors) / ss_tot
+        row = metrics_by_model[model]
+        assert math.isclose(mae, float(row['MAE_Rp_m2']), rel_tol=1e-10)
+        assert math.isclose(rmse, float(row['RMSE_Rp_m2']), rel_tol=1e-10)
+        assert math.isclose(r2, float(row['R2']), rel_tol=1e-10)
+        if model in expected:
+            assert round(mae) == expected[model], f'MAE baseline berubah: {model}: {mae}'
+        block = {r['wilayah_uji']: r for r in folds if r['model'] == model}
+        assert set(block) == regions
+        for region, group in by_region.items():
+            assert int(block[region]['n']) == len(group)
+            reg_errs = [float(r['harga_tanah_rata_rata_rp_m2']) - float(r[model]) for r in group]
+            reg_mae = sum(abs(e) for e in reg_errs) / len(reg_errs)
+            assert math.isclose(float(block[region]['MAE_Rp_m2']), reg_mae, rel_tol=1e-10)
+            if 'RMSE_Rp_m2' in block[region]:
+                reg_rmse = math.sqrt(sum(e ** 2 for e in reg_errs) / len(reg_errs))
+                assert math.isclose(float(block[region]['RMSE_Rp_m2']), reg_rmse, rel_tol=1e-10)
+        if audit is not None:
+            entries = [e for e in audit['outer_folds'] if e['model'] == model]
+            assert len(entries) == 7
+            assert {e['test_region'] for e in entries} == regions
+            for entry in entries:
+                held_out = entry['test_region']
+                assert set(entry['train_regions']) == regions - {held_out}
+                assert {tuple(k) for k in entry['test_keys']} == {(r['kab_kota'], r['kecamatan']) for r in by_region[held_out]}
+
+
 def main():
     audit_dataset()
     sys.path.insert(0, str(ROOT))
-    from tanah.verification import verify
     folder = ROOT / 'hasil/spasial'
-    verify(folder, spatial=True)
+    try:
+        from tanah.verification import verify
+    except ModuleNotFoundError as exc:
+        if exc.name not in {'numpy', 'pandas'}:
+            raise
+        print('Verifikasi CSV dengan pustaka standar; pelatihan model tidak dijalankan ulang.')
+        verify_stdlib(folder)
+    else:
+        verify(folder, spatial=True)
     scores = read_csv(folder / 'metrik.csv')
     folds = read_csv(folder / 'per_wilayah.csv')
     predictions = read_csv(folder / 'prediksi_uji.csv')
@@ -212,7 +287,7 @@ def main():
             ['Kesesuaian garis batas historis tahun 2020', 'Belum terverifikasi historis',
              'Arsip BIG memiliki penanda fitur 20230928 (layanan edisi 2022); perlu audit batas khususnya pemekaran Boyolali 2018–2019 (Gladagsari, Tamansari, Wonosamodro).'],
             ['Definisi & angka primer harga tanah 2020', '381/381 nilai cocok dengan PDF; pengukuran primer belum tervalidasi',
-             'Perlu konfirmasi jenis harga (transaksi, penawaran, NJOP, atau ZNT), dan cara perataan. Empat halaman tabel PDF sudah diperiksa; 21 label halaman lama dikoreksi dalam dataset rujukan terverifikasi. Perbedaan fasum pada 7 wilayah dan penduduk pada 3 wilayah belum terselesaikan.'],
+             'Perlu konfirmasi jenis harga (transaksi, penawaran, NJOP, atau ZNT), dan cara perataan. Dokumentasi BHUMI menyebut ZNT, tetapi arsip layer 2020, metode agregasi, dan hubungan langsungnya dengan angka Lampiran A belum terverifikasi. Ketersediaan unduhan historis belum dapat dipastikan. Empat halaman tabel PDF sudah diperiksa; 21 label halaman lama dikoreksi dalam dataset rujukan terverifikasi. Perbedaan fasum pada 7 wilayah dan penduduk pada 3 wilayah belum terselesaikan.'],
         ]),
         'CONTRIBUTIONS': table(['Anggota', 'Rencana kontribusi; konfirmasi aktual oleh tim'], [
             ['Yashif Victoriawan', 'Integrasi program dan reproduksi eksperimen'],

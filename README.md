@@ -152,3 +152,5 @@ Audit ulang 18 November 2026 dan koreksi klaim: [laporan pemeriksaan](docs/AUDIT
 ## Kandidat variabel tambahan
 
 [Registry 25 kandidat](data/kandidat_variabel.csv) dan [rancangan berbasis jurnal](docs/PENGEMBANGAN_VARIABEL.md) memisahkan dukungan konsep, adaptasi tingkat kecamatan, prioritas pengumpulan, dan status data. Daftar kandidat bukan 25 kolom observasi yang telah terkumpul; hasil eksperimen saat ini tetap dua prediktor. Rencana seleksi fitur menggunakan validasi bersarang dan tidak menjanjikan semua variabel signifikan.
+
+Penelusuran [BHUMI/ATLAS](data/SUMBER_BHUMI.md) dan [inventaris sumber](data/inventaris_bhumi.csv) mencatat sembilan dataset/fitur beserta syarat tahun, cakupan, dan kaitan literatur. Ini inventaris penelusuran, bukan dataset observasi baru. [Audit perubahan Carbon](docs/AUDIT_CARBON_2026-11-18.md) mencatat koreksi klaim dan pengujian generator.

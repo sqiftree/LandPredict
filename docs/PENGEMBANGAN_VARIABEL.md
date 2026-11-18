@@ -73,3 +73,7 @@ Landasan pengujian berganda: Benjamini & Hochberg (1995), *Controlling the False
 ## 6. Keluaran tahap berikutnya
 
 Setelah data tambahan tersedia, hasil yang diperlukan adalah dataset versi baru dengan provenance per kolom, audit cakupan/tahun, tabel korelasi dan koreksi pengujian berganda dengan batas interpretasinya, matriks kolinearitas, serta eksperimen nested validation yang baru. Model baseline dua prediktor dipertahankan sebagai pembanding. Hingga saat itu, tidak ada klaim bahwa 25 variabel telah terkumpul atau bahwa salah satunya paling signifikan di Solo Raya.
+
+## 7. Penelusuran BHUMI dan ATLAS
+
+Lihat [audit sumber BHUMI](../data/SUMBER_BHUMI.md) dan [inventaris](../data/inventaris_bhumi.csv). Kandidat sawah, akses kesehatan, dan bahaya gunung api ditemukan pada katalog, tetapi belum tersedia sebagai kolom observasi 2020. Sawah dan akses kesehatan merupakan alternatif operasionalisasi konsep yang sudah ada; bahaya gunung api merupakan perluasan hipotesis bencana. Jumlah 25 kandidat utama belum diubah karena data maupun landasan empiris spesifik kandidat baru belum lengkap.

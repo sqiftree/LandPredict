@@ -1,13 +1,13 @@
 # Audit sumber dataset untuk presentasi
 
-Tanggal pemeriksaan: 17 November 2026. Dataset: `harga_tanah_2020.csv`, 127 kecamatan, tahun acuan 2020. Kesimpulan: dapat dipakai sebagai eksperimen atas data sekunder yang dapat ditelusuri, tetapi belum layak disebut dataset transaksi tanah resmi yang seluruh angka dan definisinya telah divalidasi ke produsen primer.
+Tanggal pemeriksaan: 18 November 2026. Dataset: `harga_tanah_2020.csv`, 127 kecamatan, tahun acuan 2020. Kesimpulan: dapat dipakai sebagai eksperimen atas data sekunder yang dapat ditelusuri, tetapi belum layak disebut dataset transaksi tanah resmi yang seluruh angka dan definisinya telah divalidasi ke produsen primer.
 
 ## 1. Rantai sumber dan tingkat bukti
 
 | Komponen | Sumber yang benar-benar dipakai | Bukti dan batas verifikasi |
 | --- | --- | --- |
 | Tiga kolom numerik CSV | Lampiran A penelitian Salim Aziz, Repositori UNS, dokumen 111483 | 127 kunci dan 381 nilai cocok dengan ekstraksi langsung PDF yang diberikan pengguna. Empat halaman tabel telah diperiksa secara visual; 21 rujukan halaman lama memerlukan koreksi. |
-| Harga rata-rata kecamatan | Lampiran tersebut; artikel Aziz, Rahayu, Istanabi (2023) menyebut Bhumi ATR-BPN 2020 pada Gambar 4–5, hlm.147 | Atribusi primer masih melalui penulis sumber; arsip layer harga, jenis harga, sampel dan rumus perataan belum tersedia. |
+| Harga rata-rata kecamatan | Lampiran tersebut; artikel Aziz, Rahayu, Istanabi (2023) menyebut Bhumi ATR-BPN 2020 pada Gambar 4–5, hlm.147 | Atribusi primer masih melalui penulis sumber; arsip layer harga, jenis harga, sampel, dan rumus perataan belum diperoleh. Keberadaan ZNT di BHUMI belum membuktikan bahwa angka Lampiran A dihitung dari poligon ZNT 2020. |
 | Jumlah penduduk | Lampiran tersebut | Artikel mengacu BPS; belum ada pencocokan langsung seluruh 127 angka ke tabel BPS. Lima angka Surakarta cocok dengan Gambar 1.10 laporan pemerintah kota. |
 | Fasilitas regional | Lampiran tersebut | Artikel Tabel 3 hlm.149 menyebut observasi peneliti 2023 menggunakan data tahun 2020. Total antarsumber tidak konsisten. |
 | Koordinat | Poligon administratif BIG yang diolah program | Bukan koordinat objek transaksi. Sumber, CRS, alias dan keterbatasan historis ada di SUMBER_KOORDINAT.md. |
@@ -41,6 +41,15 @@ Untuk harga, rata-rata sederhana CSV Surakarta dan Boyolali, dibulatkan ke rupia
 Ejaan Sidoarjo pada Wonogiri memang tercetak pada PDF halaman 2 (A-2), sehingga bukan kesalahan transkripsi CSV. Pemadanan ke Sidoharjo di geometri harus tetap dijelaskan sebagai alias yang memerlukan dukungan identitas administratif; keberadaan satu padanan nama saja bukan bukti batas historis.
 
 Kolom tambahan luas terbangun pada PDF perlu validasi pengukuran sebelum digunakan. Contohnya Jebres 1.391,1 dibanding luas kecamatan 1.258, dan Laweyan 892,2 dibanding 864. Luas terbangun melebihi luas kecamatan jika unit dan cakupannya sama. Ada pula luas terbangun sangat kecil pada beberapa kecamatan. Angka tersebut memang tercetak pada PDF halaman 1, sehingga bukan sekadar kesalahan ekstraksi indeks. Ini tanda untuk memeriksa unit dan cakupan; bukan alasan mengoreksi angka dengan tebakan. Kolom tersebut belum dipakai sebagai prediktor eksperimen.
+
+### Pemeriksaan struktur Zona Nilai Tanah (ZNT) pada portal BHUMI ATR/BPN
+
+Audit ulang 18 November 2026 membedakan bukti dokumentasi dari dugaan tentang dataset. Indeks pencarian dokumentasi resmi [Katalog Data](https://bhumi.atrbpn.go.id/bantuan/katalog_data) dan [Unsur Peta](https://bhumi.atrbpn.go.id/bantuan/unsur_peta) menyebut ZNT sebagai salah satu dataset/layer BHUMI. Pembukaan langsung kedua halaman pada sesi audit gagal (timeout dan HTTP 502); atribut live, respons layanan peta, dan cakupan Solo Raya belum diperiksa langsung.
+
+1. **Standar atribut bukan bukti skema layanan historis.** Lampiran [Permen ATR/BPN No. 1 Tahun 2025](https://www.peraturan.go.id/files/permen-atrbpn-no-1-tahun-2025.pdf), halaman tercetak 95, memuat NOZN, NILAIZN, NILBULAT, dan THNNILAI dalam tabel atribut IGT ZNT. Ini mendukung adanya konsep nilai zona dan tahun penilaian pada standar 2025; tidak membuktikan kolom yang ditayangkan BHUMI pada 2020 atau tanggal pembaruan setiap zona saat ini.
+2. **Asal angka Aziz belum tersambung sampai pengukuran primer.** Artikel mengatribusikan harga kepada BHUMI 2020, tetapi audit belum memperoleh layer historis, identitas zona, tabel sampel, atau rumus yang menghasilkan 127 nilai kecamatan. Agregasi poligon ZNT merupakan hipotesis yang perlu konfirmasi, bukan temuan yang sudah dibuktikan.
+3. **Akses belum terverifikasi.** Audit belum memperoleh unduhan massal maupun arsip 2020. Kegagalan akses tidak membuktikan bahwa keduanya tidak tersedia. Klaim tentang parameter WMS GetFeatureInfo, seluruh atribut live, dan tahun berjalan dihapus karena belum didukung rekaman respons layanan.
+4. **Tindak lanjut.** Diperlukan metadata/arsip tahun 2020 beserta metode agregasi dari penulis sumber atau penyedia data. Sampai bukti tersebut diperoleh, harga tetap dilabeli data sekunder Lampiran A dengan atribusi BHUMI melalui artikel; tidak dilabeli transaksi resmi atau hasil ekstraksi ZNT langsung.
 
 ### Koreksi rujukan halaman, tanpa mengubah angka eksperimen
 
