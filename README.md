@@ -154,3 +154,11 @@ Audit ulang 18 November 2026 dan koreksi klaim: [laporan pemeriksaan](docs/AUDIT
 [Registry 25 kandidat](data/kandidat_variabel.csv) dan [rancangan berbasis jurnal](docs/PENGEMBANGAN_VARIABEL.md) memisahkan dukungan konsep, adaptasi tingkat kecamatan, prioritas pengumpulan, dan status data. Daftar kandidat bukan 25 kolom observasi yang telah terkumpul; hasil eksperimen saat ini tetap dua prediktor. Rencana seleksi fitur menggunakan validasi bersarang dan tidak menjanjikan semua variabel signifikan.
 
 Penelusuran [BHUMI/ATLAS](data/SUMBER_BHUMI.md) dan [inventaris sumber](data/inventaris_bhumi.csv) mencatat sembilan dataset/fitur beserta syarat tahun, cakupan, dan kaitan literatur. Ini inventaris penelusuran, bukan dataset observasi baru. [Audit perubahan Carbon](docs/AUDIT_CARBON_2026-11-18.md) mencatat koreksi klaim dan pengujian generator.
+
+## Variabel terolah dan atlas interaktif
+
+Lima variabel pendukung kini tersedia untuk 127 kecamatan: proporsi terbangun, cropland, pohon (ESA WorldCover 2020 v100), serta proksi kepadatan penduduk dan fasum. [Dataset](data/processed/variabel_pendukung_2020.csv), [korelasi eksploratif](data/processed/korelasi_eksploratif.csv), [manifest](data/processed/manifest.json), dan [metode/reproduksi](docs/PENGOLAHAN_VARIABEL_2020.md). Ini pengolahan tambahan dengan batas historis belum terverifikasi; hasil empat model lama tetap eksperimen dua prediktor. Sumber peta interaktif berada di `sites/landpredict-map/dist`.
+
+Salinan peta untuk GitHub: `web/landpredict`. Jalankan `python3 -m http.server 8000 --directory web/landpredict`, lalu buka `http://localhost:8000`. Checkout penerbitan Sites terpisah dari repository penelitian.
+
+Atlas terbit (privat pemilik): https://landpredict-solo-raya-2020.alikecoil4.chatgpt.site

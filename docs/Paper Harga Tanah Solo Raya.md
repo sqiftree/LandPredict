@@ -283,7 +283,7 @@ Kode sumber: R1 Aziz dkk. (2023); R2 Saefuddin dkk. (2012); R3 Syahar dkk. (2020
 
 Spearman direncanakan sebagai layar eksplorasi utama dan Pearson sebagai pemeriksaan sensitivitas; arah, besar koefisien, jumlah observasi, outlier dan kestabilan antarwilayah dilaporkan. Apabila p-value eksploratif dihitung, seluruh keluarga uji yang ditetapkan dilaporkan beserta koreksi Benjamini–Hochberg (1995). Koreksi pengujian berganda tidak memperbaiki asumsi independensi yang dilanggar oleh ketergantungan spasial. P-value standar diperlakukan sebagai nominal/eksploratif sampai prosedur inferensi spasial yang sesuai ditetapkan. Korelasi bukan pengaruh kausal, dan p-value terkecil bukan ukuran manfaat prediksi terbaik.
 
-Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya memakai bagian fit setiap lipatan dalam; pilihan fitur serta parameter dinilai pada validasi dalam, kemudian prosedur dipasang kembali pada seluruh data latih luar. Matriks antarprediktor, VIF dan rank desain lokal diperiksa. Jumlah penduduk dan kepadatan, jumlah fasilitas dan kepadatan fasilitas, serta beberapa ukuran urbanisasi diperlakukan sebagai kandidat yang berpotensi redundan. Semua 25 kandidat tidak dimasukkan sekaligus ke GWR. Belum ada korelasi, p-value atau hasil eksperimen tambahan yang dilaporkan pada tahap ini.
+Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya memakai bagian fit setiap lipatan dalam; pilihan fitur serta parameter dinilai pada validasi dalam, kemudian prosedur dipasang kembali pada seluruh data latih luar. Matriks antarprediktor, VIF dan rank desain lokal diperiksa. Jumlah penduduk dan kepadatan, jumlah fasilitas dan kepadatan fasilitas, serta beberapa ukuran urbanisasi diperlakukan sebagai kandidat yang berpotensi redundan. Semua 25 kandidat tidak dimasukkan sekaligus ke GWR. Korelasi eksploratif seluruh sampel dilaporkan pada bagian 6.3; p-value dan hasil eksperimen model tambahan belum dihitung. Hasil eksplorasi ini tidak dipakai untuk memilih fitur lalu mengklaim evaluasi independen pada data yang sama.
 
 
 | Tahap | Spesifikasi | Status |
@@ -294,6 +294,26 @@ Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya
 | D | Variabel C dengan alternatif titik representatif | Belum diuji |
 
 Pusat kegiatan harus ditetapkan dari dokumen independen, bukan dari harga tanah tertinggi. Untuk menguji efek representasi lokasi saja, prediktor aksesibilitas dipertahankan saat titik pembobotan GWR diganti. Jika aksesibilitas turut dihitung ulang, perubahan tersebut dilaporkan sebagai skenario gabungan. Penambahan variabel perlu mempertimbangkan kolinearitas serta jumlah observasi efektif pada regresi lokal.
+
+### 6.3. Pengolahan variabel pendukung dan eksplorasi awal
+
+Pengolahan tambahan menghasilkan lima variabel untuk seluruh 127 kecamatan: proporsi terbangun, cropland dan tutupan pohon dari ESA WorldCover 2020 v100 (Zanaga dkk., 2021, DOI 10.5281/zenodo.5571936), serta kepadatan penduduk dan fasilitas menggunakan luas arsip BIG. Dua tile S09E108 dan S09E111 dibaca pada resolusi asli; piksel dimasukkan berdasarkan pusatnya di dalam poligon, kemudian luas piksel elipsoid digunakan sebagai bobot. Proporsi kelas dihitung terhadap luas piksel valid. Seluruh piksel terpilih berkelas valid; hal ini bukan ukuran akurasi klasifikasi. Batas poligon pada tepi piksel merupakan pendekatan dan geometri historis 2020 masih belum terverifikasi. Kedua kepadatan disebut proksi, bukan statistik resmi kepadatan 2020.
+
+Cropland tidak identik dengan sawah; tree cover tidak identik dengan taman; built-up bukan luas tapak bangunan. Proporsi kelas utama tidak mencakup seluruh kelas; tabel keluaran juga menyimpan semua 11 kelas untuk pemeriksaan jumlah 100%. Data ini berasal dari ESA, bukan ekstraksi layer BHUMI. Katalog ATLAS tentang sawah, akses kesehatan, dan bahaya gunung api belum diolah karena metadata dan data numeriknya belum diperoleh.
+
+| Variabel | Pearson | Spearman |
+| --- | ---: | ---: |
+| jumlah_penduduk | 0.670 | 0.596 |
+| jumlah_fasum_regional | 0.716 | 0.633 |
+| kepadatan_penduduk_proksi | 0.812 | 0.634 |
+| kepadatan_fasum_proksi | 0.812 | 0.637 |
+| built_pct | 0.893 | 0.676 |
+| cropland_pct | -0.180 | 0.050 |
+| tree_pct | -0.520 | -0.485 |
+
+Koefisien dihitung pada 127 observasi terhadap harga rata-rata kecamatan, dengan average ranks untuk ties pada Spearman. Seluruh hasil bersifat eksploratif; belum ada uji signifikansi, koreksi ketergantungan spasial, atau penilaian kestabilan per wilayah. Hubungan terbangun dengan harga adalah asosiasi, bukan bukti kausal atau peningkatan akurasi GWR. Hasil model pada bagian 4 tetap eksperimen dua prediktor. Prosedur pemilihan fitur dan evaluasi model tambahan harus dilakukan tersendiri dengan validasi bersarang.
+
+Peta interaktif menampilkan poligon yang disederhanakan 40 meter untuk visualisasi, sedangkan statistik dihitung dari geometri penuh. Dataset, manifest sumber/hash dan tabel korelasi tersedia pada data/processed; cara reproduksi dan keterbatasan dicatat dalam docs/PENGOLAHAN_VARIABEL_2020.md.
 
 ## 7. Kesimpulan
 
@@ -347,7 +367,7 @@ Syahar, F., Ramadhan, R., & Putri, S. (2020). Statistical interpretation of land
 
 ## Lampiran: Status dan Kontribusi Tim
 
-Naskah ini merupakan draf empiris berdasarkan eksperimen dua prediktor yang telah dijalankan. Bagian pengembangan lanjutan adalah rencana, bukan hasil eksperimen tambahan. Identitas anggota dan kontribusi aktual perlu dilengkapi tim sebelum penyerahan.
+Naskah ini merupakan draf empiris berdasarkan eksperimen dua prediktor yang telah dijalankan. Bagian 6.3 memuat pengolahan data dan korelasi eksploratif; pengembangan model tambahan masih berupa rencana. Identitas anggota dan kontribusi aktual perlu dilengkapi tim sebelum penyerahan.
 
 | Anggota | Rencana kontribusi; konfirmasi aktual oleh tim |
 | --- | --- |

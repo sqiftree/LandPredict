@@ -21,3 +21,12 @@ docs/* - sebelum revisi.docx
 # Local reference PDFs: source access and personal appendices are not published.
 docs/Lampiran_Salim Aziz.pdf
 docs/referensi/
+
+# Downloaded raster inputs are reproduced using manifest SHA-256 checks.
+data/raw/
+sites/**/.git/
+sites/**/.sites-checkout/
+sites/**/.sites-runtime/
+
+# Sites has its own source repository; portable export is tracked under web/.
+/sites/

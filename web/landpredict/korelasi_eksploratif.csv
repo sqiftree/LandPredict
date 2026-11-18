@@ -1,0 +1,8 @@
+variabel,n,pearson,spearman,status
+jumlah_penduduk,127,0.6697580939044979,0.5960934570678665,eksplorasi seluruh sampel; bukan seleksi fitur atau uji signifikansi
+jumlah_fasum_regional,127,0.7162442622246578,0.6325541336324821,eksplorasi seluruh sampel; bukan seleksi fitur atau uji signifikansi
+kepadatan_penduduk_proksi,127,0.8116664375155964,0.6338934195725533,eksplorasi seluruh sampel; bukan seleksi fitur atau uji signifikansi
+kepadatan_fasum_proksi,127,0.8122096995349141,0.6368567578426406,eksplorasi seluruh sampel; bukan seleksi fitur atau uji signifikansi
+built_pct,127,0.8926680772725152,0.6756421072365953,eksplorasi seluruh sampel; bukan seleksi fitur atau uji signifikansi
+cropland_pct,127,-0.18014592158564183,0.050038667041619786,eksplorasi seluruh sampel; bukan seleksi fitur atau uji signifikansi
+tree_pct,127,-0.520132882384653,-0.48517177540307455,eksplorasi seluruh sampel; bukan seleksi fitur atau uji signifikansi

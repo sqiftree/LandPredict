@@ -1,6 +1,6 @@
 # Pengembangan variabel berdasarkan jurnal dan rencana uji
 
-Disusun 18 November 2026. Status: rancangan pengumpulan dan pengujian, bukan hasil eksperimen tambahan. Daftar terstruktur terdapat di `data/kandidat_variabel.csv`: 25 kandidat termasuk dua variabel baseline. Sebagian merupakan cara berbeda mengukur konsep yang sama, sehingga bukan 25 sumber informasi independen. Belum ada angka korelasi atau p-value baru yang dilaporkan.
+Disusun 18 November 2026. Status: rancangan pengembangan dengan pembaruan pengolahan data; belum ada eksperimen model tambahan. Daftar terstruktur terdapat di `data/kandidat_variabel.csv`: 25 kandidat termasuk dua variabel baseline. Sebagian merupakan cara berbeda mengukur konsep yang sama, sehingga bukan 25 sumber informasi independen. Pembaruan pengolahan 18 November 2026: lima variabel telah dihitung untuk 127 kecamatan dan korelasi eksploratif tersedia; lihat PENGOLAHAN_VARIABEL_2020.md. Tabel sumber di bawah merekam rancangan awal; status terkini per variabel ada pada registry. Belum ada p-value atau hasil model tambahan.
 
 ## 1. Tujuan yang dapat disampaikan kepada dosen
 
@@ -72,8 +72,8 @@ Landasan pengujian berganda: Benjamini & Hochberg (1995), *Controlling the False
 
 ## 6. Keluaran tahap berikutnya
 
-Setelah data tambahan tersedia, hasil yang diperlukan adalah dataset versi baru dengan provenance per kolom, audit cakupan/tahun, tabel korelasi dan koreksi pengujian berganda dengan batas interpretasinya, matriks kolinearitas, serta eksperimen nested validation yang baru. Model baseline dua prediktor dipertahankan sebagai pembanding. Hingga saat itu, tidak ada klaim bahwa 25 variabel telah terkumpul atau bahwa salah satunya paling signifikan di Solo Raya.
+Setelah data tambahan tersedia, hasil yang diperlukan adalah dataset versi baru dengan provenance per kolom, audit cakupan/tahun, tabel korelasi dan koreksi pengujian berganda dengan batas interpretasinya, matriks kolinearitas, serta eksperimen nested validation yang baru. Model baseline dua prediktor dipertahankan sebagai pembanding. Lima variabel telah diolah pada pembaruan berikutnya, tetapi belum ada klaim bahwa seluruh 25 kandidat telah terkumpul atau bahwa salah satunya paling signifikan di Solo Raya.
 
 ## 7. Penelusuran BHUMI dan ATLAS
 
-Lihat [audit sumber BHUMI](../data/SUMBER_BHUMI.md) dan [inventaris](../data/inventaris_bhumi.csv). Kandidat sawah, akses kesehatan, dan bahaya gunung api ditemukan pada katalog, tetapi belum tersedia sebagai kolom observasi 2020. Sawah dan akses kesehatan merupakan alternatif operasionalisasi konsep yang sudah ada; bahaya gunung api merupakan perluasan hipotesis bencana. Jumlah 25 kandidat utama belum diubah karena data maupun landasan empiris spesifik kandidat baru belum lengkap.
+Lihat [audit sumber BHUMI](../data/SUMBER_BHUMI.md) dan [inventaris](../data/inventaris_bhumi.csv). Kandidat sawah, akses kesehatan, dan bahaya gunung api ditemukan pada katalog, tetapi belum tersedia sebagai kolom observasi 2020. Tiga proporsi tutupan lahan yang kemudian diolah berasal dari raster ESA, bukan kandidat ATLAS tersebut. Sawah dan akses kesehatan merupakan alternatif operasionalisasi konsep yang sudah ada; bahaya gunung api merupakan perluasan hipotesis bencana. Jumlah 25 kandidat utama belum diubah karena data maupun landasan empiris spesifik kandidat baru belum lengkap.

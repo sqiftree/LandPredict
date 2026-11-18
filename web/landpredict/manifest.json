@@ -1,0 +1,50 @@
+{
+  "access_date": "2026-11-18",
+  "product": "ESA WorldCover 2020 v100",
+  "doi": "https://doi.org/10.5281/zenodo.5571936",
+  "license": "CC BY 4.0",
+  "attribution": "\u00a9 ESA WorldCover project 2020 / Contains modified Copernicus Sentinel data (2020) processed by ESA WorldCover consortium",
+  "sources": [
+    {
+      "tile": "S09E108",
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v100/2020/map/ESA_WorldCover_10m_2020_v100_S09E108_Map.tif",
+      "sha256": "de2fea4007a0c42963f2fe432b264c40da2001323a9d4780e62561e630a8c67e",
+      "bytes": 48900031,
+      "crs": "EPSG:4326",
+      "resolution_degrees": [
+        8.333333333333333e-05,
+        8.333333333333333e-05
+      ],
+      "nodata": 0.0
+    },
+    {
+      "tile": "S09E111",
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v100/2020/map/ESA_WorldCover_10m_2020_v100_S09E111_Map.tif",
+      "sha256": "91120ca892f6233b26d437e6639ef743792979af8131dcf7fd65fc40e185e682",
+      "bytes": 60655006,
+      "crs": "EPSG:4326",
+      "resolution_degrees": [
+        8.333333333333333e-05,
+        8.333333333333333e-05
+      ],
+      "nodata": 0.0
+    }
+  ],
+  "input_hashes": {
+    "data/harga_tanah_2020.csv": "b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66",
+    "data/jawa_tengah_big.geojson": "32225cee3e3b72a1f942b533abebfa582d05b1a0f9556bda0d9ed7cbfbd9dacb",
+    "data/padanan_nama.csv": "70ddf9f131882b05b4d2c7a4f7d0921fb687a14b088465a3ec0193499b69f2c2"
+  },
+  "n": 127,
+  "min_valid_pct": 99.99999999999999,
+  "method": "Pixel-center mask at native resolution; ellipsoidal pixel area weights by row; class proportions over valid classified pixels. Polygon edges approximated by pixel-center inclusion. No resampling. UTM49S polygon area only for density. Display geometry simplified 40m after statistics.",
+  "geometry_2020_verified": false,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "versions": {
+    "numpy": "2.4.4",
+    "rasterio": "1.4.4",
+    "shapely": "2.1.2",
+    "pyproj": "3.7.2"
+  },
+  "csv_sha256": "8cfde68231141e16bc6f2de63afbdf209c071d266e6c64b44036ffbe205ef900"
+}
