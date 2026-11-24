@@ -15,6 +15,13 @@ def main():
         verify(ROOT / 'hasil' / mode, spatial=mode == 'spasial')
     for mode in ['replikasi_notebook', 'tujuh_prediktor_big']:
         verify(ROOT / 'hasil' / mode, spatial=True, colab=True)
+    analysis = ROOT / 'hasil/analisis_variabel'
+    analysis_files = ['statistik_variabel.csv', 'median_per_wilayah.csv', 'korelasi_pasangan.csv',
+                      *(f'{name}.{ext}' for name in ['profil_wilayah', 'sebaran_harga', 'matriks_korelasi']
+                        for ext in ['png', 'pdf'])]
+    for name in analysis_files:
+        if not (analysis / name).is_file():
+            raise FileNotFoundError(analysis / name)
     figures = ROOT / 'artifacts/figures'
     figures.mkdir(parents=True, exist_ok=True)
     required_figures = ['peta_harga_dan_prediksi.png', 'peta_harga_dan_prediksi.pdf',
@@ -42,6 +49,10 @@ def main():
     with (ROOT / 'hasil/tujuh_prediktor_big/prediksi_uji.csv').open() as stream:
         predictions = [[r['kab_kota'], r['kecamatan'], float(r['KNN'])] for r in csv.DictReader(stream)]
     (ROOT / 'web/landpredict/prediksi_knn.json').write_text(json.dumps(predictions, indent=2) + '\n')
+    destination = ROOT / 'artifacts/analisis_variabel'
+    destination.mkdir(parents=True, exist_ok=True)
+    for name in analysis_files:
+        shutil.copy2(analysis / name, destination / name)
     print('Snapshot eksperimen dan prediksi atlas diperbarui setelah verifikasi.')
 
 

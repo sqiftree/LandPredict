@@ -335,6 +335,21 @@ def main():
         'Ini merupakan diagnostik setelah evaluasi; wilayah tersebut tidak dikeluarkan dari perhitungan atau digunakan untuk menyetel ulang model.'
     )
 
+    analysis = ROOT / 'artifacts/analisis_variabel'
+    profiles = read_csv(analysis / 'statistik_variabel.csv')
+    target = 'harga_tanah_rata_rata_rp_m2'
+    summary_rows = []
+    for profile in profiles:
+        digits = 3 if profile['satuan'] == 'unit/km²' else 2 if profile['satuan'] == '%' else 0
+        low, q1, med, q3, high = [decimal_id(profile[key], digits) for key in ('min', 'q1', 'median', 'q3', 'max')]
+        summary_rows.append([f"{profile['label']} ({profile['satuan']})", med, f'{q1}–{q3}', low, high])
+    values['STATISTIK_VARIABEL'] = table(['Variabel (satuan)', 'Median', 'Q1–Q3', 'Min.', 'Maks.'], summary_rows)
+    labels = {row['variabel']: row['label'] for row in profiles}
+    pairs = read_csv(analysis / 'korelasi_pasangan.csv')
+    values['KORELASI_HARGA'] = table(['Prediktor terhadap harga 2020', 'Pearson r', 'Spearman ρ'],
+        [[labels[r['variabel_x']], decimal_id(r['pearson'], 3), decimal_id(r['spearman'], 3)]
+         for r in pairs if r['variabel_y'] == target and r['variabel_x'] != target])
+
     values['FIGUR_TUJUH_PREDIKTOR'] = '../artifacts/tujuh_prediktor_big/evaluasi.png'
     extended = ROOT / 'artifacts/tujuh_prediktor_big'
     replica = ROOT / 'artifacts/replikasi_notebook'

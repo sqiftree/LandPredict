@@ -21,6 +21,7 @@ COMMANDS = [
     ['scripts/check_regression.py', 'artifacts/replikasi_notebook', 'hasil/replikasi_notebook'],
     ['scripts/check_regression.py', 'artifacts/tujuh_prediktor_big', 'hasil/tujuh_prediktor_big'],
     ['scripts/diagnostik_colab.py', 'hasil/tujuh_prediktor_big'],
+    ['scripts/analisis_variabel.py', 'hasil/analisis_variabel'],
 ]
 
 

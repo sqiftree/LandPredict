@@ -181,17 +181,33 @@ Pengolahan tambahan menghasilkan lima variabel untuk seluruh 127 kecamatan: prop
 
 Cropland tidak identik dengan sawah; tree cover tidak identik dengan taman; built-up bukan luas tapak bangunan. Proporsi kelas utama tidak mencakup seluruh kelas; tabel keluaran juga menyimpan semua 11 kelas untuk pemeriksaan jumlah 100%. Data ini berasal dari ESA, bukan ekstraksi layer BHUMI. Katalog ATLAS tentang sawah, akses kesehatan, dan bahaya gunung api belum diolah karena metadata dan data numeriknya belum diperoleh.
 
-| Variabel | Pearson | Spearman |
-| --- | ---: | ---: |
-| jumlah_penduduk | 0.670 | 0.596 |
-| jumlah_fasum_regional | 0.716 | 0.633 |
-| kepadatan_penduduk_proksi | 0.812 | 0.634 |
-| kepadatan_fasum_proksi | 0.812 | 0.637 |
-| built_pct | 0.893 | 0.676 |
-| cropland_pct | -0.180 | 0.050 |
-| tree_pct | -0.520 | -0.485 |
+**Dataset dan satuan pengamatan.** Setiap baris mewakili satu kecamatan pada tahun 2020. Pasangan nama kabupaten/kota dan kecamatan menghubungkan tiga sumber berikut. Setiap kecamatan mendapat bobot yang sama dalam ringkasan dan korelasi.
 
-Koefisien dihitung pada 127 observasi terhadap harga rata-rata kecamatan, dengan average ranks untuk ties pada Spearman. Seluruh hasil bersifat eksploratif; belum ada uji signifikansi, koreksi ketergantungan spasial, atau penilaian kestabilan per wilayah. Hubungan terbangun dengan harga adalah asosiasi, bukan bukti kausal atau peningkatan akurasi GWR. Hasil model pada bagian 4 tetap eksperimen dua prediktor. Prosedur pemilihan fitur dan evaluasi model tambahan harus dilakukan tersendiri dengan validasi bersarang.
+| Sumber data | Kolom yang digunakan | Cara memperoleh nilai kecamatan |
+| --- | --- | --- |
+| Lampiran A Salim Aziz | Penduduk, jumlah fasilitas umum regional, harga rata-rata (Rp/m²) | Angka per kecamatan ditranskripsi dan dicocokkan dengan lampiran. Harga menjadi variabel target. |
+| Poligon BIG dan jumlah dari Lampiran A | Kepadatan penduduk (jiwa/km²), kepadatan fasilitas regional (unit/km²) | Masing-masing jumlah dibagi luas poligon kecamatan yang dihitung dalam UTM 49S. |
+| ESA WorldCover 2020 v100 dan poligon BIG | Persentase terbangun, tanaman budidaya (cropland), tutupan pohon | Luas piksel valid pada kelas yang bersangkutan dibagi total luas piksel valid kecamatan, kemudian dikalikan 100. |
+
+Contoh satu baris pada dataset adalah Banjarsari, Kota Surakarta. Luas arsipnya 15,4864 km². Pembagian 168.770 penduduk dan 9 fasilitas regional dengan luas tersebut menghasilkan 10.897,95 jiwa/km² dan 0,581 unit/km². WorldCover mencatat 80,79% terbangun, 1,67% tanaman budidaya dan 14,33% tutupan pohon. Harga yang dipasangkan dengan baris tersebut adalah Rp7.678.425/m².
+
+**Sebaran nilai.** Tabel menunjukkan median, rentang tengah 50% kecamatan (Q1–Q3), serta nilai minimum dan maksimum. Seluruh variabel memiliki 127 nilai terisi. Sebanyak 99 kecamatan memiliki jumlah fasilitas regional tercatat nol. Karena itu median dan kedua kuartil kepadatan fasilitas bernilai nol. Definisi fasilitas mengikuti kategori regional dalam sumber.
+
+{{STATISTIK_VARIABEL}}
+
+![Median lima variabel tambahan menurut kabupaten/kota. Angka dalam kurung menunjukkan jumlah kecamatan. Intensitas biru dibandingkan di dalam masing-masing kolom; setiap kolom memakai skala sendiri.](../artifacts/analisis_variabel/profil_wilayah.png)
+
+Lima kecamatan di Kota Surakarta memiliki median terbangun 84,95% dan median kepadatan penduduk 10.898 jiwa/km². Di antara 25 kecamatan Wonogiri, median kedua variabel masing-masing 2,99% dan 543 jiwa/km². Median ini menggambarkan kecamatan tipikal dalam setiap wilayah. Persentase tutupan seluruh kabupaten memerlukan pembobotan menurut luas.
+
+![Harga teramati terhadap setiap variabel tambahan. Satu titik mewakili satu kecamatan pada 2020. Semua panel memakai skala harga yang sama. Titik jingga menandai lima kecamatan Kota Surakarta.](../artifacts/analisis_variabel/sebaran_harga.png)
+
+**Perhitungan korelasi.** Pearson dihitung pada nilai asli dengan rumus r = kovarians(X,Y) / (sX × sY), dengan kovarians dan simpangan baku sampel memakai penyebut n − 1. Sebagai contoh, ambil X sebagai persentase terbangun dan Y sebagai harga dalam juta Rp/m². Pada 127 kecamatan, r = 31,52068 / (17,27303 × 2,04426) ≈ 0,893. Untuk Spearman, nilai X dan Y masing-masing diubah menjadi peringkat, nilai yang sama diberi peringkat rata-rata, lalu rumus Pearson diterapkan pada kedua deret peringkat. Pasangan terbangun dan harga menghasilkan ρ = 0,676. Penghitungan menggunakan seluruh presisi angka sumber sebelum pembulatan.
+
+{{KORELASI_HARGA}}
+
+![Korelasi tujuh prediktor dan harga untuk 127 kecamatan. Untuk setiap pasangan, sel di atas diagonal memberikan Pearson dan sel cerminnya di bawah diagonal memberikan Spearman. Merah menunjukkan hubungan positif dan biru hubungan negatif.](../artifacts/analisis_variabel/matriks_korelasi.png)
+
+Proporsi terbangun memiliki hubungan positif paling kuat dengan harga menurut kedua ukuran. Hubungan liniernya lebih kuat daripada hubungan peringkatnya. Diagram sebar memperlihatkan pengelompokan lima kecamatan Surakarta di ujung atas proporsi terbangun dan harga. Untuk tanaman budidaya, Pearson bernilai −0,180 dan Spearman 0,050, sehingga urutan kecamatan menurut persentase tanaman budidaya hampir tidak berkaitan dengan urutan harga. Proporsi terbangun dan kepadatan penduduk sendiri berkorelasi kuat (r = 0,952; ρ = 0,950). Keduanya membawa informasi yang tumpang tindih. Koefisien bersifat deskriptif pada sampel gabungan; perbedaan antarwilayah dapat ikut membentuk hubungan tersebut. Analisis tidak menggunakan korelasi ini untuk memilih prediktor atau menyimpulkan sebab-akibat.
 
 Peta interaktif menampilkan poligon yang disederhanakan 40 meter untuk visualisasi, sedangkan statistik dihitung dari geometri penuh. Dataset, manifest sumber/hash dan tabel korelasi tersedia pada data/processed; cara reproduksi dan keterbatasan dicatat dalam docs/PENGOLAHAN_VARIABEL_2020.md.
 

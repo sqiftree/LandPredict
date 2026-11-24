@@ -96,6 +96,7 @@ Seluruh wilayah memiliki cakupan piksel terklasifikasi valid sebesar 100% dalam 
 Korelasi Spearman proporsi terbangun dengan harga adalah sekitar **0,676** pada seluruh 127 observasi. Hasil ini bersifat eksploratif: belum membuktikan signifikansi, sebab-akibat, atau peningkatan kinerja GWR.
 
 - [CSV variabel pendukung](data/processed/variabel_pendukung_2020.csv)
+- [Grafik, statistik per variabel, dan korelasi setiap pasangan](artifacts/analisis_variabel/) untuk bagian 6.3 naskah. Buat ulang dengan `python scripts/analisis_variabel.py hasil/analisis_variabel`.
 - [CSV korelasi eksploratif](data/processed/korelasi_eksploratif.csv)
 - [Manifest sumber, versi, dan SHA-256](data/processed/manifest.json)
 - [Metode pengolahan dan keterbatasan](docs/PENGOLAHAN_VARIABEL_2020.md)
