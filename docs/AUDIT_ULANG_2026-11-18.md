@@ -15,7 +15,7 @@ Tanggal: 18 November 2026. Versi awal yang diperiksa: `3b0c30d52aa0043a90ad7057a
 | Tes | 10 lulus: 7 tes protokol dan 3 tes baru untuk kejujuran status audit dataset. |
 | Artefak acuan | 25 hash dalam artifacts/sha256.json cocok. Hash membuktikan konsistensi berkas, bukan kebenaran substantif pengukuran awal. |
 
-Ringkasan mesin ada di `artifacts/review_20261118/summary.json`. Hasil eksekusi lokal berada di `hasil/audit_20261118/`; artefak acuan tetap dipertahankan.
+Ringkasan mesin ada di `artifacts/review_20261118/summary.json`. Perintah berikut membuat ulang hasil audit di `hasil/audit_20261118/`. Hasil acuan tersedia di `artifacts/`.
 
 | Model | MAE (Rp/m²) | RMSE (Rp/m²) |
 | --- | --- | --- |
@@ -29,7 +29,7 @@ Ringkasan mesin ada di `artifacts/review_20261118/summary.json`. Hasil eksekusi 
 1. **Status audit ditulis tetap.** Skrip lama menulis kalimat keberhasilan sebelum assertion numerik terakhir. Jika CSV berubah, proses dapat gagal tetapi meninggalkan JSON yang masih menyebut 381 nilai cocok. Sekarang jumlah dan status dihitung dari hasil aktual; kegagalan mengganti JSON menjadi `failed`. Generator paper berhenti jika pemeriksaan gagal. Tes sengaja mengubah nilai penduduk untuk membuktikannya.
 2. **PDF tidak selalu tersedia.** Skrip dahulu dapat menyatakan pemeriksaan PDF tanpa membedakan keberadaan berkas lokal. Sekarang `pdf_lokal_diperiksa` menyatakan apakah hash PDF lokal benar-benar dicek. Tanpa PDF, perbandingan hanya terhadap ekstraksi yang diarsipkan. Tanggal pemeriksaan visual sebelumnya dipisahkan dari tanggal eksekusi audit.
 3. **Generator paper terlalu mengandalkan keluaran lama.** Sekarang verifier menghitung ulang MAE/RMSE/R² dan memeriksa struktur fold sebelum DOCX dibuat. Kalimat tetap tentang jumlah tes di tabel paper diganti dengan penjelasan pemeriksaan yang benar-benar dipanggil generator.
-4. **Dokumentasi sumber tertinggal.** HASIL_PAPER.md dan draf lama masih menyebut seluruh angka belum dicocokkan dengan lampiran, padahal audit PDF sudah selesai. Teks tersebut diselaraskan; ketidakpastian harga primer tetap dinyatakan.
+4. **Dokumentasi sumber tertinggal.** Ringkasan eksperimen dan draf lama masih menyebut seluruh angka belum dicocokkan dengan lampiran, padahal audit PDF sudah selesai. Teks tersebut diselaraskan; ketidakpastian harga primer tetap dinyatakan.
 5. **Asal wilayah Wonosamodro terlalu disederhanakan.** Uraian diperbaiki menjadi Wonosegoro dan Kemusu sesuai [berita resmi Pemprov Jawa Tengah, 11 Februari 2019](https://jatengprov.go.id/beritadaerah/tiga-kecamatan-baru-terbentuk-berikut-camat-yang-menjabat/). Keberadaan kecamatan baru tidak membuktikan geometri BIG identik dengan batas 2020.
 6. **Klaim toleransi koordinat terlalu ketat.** Catatan <1e-9 m tidak sesuai hasil ulang maksimum 3,26e-9 m. Dokumentasi sekarang menyebut nilai terukur dan batas <1e-8 m. Angka koordinat tidak diubah.
 7. **Satu titik bukan satu-satunya pilihan metodologis.** Paper kini menyebut representasi satu titik sebagai pilihan implementasi, bukan kewajiban universal semua model spasial.

@@ -9,13 +9,15 @@ import pandas as pd
 from .config import BASELINE_MAE, KEY, ROOT, TARGET
 
 
-def verify(folder, spatial=False):
+def verify(folder, spatial=False, colab=False):
     if not __debug__:
         raise RuntimeError('Jalankan verifikasi tanpa python -O agar assertions aktif.')
     audit_path = folder / 'audit.json'
     audit = json.loads(audit_path.read_text()) if audit_path.exists() else None
     if audit is not None:
         assert audit['status'] == 'complete', 'Eksperimen gagal/belum selesai; CSV lama tidak boleh dipakai.'
+    if colab:
+        assert spatial and audit and audit.get("protocol") == "colab_log7"
     source = pd.read_csv(ROOT / "data/harga_tanah_2020.csv")
     predictions = pd.read_csv(folder / "prediksi_uji.csv")
     metrics = pd.read_csv(folder / "metrik.csv")
@@ -42,7 +44,9 @@ def verify(folder, spatial=False):
         np.testing.assert_allclose([mae, rmse], row[["MAE_Rp_m2", "RMSE_Rp_m2"]].to_numpy(dtype=float), rtol=1e-10)
         r2 = 1 - np.sum(error ** 2) / np.sum((predictions[TARGET] - predictions[TARGET].mean()) ** 2)
         np.testing.assert_allclose(r2, float(row['R2']), rtol=1e-10)
-        if model in expected:
+        if colab:
+            np.testing.assert_allclose(row["MAPE_pct"], 100 * (error.abs() / predictions[TARGET]).mean())
+        elif model in expected:
             assert round(mae) == expected[model], f"MAE baseline berubah: {model}: {mae}"
         block = folds[folds.model == model].set_index("wilayah_uji")
         assert set(block.index) == set(predictions.kab_kota.unique())
@@ -68,5 +72,6 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("folder", type=Path)
     parser.add_argument("--spasial", action="store_true", help="Wajibkan empat model termasuk GWR")
+    parser.add_argument("--colab", action="store_true", help="Verifikasi protokol tujuh prediktor log-harga")
     args = parser.parse_args()
-    verify(args.folder, args.spasial)
+    verify(args.folder, args.spasial or args.colab, args.colab)

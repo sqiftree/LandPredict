@@ -16,6 +16,11 @@ COMMANDS = [
     ['scripts/check_regression.py', 'artifacts/baseline', 'hasil/baseline'],
     ['scripts/check_regression.py', 'artifacts/spasial', 'hasil/spasial'],
     ['-m', 'tanah', 'paper'],
+    ['-m', 'tanah', 'colab', '--output', 'hasil/replikasi_notebook'],
+    ['-m', 'tanah', 'colab', '--koordinat', 'data/koordinat.csv', '--output', 'hasil/tujuh_prediktor_big'],
+    ['scripts/check_regression.py', 'artifacts/replikasi_notebook', 'hasil/replikasi_notebook'],
+    ['scripts/check_regression.py', 'artifacts/tujuh_prediktor_big', 'hasil/tujuh_prediktor_big'],
+    ['scripts/diagnostik_colab.py', 'hasil/tujuh_prediktor_big'],
 ]
 
 

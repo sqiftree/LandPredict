@@ -1,0 +1,2773 @@
+{
+  "status": "complete",
+  "python": "3.12.16",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.18.1",
+    "threadpoolctl": "3.6.0"
+  },
+  "data_sha256": "b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66",
+  "coordinates_sha256": "1e8e777f35e390ad95be9efba414ac7656381b942de55252219052d02026ef9b",
+  "code_sha256": {
+    "tanah/__init__.py": "03be8233187f72616d2c6a61085b7982d8f9d7f7d6290f6f484bc94f78b141a0",
+    "tanah/__main__.py": "6734fd9aec136450ea5dc83ea207069ab859af9d5e65fba7c9abf2f2f19e3fe9",
+    "tanah/colab.py": "6345d05f690f9ba2c4e312e41b373b14b38d62cabdecdffae508772b5a88d36e",
+    "tanah/colab_models.py": "2b3b885692c331f7f8cb96b25b1146fceed8b821199470305c59cbe870103ac6",
+    "tanah/config.py": "93c1df1662ed9da3572c6329d036266ad44777513aa15eb4daa4b5314954c9fd",
+    "tanah/coordinates.py": "64e473b435163e16df73e6150941cd1b0fb3b4a3234ff161dfccb405bcae01d9",
+    "tanah/data.py": "65422155e037223744095c5bcddcf8f0363367ded82f0a24d3acab596fadfc02",
+    "tanah/diagnostics.py": "da89afc4011345bee8063ffcb51dcecaaae2c1e4337bc7bbbf9138a8b1149db8",
+    "tanah/experiment.py": "aa6df0ce3cc9bd391ae9165d73275941095dfb9e3c9e441d80a9d964e64593ea",
+    "tanah/models.py": "65c0514e276b839c68786643ef713b6279b474539e52205c47be3f15c6525c27",
+    "tanah/provenance.py": "3bced914b3db5f476141d8962ce5d04766c625b1272f63db9a65f538ae39356d",
+    "tanah/reporting.py": "c02402c2a9748d414b79d3c4f81cef5e24338aced8f28a1a614f2a10dfa1c162",
+    "tanah/selection.py": "a7716f51553a47796d9364fc3ed9aa7fde370ec7ab21efb3bb275c811f2c893d",
+    "tanah/spatial_audit.py": "f4807d44503e42d1a5a3365e082fbfa8b4809dab0cccb587705ecd4363d7441d",
+    "tanah/verification.py": "70399bb8810508e0d2f9f2a58cf49a83a65f1dfd82d631657eb1087afb289a63"
+  },
+  "features": [
+    "kepadatan_penduduk_proksi",
+    "kepadatan_fasum_proksi",
+    "built_pct",
+    "tree_pct",
+    "cropland_pct",
+    "jumlah_penduduk",
+    "jumlah_fasum_regional"
+  ],
+  "candidate_parameters": {
+    "Linear": [
+      1e-08
+    ],
+    "KNN": [
+      5
+    ],
+    "Decision Tree": [
+      4
+    ],
+    "GWR": [
+      5,
+      10,
+      15,
+      25,
+      40,
+      60,
+      80
+    ]
+  },
+  "kernel": "Gaussian",
+  "distance_unit": "km",
+  "geometry_2020_status": "unverified_historical_boundaries",
+  "inner_selection": "pooled RMSE in Rp/m2",
+  "outer_folds": [
+    {
+      "model": "Linear",
+      "test_region": "Kabupaten Boyolali",
+      "parameter": 1e-08,
+      "train_regions": [
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Boyolali",
+          "Sambi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Nogosari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Karanggede"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Mojosongo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ngemplak"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ampel"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosegoro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Simo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Andong"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Boyolali"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Musuk"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Teras"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Klego"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Cepogo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Banyudono"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Kemusu"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Juwangi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Selo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Sawit"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosamodro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Tamansari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Gladagsari"
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "test_region": "Kabupaten Boyolali",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Boyolali",
+          "Sambi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Nogosari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Karanggede"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Mojosongo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ngemplak"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ampel"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosegoro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Simo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Andong"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Boyolali"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Musuk"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Teras"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Klego"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Cepogo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Banyudono"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Kemusu"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Juwangi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Selo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Sawit"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosamodro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Tamansari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Gladagsari"
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "test_region": "Kabupaten Boyolali",
+      "parameter": 4,
+      "train_regions": [
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Boyolali",
+          "Sambi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Nogosari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Karanggede"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Mojosongo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ngemplak"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ampel"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosegoro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Simo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Andong"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Boyolali"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Musuk"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Teras"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Klego"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Cepogo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Banyudono"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Kemusu"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Juwangi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Selo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Sawit"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosamodro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Tamansari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Gladagsari"
+        ]
+      ]
+    },
+    {
+      "model": "GWR",
+      "test_region": "Kabupaten Boyolali",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Boyolali",
+          "Sambi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Nogosari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Karanggede"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Mojosongo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ngemplak"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Ampel"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosegoro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Simo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Andong"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Boyolali"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Musuk"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Teras"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Klego"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Cepogo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Banyudono"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Kemusu"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Juwangi"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Selo"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Sawit"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Wonosamodro"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Tamansari"
+        ],
+        [
+          "Kabupaten Boyolali",
+          "Gladagsari"
+        ]
+      ]
+    },
+    {
+      "model": "Linear",
+      "test_region": "Kabupaten Karanganyar",
+      "parameter": 1e-08,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Karanganyar",
+          "Jaten"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kebakramat"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karanganyar"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Gondangrejo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Colomadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kerjo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tasikmadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Ngargoyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tawangmangu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jenawi"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Mojogedang"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karangpandan"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatipuro"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Matesih"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatiyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumantono"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumapolo"
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "test_region": "Kabupaten Karanganyar",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Karanganyar",
+          "Jaten"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kebakramat"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karanganyar"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Gondangrejo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Colomadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kerjo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tasikmadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Ngargoyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tawangmangu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jenawi"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Mojogedang"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karangpandan"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatipuro"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Matesih"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatiyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumantono"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumapolo"
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "test_region": "Kabupaten Karanganyar",
+      "parameter": 4,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Karanganyar",
+          "Jaten"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kebakramat"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karanganyar"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Gondangrejo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Colomadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kerjo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tasikmadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Ngargoyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tawangmangu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jenawi"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Mojogedang"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karangpandan"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatipuro"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Matesih"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatiyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumantono"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumapolo"
+        ]
+      ]
+    },
+    {
+      "model": "GWR",
+      "test_region": "Kabupaten Karanganyar",
+      "parameter": 40,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Karanganyar",
+          "Jaten"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kebakramat"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karanganyar"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Gondangrejo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Colomadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Kerjo"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tasikmadu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Ngargoyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Tawangmangu"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jenawi"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Mojogedang"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Karangpandan"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatipuro"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Matesih"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jatiyoso"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumantono"
+        ],
+        [
+          "Kabupaten Karanganyar",
+          "Jumapolo"
+        ]
+      ]
+    },
+    {
+      "model": "Linear",
+      "test_region": "Kabupaten Klaten",
+      "parameter": 1e-08,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Klaten",
+          "Bayat"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jatinom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Trucuk"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Manisrenggo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Cawas"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jogonalan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Prambanan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kemalang"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Pedan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Tulung"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangnongko"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Juwiring"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wedi"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ceper"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Utara"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karanganom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangdowo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wonosari"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ngawen"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kalikotes"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Selatan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Tengah"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Polanharjo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Gantiwarno"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Delanggu"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kebonarum"
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "test_region": "Kabupaten Klaten",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Klaten",
+          "Bayat"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jatinom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Trucuk"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Manisrenggo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Cawas"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jogonalan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Prambanan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kemalang"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Pedan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Tulung"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangnongko"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Juwiring"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wedi"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ceper"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Utara"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karanganom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangdowo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wonosari"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ngawen"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kalikotes"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Selatan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Tengah"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Polanharjo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Gantiwarno"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Delanggu"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kebonarum"
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "test_region": "Kabupaten Klaten",
+      "parameter": 4,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Klaten",
+          "Bayat"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jatinom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Trucuk"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Manisrenggo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Cawas"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jogonalan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Prambanan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kemalang"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Pedan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Tulung"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangnongko"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Juwiring"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wedi"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ceper"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Utara"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karanganom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangdowo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wonosari"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ngawen"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kalikotes"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Selatan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Tengah"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Polanharjo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Gantiwarno"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Delanggu"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kebonarum"
+        ]
+      ]
+    },
+    {
+      "model": "GWR",
+      "test_region": "Kabupaten Klaten",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Klaten",
+          "Bayat"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jatinom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Trucuk"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Manisrenggo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Cawas"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Jogonalan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Prambanan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kemalang"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Pedan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Tulung"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangnongko"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Juwiring"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wedi"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ceper"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Utara"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karanganom"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Karangdowo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Wonosari"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Ngawen"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kalikotes"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Selatan"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Klaten Tengah"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Polanharjo"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Gantiwarno"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Delanggu"
+        ],
+        [
+          "Kabupaten Klaten",
+          "Kebonarum"
+        ]
+      ]
+    },
+    {
+      "model": "Linear",
+      "test_region": "Kabupaten Sragen",
+      "parameter": 1e-08,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sragen",
+          "Sambungmacan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Karangmalang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Masaran"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gondang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sragen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kedawung"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Plupuh"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Ngrampal"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tanon"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Jenar"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kalijambe"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gemolong"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sambirejo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Miri"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tangen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sukodono"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sumberlawang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sidoharjo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Mondokan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gesi"
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "test_region": "Kabupaten Sragen",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sragen",
+          "Sambungmacan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Karangmalang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Masaran"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gondang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sragen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kedawung"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Plupuh"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Ngrampal"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tanon"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Jenar"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kalijambe"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gemolong"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sambirejo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Miri"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tangen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sukodono"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sumberlawang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sidoharjo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Mondokan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gesi"
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "test_region": "Kabupaten Sragen",
+      "parameter": 4,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sragen",
+          "Sambungmacan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Karangmalang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Masaran"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gondang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sragen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kedawung"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Plupuh"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Ngrampal"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tanon"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Jenar"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kalijambe"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gemolong"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sambirejo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Miri"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tangen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sukodono"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sumberlawang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sidoharjo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Mondokan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gesi"
+        ]
+      ]
+    },
+    {
+      "model": "GWR",
+      "test_region": "Kabupaten Sragen",
+      "parameter": 10,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sragen",
+          "Sambungmacan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Karangmalang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Masaran"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gondang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sragen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kedawung"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Plupuh"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Ngrampal"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tanon"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Jenar"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Kalijambe"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gemolong"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sambirejo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Miri"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Tangen"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sukodono"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sumberlawang"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Sidoharjo"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Mondokan"
+        ],
+        [
+          "Kabupaten Sragen",
+          "Gesi"
+        ]
+      ]
+    },
+    {
+      "model": "Linear",
+      "test_region": "Kabupaten Sukoharjo",
+      "parameter": 1e-08,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sukoharjo",
+          "Grogol"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Sukoharjo"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Weru"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Tawangsari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Polokarto"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Mojolaban"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Kartasura"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bulu"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Nguter"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bendosari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Baki"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Gatak"
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "test_region": "Kabupaten Sukoharjo",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sukoharjo",
+          "Grogol"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Sukoharjo"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Weru"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Tawangsari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Polokarto"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Mojolaban"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Kartasura"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bulu"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Nguter"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bendosari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Baki"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Gatak"
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "test_region": "Kabupaten Sukoharjo",
+      "parameter": 4,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sukoharjo",
+          "Grogol"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Sukoharjo"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Weru"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Tawangsari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Polokarto"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Mojolaban"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Kartasura"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bulu"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Nguter"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bendosari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Baki"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Gatak"
+        ]
+      ]
+    },
+    {
+      "model": "GWR",
+      "test_region": "Kabupaten Sukoharjo",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Sukoharjo",
+          "Grogol"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Sukoharjo"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Weru"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Tawangsari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Polokarto"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Mojolaban"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Kartasura"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bulu"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Nguter"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Bendosari"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Baki"
+        ],
+        [
+          "Kabupaten Sukoharjo",
+          "Gatak"
+        ]
+      ]
+    },
+    {
+      "model": "Linear",
+      "test_region": "Kabupaten Wonogiri",
+      "parameter": 1e-08,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Wonogiri",
+          "Sidoarjo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Pracimantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wonogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Girimarto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Selogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Eromoko"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Slogohimo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wuryantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Ngadirojo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatisrono"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Purwantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatipurno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Manyaran"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Baturetno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Nguntoronadi"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giriwoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Tirtomoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giritontro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Puhpelem"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Batuwarno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Kismantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Paranggupito"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatiroto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Karangtengah"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Bulukerto"
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "test_region": "Kabupaten Wonogiri",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Wonogiri",
+          "Sidoarjo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Pracimantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wonogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Girimarto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Selogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Eromoko"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Slogohimo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wuryantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Ngadirojo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatisrono"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Purwantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatipurno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Manyaran"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Baturetno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Nguntoronadi"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giriwoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Tirtomoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giritontro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Puhpelem"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Batuwarno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Kismantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Paranggupito"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatiroto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Karangtengah"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Bulukerto"
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "test_region": "Kabupaten Wonogiri",
+      "parameter": 4,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Wonogiri",
+          "Sidoarjo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Pracimantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wonogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Girimarto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Selogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Eromoko"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Slogohimo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wuryantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Ngadirojo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatisrono"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Purwantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatipurno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Manyaran"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Baturetno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Nguntoronadi"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giriwoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Tirtomoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giritontro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Puhpelem"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Batuwarno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Kismantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Paranggupito"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatiroto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Karangtengah"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Bulukerto"
+        ]
+      ]
+    },
+    {
+      "model": "GWR",
+      "test_region": "Kabupaten Wonogiri",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kota Surakarta"
+      ],
+      "test_keys": [
+        [
+          "Kabupaten Wonogiri",
+          "Sidoarjo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Pracimantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wonogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Girimarto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Selogiri"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Eromoko"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Slogohimo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Wuryantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Ngadirojo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatisrono"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Purwantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatipurno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Manyaran"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Baturetno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Nguntoronadi"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giriwoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Tirtomoyo"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Giritontro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Puhpelem"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Batuwarno"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Kismantoro"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Paranggupito"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Jatiroto"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Karangtengah"
+        ],
+        [
+          "Kabupaten Wonogiri",
+          "Bulukerto"
+        ]
+      ]
+    },
+    {
+      "model": "Linear",
+      "test_region": "Kota Surakarta",
+      "parameter": 1e-08,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri"
+      ],
+      "test_keys": [
+        [
+          "Kota Surakarta",
+          "Banjarsari"
+        ],
+        [
+          "Kota Surakarta",
+          "Jebres"
+        ],
+        [
+          "Kota Surakarta",
+          "Laweyan"
+        ],
+        [
+          "Kota Surakarta",
+          "Pasar Kliwon"
+        ],
+        [
+          "Kota Surakarta",
+          "Serengan"
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "test_region": "Kota Surakarta",
+      "parameter": 5,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri"
+      ],
+      "test_keys": [
+        [
+          "Kota Surakarta",
+          "Banjarsari"
+        ],
+        [
+          "Kota Surakarta",
+          "Jebres"
+        ],
+        [
+          "Kota Surakarta",
+          "Laweyan"
+        ],
+        [
+          "Kota Surakarta",
+          "Pasar Kliwon"
+        ],
+        [
+          "Kota Surakarta",
+          "Serengan"
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "test_region": "Kota Surakarta",
+      "parameter": 4,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri"
+      ],
+      "test_keys": [
+        [
+          "Kota Surakarta",
+          "Banjarsari"
+        ],
+        [
+          "Kota Surakarta",
+          "Jebres"
+        ],
+        [
+          "Kota Surakarta",
+          "Laweyan"
+        ],
+        [
+          "Kota Surakarta",
+          "Pasar Kliwon"
+        ],
+        [
+          "Kota Surakarta",
+          "Serengan"
+        ]
+      ]
+    },
+    {
+      "model": "GWR",
+      "test_region": "Kota Surakarta",
+      "parameter": 10,
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri"
+      ],
+      "test_keys": [
+        [
+          "Kota Surakarta",
+          "Banjarsari"
+        ],
+        [
+          "Kota Surakarta",
+          "Jebres"
+        ],
+        [
+          "Kota Surakarta",
+          "Laweyan"
+        ],
+        [
+          "Kota Surakarta",
+          "Pasar Kliwon"
+        ],
+        [
+          "Kota Surakarta",
+          "Serengan"
+        ]
+      ]
+    }
+  ],
+  "inner_scores": [
+    {
+      "outer_region": "Kabupaten Boyolali",
+      "bandwidth_km": 5,
+      "RMSE_Rp_m2": 10252625.907372879
+    },
+    {
+      "outer_region": "Kabupaten Boyolali",
+      "bandwidth_km": 10,
+      "RMSE_Rp_m2": 74517830.82204321
+    },
+    {
+      "outer_region": "Kabupaten Boyolali",
+      "bandwidth_km": 15,
+      "RMSE_Rp_m2": 138939690.4069101
+    },
+    {
+      "outer_region": "Kabupaten Boyolali",
+      "bandwidth_km": 25,
+      "RMSE_Rp_m2": 124151481.75065818
+    },
+    {
+      "outer_region": "Kabupaten Boyolali",
+      "bandwidth_km": 40,
+      "RMSE_Rp_m2": 129238042.92321792
+    },
+    {
+      "outer_region": "Kabupaten Boyolali",
+      "bandwidth_km": 60,
+      "RMSE_Rp_m2": 134878878.10123596
+    },
+    {
+      "outer_region": "Kabupaten Boyolali",
+      "bandwidth_km": 80,
+      "RMSE_Rp_m2": 137454767.23553106
+    },
+    {
+      "outer_region": "Kabupaten Karanganyar",
+      "bandwidth_km": 5,
+      "RMSE_Rp_m2": 741832070091.794
+    },
+    {
+      "outer_region": "Kabupaten Karanganyar",
+      "bandwidth_km": 10,
+      "RMSE_Rp_m2": 709166671.9418625
+    },
+    {
+      "outer_region": "Kabupaten Karanganyar",
+      "bandwidth_km": 15,
+      "RMSE_Rp_m2": 331318449.6749964
+    },
+    {
+      "outer_region": "Kabupaten Karanganyar",
+      "bandwidth_km": 25,
+      "RMSE_Rp_m2": 274751183.16903067
+    },
+    {
+      "outer_region": "Kabupaten Karanganyar",
+      "bandwidth_km": 40,
+      "RMSE_Rp_m2": 274014220.57849944
+    },
+    {
+      "outer_region": "Kabupaten Karanganyar",
+      "bandwidth_km": 60,
+      "RMSE_Rp_m2": 275572305.4267089
+    },
+    {
+      "outer_region": "Kabupaten Karanganyar",
+      "bandwidth_km": 80,
+      "RMSE_Rp_m2": 276106242.7241421
+    },
+    {
+      "outer_region": "Kabupaten Klaten",
+      "bandwidth_km": 5,
+      "RMSE_Rp_m2": 7566950.755357662
+    },
+    {
+      "outer_region": "Kabupaten Klaten",
+      "bandwidth_km": 10,
+      "RMSE_Rp_m2": 26277428.866784748
+    },
+    {
+      "outer_region": "Kabupaten Klaten",
+      "bandwidth_km": 15,
+      "RMSE_Rp_m2": 205657814.20030898
+    },
+    {
+      "outer_region": "Kabupaten Klaten",
+      "bandwidth_km": 25,
+      "RMSE_Rp_m2": 2138023505.3438728
+    },
+    {
+      "outer_region": "Kabupaten Klaten",
+      "bandwidth_km": 40,
+      "RMSE_Rp_m2": 5927409192.41882
+    },
+    {
+      "outer_region": "Kabupaten Klaten",
+      "bandwidth_km": 60,
+      "RMSE_Rp_m2": 8667784142.306225
+    },
+    {
+      "outer_region": "Kabupaten Klaten",
+      "bandwidth_km": 80,
+      "RMSE_Rp_m2": 9880963009.942488
+    },
+    {
+      "outer_region": "Kabupaten Sragen",
+      "bandwidth_km": 5,
+      "RMSE_Rp_m2": 2795562.1310344297
+    },
+    {
+      "outer_region": "Kabupaten Sragen",
+      "bandwidth_km": 10,
+      "RMSE_Rp_m2": 1758942.6864639362
+    },
+    {
+      "outer_region": "Kabupaten Sragen",
+      "bandwidth_km": 15,
+      "RMSE_Rp_m2": 7253618.020646556
+    },
+    {
+      "outer_region": "Kabupaten Sragen",
+      "bandwidth_km": 25,
+      "RMSE_Rp_m2": 19518565.44028888
+    },
+    {
+      "outer_region": "Kabupaten Sragen",
+      "bandwidth_km": 40,
+      "RMSE_Rp_m2": 31756371.02330604
+    },
+    {
+      "outer_region": "Kabupaten Sragen",
+      "bandwidth_km": 60,
+      "RMSE_Rp_m2": 40375690.996461414
+    },
+    {
+      "outer_region": "Kabupaten Sragen",
+      "bandwidth_km": 80,
+      "RMSE_Rp_m2": 44335859.47268057
+    },
+    {
+      "outer_region": "Kabupaten Sukoharjo",
+      "bandwidth_km": 5,
+      "RMSE_Rp_m2": 286063170.5028127
+    },
+    {
+      "outer_region": "Kabupaten Sukoharjo",
+      "bandwidth_km": 10,
+      "RMSE_Rp_m2": 493803734.43053275
+    },
+    {
+      "outer_region": "Kabupaten Sukoharjo",
+      "bandwidth_km": 15,
+      "RMSE_Rp_m2": 462212739.2316991
+    },
+    {
+      "outer_region": "Kabupaten Sukoharjo",
+      "bandwidth_km": 25,
+      "RMSE_Rp_m2": 350352635.5635304
+    },
+    {
+      "outer_region": "Kabupaten Sukoharjo",
+      "bandwidth_km": 40,
+      "RMSE_Rp_m2": 351944739.0603515
+    },
+    {
+      "outer_region": "Kabupaten Sukoharjo",
+      "bandwidth_km": 60,
+      "RMSE_Rp_m2": 365283255.57006526
+    },
+    {
+      "outer_region": "Kabupaten Sukoharjo",
+      "bandwidth_km": 80,
+      "RMSE_Rp_m2": 371893069.444315
+    },
+    {
+      "outer_region": "Kabupaten Wonogiri",
+      "bandwidth_km": 5,
+      "RMSE_Rp_m2": 6074892.494116818
+    },
+    {
+      "outer_region": "Kabupaten Wonogiri",
+      "bandwidth_km": 10,
+      "RMSE_Rp_m2": 37813623.24387734
+    },
+    {
+      "outer_region": "Kabupaten Wonogiri",
+      "bandwidth_km": 15,
+      "RMSE_Rp_m2": 130686855.70284398
+    },
+    {
+      "outer_region": "Kabupaten Wonogiri",
+      "bandwidth_km": 25,
+      "RMSE_Rp_m2": 141532472.30445266
+    },
+    {
+      "outer_region": "Kabupaten Wonogiri",
+      "bandwidth_km": 40,
+      "RMSE_Rp_m2": 129511182.82856981
+    },
+    {
+      "outer_region": "Kabupaten Wonogiri",
+      "bandwidth_km": 60,
+      "RMSE_Rp_m2": 124184252.94796509
+    },
+    {
+      "outer_region": "Kabupaten Wonogiri",
+      "bandwidth_km": 80,
+      "RMSE_Rp_m2": 122246965.45886843
+    },
+    {
+      "outer_region": "Kota Surakarta",
+      "bandwidth_km": 5,
+      "RMSE_Rp_m2": 5644166.18153379
+    },
+    {
+      "outer_region": "Kota Surakarta",
+      "bandwidth_km": 10,
+      "RMSE_Rp_m2": 2086222.928720998
+    },
+    {
+      "outer_region": "Kota Surakarta",
+      "bandwidth_km": 15,
+      "RMSE_Rp_m2": 2581233.412318987
+    },
+    {
+      "outer_region": "Kota Surakarta",
+      "bandwidth_km": 25,
+      "RMSE_Rp_m2": 2676191.9654632197
+    },
+    {
+      "outer_region": "Kota Surakarta",
+      "bandwidth_km": 40,
+      "RMSE_Rp_m2": 2920298.6215396496
+    },
+    {
+      "outer_region": "Kota Surakarta",
+      "bandwidth_km": 60,
+      "RMSE_Rp_m2": 3092683.164554813
+    },
+    {
+      "outer_region": "Kota Surakarta",
+      "bandwidth_km": 80,
+      "RMSE_Rp_m2": 3167958.203052816
+    }
+  ],
+  "singular_failures": [],
+  "protocol": "colab_log7",
+  "supporting_sha256": "8cfde68231141e16bc6f2de63afbdf209c071d266e6c64b44036ffbe205ef900",
+  "notebook_sha256": "4aa72c135e6b886d9e114819149c9982de87a24b9e3aaf7aa0100cbe1134f3d3",
+  "gwr_ridge": 0.001,
+  "knn_weights": "inverse distance",
+  "tree_min_leaf": 3,
+  "tree_min_split": 6,
+  "outside_BIG": []
+}

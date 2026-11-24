@@ -2,7 +2,7 @@
 
 Estimasi harga tanah rata-rata per m² pada **127 kecamatan di Solo Raya, tahun 2020**, menggunakan regresi linear, K-Nearest Neighbors (KNN), Decision Tree, dan Geographically Weighted Regression (GWR).
 
-**[Buka atlas interaktif](https://sqiftree.github.io/LandPredict/)** · [Paper Word](docs/Paper%20Harga%20Tanah%20Solo%20Raya.docx) · [Paper Markdown](docs/Paper%20Harga%20Tanah%20Solo%20Raya.md) · [Dataset pendukung](data/processed/variabel_pendukung_2020.csv)
+**[Buka atlas interaktif](https://sqiftree.github.io/LandPredict/)** · [Paper Word](docs/harga_tanah_solo_raya_2020.docx) · [Paper Markdown](docs/harga_tanah_solo_raya_2020.md) · [Dataset pendukung](data/processed/variabel_pendukung_2020.csv)
 
 Proyek ini mendukung penelitian dan presentasi akademik. Unit analisisnya adalah rata-rata kecamatan, bukan bidang tanah atau transaksi individual. Hasilnya tidak digunakan untuk penilaian properti maupun prediksi harga tahun berjalan.
 
@@ -21,15 +21,23 @@ Wilayah penelitian mencakup Kota Surakarta serta Kabupaten Boyolali, Karanganyar
 | Eksperimen empat model | Selesai dengan **dua prediktor: penduduk dan fasilitas umum regional** |
 | Variabel pendukung | Lima variabel tambahan sudah diolah untuk 127 kecamatan |
 | Eksplorasi korelasi | Pearson dan Spearman tersedia; belum ada uji signifikansi atau klaim kausal |
-| Model dengan variabel tambahan | Belum dilatih dan dievaluasi |
+| Model dengan variabel tambahan | Empat model tujuh prediktor diverifikasi pada tujuh blok, termasuk replikasi notebook dan sensitivitas titik BIG |
 | Atlas interaktif | Aktif di GitHub Pages |
 | Batas historis 2020 dan pengukuran primer harga | Belum sepenuhnya terverifikasi |
+
+## Hasil integrasi notebook
+
+Dengan tujuh fitur dan target log, KNN berbobot menghasilkan **MAE Rp619.531/m² dan RMSE Rp1.309.859/m²** untuk rata-rata kecamatan tahun 2020. Menjalankan KNN log dengan pengaturan identik dan hanya dua fitur menghasilkan MAE Rp733.681/m². Pada spesifikasi tujuh fitur, lima kecamatan Surakarta menyumbang 99,66% jumlah kuadrat galat GWR dengan titik BIG.
+
+- [Prediksi uji](artifacts/tujuh_prediktor_big/prediksi_uji.csv), [metrik gabungan](artifacts/tujuh_prediktor_big/metrik.csv), [hasil per wilayah dan parameter](artifacts/tujuh_prediktor_big/per_wilayah.csv), [figur cetak](artifacts/tujuh_prediktor_big/evaluasi.pdf).
+- [Notebook sumber](notebooks/replikasi_harga_tanah_2020.ipynb), [koordinat kiriman](data/sumber/koordinat_solo_raya.csv), [replikasi notebook dengan koordinat kiriman](artifacts/replikasi_notebook), [audit koordinat](data/SUMBER_KOORDINAT.md), [diagnostik dan pembanding KNN](artifacts/tujuh_prediktor_big/diagnostik.json).
+- Reproduksi penuh memakai perintah Docker di bawah. Setelah audit poligon tersedia, jalankan `python -m tanah colab --output hasil/replikasi_notebook` untuk replikasi dan `python -m tanah colab --koordinat data/koordinat.csv --output hasil/tujuh_prediktor_big` untuk titik BIG. Periksa CSV tersimpan dengan `python -m tanah verify hasil/tujuh_prediktor_big --colab`. Buat ulang figur dan pembanding KNN dengan `python scripts/diagnostik_colab.py hasil/tujuh_prediktor_big`. Naskah Word dan Markdown dibangun dari artefak acuan dengan `python scripts/build_manuscript.py`.
 
 ## Atlas interaktif
 
 **https://sqiftree.github.io/LandPredict/**
 
-Atlas menyediakan pilihan layer harga, tutupan lahan, kepadatan, dan cakupan raster; filter kabupaten/kota; pencarian kecamatan; profil wilayah saat diklik; diagram sebar; serta unduhan CSV dan metadata sumber.
+Atlas lokal menyediakan layer prediksi uji dan galat absolut KNN tujuh fitur, harga, tutupan lahan, kepadatan, dan cakupan raster; filter kabupaten/kota; pencarian kecamatan; profil wilayah saat diklik; diagram sebar; serta unduhan CSV dan metadata sumber.
 
 Peta ini merupakan visualisasi penelitian, bukan layanan resmi ATR/BPN dan tidak terhubung langsung ke BHUMI. Poligon dan pustaka Leaflet disertakan dalam situs. Peta dasar OpenStreetMap bersifat opsional dan memerlukan internet.
 
@@ -61,7 +69,7 @@ Setiap model menghasilkan 127 prediksi uji dan tujuh blok evaluasi. Empat model 
 - [Hasil empat model dan catatan audit](artifacts/spasial/)
 - [Hasil tiga baseline](artifacts/baseline/)
 - [Figur dan diagnostik](artifacts/figures/)
-- [Ringkasan eksperimen](HASIL_PAPER.md)
+- [Ringkasan eksperimen](docs/ringkasan_eksperimen.md)
 
 ## Dataset dan variabel pendukung
 
@@ -103,7 +111,7 @@ Daftar 25 kandidat bukan 25 variabel yang seluruhnya telah terkumpul. Kandidat s
 | [BIG KSP Satu Peta](https://kspservices.big.go.id/satupeta/rest/services/PUBLIK/BATAS_WILAYAH/MapServer/3) | Poligon kecamatan dan titik representatif | Penanda fitur 20230928; kesesuaian dengan batas 2020 belum terverifikasi |
 | [ESA WorldCover 2020 v100](https://doi.org/10.5281/zenodo.5571936) | Tutupan lahan | Klasifikasi raster dan pendekatan tepi piksel memiliki ketidakpastian |
 
-Ke-127 titik berada dalam poligon padanannya. Titik dihitung dari geometri, tidak ditentukan oleh harga dan tidak mewakili lokasi transaksi. Tidak ada koordinat tebakan atau proyeksi harga ke tahun lain.
+Ke-127 titik hasil perhitungan BIG berada dalam poligon padanannya. Titik dihitung dari geometri, tidak ditentukan oleh harga dan tidak mewakili lokasi transaksi. Tidak ada koordinat tebakan atau proyeksi harga ke tahun lain.
 
 Audit masih mencatat perbedaan total fasilitas terhadap artikel pada tujuh wilayah dan penduduk pada tiga wilayah. Sebanyak 21 rujukan halaman CSV lama bertuliskan A-4, sedangkan nomor cetaknya B-1. [Dataset rujukan yang diperbaiki](artifacts/data_audit/dataset_2020_rujukan_terverifikasi.csv) mempertahankan angka sumber; eksperimen menggunakan CSV awal.
 
@@ -182,19 +190,25 @@ python scripts/publish_artifacts.py
 python scripts/build_manuscript.py
 ```
 
-`publish_artifacts.py` memperbarui snapshot hasil; jalankan hanya setelah meninjau perubahan. Generator memakai `docs/paper_template.md` untuk menghasilkan Markdown dan Word. Narasi serta tabel eksplorasi bagian 6.3 harus ditinjau jika data atau metode berubah. Verifikasi CSV pada generator tidak berarti pelatihan model telah dijalankan ulang.
+`publish_artifacts.py` memperbarui snapshot hasil; jalankan hanya setelah meninjau perubahan. Generator memakai `docs/template/naskah.md` untuk menghasilkan Markdown dan Word. Narasi serta tabel eksplorasi bagian 6.3 harus ditinjau jika data atau metode berubah. Verifikasi CSV pada generator tidak berarti pelatihan model telah dijalankan ulang.
 
-## Struktur repository
+## Struktur proyek
 
 ```text
 tanah/                      Model, validasi bersarang, verifikasi, dan geometri
 scripts/                    Reproduksi, audit, pengolahan raster, dan generator paper
 tests/                      Tes protokol, audit, dan pengolahan data
-data/harga_tanah_2020.csv    Dataset awal eksperimen
+notebooks/                  Notebook asli untuk replikasi skor
+data/harga_tanah_2020.csv   Dataset awal eksperimen
 data/koordinat.csv          Titik representatif 127 kecamatan
 data/processed/             Variabel tambahan, korelasi, GeoJSON, dan manifest
-artifacts/                  Snapshot hasil model, audit, dan figur
-docs/                       Paper, rancangan variabel, audit, dan panduan deployment
+data/sumber/                Sumber pembanding, koordinat kiriman, dan metadata
+artifacts/tujuh_prediktor_big/   Hasil tujuh prediktor dengan titik BIG untuk paper
+artifacts/replikasi_notebook/    Hasil pembanding dengan koordinat notebook
+hasil/                      Keluaran eksekusi lokal yang dapat dibuat ulang
+docs/                       Naskah Word dan Markdown, ringkasan, serta panduan
+docs/template/              Templat naskah dan sampul Word
+docs/arsip/                 Draf dan laporan historis
 web/landpredict/            Situs statis yang diterbitkan ke GitHub Pages
 .github/workflows/          Pemeriksaan dan deployment atlas
 ```

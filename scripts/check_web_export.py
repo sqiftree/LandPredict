@@ -17,6 +17,9 @@ def main():
  Assets().feed((WEB/'index.html').read_text())
  for name in ['variabel_pendukung_2020.csv','korelasi_eksploratif.csv','manifest.json','solo_raya_display.geojson']:
   if (WEB/name).read_bytes()!=(ROOT/'data/processed'/name).read_bytes():raise ValueError(f'Stale web export: {name}')
+ with (ROOT/'artifacts/tujuh_prediktor_big/prediksi_uji.csv').open() as f:
+  predictions=[[r['kab_kota'],r['kecamatan'],float(r['KNN'])] for r in csv.DictReader(f)]
+ if json.loads((WEB/'prediksi_knn.json').read_text())!=predictions:raise ValueError('Stale web predictions')
  manifest=json.loads((WEB/'manifest.json').read_text())
  if hashlib.sha256((WEB/'variabel_pendukung_2020.csv').read_bytes()).hexdigest()!=manifest['csv_sha256']:raise ValueError('Dataset hash mismatch')
  with (WEB/'variabel_pendukung_2020.csv').open() as f:rows=list(csv.DictReader(f))

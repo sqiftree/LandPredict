@@ -1,0 +1,637 @@
+[
+  [
+    "Kota Surakarta",
+    "Banjarsari",
+    4431709.517235779
+  ],
+  [
+    "Kota Surakarta",
+    "Jebres",
+    3937566.0797668183
+  ],
+  [
+    "Kota Surakarta",
+    "Laweyan",
+    3801121.182663922
+  ],
+  [
+    "Kota Surakarta",
+    "Pasar Kliwon",
+    4800149.623805221
+  ],
+  [
+    "Kota Surakarta",
+    "Serengan",
+    4801419.275789329
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Sambi",
+    97339.18232775186
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Nogosari",
+    412115.81393121
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Karanggede",
+    97722.35073670902
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Mojosongo",
+    513290.25801681995
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Ngemplak",
+    977817.8484677356
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Ampel",
+    263995.3565726197
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Wonosegoro",
+    95436.78654802585
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Simo",
+    81549.24054437138
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Andong",
+    203826.3055789845
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Boyolali",
+    2795111.561111827
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Musuk",
+    189907.57688255046
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Teras",
+    148768.4687667198
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Klego",
+    99393.69131021987
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Cepogo",
+    270791.78185456403
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Banyudono",
+    287052.8546909726
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Kemusu",
+    101203.21773943742
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Juwangi",
+    80792.88904111699
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Selo",
+    116213.65772082274
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Sawit",
+    94489.94209469999
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Wonosamodro",
+    95087.24601042364
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Tamansari",
+    145022.8526426516
+  ],
+  [
+    "Kabupaten Boyolali",
+    "Gladagsari",
+    272260.8772957385
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Grogol",
+    2299033.0917784083
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Sukoharjo",
+    3055031.7445439706
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Weru",
+    141604.9120346292
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Tawangsari",
+    131320.39278256864
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Polokarto",
+    804067.8593272984
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Mojolaban",
+    264466.73492903233
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Kartasura",
+    2356587.3686321205
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Bulu",
+    75972.1821104274
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Nguter",
+    242968.96798231182
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Bendosari",
+    176834.72515988623
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Baki",
+    389319.0523006264
+  ],
+  [
+    "Kabupaten Sukoharjo",
+    "Gatak",
+    538839.766190416
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Jaten",
+    2315591.240602673
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Kebakramat",
+    586568.4617140647
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Karanganyar",
+    1656011.1752557114
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Gondangrejo",
+    305667.08429559856
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Colomadu",
+    851361.2452230352
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Kerjo",
+    83283.62001666203
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Tasikmadu",
+    832214.2384196026
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Ngargoyoso",
+    68857.54545697304
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Tawangmangu",
+    100257.64280741586
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Jenawi",
+    85319.00310712615
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Mojogedang",
+    265300.84196977626
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Karangpandan",
+    149726.21618354708
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Jatipuro",
+    73684.0448488706
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Matesih",
+    132431.5460815772
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Jatiyoso",
+    63303.379007280324
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Jumantono",
+    102225.90652008903
+  ],
+  [
+    "Kabupaten Karanganyar",
+    "Jumapolo",
+    87433.39450131735
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Sidoarjo",
+    354761.916459192
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Pracimantoro",
+    388272.3684822597
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Wonogiri",
+    2476271.0851850566
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Girimarto",
+    200979.28928627426
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Selogiri",
+    1067959.1295118127
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Eromoko",
+    131183.93598969613
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Slogohimo",
+    352571.3741711095
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Wuryantoro",
+    137290.5825669491
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Ngadirojo",
+    444142.3758692041
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Jatisrono",
+    172306.88601119033
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Purwantoro",
+    417083.6781498355
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Jatipurno",
+    156902.95451211077
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Manyaran",
+    190602.73756757102
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Baturetno",
+    172015.63803833924
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Nguntoronadi",
+    116661.24894939823
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Giriwoyo",
+    217089.60423215883
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Tirtomoyo",
+    449209.78245241696
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Giritontro",
+    148289.13980887283
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Puhpelem",
+    188193.34159493435
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Batuwarno",
+    143675.3141818821
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Kismantoro",
+    149331.1595247123
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Paranggupito",
+    193353.46114995962
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Jatiroto",
+    224289.05014819966
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Karangtengah",
+    186715.26548990296
+  ],
+  [
+    "Kabupaten Wonogiri",
+    "Bulukerto",
+    168491.141157506
+  ],
+  [
+    "Kabupaten Sragen",
+    "Sambungmacan",
+    199750.56003822907
+  ],
+  [
+    "Kabupaten Sragen",
+    "Karangmalang",
+    193890.0941728652
+  ],
+  [
+    "Kabupaten Sragen",
+    "Masaran",
+    536540.0148369365
+  ],
+  [
+    "Kabupaten Sragen",
+    "Gondang",
+    140505.0242286511
+  ],
+  [
+    "Kabupaten Sragen",
+    "Sragen",
+    3379829.2848720406
+  ],
+  [
+    "Kabupaten Sragen",
+    "Kedawung",
+    206173.00511614568
+  ],
+  [
+    "Kabupaten Sragen",
+    "Plupuh",
+    201136.73350605048
+  ],
+  [
+    "Kabupaten Sragen",
+    "Ngrampal",
+    142575.5826200537
+  ],
+  [
+    "Kabupaten Sragen",
+    "Tanon",
+    190533.8993453968
+  ],
+  [
+    "Kabupaten Sragen",
+    "Jenar",
+    199066.56656013976
+  ],
+  [
+    "Kabupaten Sragen",
+    "Kalijambe",
+    387969.8109695021
+  ],
+  [
+    "Kabupaten Sragen",
+    "Gemolong",
+    784956.6625225054
+  ],
+  [
+    "Kabupaten Sragen",
+    "Sambirejo",
+    143236.8279580164
+  ],
+  [
+    "Kabupaten Sragen",
+    "Miri",
+    111692.6884917517
+  ],
+  [
+    "Kabupaten Sragen",
+    "Tangen",
+    125517.00236322577
+  ],
+  [
+    "Kabupaten Sragen",
+    "Sukodono",
+    170201.28435968028
+  ],
+  [
+    "Kabupaten Sragen",
+    "Sumberlawang",
+    182173.8227547625
+  ],
+  [
+    "Kabupaten Sragen",
+    "Sidoharjo",
+    195552.67978319904
+  ],
+  [
+    "Kabupaten Sragen",
+    "Mondokan",
+    185314.97597384965
+  ],
+  [
+    "Kabupaten Sragen",
+    "Gesi",
+    148860.70009956195
+  ],
+  [
+    "Kabupaten Klaten",
+    "Bayat",
+    453171.34481216985
+  ],
+  [
+    "Kabupaten Klaten",
+    "Jatinom",
+    263149.37123244395
+  ],
+  [
+    "Kabupaten Klaten",
+    "Trucuk",
+    330759.3649655076
+  ],
+  [
+    "Kabupaten Klaten",
+    "Manisrenggo",
+    347593.22379000543
+  ],
+  [
+    "Kabupaten Klaten",
+    "Cawas",
+    156450.332655759
+  ],
+  [
+    "Kabupaten Klaten",
+    "Jogonalan",
+    755483.3391253859
+  ],
+  [
+    "Kabupaten Klaten",
+    "Prambanan",
+    571758.7968750687
+  ],
+  [
+    "Kabupaten Klaten",
+    "Kemalang",
+    245749.03420681824
+  ],
+  [
+    "Kabupaten Klaten",
+    "Pedan",
+    279261.20888874476
+  ],
+  [
+    "Kabupaten Klaten",
+    "Tulung",
+    756142.911510069
+  ],
+  [
+    "Kabupaten Klaten",
+    "Karangnongko",
+    240567.6832033982
+  ],
+  [
+    "Kabupaten Klaten",
+    "Juwiring",
+    134644.26283143953
+  ],
+  [
+    "Kabupaten Klaten",
+    "Wedi",
+    205875.70415084364
+  ],
+  [
+    "Kabupaten Klaten",
+    "Ceper",
+    1222787.1470106477
+  ],
+  [
+    "Kabupaten Klaten",
+    "Klaten Utara",
+    3362379.318547585
+  ],
+  [
+    "Kabupaten Klaten",
+    "Karanganom",
+    291181.7480258328
+  ],
+  [
+    "Kabupaten Klaten",
+    "Karangdowo",
+    181015.03815770935
+  ],
+  [
+    "Kabupaten Klaten",
+    "Wonosari",
+    297117.81098372187
+  ],
+  [
+    "Kabupaten Klaten",
+    "Ngawen",
+    652235.6315595685
+  ],
+  [
+    "Kabupaten Klaten",
+    "Kalikotes",
+    350191.9487613697
+  ],
+  [
+    "Kabupaten Klaten",
+    "Klaten Selatan",
+    2548871.161240706
+  ],
+  [
+    "Kabupaten Klaten",
+    "Klaten Tengah",
+    3237862.00361908
+  ],
+  [
+    "Kabupaten Klaten",
+    "Polanharjo",
+    163983.64806525235
+  ],
+  [
+    "Kabupaten Klaten",
+    "Gantiwarno",
+    152988.22723455136
+  ],
+  [
+    "Kabupaten Klaten",
+    "Delanggu",
+    1223031.9282876719
+  ],
+  [
+    "Kabupaten Klaten",
+    "Kebonarum",
+    165125.27007399045
+  ]
+]

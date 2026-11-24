@@ -1,0 +1,17 @@
+{
+  "VIF": {
+    "kepadatan_penduduk_proksi": 15.390162960425911,
+    "kepadatan_fasum_proksi": 11.106913412518766,
+    "built_pct": 36.6483537248761,
+    "tree_pct": 24.274546092377488,
+    "cropland_pct": 12.876085595094645,
+    "jumlah_penduduk": 2.409571832944865,
+    "jumlah_fasum_regional": 5.857345355417394
+  },
+  "KNN_log_dua_fitur": {
+    "MAE_Rp_m2": 733681.3360636136,
+    "RMSE_Rp_m2": 1585545.8082687317,
+    "R2": 0.39365915018514774
+  },
+  "surakarta_fraksi_SSE_GWR": 0.9965684632435394
+}

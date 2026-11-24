@@ -22,7 +22,7 @@ def run(coordinates: Path | None = None, output: Path | None = None) -> Path:
     """Evaluate every region exactly once; no target from the outer test is fitted."""
     coordinates = Path(coordinates) if coordinates is not None else None
     frame = load_observations()
-    folder = Path(output) if output is not None else ROOT / ('hasil_spasial' if coordinates else 'hasil_awal')
+    folder = Path(output) if output is not None else ROOT / 'hasil' / ('spasial' if coordinates else 'baseline')
     folder.mkdir(parents=True, exist_ok=True)
     candidates = {name: values for name, values in CANDIDATES.items() if coordinates or name != 'GWR'}
     audit = new_audit(coordinates, candidates)

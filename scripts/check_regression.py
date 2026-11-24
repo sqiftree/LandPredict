@@ -18,6 +18,14 @@ def compare(expected: Path, actual: Path) -> None:
             raise AssertionError(f'Protokol atau input berubah: {field}')
     if len(old['inner_scores']) != len(new['inner_scores']):
         raise AssertionError('Jumlah skor internal berubah.')
+    if old.get('protocol') == 'colab_log7':
+        for field in ['protocol', 'supporting_sha256', 'outside_BIG', 'candidate_parameters']:
+            assert old[field] == new[field], field
+        for a, b in zip(old['inner_scores'], new['inner_scores']):
+            assert a['outer_region'] == b['outer_region'] and a['bandwidth_km'] == b['bandwidth_km']
+            np.testing.assert_allclose(a['RMSE_Rp_m2'], b['RMSE_Rp_m2'], rtol=1e-12)
+        print(f'PASS: replikasi protokol tujuh prediktor: {actual}')
+        return
     for a, b in zip(old['inner_scores'], new['inner_scores']):
         for field in ['model', 'outer_region', 'parameter', 'valid']:
             if a[field] != b[field]:

@@ -54,7 +54,7 @@ def describe_column(rows, col):
     }
 
 
-def verify_stdlib(folder):
+def verify_stdlib(folder, colab=False):
     """Fallback verifier using only stdlib when numpy/pandas are absent."""
     if not __debug__:
         raise RuntimeError('Jalankan verifikasi tanpa python -O agar assertions aktif.')
@@ -100,7 +100,9 @@ def verify_stdlib(folder):
         assert math.isclose(mae, float(row['MAE_Rp_m2']), rel_tol=1e-10)
         assert math.isclose(rmse, float(row['RMSE_Rp_m2']), rel_tol=1e-10)
         assert math.isclose(r2, float(row['R2']), rel_tol=1e-10)
-        if model in expected:
+        if colab:
+            assert audit["protocol"] == "colab_log7"
+        elif model in expected:
             assert round(mae) == expected[model], f'MAE baseline berubah: {model}: {mae}'
         block = {r['wilayah_uji']: r for r in folds if r['model'] == model}
         assert set(block) == regions
@@ -333,19 +335,28 @@ def main():
         'Ini merupakan diagnostik setelah evaluasi; wilayah tersebut tidak dikeluarkan dari perhitungan atau digunakan untuk menyetel ulang model.'
     )
 
-    prior = (ROOT / 'docs/Draf Revisi Harga Tanah.md').read_text(encoding='utf-8')
+    values['FIGUR_TUJUH_PREDIKTOR'] = '../artifacts/tujuh_prediktor_big/evaluasi.png'
+    extended = ROOT / 'artifacts/tujuh_prediktor_big'
+    replica = ROOT / 'artifacts/replikasi_notebook'
+    for path in (extended, replica):
+        verify_stdlib(path, colab=True)
+    ext_scores = sorted(read_csv(extended / 'metrik.csv'), key=lambda r: float(r['MAE_Rp_m2']))
+    values['COLAB_METRICS'] = table(['Model', 'MAE (Rp/m²)', 'RMSE (Rp/m²)', 'MAPE (%)', 'R²'],
+        [[r['model'], rupiah(r['MAE_Rp_m2']), rupiah(r['RMSE_Rp_m2']),
+          decimal_id(r['MAPE_pct']), decimal_id(r['R2'], 3)] for r in ext_scores])
+    prior = (ROOT / 'docs/arsip/draf_revisi_harga_tanah.md').read_text(encoding='utf-8')
     values['REFERENCES'] = prior.split('## e. Referensi\n', 1)[1].split('## Kontribusi Anggota', 1)[0].strip()
 
-    manuscript = (ROOT / 'docs/paper_template.md').read_text(encoding='utf-8')
+    manuscript = (ROOT / 'docs/template/naskah.md').read_text(encoding='utf-8')
     for key, value in values.items():
         manuscript = manuscript.replace('{{' + key + '}}', value)
     if '{{' in manuscript:
         raise ValueError('Ada placeholder yang belum diisi.')
 
-    markdown = ROOT / 'docs/Paper Harga Tanah Solo Raya.md'
+    markdown = ROOT / 'docs/harga_tanah_solo_raya_2020.md'
     markdown.write_text(manuscript, encoding='utf-8')
-    render(ROOT / 'docs/Draf Paper TUBES Machine Learning Harga Tanah (1).docx', markdown,
-           ROOT / 'docs/Paper Harga Tanah Solo Raya.docx')
+    render(ROOT / 'docs/template/sampul_naskah.docx', markdown,
+           ROOT / 'docs/harga_tanah_solo_raya_2020.docx')
 
 
 if __name__ == '__main__':

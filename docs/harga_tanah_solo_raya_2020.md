@@ -2,7 +2,7 @@
 
 ## Abstrak
 
-Penelitian ini mengevaluasi manfaat pembobotan geografis untuk memperkirakan harga tanah rata-rata kecamatan pada kabupaten/kota yang tidak dilibatkan dalam pelatihan. Dataset mencakup 127 kecamatan di tujuh kabupaten/kota Solo Raya tahun 2020, dengan jumlah penduduk dan jumlah fasilitas umum regional sebagai prediktor. Geographically Weighted Regression (GWR) Gaussian dibandingkan dengan regresi linear, K-Nearest Neighbors (KNN), dan Decision Tree menggunakan tujuh lipatan luar leave-one-kabupaten/kota-out. Standardisasi dan pemilihan parameter dilakukan pada bagian latih melalui validasi internal antarkabupaten/kota. Koordinat dihitung sebagai point-on-surface dari poligon kecamatan BIG setelah proyeksi ke UTM 49S dan digunakan untuk menghitung jarak haversine. KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Dengan demikian, pembobotan geografis pada spesifikasi yang diuji belum memberi keunggulan konsisten. Seluruh model menghasilkan 127 prediksi uji dan hasilnya dapat direproduksi melalui pipeline modular. Interpretasi dibatasi pada rata-rata kecamatan tahun 2020, dengan ketidakpastian definisi harga, perbedaan fasum dan penduduk antarsumber, serta kesesuaian batas historis yang masih perlu dikonfirmasi.
+Penelitian ini mengevaluasi manfaat pembobotan geografis untuk memperkirakan harga tanah rata-rata kecamatan pada kabupaten/kota yang tidak dilibatkan dalam pelatihan. Dataset mencakup 127 kecamatan di tujuh kabupaten/kota Solo Raya tahun 2020, dengan jumlah penduduk dan jumlah fasilitas umum regional sebagai prediktor. Geographically Weighted Regression (GWR) Gaussian dibandingkan dengan regresi linear, K-Nearest Neighbors (KNN), dan Decision Tree menggunakan tujuh lipatan luar leave-one-kabupaten/kota-out. Standardisasi dan pemilihan parameter dilakukan pada bagian latih melalui validasi internal antarkabupaten/kota. Koordinat dihitung sebagai point-on-surface dari poligon kecamatan BIG setelah proyeksi ke UTM 49S dan digunakan untuk menghitung jarak haversine. Pada eksperimen dua prediktor, KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Eksperimen tujuh prediktor menambahkan kepadatan dan tutupan lahan serta memodelkan log-harga. KNN berbobot menghasilkan MAE Rp619.531/m² dan RMSE Rp1.309.859/m². Dengan demikian, pembobotan geografis pada spesifikasi yang diuji belum memberi keunggulan konsisten. Seluruh model menghasilkan 127 prediksi uji dan hasilnya dapat direproduksi melalui pipeline modular. Interpretasi dibatasi pada rata-rata kecamatan tahun 2020, dengan ketidakpastian definisi harga, perbedaan fasum dan penduduk antarsumber, serta kesesuaian batas historis yang masih perlu dikonfirmasi.
 
 Kata kunci: harga tanah; GWR; KNN; validasi spasial; Solo Raya; kecamatan.
 
@@ -283,7 +283,7 @@ Kode sumber: R1 Aziz dkk. (2023); R2 Saefuddin dkk. (2012); R3 Syahar dkk. (2020
 
 Spearman direncanakan sebagai layar eksplorasi utama dan Pearson sebagai pemeriksaan sensitivitas; arah, besar koefisien, jumlah observasi, outlier dan kestabilan antarwilayah dilaporkan. Apabila p-value eksploratif dihitung, seluruh keluarga uji yang ditetapkan dilaporkan beserta koreksi Benjamini–Hochberg (1995). Koreksi pengujian berganda tidak memperbaiki asumsi independensi yang dilanggar oleh ketergantungan spasial. P-value standar diperlakukan sebagai nominal/eksploratif sampai prosedur inferensi spasial yang sesuai ditetapkan. Korelasi bukan pengaruh kausal, dan p-value terkecil bukan ukuran manfaat prediksi terbaik.
 
-Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya memakai bagian fit setiap lipatan dalam; pilihan fitur serta parameter dinilai pada validasi dalam, kemudian prosedur dipasang kembali pada seluruh data latih luar. Matriks antarprediktor, VIF dan rank desain lokal diperiksa. Jumlah penduduk dan kepadatan, jumlah fasilitas dan kepadatan fasilitas, serta beberapa ukuran urbanisasi diperlakukan sebagai kandidat yang berpotensi redundan. Semua 25 kandidat tidak dimasukkan sekaligus ke GWR. Korelasi eksploratif seluruh sampel dilaporkan pada bagian 6.3; p-value dan hasil eksperimen model tambahan belum dihitung. Hasil eksplorasi ini tidak dipakai untuk memilih fitur lalu mengklaim evaluasi independen pada data yang sama.
+Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya memakai bagian fit setiap lipatan dalam; pilihan fitur serta parameter dinilai pada validasi dalam, kemudian prosedur dipasang kembali pada seluruh data latih luar. Matriks antarprediktor, VIF dan rank desain lokal diperiksa. Jumlah penduduk dan kepadatan, jumlah fasilitas dan kepadatan fasilitas, serta beberapa ukuran urbanisasi diperlakukan sebagai kandidat yang berpotensi redundan. Semua 25 kandidat tidak dimasukkan sekaligus ke GWR. Korelasi eksploratif seluruh sampel dilaporkan pada bagian 6.3; evaluasi tujuh prediktor disajikan pada bagian 6.4. Hasil eksplorasi ini tidak dipakai untuk memilih fitur lalu mengklaim evaluasi independen pada data yang sama.
 
 
 | Tahap | Spesifikasi | Status |
@@ -315,11 +315,32 @@ Koefisien dihitung pada 127 observasi terhadap harga rata-rata kecamatan, dengan
 
 Peta interaktif menampilkan poligon yang disederhanakan 40 meter untuk visualisasi, sedangkan statistik dihitung dari geometri penuh. Dataset, manifest sumber/hash dan tabel korelasi tersedia pada data/processed; cara reproduksi dan keterbatasan dicatat dalam docs/PENGOLAHAN_VARIABEL_2020.md.
 
+### 6.4 Eksperimen tujuh prediktor dan sensitivitas koordinat
+
+Kelima variabel pada bagian 6.3 ditambahkan pada jumlah penduduk dan fasilitas. Empat estimator NumPy dari notebook menggunakan tujuh lipatan luar yang sama dengan bagian 4. Rerata dan simpangan baku setiap fitur dihitung pada bagian latih. Model dilatih pada ln(harga) dan prediksinya dikembalikan ke Rp/m² dengan eksponensial tanpa koreksi retransformasi. Dengan cara ini, galat positif besar pada skala log dapat membesar pada skala rupiah.
+
+KNN menggunakan lima tetangga dengan bobot kebalikan jarak dalam ruang prediktor. Pohon CART memiliki kedalaman maksimum empat, minimal enam observasi untuk membelah simpul dan tiga per daun. Parameter keduanya ditetapkan mengikuti notebook. Regresi linear global menggunakan penalti numerik 10⁻⁸ dan GWR Gaussian memakai penalti 10⁻³, termasuk pada intersep. Bandwidth dipilih dari 5, 10, 15, 25, 40, 60 dan 80 km berdasarkan RMSE gabungan pada enam lipatan validasi internal. Standardisasi dipasang kembali pada setiap bagian latih internal. Koordinat hanya digunakan oleh GWR. Tabel melaporkan skor gabungan dari 127 prediksi uji per model dengan titik BIG.
+
+| Model | MAE (Rp/m²) | RMSE (Rp/m²) | MAPE (%) | R² |
+| --- | --- | --- | --- | --- |
+| KNN | 619.531 | 1.309.859 | 127,72 | 0,586 |
+| Decision Tree | 724.774 | 1.328.450 | 231,83 | 0,574 |
+| GWR | 5.377.444 | 36.519.930 | 263,26 | -320,676 |
+| Linear | 25.741.669 | 218.841.334 | 447,02 | -11.549,956 |
+
+![Gambar. Evaluasi tujuh prediktor dengan titik BIG. Garis putus-putus menunjukkan prediksi tepat. Warna panel kanan menggunakan skala logaritmik.](../artifacts/tujuh_prediktor_big/evaluasi.png)
+
+Untuk mengukur kontribusi lima fitur secara bersama, KNN dilatih ulang dengan dua prediktor awal. Target log, bobot, k, standardisasi dan lipatan dipertahankan. Penambahan fitur menurunkan MAE dari Rp733.681 menjadi Rp619.531/m² (15,6%) dan RMSE dari Rp1.585.546 menjadi Rp1.309.859/m². Pada lipatan Surakarta, MAE KNN tujuh fitur masih mencapai Rp3.958.006/m². Laweyan memiliki harga aktual Rp11.800.794/m² dan prediksi sekitar Rp3,80 juta/m².
+
+Replikasi dengan koordinat kiriman menghasilkan MAE GWR Rp4.633.597/m² dan RMSE Rp30.928.350/m². Pada arsip BIG, titik kiriman Ampel dan Wonosegoro berada di luar poligon padanannya. Pengulangan dengan 127 titik interior BIG menghasilkan angka pada tabel. Pada eksperimen tujuh prediktor, GWR memperoleh MAE lebih rendah daripada regresi linear global, tetapi lebih tinggi daripada KNN dan pohon. Perbandingan dengan model linear juga melibatkan perbedaan penalti. Lima kecamatan Surakarta menyumbang 99,66% jumlah kuadrat galat GWR dengan titik BIG. Semua regresi lokal menghasilkan prediksi finite. Pada protokol awal, matriks desain lokal yang kehilangan rank menggugurkan kandidat bandwidth dan dicatat di audit. Tidak terjadi kegagalan singular pada run awal ini. Pada protokol notebook, penalti ridge menstabilkan penyelesaian sistem lokal. Besarnya galat di Surakarta terjadi meskipun sistem dapat diselesaikan.
+
+VIF deskriptif pada seluruh sampel mencapai 36,65 untuk proporsi terbangun dan 24,27 untuk tutupan pohon. Nilai ini menunjukkan redundansi linear antarprediktor dan membatasi interpretasi koefisien individual. Seluruh tujuh fitur tetap digunakan di setiap lipatan. Perbandingan model dilaporkan secara deskriptif karena kecamatan dalam satu blok berbagi wilayah uji dan lipatan menggunakan data latih yang tumpang tindih. Klaim signifikansi Wilcoxon per kecamatan dari notebook memerlukan penanganan ketergantungan tersebut.
+
 ## 7. Kesimpulan
 
-Pada 127 kecamatan Solo Raya tahun 2020, KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR Gaussian menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Pembobotan geografis pada spesifikasi yang diuji belum memberikan keunggulan prediktif konsisten dalam validasi lintas kabupaten/kota.
+Pada spesifikasi awal dua prediktor untuk 127 kecamatan Solo Raya tahun 2020, KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR Gaussian menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Pembobotan geografis pada spesifikasi yang diuji belum memberikan keunggulan prediktif konsisten dalam validasi lintas kabupaten/kota.
 
-Eksperimen menghasilkan 127 prediksi uji per model, tujuh lipatan per model, dan 28 baris evaluasi wilayah. Hasil tetap konsisten setelah kode dimodularisasi. Pengembangan berikutnya perlu mengutamakan audit sumber harga dan batas historis, penambahan prediktor yang terukur, serta pengujian sensitivitas koordinat dan bandwidth. Kesimpulan tidak digunakan untuk harga bidang tanah atau prediksi harga tahun berjalan.
+Eksperimen menghasilkan 127 prediksi uji per model, tujuh lipatan per model, dan 28 baris evaluasi wilayah. Dalam eksperimen tujuh prediktor, KNN berbobot mencatat MAE dan RMSE gabungan terendah. Hasil pembanding KNN menunjukkan bahwa kepadatan dan tutupan lahan secara bersama membantu prediksi lintas wilayah pada data ini. Pengembangan berikutnya perlu mengutamakan audit sumber harga dan batas historis, penambahan prediktor yang terukur, serta pengujian sensitivitas koordinat dan bandwidth. Kesimpulan tidak digunakan untuk harga bidang tanah atau prediksi harga tahun berjalan.
 
 ## 8. Ketersediaan Kode, Data, dan Reproduksi
 
@@ -367,7 +388,7 @@ Syahar, F., Ramadhan, R., & Putri, S. (2020). Statistical interpretation of land
 
 ## Lampiran: Status dan Kontribusi Tim
 
-Naskah ini merupakan draf empiris berdasarkan eksperimen dua prediktor yang telah dijalankan. Bagian 6.3 memuat pengolahan data dan korelasi eksploratif; pengembangan model tambahan masih berupa rencana. Identitas anggota dan kontribusi aktual perlu dilengkapi tim sebelum penyerahan.
+Naskah ini merupakan draf empiris berdasarkan eksperimen dua dan tujuh prediktor. Bagian 6.3 dan 6.4 melaporkan pengolahan data, eksperimen tujuh prediktor, dan uji sensitivitas koordinat. Identitas anggota dan kontribusi aktual perlu dilengkapi tim sebelum penyerahan.
 
 | Anggota | Rencana kontribusi; konfirmasi aktual oleh tim |
 | --- | --- |

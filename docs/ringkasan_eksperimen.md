@@ -71,3 +71,10 @@ docker run --rm --network none --user "$(id -u):$(id -g)" -v "$PWD:/app" -w /app
 Ganti bagian `python siapkan_paper.py` dengan masing-masing perintah sesuai urutan. Mount direktori proyek memastikan kode terkini dan keluaran tersedia di host. Build membutuhkan jaringan; eksekusi memakai arsip lokal dan tidak membutuhkan jaringan. Dependensi transitif dapat berubah saat rebuild; gunakan hasil/requirements-resolved.txt untuk mereplikasi versi sesi ini.
 
 Audit 18 November 2026 menggunakan Python 3.12.16 terisolasi dan versi pustaka sesuai artifacts/requirements-resolved.txt, karena Docker/GDAL tidak tersedia pada sesi tersebut. Baseline dan empat model dijalankan ulang; koordinat arsip diperiksa kembali dengan Shapely terhadap geometri BIG, tanpa mengklaim pengulangan langkah ekspor GDAL. Rincian: docs/AUDIT_ULANG_2026-11-18.md.
+
+
+## Eksperimen tujuh prediktor, 24 November 2026
+
+Penambahan kepadatan penduduk dan fasum serta tiga kelas WorldCover pada KNN log-harga menurunkan MAE dari Rp733.681 menjadi Rp619.531/m² dalam pembandingan dengan k, bobot dan lipatan yang sama. Dengan titik interior BIG, GWR log-harga menghasilkan MAE Rp5.377.444/m² dan RMSE Rp36.519.930/m². Lima kecamatan Surakarta menyumbang 99,66% jumlah kuadrat galat GWR. Replikasi persis koordinat notebook menghasilkan MAE GWR Rp4.633.597/m² dan RMSE Rp30.928.350/m². Dua titik kiriman di Boyolali berada di luar poligon BIG padanannya.
+
+[Hasil per kecamatan dan wilayah](../artifacts/tujuh_prediktor_big/) · [Replikasi notebook](../artifacts/replikasi_notebook/) · [Naskah dan figur](harga_tanah_solo_raya_2020.md) · [Cara reproduksi](../README.md)
