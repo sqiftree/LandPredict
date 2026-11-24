@@ -1,6 +1,8 @@
 .venv/
 __pycache__/
 *.py[cod]
+.ipynb_checkpoints/
+.DS_Store
 *:Zone.Identifier
 .env
 .env.*
