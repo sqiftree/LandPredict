@@ -22,9 +22,16 @@ COMMANDS = [
     ['scripts/check_regression.py', 'artifacts/tujuh_prediktor_big', 'hasil/tujuh_prediktor_big'],
     ['scripts/diagnostik_colab.py', 'hasil/tujuh_prediktor_big'],
     ['scripts/analisis_variabel.py', 'hasil/analisis_variabel'],
+    ['scripts/check_regression.py', 'artifacts/analisis_variabel', 'hasil/analisis_variabel', '--tables',
+     'statistik_variabel.csv', 'median_per_wilayah.csv', 'korelasi_pasangan.csv'],
     ['scripts/eksperimen_akses_medan.py', '--output', 'hasil/akses_medan'],
     ['scripts/grafik_akses_medan.py', 'hasil/akses_medan'],
+    ['scripts/check_regression.py', 'artifacts/akses_medan', 'hasil/akses_medan', '--tables',
+     'metrik.csv', 'per_wilayah.csv', 'prediksi_uji.csv', 'seleksi_internal.csv', 'korelasi.csv'],
     ['scripts/review_kepadatan_wisata.py'],
+    ['scripts/check_regression.py', 'artifacts/review_kepadatan_wisata', 'hasil/review_kepadatan_wisata', '--tables',
+     'dataset.csv', 'korelasi.csv', 'metrik.csv', 'per_wilayah.csv', 'pilihan_per_wilayah.csv',
+     'prediksi_seleksi.csv', 'prediksi_uji.csv'],
 ]
 
 

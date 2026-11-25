@@ -70,7 +70,7 @@ StandardScaler dipasang hanya pada bagian latih setiap pemanggilan model, termas
 
 ### 3.2. Regresi linear dan Decision Tree
 
-Regresi linear mengestimasi satu intersep dan dua koefisien global. Decision Tree menggunakan pemisahan prediktor berdasarkan ambang nilai, dengan kandidat kedalaman maksimum 2, 4, dan 6; min_samples_leaf=3; serta random_state=124. Keduanya menerima dua prediktor yang sama dengan model lain. Tidak ada pemotongan prediksi negatif setelah estimasi.
+Regresi linear mengestimasi satu intersep dan dua koefisien global. Decision Tree menggunakan pemisahan prediktor berdasarkan ambang nilai, dengan kandidat kedalaman maksimum 2, 4, dan 6; min_samples_leaf=3; serta random_state=124 (Pedregosa dkk., 2011). Keduanya menerima dua prediktor yang sama dengan model lain. Tidak ada pemotongan prediksi negatif setelah estimasi.
 
 ### 3.3. K-Nearest Neighbors
 
@@ -229,7 +229,7 @@ VIF deskriptif pada seluruh sampel mencapai 36,65 untuk proporsi terbangun dan 2
 
 ### 6.5 Akses wisata, kampus dan topografi
 
-Untuk menguji apakah galat di sekitar Tawangmangu juga muncul di wilayah lain, kami menambah empat variabel yang terukur untuk semua 127 kecamatan. Dari titik interior tiap kecamatan, kami hitung jarak lingkaran besar ke objek wisata dan kampus terpetakan terdekat, termasuk objek di luar batas kecamatan. Sumbernya © OpenStreetMap contributors, ekstrak Geofabrik Indonesia 1 Januari 2021. Klasifikasi, cakupan pemetaan dan posisi titik interior memengaruhi nilai jarak. Median elevasi dan kemiringan dihitung atas sel valid di dalam poligon BIG dari SRTM v4.1 CIAT. Untuk Tawangmangu, elevasi median mencapai 1.218 m, lereng median 15,1°, jarak wisata 0,14 km dan jarak kampus 22,44 km.
+Untuk menguji apakah galat di sekitar Tawangmangu juga muncul di wilayah lain, kami menambah empat variabel yang terukur untuk semua 127 kecamatan. Dari titik interior tiap kecamatan, kami hitung jarak lingkaran besar ke objek wisata dan kampus terpetakan terdekat, termasuk objek di luar batas kecamatan. Sumbernya © OpenStreetMap contributors, ekstrak Geofabrik Indonesia 1 Januari 2021. Klasifikasi, cakupan pemetaan dan posisi titik interior memengaruhi nilai jarak. Median elevasi dan kemiringan dihitung atas sel valid di dalam poligon BIG dari SRTM v4.1 CIAT (Jarvis dkk., 2008). Untuk Tawangmangu, elevasi median mencapai 1.218 m, lereng median 15,1°, jarak wisata 0,14 km dan jarak kampus 22,44 km.
 
 Riswandha dan Wahyono (2017) mendokumentasikan perubahan penggunaan lahan di kawasan wisata Tawangmangu. Wang (2023) mempelajari kedekatan kampus dan harga rumah di Amerika Serikat. Huang dan Hewings (2021) menguji peran lereng terhadap harga tanah di Auckland. Perbedaan unit analisis dan pasar membatasi penerapan hasil studi tersebut ke Solo Raya.
 
@@ -257,6 +257,8 @@ Untuk menguji galat besar, Ridge global dan GWR Gaussian dilatih langsung pada h
 
 {{UJI_SELEKSI}}
 
+{{ZERO_CLIP_SUMMARY}}
+
 Di Tawangmangu, empat objek wisata berada dalam radius pengukuran. Ridge lima variabel memprediksi Rp1.376.791/m² terhadap harga aktual Rp1.767.344/m². Saat Karanganyar ditahan, seleksi internal memilih kepadatan dan lahan terbangun saja sehingga prediksi turun ke Rp385.175/m². Saat Surakarta ditahan, seleksi internal memilih GWR dua variabel dengan bandwidth 15 km. Prediksi Pasar Kliwon mencapai batas bawah nol. Galat besar ini menunjukkan risiko ekstrapolasi ke wilayah perkotaan yang lebih padat daripada seluruh data latih. Evaluasi bersifat eksploratif karena rancangan fitur berangkat dari peninjauan galat sebelumnya.
 
 ## 7. Kesimpulan
@@ -276,18 +278,6 @@ Lingkungan uji menggunakan Python 3.12 dan dependensi yang dicatat pada hasil/re
 ## Referensi
 
 {{REFERENCES}}
-
-Jarvis, A., Reuter, H. I., Nelson, A. & Guevara, E. (2008). Hole-filled seamless SRTM data V4. CIAT. https://srtm.csi.cgiar.org/srtmdata/
-
-OpenStreetMap contributors. Ekstrak Indonesia, Geofabrik, 1 Januari 2021. https://download.geofabrik.de/asia/indonesia-210101-free.shp.zip
-
-Riswandha, Y. & Wahyono, H. (2017). Pengaruh kegiatan wisata terhadap perubahan penggunaan lahan di Kecamatan Tawangmangu, Kabupaten Karanganyar. Teknik PWK 6(2), 131–141. https://doi.org/10.14710/tpwk.2017.18052
-
-Wang, B. (2023). The Effect of Proximity to Universities on House Prices after the COVID Outbreak. Journal of Risk and Financial Management 16(3), 167. https://doi.org/10.3390/jrfm16030167
-
-Huang, Y. & Hewings, G. (2021). More Reliable Land Price Index: Is There a Slope Effect? Land 10(3), 261. https://doi.org/10.3390/land10030261
-
-Wheeler, D. C. (2007). Diagnostic Tools and a Remedial Method for Collinearity in Geographically Weighted Regression. Environment and Planning A 39, 2464–2481. https://doi.org/10.1068/a38325
 
 ## Lampiran: Status dan Kontribusi Tim
 

@@ -86,7 +86,7 @@ Ketiga, landasan geodetik melalui proyeksi metrik planar UTM Zona 49S (EPSG:3274
 
 Keempat, konstruksi koordinat tidak menggunakan target harga. Koordinat titik ditentukan semata-mata oleh geometri batas administratif BIG tanpa membaca nilai harga tanah aktual. Dengan demikian, harga pada baris Banjarsari sebesar Rp7.678.425/m² tidak berarti harga bidang tepat pada koordinat point-on-surface Banjarsari bernilai demikian, melainkan nilai rata-rata kecamatan yang dilekatkan pada simpul koordinat wilayahnya. Titik ini bukan jaminan lokasi kantor kecamatan, pusat penduduk, pusat perdagangan, atau titik transaksi, dan satu titik menyederhanakan variasi internal wilayah yang rata-rata seluas 47,54 km².
 
-Audit spasial pada 127 kecamatan menunjukkan seluruh 127 titik (100%) berada di dalam poligon padanannya (`di_dalam_poligon = True`), dengan jarak titik ke batas berkisar antara 383,02 m hingga 4.572,15 m (median 1.650,59 m; rata-rata 1.755,75 m) dan selisih numerik maksimum point-on-surface terhadap Shapely sekitar 3.26e-09 m.
+Audit spasial pada 127 kecamatan menunjukkan seluruh 127 titik (100%) berada di dalam poligon padanannya (`di_dalam_poligon = True`), dengan jarak titik ke batas berkisar antara 383,02 m hingga 4.572,15 m (median 1.650,59 m; rata-rata 1.755,75 m) dan selisih numerik maksimum point-on-surface terhadap Shapely sekitar 3,26e-09 m.
 
 | Kasus ekstrem jarak ke batas | Kabupaten/kota | Kecamatan | Jarak ke batas (m) | Luas kecamatan (km²) |
 | --- | --- | --- | --- | --- |
@@ -109,7 +109,7 @@ StandardScaler dipasang hanya pada bagian latih setiap pemanggilan model, termas
 
 ### 3.2. Regresi linear dan Decision Tree
 
-Regresi linear mengestimasi satu intersep dan dua koefisien global. Decision Tree menggunakan pemisahan prediktor berdasarkan ambang nilai, dengan kandidat kedalaman maksimum 2, 4, dan 6; min_samples_leaf=3; serta random_state=124. Keduanya menerima dua prediktor yang sama dengan model lain. Tidak ada pemotongan prediksi negatif setelah estimasi.
+Regresi linear mengestimasi satu intersep dan dua koefisien global. Decision Tree menggunakan pemisahan prediktor berdasarkan ambang nilai, dengan kandidat kedalaman maksimum 2, 4, dan 6; min_samples_leaf=3; serta random_state=124 (Pedregosa dkk., 2011). Keduanya menerima dua prediktor yang sama dengan model lain. Tidak ada pemotongan prediksi negatif setelah estimasi.
 
 ### 3.3. K-Nearest Neighbors
 
@@ -184,7 +184,7 @@ Seluruh RMSE pada tabel dalam Rp/m²; n adalah jumlah kecamatan uji.
 
 GWR memiliki MAE lebih kecil daripada regresi linear pada Karanganyar dan Sukoharjo, serta lebih kecil daripada KNN pada Karanganyar dan Surakarta. GWR juga mengungguli Decision Tree dalam MAE pada Boyolali, Karanganyar, dan Sukoharjo. Dengan demikian, peningkatan lokal tidak merata. Seluruh wilayah tetap disertakan pada hasil gabungan.
 
-Surakarta hanya memuat lima kecamatan, tetapi memiliki MAE GWR 5.393.705 dan KNN 5.779.800 Rp/m². Lima kecamatan ini menyumbang sekitar 61.7% jumlah kuadrat galat GWR dan 64.1% jumlah kuadrat galat KNN. Besarnya galat Surakarta membantu menjelaskan perbedaan peringkat MAE dan RMSE. Ini merupakan diagnostik setelah evaluasi; wilayah tersebut tidak dikeluarkan dari perhitungan atau digunakan untuk menyetel ulang model.
+Surakarta hanya memuat lima kecamatan, tetapi memiliki MAE GWR 5.393.705 dan KNN 5.779.800 Rp/m². Lima kecamatan ini menyumbang sekitar 61,7% jumlah kuadrat galat GWR dan 64,1% jumlah kuadrat galat KNN. Besarnya galat Surakarta membantu menjelaskan perbedaan peringkat MAE dan RMSE. Ini merupakan diagnostik setelah evaluasi; wilayah tersebut tidak dikeluarkan dari perhitungan atau digunakan untuk menyetel ulang model.
 
 ### 4.3. Parameter terpilih dan perilaku prediksi
 
@@ -243,7 +243,7 @@ Pengembangan yang direncanakan mencakup penggantian jumlah penduduk dengan kepad
 | Fasilitas umum regional | Lampiran Aziz (tahun data 2020; tahun publikasi belum dipastikan), BPS/Podes, dan instansi penyedia | Definisikan kategori fasum secara konsisten; Podes 2021 bukan data 2020 sehingga hanya dipakai jika dinyatakan sebagai pendekatan. |
 | Akses pusat kegiatan (km) | Dokumen RTRW Provinsi Jawa Tengah / RTRW Kabupaten/Kota | Tetapkan pusat kegiatan secara independen tanpa memakai nilai harga tanah tertinggi pada dataset. |
 | Akses jalan utama (km) | BIG / Peta Rupabumi Indonesia (RBI) dan dinas terkait | Periksa klasifikasi jalan arteri/kolektor dan tahun data jaringan jalan. |
-| Proporsi permukaan terbangun (%) | European Commission JRC — GHSL GHS-BUILT-S R2023A epoch 2020 (100 m) | Mengukur permukaan terbangun agregat per poligon kecamatan; tidak disamakan langsung dengan luas kawasan permukiman RTRW. |
+| Proporsi permukaan terbangun (%) | ESA WorldCover 2020 v100 (diolah) dan GHSL GHS-BUILT-S R2023A epoch 2020 (alternatif) | ESA WorldCover 2020 v100 sudah diolah dan diuji pada bagian 6.3–6.6; GHSL tetap menjadi alternatif pembanding dan tidak disamakan langsung dengan luas kawasan permukiman RTRW. |
 
 ### 6.1. Perluasan kandidat berbasis literatur
 
@@ -288,10 +288,10 @@ Untuk pengembangan model, imputasi, penyaringan korelasi dan seleksi fitur hanya
 
 | Tahap | Spesifikasi | Status |
 | --- | --- | --- |
-| A | Jumlah penduduk + fasilitas regional | Sudah dijalankan; hasil paper ini |
-| B | Kepadatan penduduk + fasilitas regional | Belum diuji |
-| C | B + akses pusat kegiatan + akses jalan + proporsi terbangun | Data belum lengkap; belum diuji |
-| D | Variabel C dengan alternatif titik representatif | Belum diuji |
+| A | Jumlah penduduk + fasilitas regional | Sudah dijalankan; hasil utama bagian 4 |
+| B | Kepadatan penduduk + fasilitas regional | Sudah diuji secara eksploratif pada bagian 6.4 dan 6.6 (kepadatan masih proksi arsip BIG) |
+| C | B + akses pusat kegiatan + akses jalan + proporsi terbangun | Sebagian diuji pada bagian 6.5–6.6 (tutupan lahan, wisata, kampus, topografi); akses jalan utama dan pusat kegiatan RTRW belum diuji |
+| D | Variabel C dengan alternatif titik representatif | Sebagian diuji pada bagian 6.4 (koordinat kiriman vs titik interior BIG); alternatif titik pusat permukiman belum diuji |
 
 Pusat kegiatan harus ditetapkan dari dokumen independen, bukan dari harga tanah tertinggi. Untuk menguji efek representasi lokasi saja, prediktor aksesibilitas dipertahankan saat titik pembobotan GWR diganti. Jika aksesibilitas turut dihitung ulang, perubahan tersebut dilaporkan sebagai skenario gabungan. Penambahan variabel perlu mempertimbangkan kolinearitas serta jumlah observasi efektif pada regresi lokal.
 
@@ -371,7 +371,7 @@ VIF deskriptif pada seluruh sampel mencapai 36,65 untuk proporsi terbangun dan 2
 
 ### 6.5 Akses wisata, kampus dan topografi
 
-Untuk menguji apakah galat di sekitar Tawangmangu juga muncul di wilayah lain, kami menambah empat variabel yang terukur untuk semua 127 kecamatan. Dari titik interior tiap kecamatan, kami hitung jarak lingkaran besar ke objek wisata dan kampus terpetakan terdekat, termasuk objek di luar batas kecamatan. Sumbernya © OpenStreetMap contributors, ekstrak Geofabrik Indonesia 1 Januari 2021. Klasifikasi, cakupan pemetaan dan posisi titik interior memengaruhi nilai jarak. Median elevasi dan kemiringan dihitung atas sel valid di dalam poligon BIG dari SRTM v4.1 CIAT. Untuk Tawangmangu, elevasi median mencapai 1.218 m, lereng median 15,1°, jarak wisata 0,14 km dan jarak kampus 22,44 km.
+Untuk menguji apakah galat di sekitar Tawangmangu juga muncul di wilayah lain, kami menambah empat variabel yang terukur untuk semua 127 kecamatan. Dari titik interior tiap kecamatan, kami hitung jarak lingkaran besar ke objek wisata dan kampus terpetakan terdekat, termasuk objek di luar batas kecamatan. Sumbernya © OpenStreetMap contributors, ekstrak Geofabrik Indonesia 1 Januari 2021. Klasifikasi, cakupan pemetaan dan posisi titik interior memengaruhi nilai jarak. Median elevasi dan kemiringan dihitung atas sel valid di dalam poligon BIG dari SRTM v4.1 CIAT (Jarvis dkk., 2008). Untuk Tawangmangu, elevasi median mencapai 1.218 m, lereng median 15,1°, jarak wisata 0,14 km dan jarak kampus 22,44 km.
 
 Riswandha dan Wahyono (2017) mendokumentasikan perubahan penggunaan lahan di kawasan wisata Tawangmangu. Wang (2023) mempelajari kedekatan kampus dan harga rumah di Amerika Serikat. Huang dan Hewings (2021) menguji peran lereng terhadap harga tanah di Auckland. Perbedaan unit analisis dan pasar membatasi penerapan hasil studi tersebut ke Solo Raya.
 
@@ -414,11 +414,13 @@ Pearson dan Spearman gabungan memakai 127 observasi. Untuk menguji hubungan di d
 
 Untuk menguji galat besar, Ridge global dan GWR Gaussian dilatih langsung pada harga dalam Rp/m². Prediksi negatif diberi batas bawah nol. Lima spesifikasi diuji: kepadatan saja, kepadatan dan lahan terbangun, tambahan ln(1+jumlah objek wisata), elevasi dan lereng, lalu alternatif dengan interaksi elevasi × ln(1+jumlah objek) atau tambahan kedua jarak. Penalti koefisien dipilih dari 0,01, 0,1 atau 1, dengan bandwidth GWR 15, 40 atau 80 km. Standardisasi dipasang ulang pada setiap bagian latih. Pembanding lima variabel memilih parameter melalui MAE internal. Prosedur seleksi RMSE memilih sekaligus spesifikasi, model dan parameter melalui RMSE gabungan enam blok internal. Harga wilayah uji luar hanya dipakai saat evaluasi. Tabel merangkum prediksi lintas tujuh wilayah.
 
-| Model | Spesifikasi | MAE (Rp/m²) | RMSE (Rp/m²) |
-| --- | --- | --- | --- |
-| Ridge | kota_wisata_medan | 660.964 | 1.065.252 |
-| GWR ridge | kota_wisata_medan | 734.631 | 1.320.632 |
-| Seleksi RMSE | validasi internal | 844.988 | 1.489.458 |
+| Model | Spesifikasi | MAE (Rp/m²) | RMSE (Rp/m²) | Prediksi nol |
+| --- | --- | --- | --- | --- |
+| Ridge | kota_wisata_medan | 660.964 | 1.065.252 | 19/127 |
+| GWR ridge | kota_wisata_medan | 734.631 | 1.320.632 | 20/127 |
+| Seleksi RMSE | validasi internal | 844.988 | 1.489.458 | 15/127 |
+
+Berbeda dari eksperimen dua prediktor pada bagian 4 yang mempertahankan nilai negatif tanpa pemotongan, eksperimen pada bagian ini menetapkan batas bawah Rp0/m². Pemotongan terjadi pada 19/127 kecamatan untuk Ridge lima variabel, 20/127 untuk GWR ridge lima variabel, dan 15/127 untuk Seleksi RMSE (total 139 dari 1.270 prediksi uji pada seluruh kombinasi model dan spesifikasi).
 
 Di Tawangmangu, empat objek wisata berada dalam radius pengukuran. Ridge lima variabel memprediksi Rp1.376.791/m² terhadap harga aktual Rp1.767.344/m². Saat Karanganyar ditahan, seleksi internal memilih kepadatan dan lahan terbangun saja sehingga prediksi turun ke Rp385.175/m². Saat Surakarta ditahan, seleksi internal memilih GWR dua variabel dengan bandwidth 15 km. Prediksi Pasar Kliwon mencapai batas bawah nol. Galat besar ini menunjukkan risiko ekstrapolasi ke wilayah perkotaan yang lebih padat daripada seluruh data latih. Evaluasi bersifat eksploratif karena rancangan fitur berangkat dari peninjauan galat sebelumnya.
 
@@ -440,14 +442,6 @@ Lingkungan uji menggunakan Python 3.12 dan dependensi yang dicatat pada hasil/re
 
 Arafah, Y., Hanifah, W., Sabila, F., Asra, H., & Djamaluddin, M. (2026). Land Price Variation in the Urban Fringe of Banda Aceh: A Hedonic Analysis of Syiah Kuala District. The Journal of Indonesia Sustainable Development Planning, 7(2), 290–304. https://doi.org/10.46456/jisdep.v7i2.971
 
-Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society: Series B, 57(1), 289–300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
-
-Berawi, M. A., Suwartha, N., Kurnia, K., Gunawan, Miraj, P., & Berawi, A. R. B. (2018). Forecasting the Land Value around Commuter Rail Stations using Hedonic Price Modeling. International Journal of Technology, 9(7), 1329–1337. https://doi.org/10.14716/ijtech.v9i7.2589
-
-Huang, Y., & Hewings, G. (2021). More Reliable Land Price Index: Is There a Slope Effect? Land, 10(3), 261. https://doi.org/10.3390/land10030261
-
-Zhang, P., Hu, S., Li, W., Zhang, C., Yang, S., & Qu, S. (2021). Modeling fine-scale residential land price distribution: An experimental study using open data and machine learning. Applied Geography, article 102442. https://doi.org/10.1016/j.apgeog.2021.102442
-
 Arumingtyas, O., Subiyanto, S., & Firdaus, H. (2019). Analisis faktor aksesibilitas, fasum dan fasos terhadap harga bidang tanah serta visualisasi berbasis WebGIS (Studi kasus: Kelurahan Tlogosari Kulon, Kecamatan Pedurungan, Kota Semarang). Jurnal Geodesi Undip, 8(4), 165–174. https://doi.org/10.14710/jgundip.2019.25155
 
 Aziz, S. (t.t.). Potensi Struktur Ruang Wilayah Polisentris. Repositori UNS, Lampiran A. Tahun publikasi perlu dikonfirmasi; 2020 merupakan tahun data. https://digilib.uns.ac.id/dokumen/download/111483/NzEwODU3/Potensi-Struktur-Ruang-Wilayah-Polisentris-Lampiran_Salim-Aziz.pdf
@@ -456,15 +450,27 @@ Aziz, S., Rahayu, P., & Istanabi, T. (2023). Potensi wilayah perkotaan polisentr
 
 Badan Informasi Geospasial. (t.t.). Peta Wilayah Administrasi Kecamatan, KSP Satu Peta, layer 3. Metadata diperiksa ulang 17 November 2026. https://kspservices.big.go.id/satupeta/rest/services/PUBLIK/BATAS_WILAYAH/MapServer/3
 
+Benjamini, Y., & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society: Series B, 57(1), 289–300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
+
+Berawi, M. A., Suwartha, N., Kurnia, K., Gunawan, Miraj, P., & Berawi, A. R. B. (2018). Forecasting the Land Value around Commuter Rail Stations using Hedonic Price Modeling. International Journal of Technology, 9(7), 1329–1337. https://doi.org/10.14716/ijtech.v9i7.2589
+
 Brunsdon, C., Fotheringham, A. S., & Charlton, M. E. (1996). Geographically weighted regression: A method for exploring spatial nonstationarity. Geographical Analysis, 28(4), 281–298. https://doi.org/10.1111/j.1538-4632.1996.tb00936.x
 
 European Commission, Joint Research Centre. GHS-BUILT-S R2023A: Built-up surface grid. Kandidat sumber variabel pengembangan; belum digunakan pada hasil baseline. https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php
 
+Huang, Y., & Hewings, G. (2021). More Reliable Land Price Index: Is There a Slope Effect? Land, 10(3), 261. https://doi.org/10.3390/land10030261
+
 Janssen, K. M. J., Mulder, P., & Yudhistira, M. H. (2022). Spatial sorting of rich versus poor people in Jakarta. Bulletin of Indonesian Economic Studies, 58(2), 167–194. https://doi.org/10.1080/00074918.2021.1876209
+
+Jarvis, A., Reuter, H. I., Nelson, A., & Guevara, E. (2008). Hole-filled seamless SRTM data V4. CIAT. https://srtm.csi.cgiar.org/srtmdata/
+
+OpenStreetMap contributors. Ekstrak Indonesia, Geofabrik, 1 Januari 2021. https://download.geofabrik.de/asia/indonesia-210101-free.shp.zip
 
 Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., … Duchesnay, É. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830.
 
 Pemerintah Kota Surakarta. Laporan pada portal Dinas Lingkungan Hidup, Gambar 1.10, hlm. i-20: penduduk per kecamatan tahun 2020, sumber BPS Kota Surakarta 2021. Diakses 17 November 2026. https://dlh.surakarta.go.id/web/file/20220714104304.pdf
+
+Riswandha, Y., & Wahyono, H. (2017). Pengaruh kegiatan wisata terhadap perubahan penggunaan lahan di Kecamatan Tawangmangu, Kabupaten Karanganyar. Teknik PWK, 6(2), 131–141. https://doi.org/10.14710/tpwk.2017.18052
 
 Roberts, D. R., Bahn, V., Ciuti, S., Boyce, M. S., Elith, J., Guillera-Arroita, G., … Dormann, C. F. (2017). Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography, 40(8), 913–929. https://doi.org/10.1111/ecog.02881
 
@@ -472,17 +478,13 @@ Saefuddin, A., Widyaningsih, Y., Ginting, A., & Mamat, M. (2012). Land price mod
 
 Syahar, F., Ramadhan, R., & Putri, S. (2020). Statistical interpretation of land value patterns in Padang, Indonesia. International Journal of GEOMATE, 19(72), 109–116. https://geomatejournal.com/geomate/article/view/1136
 
-Jarvis, A., Reuter, H. I., Nelson, A. & Guevara, E. (2008). Hole-filled seamless SRTM data V4. CIAT. https://srtm.csi.cgiar.org/srtmdata/
+Wang, B. (2023). The Effect of Proximity to Universities on House Prices after the COVID Outbreak. Journal of Risk and Financial Management, 16(3), 167. https://doi.org/10.3390/jrfm16030167
 
-OpenStreetMap contributors. Ekstrak Indonesia, Geofabrik, 1 Januari 2021. https://download.geofabrik.de/asia/indonesia-210101-free.shp.zip
+Wheeler, D. C. (2007). Diagnostic Tools and a Remedial Method for Collinearity in Geographically Weighted Regression. Environment and Planning A, 39, 2464–2481. https://doi.org/10.1068/a38325
 
-Riswandha, Y. & Wahyono, H. (2017). Pengaruh kegiatan wisata terhadap perubahan penggunaan lahan di Kecamatan Tawangmangu, Kabupaten Karanganyar. Teknik PWK 6(2), 131–141. https://doi.org/10.14710/tpwk.2017.18052
+Zanaga, D., Van De Kerchove, R., De Keersmaecker, W., Souverijns, N., Brockmann, C., Quast, R., Wevers, J., Grosu, A., Paccini, A., Vergnaud, S., Cartus, O., Santoro, M., Fritz, S., Georgieva, I., Lesiv, M., Carter, S., Herold, M., Li, L., Tsendbazar, N. E., Ramoino, F., & Arino, O. (2021). ESA WorldCover 10 m 2020 v100 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5571936
 
-Wang, B. (2023). The Effect of Proximity to Universities on House Prices after the COVID Outbreak. Journal of Risk and Financial Management 16(3), 167. https://doi.org/10.3390/jrfm16030167
-
-Huang, Y. & Hewings, G. (2021). More Reliable Land Price Index: Is There a Slope Effect? Land 10(3), 261. https://doi.org/10.3390/land10030261
-
-Wheeler, D. C. (2007). Diagnostic Tools and a Remedial Method for Collinearity in Geographically Weighted Regression. Environment and Planning A 39, 2464–2481. https://doi.org/10.1068/a38325
+Zhang, P., Hu, S., Li, W., Zhang, C., Yang, S., & Qu, S. (2021). Modeling fine-scale residential land price distribution: An experimental study using open data and machine learning. Applied Geography, article 102442. https://doi.org/10.1016/j.apgeog.2021.102442
 
 ## Lampiran: Status dan Kontribusi Tim
 

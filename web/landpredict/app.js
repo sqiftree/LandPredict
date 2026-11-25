@@ -79,9 +79,9 @@ async function loadAtlas() {
  const response = await fetch('uji_korelasi.csv');
  if (!response.ok) throw Error('Tabel korelasi gagal dimuat.');
  for (const line of (await response.text()).trim().split(/\r?\n/).slice(1)) {
-   const [field, , , rho, , , adjusted] = line.split(',');
+   const [field, , , rho, within, , adjusted] = line.split(',');
    const row = $('reviewCorrelations').insertRow();
-   for (const value of [definitions[field][0], fmt(rho, 3), fmt(adjusted, 4)]) row.insertCell().textContent = value;
+   for (const value of [definitions[field][0], fmt(rho, 3), fmt(within, 3), fmt(adjusted, 4)]) row.insertCell().textContent = value;
  }
 }
 loadAtlas().catch(e => {

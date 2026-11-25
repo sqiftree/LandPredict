@@ -33,6 +33,18 @@ def main():
     for name in extended_files:
         if not (ROOT / 'hasil/tujuh_prediktor_big' / name).is_file():
             raise FileNotFoundError(f'Diagnostik eksperimen tujuh prediktor belum tersedia: {name}')
+    access_dir = ROOT / 'hasil/akses_medan'
+    access_files = ['metrik.csv', 'per_wilayah.csv', 'prediksi_uji.csv', 'seleksi_internal.csv',
+                    'korelasi.csv', 'audit.json', 'akses_medan.png']
+    for name in access_files:
+        if not (access_dir / name).is_file():
+            raise FileNotFoundError(f'Keluaran akses_medan belum tersedia: {name}')
+    review_dir = ROOT / 'hasil/review_kepadatan_wisata'
+    review_files = ['dataset.csv', 'korelasi.csv', 'metrik.csv', 'per_wilayah.csv',
+                    'pilihan_per_wilayah.csv', 'prediksi_seleksi.csv', 'prediksi_uji.csv', 'review.json']
+    for name in review_files:
+        if not (review_dir / name).is_file():
+            raise FileNotFoundError(f'Keluaran review_kepadatan_wisata belum tersedia: {name}')
     for mode in ['baseline', 'spasial', 'replikasi_notebook', 'tujuh_prediktor_big']:
         destination = ROOT / 'artifacts' / mode
         destination.mkdir(parents=True, exist_ok=True)
@@ -46,9 +58,20 @@ def main():
     shutil.copy2(ROOT / 'hasil/requirements-resolved.txt', ROOT / 'artifacts/requirements-resolved.txt')
     for name in extended_files:
         shutil.copy2(ROOT / 'hasil/tujuh_prediktor_big' / name, ROOT / 'artifacts/tujuh_prediktor_big' / name)
+    access_dest = ROOT / 'artifacts/akses_medan'
+    access_dest.mkdir(parents=True, exist_ok=True)
+    for name in access_files:
+        shutil.copy2(access_dir / name, access_dest / name)
+    review_dest = ROOT / 'artifacts/review_kepadatan_wisata'
+    review_dest.mkdir(parents=True, exist_ok=True)
+    for name in review_files:
+        shutil.copy2(review_dir / name, review_dest / name)
     with (ROOT / 'hasil/tujuh_prediktor_big/prediksi_uji.csv').open() as stream:
         predictions = [[r['kab_kota'], r['kecamatan'], float(r['KNN'])] for r in csv.DictReader(stream)]
     (ROOT / 'web/landpredict/prediksi_knn.json').write_text(json.dumps(predictions, indent=2) + '\n')
+    for source, export in [('review.json', 'review.json'), ('dataset.csv', 'dataset_wisata_medan.csv'),
+                           ('korelasi.csv', 'uji_korelasi.csv'), ('prediksi_seleksi.csv', 'uji_prediksi.csv')]:
+        shutil.copy2(review_dir / source, ROOT / 'web/landpredict' / export)
     destination = ROOT / 'artifacts/analisis_variabel'
     destination.mkdir(parents=True, exist_ok=True)
     for name in analysis_files:

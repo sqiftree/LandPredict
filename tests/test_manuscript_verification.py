@@ -16,7 +16,7 @@ class ManuscriptVerificationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.folder = Path(self.temp.name) / 'spasial'
-        shutil.copytree(ROOT / 'hasil/spasial', self.folder)
+        shutil.copytree(ROOT / 'artifacts/spasial', self.folder)
 
     def test_archived_predictions_pass(self):
         verify_stdlib(self.folder)
@@ -46,6 +46,18 @@ class ManuscriptVerificationTests(unittest.TestCase):
         path.write_text(json.dumps(audit))
         with self.assertRaises(AssertionError):
             verify_stdlib(self.folder)
+
+    def test_generated_manuscript_consistency(self):
+        manuscript = (ROOT / 'docs/harga_tanah_solo_raya_2020.md').read_text(encoding='utf-8')
+        refs = manuscript.split('## Referensi', 1)[1].split('## Lampiran', 1)[0]
+        self.assertEqual(refs.count('Huang, Y., & Hewings, G. (2021)'), 1)
+        self.assertNotIn('Huang, Y. & Hewings, G. (2021)', refs)
+        self.assertIn('Zanaga, D.', refs)
+        self.assertNotIn('61.7%', manuscript)
+        self.assertNotIn('64.1%', manuscript)
+        self.assertIn('61,7%', manuscript)
+        self.assertIn('64,1%', manuscript)
+        self.assertIn('19/127', manuscript)
 
 
 if __name__ == '__main__':

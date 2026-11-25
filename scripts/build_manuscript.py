@@ -124,10 +124,16 @@ def verify_stdlib(folder, colab=False):
                 assert {tuple(k) for k in entry['test_keys']} == {(r['kab_kota'], r['kecamatan']) for r in by_region[held_out]}
 
 
+def prefer_hasil(hasil_rel, artifact_rel):
+    """Use local hasil/ output when present, falling back to committed artifacts/."""
+    candidate = ROOT / hasil_rel
+    return candidate if candidate.exists() else ROOT / artifact_rel
+
+
 def main():
     audit_dataset()
     sys.path.insert(0, str(ROOT))
-    folder = ROOT / 'hasil/spasial'
+    folder = ROOT / 'hasil/spasial' if (ROOT / 'hasil/spasial/audit.json').is_file() else ROOT / 'artifacts/spasial'
     try:
         from tanah.verification import verify
     except ModuleNotFoundError as exc:
@@ -140,9 +146,9 @@ def main():
     scores = read_csv(folder / 'metrik.csv')
     folds = read_csv(folder / 'per_wilayah.csv')
     predictions = read_csv(folder / 'prediksi_uji.csv')
-    dataset = read_csv(ROOT / 'hasil/paper/dataset_paper_2020.csv')
+    dataset = read_csv(prefer_hasil('hasil/paper/dataset_paper_2020.csv', 'artifacts/dataset_paper_2020.csv'))
     audit = json.loads((folder / 'audit.json').read_text(encoding='utf-8'))
-    diagnostics = json.loads((ROOT / 'hasil/paper/diagnostics.json').read_text(encoding='utf-8'))
+    diagnostics = json.loads(prefer_hasil('hasil/paper/diagnostics.json', 'artifacts/figures/diagnostics.json').read_text(encoding='utf-8'))
     if audit['status'] != 'complete' or len(predictions) != 127 or len(folds) != 28 or len(dataset) != 127:
         raise ValueError('Hasil eksperimen atau dataset gabungan belum lengkap.')
     if not all(r['di_dalam_poligon'] == 'True' for r in dataset):
@@ -217,7 +223,7 @@ def main():
         f"padanannya (`di_dalam_poligon = True`), dengan jarak titik ke batas berkisar antara "
         f"{decimal_id(closest['jarak_ke_batas_m'], 2)} m hingga {decimal_id(farthest['jarak_ke_batas_m'], 2)} m "
         f"(median {decimal_id(dist_s['median'], 2)} m; rata-rata {decimal_id(dist_s['mean'], 2)} m) "
-        f"dan selisih numerik maksimum point-on-surface terhadap Shapely sekitar {max_pos_diff:.2e} m."
+        f"dan selisih numerik maksimum point-on-surface terhadap Shapely sekitar {f'{max_pos_diff:.2e}'.replace('.', ',')} m."
     )
     coord_audit_table = table(
         ['Kasus ekstrem jarak ke batas', 'Kabupaten/kota', 'Kecamatan', 'Jarak ke batas (m)', 'Luas kecamatan (km²)'],
@@ -270,14 +276,14 @@ def main():
              'Tetapkan pusat kegiatan secara independen tanpa memakai nilai harga tanah tertinggi pada dataset.'],
             ['Akses jalan utama (km)', 'BIG / Peta Rupabumi Indonesia (RBI) dan dinas terkait',
              'Periksa klasifikasi jalan arteri/kolektor dan tahun data jaringan jalan.'],
-            ['Proporsi permukaan terbangun (%)', 'European Commission JRC — GHSL GHS-BUILT-S R2023A epoch 2020 (100 m)',
-             'Mengukur permukaan terbangun agregat per poligon kecamatan; tidak disamakan langsung dengan luas kawasan permukiman RTRW.'],
+            ['Proporsi permukaan terbangun (%)', 'ESA WorldCover 2020 v100 (diolah) dan GHSL GHS-BUILT-S R2023A epoch 2020 (alternatif)',
+             'ESA WorldCover 2020 v100 sudah diolah dan diuji pada bagian 6.3–6.6; GHSL tetap menjadi alternatif pembanding dan tidak disamakan langsung dengan luas kawasan permukiman RTRW.'],
         ]),
         'FUTURE_EXPERIMENTS': table(['Tahap', 'Spesifikasi', 'Status'], [
-            ['A', 'Jumlah penduduk + fasilitas regional', 'Sudah dijalankan; hasil paper ini'],
-            ['B', 'Kepadatan penduduk + fasilitas regional', 'Belum diuji'],
-            ['C', 'B + akses pusat kegiatan + akses jalan + proporsi terbangun', 'Data belum lengkap; belum diuji'],
-            ['D', 'Variabel C dengan alternatif titik representatif', 'Belum diuji'],
+            ['A', 'Jumlah penduduk + fasilitas regional', 'Sudah dijalankan; hasil utama bagian 4'],
+            ['B', 'Kepadatan penduduk + fasilitas regional', 'Sudah diuji secara eksploratif pada bagian 6.4 dan 6.6 (kepadatan masih proksi arsip BIG)'],
+            ['C', 'B + akses pusat kegiatan + akses jalan + proporsi terbangun', 'Sebagian diuji pada bagian 6.5–6.6 (tutupan lahan, wisata, kampus, topografi); akses jalan utama dan pusat kegiatan RTRW belum diuji'],
+            ['D', 'Variabel C dengan alternatif titik representatif', 'Sebagian diuji pada bagian 6.4 (koordinat kiriman vs titik interior BIG); alternatif titik pusat permukiman belum diuji'],
         ]),
         'AUDIT_STATUS': table(['Komponen', 'Status saat ini', 'Bukti di repositori / tindakan audit lanjutan'], [
             ['Konsistensi komputasional 4 model & 7 lipatan', 'Terverifikasi',
@@ -329,8 +335,8 @@ def main():
     values['SURAKARTA_DISCUSSION'] = (
         f"Surakarta hanya memuat lima kecamatan, tetapi memiliki MAE GWR {rupiah(lookup[solo, 'GWR']['MAE_Rp_m2'])} "
         f"dan KNN {rupiah(lookup[solo, 'KNN']['MAE_Rp_m2'])} Rp/m². "
-        f"Lima kecamatan ini menyumbang sekitar {100*shares['GWR']:.1f}% jumlah kuadrat galat GWR "
-        f"dan {100*shares['KNN']:.1f}% jumlah kuadrat galat KNN. "
+        f"Lima kecamatan ini menyumbang sekitar {decimal_id(100 * shares['GWR'], 1)}% jumlah kuadrat galat GWR "
+        f"dan {decimal_id(100 * shares['KNN'], 1)}% jumlah kuadrat galat KNN. "
         'Besarnya galat Surakarta membantu menjelaskan perbedaan peringkat MAE dan RMSE. '
         'Ini merupakan diagnostik setelah evaluasi; wilayah tersebut tidak dikeluarkan dari perhitungan atau digunakan untuk menyetel ulang model.'
     )
@@ -352,14 +358,30 @@ def main():
 
     akses = read_csv(ROOT / 'artifacts/akses_medan/metrik.csv')
     review = ROOT / 'artifacts/review_kepadatan_wisata'
+    review_preds = read_csv(review / 'prediksi_uji.csv')
+    review_sel = read_csv(review / 'prediksi_seleksi.csv')
+    zero_counts = defaultdict(int)
+    for row in review_preds:
+        if float(row['prediksi']) == 0.0:
+            zero_counts[(row['model'], row['spesifikasi'])] += 1
+    zero_seleksi = sum(1 for row in review_sel if float(row['prediksi_seleksi']) == 0.0)
     values['UJI_KORELASI'] = table(
         ['Variabel', 'Pearson', 'Spearman', 'Dalam blok', 'p terkoreksi'],
         [[r['variabel'], *[decimal_id(r[c], 4) for c in ('pearson', 'spearman', 'rho_dalam_blok', 'p_bonferroni')]]
          for r in read_csv(review / 'korelasi.csv')])
     values['UJI_SELEKSI'] = table(
-        ['Model', 'Spesifikasi', 'MAE (Rp/m²)', 'RMSE (Rp/m²)'],
-        [[r['model'], r['spesifikasi'], rupiah(r['MAE_Rp_m2']), rupiah(r['RMSE_Rp_m2'])]
+        ['Model', 'Spesifikasi', 'MAE (Rp/m²)', 'RMSE (Rp/m²)', 'Prediksi nol'],
+        [[r['model'], r['spesifikasi'], rupiah(r['MAE_Rp_m2']), rupiah(r['RMSE_Rp_m2']),
+          f"{zero_seleksi}/127" if r['model'] == 'Seleksi RMSE' else f"{zero_counts[(r['model'], r['spesifikasi'])]}/127"]
          for r in read_csv(review / 'metrik.csv') if r['spesifikasi'] in ('kota_wisata_medan','validasi internal')])
+    values['ZERO_CLIP_SUMMARY'] = (
+        f"Berbeda dari eksperimen dua prediktor pada bagian 4 yang mempertahankan nilai negatif tanpa pemotongan, "
+        f"eksperimen pada bagian ini menetapkan batas bawah Rp0/m². Pemotongan terjadi pada "
+        f"{zero_counts[('Ridge', 'kota_wisata_medan')]}/127 kecamatan untuk Ridge lima variabel, "
+        f"{zero_counts[('GWR ridge', 'kota_wisata_medan')]}/127 untuk GWR ridge lima variabel, "
+        f"dan {zero_seleksi}/127 untuk Seleksi RMSE (total {sum(zero_counts.values())} dari {rupiah(len(review_preds))} prediksi uji "
+        f"pada seluruh kombinasi model dan spesifikasi)."
+    )
     values['HASIL_AKSES'] = table(
         ['Prediktor', 'KNN', 'Pohon', 'Ridge global', 'GWR ridge'],
         [[spec] + [rupiah(next(r['MAE_Rp_m2'] for r in akses
@@ -376,7 +398,21 @@ def main():
         [[r['model'], rupiah(r['MAE_Rp_m2']), rupiah(r['RMSE_Rp_m2']),
           decimal_id(r['MAPE_pct']), decimal_id(r['R2'], 3)] for r in ext_scores])
     prior = (ROOT / 'docs/arsip/draf_revisi_harga_tanah.md').read_text(encoding='utf-8')
-    values['REFERENCES'] = prior.split('## e. Referensi\n', 1)[1].split('## Kontribusi Anggota', 1)[0].strip()
+    base_refs = [
+        line.strip()
+        for line in prior.split('## e. Referensi\n', 1)[1].split('## Kontribusi Anggota', 1)[0].splitlines()
+        if line.strip()
+    ]
+    extra_refs = [
+        'Jarvis, A., Reuter, H. I., Nelson, A., & Guevara, E. (2008). Hole-filled seamless SRTM data V4. CIAT. https://srtm.csi.cgiar.org/srtmdata/',
+        'OpenStreetMap contributors. Ekstrak Indonesia, Geofabrik, 1 Januari 2021. https://download.geofabrik.de/asia/indonesia-210101-free.shp.zip',
+        'Riswandha, Y., & Wahyono, H. (2017). Pengaruh kegiatan wisata terhadap perubahan penggunaan lahan di Kecamatan Tawangmangu, Kabupaten Karanganyar. Teknik PWK, 6(2), 131–141. https://doi.org/10.14710/tpwk.2017.18052',
+        'Wang, B. (2023). The Effect of Proximity to Universities on House Prices after the COVID Outbreak. Journal of Risk and Financial Management, 16(3), 167. https://doi.org/10.3390/jrfm16030167',
+        'Wheeler, D. C. (2007). Diagnostic Tools and a Remedial Method for Collinearity in Geographically Weighted Regression. Environment and Planning A, 39, 2464–2481. https://doi.org/10.1068/a38325',
+        'Zanaga, D., Van De Kerchove, R., De Keersmaecker, W., Souverijns, N., Brockmann, C., Quast, R., Wevers, J., Grosu, A., Paccini, A., Vergnaud, S., Cartus, O., Santoro, M., Fritz, S., Georgieva, I., Lesiv, M., Carter, S., Herold, M., Li, L., Tsendbazar, N. E., Ramoino, F., & Arino, O. (2021). ESA WorldCover 10 m 2020 v100 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5571936',
+    ]
+    all_refs = sorted(dict.fromkeys(base_refs + extra_refs), key=lambda entry: entry.casefold())
+    values['REFERENCES'] = '\n\n'.join(all_refs)
 
     manuscript = (ROOT / 'docs/template/naskah.md').read_text(encoding='utf-8')
     for key, value in values.items():

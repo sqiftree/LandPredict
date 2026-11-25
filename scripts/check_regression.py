@@ -7,6 +7,13 @@ import pandas as pd
 import numpy as np
 
 
+def compare_tables(expected: Path, actual: Path, tables: list[str]) -> None:
+    for name in tables:
+        pd.testing.assert_frame_equal(pd.read_csv(expected / name), pd.read_csv(actual / name),
+                                      check_exact=False, rtol=1e-12, atol=1e-8)
+    print(f'PASS: tabel konsisten ({", ".join(tables)}): {actual}')
+
+
 def compare(expected: Path, actual: Path) -> None:
     for name in ['metrik.csv', 'per_wilayah.csv', 'prediksi_uji.csv']:
         pd.testing.assert_frame_equal(pd.read_csv(expected / name), pd.read_csv(actual / name),
@@ -42,5 +49,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('expected', type=Path)
     parser.add_argument('actual', type=Path)
+    parser.add_argument('--tables', nargs='+', help='Bandingkan hanya daftar tabel CSV tertentu')
     args = parser.parse_args()
-    compare(args.expected, args.actual)
+    if args.tables:
+        compare_tables(args.expected, args.actual, args.tables)
+    else:
+        compare(args.expected, args.actual)
