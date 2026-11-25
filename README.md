@@ -33,6 +33,12 @@ Dengan tujuh fitur dan target log, KNN berbobot menghasilkan **MAE Rp619.531/m²
 - [Notebook sumber](notebooks/replikasi_harga_tanah_2020.ipynb), [koordinat kiriman](data/sumber/koordinat_solo_raya.csv), [replikasi notebook dengan koordinat kiriman](artifacts/replikasi_notebook), [audit koordinat](data/SUMBER_KOORDINAT.md), [diagnostik dan pembanding KNN](artifacts/tujuh_prediktor_big/diagnostik.json).
 - Reproduksi penuh memakai perintah Docker di bawah. Setelah audit poligon tersedia, jalankan `python -m tanah colab --output hasil/replikasi_notebook` untuk replikasi dan `python -m tanah colab --koordinat data/koordinat.csv --output hasil/tujuh_prediktor_big` untuk titik BIG. Periksa CSV tersimpan dengan `python -m tanah verify hasil/tujuh_prediktor_big --colab`. Buat ulang figur dan pembanding KNN dengan `python scripts/diagnostik_colab.py hasil/tujuh_prediktor_big`. Naskah Word dan Markdown dibangun dari artefak acuan dengan `python scripts/build_manuscript.py`.
 
+Untuk presentasi, hasil utama membandingkan keempat model dengan dua prediktor identik pada tujuh wilayah uji. GWR menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Bagian 6.5–6.6 naskah membahas analisis tambahan setelah pemeriksaan galat. Pada demo atlas, layer Ridge lima variabel memberikan MAE Rp660.964/m² dan RMSE Rp1.065.252/m². [Metrik utama](artifacts/spasial/metrik.csv) · [Metrik tambahan](artifacts/review_kepadatan_wisata/metrik.csv) · [Dataset dan sumber setiap variabel](data/processed/akses_medan/README.md).
+
+## Eksperimen akses dan medan
+
+Empat variabel baru tersedia untuk 127 kecamatan. KNN dengan tambahan jarak kampus mencapai MAE Rp610.868/m² dan RMSE Rp1.263.634/m² pada tujuh blok luar. Pembanding tujuh fitur dengan penyetelan yang sama mencapai MAE Rp633.139/m². Di Tawangmangu galat masih besar. Bagian 6.5 paper memuat perbandingan delapan spesifikasi, pemeriksaan GWR ridge dan contoh kecamatan yang membaik maupun memburuk. [Dataset dan sumber](data/processed/akses_medan/README.md) · [Prediksi per kecamatan](artifacts/akses_medan/prediksi_uji.csv) · [Metrik](artifacts/akses_medan/metrik.csv) · [Korelasi dan diagram sebar](artifacts/akses_medan/akses_medan.png).
+
 ## Atlas interaktif
 
 **https://sqiftree.github.io/LandPredict/**

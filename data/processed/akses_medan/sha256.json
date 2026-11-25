@@ -1,0 +1,13 @@
+{
+  "data/raw/srtm/srtm_59_14.zip": "3075fbe654c9f23385adbe5942cb762526cf2de5823842802374daa56cdacb26",
+  "hasil/audit_spasial/solo_raya.geojson": "c6012051d92b52402ffe477456915b455553d0c19ba58aa817f103bfa5a60f2c",
+  "data/koordinat.csv": "1e8e777f35e390ad95be9efba414ac7656381b942de55252219052d02026ef9b",
+  "data/raw/osm_210101/gis_osm_pois_a_free_1.dbf": "00b125022ba1d4a1216c0742dfa0488c836c4de3979f4a9734b21be298fc1570",
+  "data/raw/osm_210101/gis_osm_pois_a_free_1.shp": "03d87990c8bc4be6b05cf60889dcd21f434b1311a2a0b1ef5345711830feb5dd",
+  "data/raw/osm_210101/gis_osm_pois_a_free_1.shx": "70ebdf280842976832e2c680c6bab5b47837c977831effd7da1918205f223f5d",
+  "data/raw/osm_210101/gis_osm_pois_free_1.dbf": "3bb0bca899a86a2078e192c54e8f965816e558e4e3c70ceeb0431f927aef0bff",
+  "data/raw/osm_210101/gis_osm_pois_free_1.shp": "8bdda473c6ffd09de56b2f39dbe678c80161fd030eefc09793db3bda5c6efded",
+  "data/raw/osm_210101/gis_osm_pois_free_1.shx": "ec3ffca9433364c6d38fd0d5bed6052850db3e5c1b981a98b12774a6b5b99ea7",
+  "data/processed/akses_medan/fitur.csv": "ce2ae6d68a63c5cc5a8be0d712accfc77f37aabfe10b974e428c0fa08d54c4be",
+  "data/processed/akses_medan/poi_osm.csv": "84196a4e1b8a3fc8b0f8fa6f792d8646d11be3067368f2236c36987fbe3b44a7"
+}

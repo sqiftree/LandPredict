@@ -1,0 +1,1401 @@
+spesifikasi,model,wilayah_luar,parameter,mae_internal
+dasar,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",25757919.99980213
+dasar,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",51812401.52949701
+dasar,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",11008649.392134354
+dasar,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",37954792.24393562
+dasar,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",46052243.72037852
+dasar,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",9329294.076473072
+dasar,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",237707297.12637797
+dasar,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",171021752.20808244
+dasar,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",43565632.99301475
+dasar,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",14143379.48848074
+dasar,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",36785095.0911739
+dasar,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",9080806.958401449
+dasar,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",56234843.5254891
+dasar,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",85804789.93855229
+dasar,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",12198684.10774183
+dasar,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",24225054.114907775
+dasar,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",48742540.97547356
+dasar,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",10391938.469722062
+dasar,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",788680.6605864734
+dasar,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",562546.8869510764
+dasar,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",512609.4227741993
+dasar,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",25480538.997342147
+dasar,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",43318666.5807896
+dasar,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",15176163.764268762
+dasar,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",24124202.536668193
+dasar,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",50537429.91171551
+dasar,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",12739252.569953563
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",24492864.812457006
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",38548470.143617764
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",14345131.349640004
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",23692322.792477623
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",48323080.46794258
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",14473141.524567347
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",23768474.09625794
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",49976811.153195
+dasar,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",13253600.884426638
+dasar,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",42207063.19935857
+dasar,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",36758989.08660429
+dasar,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",10659240.157443827
+dasar,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",38013432.82012664
+dasar,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",45773326.688236654
+dasar,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",10415195.097768765
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",42311905.95502324
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",35677908.125591606
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",10475022.619798731
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",38439390.273058675
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",43220899.33220407
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",11095632.247606296
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",37957095.32217201
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",45176469.40441906
+dasar,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",10726216.041839452
+dasar,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",27752867.190573387
+dasar,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",45263726.41742091
+dasar,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",29207946.15401254
+dasar,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",171583851.63492006
+dasar,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",131545257.23648953
+dasar,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",45292390.78602426
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",11678365.776291061
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",28067254.111807518
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",21860427.926638167
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",95354985.83943227
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",88331635.15986003
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",40808552.29982889
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",153248965.52756128
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",121197523.18741433
+dasar,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",44935872.702989675
+dasar,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",3335451.286627394
+dasar,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",12986514.629309062
+dasar,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",7714537.142164037
+dasar,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",10390929.726176457
+dasar,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",30905375.34937193
+dasar,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",9395644.46865579
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",2003757.6750102744
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",8925111.448818868
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",6758304.903893413
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",6299481.729453025
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",21501049.71441321
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",8965208.934633369
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",9178119.525588982
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",28537569.739352003
+dasar,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",9375467.042186962
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",71179354.8495328
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",115958479.12318815
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",21758489.05122571
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",53517843.64904567
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",86767014.97069952
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",13779782.851168407
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",70766165.41792071
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",115621079.7146158
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",21608805.535404976
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",55259522.32028223
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",92269394.49754027
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",16159056.981774105
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",53196639.009337805
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",87861013.89429374
+dasar,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",14521573.580797335
+dasar,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",23779241.437264375
+dasar,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",40217608.537799224
+dasar,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",13027508.19692753
+dasar,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",25402498.582913347
+dasar,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",48711409.431847155
+dasar,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",11196406.648449535
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",17097665.22305982
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",32427750.87827668
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",12165928.069550747
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",26720675.60080767
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",46060694.05657783
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",12703653.517622018
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",26174373.10386802
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",48262065.56208402
+dasar,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",11774082.726250099
+dasar,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",756322.6935535356
+dasar,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",631281.4662331537
+dasar,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",591977.5966007836
+dasar,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",767152.6130230811
+dasar,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",552836.939026013
+dasar,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",528763.129530034
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",748544.1388035155
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",612993.4001257865
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",552870.6792095287
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",739439.3224381071
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",558355.3923828908
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",527853.9961969801
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",753637.2411581662
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",554346.861516774
+dasar,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",518802.82452406554
+dasar,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",707764.517376285
+dasar,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",689217.2541235182
+dasar,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",714479.886636764
+dasar,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",865222.4386797027
+dasar,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",631813.9742102126
+dasar,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",665232.8530090641
+dasar,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",674979.9378155752
+dasar,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",785034.2589926322
+dasar,KNN,Kabupaten Klaten,"[""k"", 3, 0]",659843.5552437792
+dasar,KNN,Kabupaten Klaten,"[""k"", 5, 0]",650923.5729875248
+dasar,KNN,Kabupaten Klaten,"[""k"", 7, 0]",718236.7281288013
+dasar,KNN,Kabupaten Klaten,"[""k"", 15, 0]",891443.9014814378
+dasar,KNN,Kabupaten Sragen,"[""k"", 3, 0]",720738.868013735
+dasar,KNN,Kabupaten Sragen,"[""k"", 5, 0]",742868.983523347
+dasar,KNN,Kabupaten Sragen,"[""k"", 7, 0]",766743.3489994295
+dasar,KNN,Kabupaten Sragen,"[""k"", 15, 0]",904283.1767515521
+dasar,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",607501.0645658438
+dasar,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",588384.7584216801
+dasar,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",621042.8512546214
+dasar,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",737469.9438359999
+dasar,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",730068.8790414202
+dasar,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",721938.3339533783
+dasar,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",774430.930860603
+dasar,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",923069.0034540269
+dasar,KNN,Kota Surakarta,"[""k"", 3, 0]",448698.1447413882
+dasar,KNN,Kota Surakarta,"[""k"", 5, 0]",477459.5139481286
+dasar,KNN,Kota Surakarta,"[""k"", 7, 0]",502353.68091751885
+dasar,KNN,Kota Surakarta,"[""k"", 15, 0]",557063.9300794603
+dasar,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1241908.793143806
+dasar,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",1012302.7753202332
+dasar,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1087403.6016034912
+dasar,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",680854.400843107
+dasar,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",630487.1476181821
+dasar,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",625615.2406261165
+dasar,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",931630.0981841921
+dasar,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",693093.9544219475
+dasar,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",721146.7562323743
+dasar,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",752750.6811451862
+dasar,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",730227.2225476047
+dasar,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",731702.9249119424
+dasar,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",959131.4182074342
+dasar,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",807850.4431120076
+dasar,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",813252.3117370277
+dasar,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",1043111.8960084738
+dasar,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",836170.8654610828
+dasar,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",884771.8876098538
+dasar,Pohon,Kota Surakarta,"[""depth"", 2, 0]",565583.2160942625
+dasar,Pohon,Kota Surakarta,"[""depth"", 4, 0]",633103.6619929641
+dasar,Pohon,Kota Surakarta,"[""depth"", 6, 0]",605493.7304109826
+medan,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",22699093.590925258
+medan,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",52201054.239576764
+medan,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",11365557.717263615
+medan,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",20458608.994887743
+medan,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",32956971.451551434
+medan,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",8171459.122434592
+medan,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",132244647.54798809
+medan,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",128103485.13223402
+medan,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",41260943.17903647
+medan,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",13831650.155325495
+medan,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",38237139.832793094
+medan,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",8957974.780640628
+medan,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",56795764.697466046
+medan,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",86395342.37874067
+medan,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",12321636.950902347
+medan,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",77307685.42413934
+medan,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",81442950.29820862
+medan,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",11541237.538043765
+medan,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",775759.4616424341
+medan,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",557455.4146412408
+medan,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",513245.9351295586
+medan,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",35317504.06945968
+medan,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",48488207.23894695
+medan,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",15476007.09809757
+medan,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",25674007.132645298
+medan,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",56177377.76829008
+medan,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",13381397.387027284
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",34755992.59543521
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",41647583.00323831
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",14498283.950291062
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",31181606.685372442
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",57767074.781238884
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",15195809.160462884
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",26965708.279775146
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",57182191.802600145
+medan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",13963406.529547669
+medan,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",23868467.968651205
+medan,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",33060425.436561722
+medan,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",10499743.331897097
+medan,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",20098298.025753185
+medan,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",34149374.00424815
+medan,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",9491165.907113349
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",24513694.528442733
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",32331993.9105073
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",10333864.540451111
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",20238857.48369739
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",35073585.26203
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",10592837.075177386
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",20009019.72857313
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",34563825.53866275
+medan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",9936468.56833666
+medan,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",21069020.507651847
+medan,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",41955383.68829763
+medan,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",29007756.728974637
+medan,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",121234212.21855368
+medan,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",107678298.16061673
+medan,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",43944505.80150986
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",9300861.760814473
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",26754968.943486337
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",21757717.698697608
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",80930149.63053356
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",79429493.29717828
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",40372836.75263033
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",115173175.15627994
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",101821185.24006793
+medan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",43858640.769015834
+medan,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",4106433.8729753178
+medan,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",14135021.232696915
+medan,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",7749185.668498461
+medan,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",12249263.101679552
+medan,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",35206794.44096732
+medan,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",9481466.42762366
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",2303888.469220477
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",9400768.183882663
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",6776896.808686031
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",8800940.002686989
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",25526412.68878356
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",9108012.928917892
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",11560899.730878353
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",33358896.866487876
+medan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",9507665.740880178
+medan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",100221389.78209244
+medan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",128527765.21153742
+medan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",22305685.134825733
+medan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",68584897.56727695
+medan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",99910663.39888737
+medan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",14336577.907756303
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",98779858.54393877
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",127669803.80006154
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",22153711.536218688
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",90144369.64844356
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",115653214.17421725
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",16979384.22969941
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",75792807.88812362
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",106119171.42205295
+medan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",15223632.975739295
+medan,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",29874980.88289069
+medan,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",43575305.79301131
+medan,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",13213996.734251115
+medan,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",68272647.09045327
+medan,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",74124263.3449259
+medan,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",12159836.708281651
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",18719954.27727357
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",33428152.893676724
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",12240641.836110033
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",46269899.42193812
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",56663112.34109887
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",13170519.812884174
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",60782930.629410885
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",68150653.6841031
+medan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",12573702.225068083
+medan,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",776739.4191497597
+medan,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",641797.921980736
+medan,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",595175.4367267903
+medan,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",766181.86919447
+medan,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",566597.5491462274
+medan,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",531685.7857476061
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",764729.9831207275
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",634370.220817296
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",560181.1088062479
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",779605.2470621015
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",590209.7501069648
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",531796.0402142741
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",778266.9048479438
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",574292.7270367405
+medan,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",520942.6419079438
+medan,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",689495.3810608957
+medan,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",681334.5766508533
+medan,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",716560.5908537855
+medan,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",865400.1253618848
+medan,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",655507.7447422795
+medan,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",682219.3239736208
+medan,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",689872.6349538126
+medan,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",793331.7085436481
+medan,KNN,Kabupaten Klaten,"[""k"", 3, 0]",677340.8516945298
+medan,KNN,Kabupaten Klaten,"[""k"", 5, 0]",662670.2096808172
+medan,KNN,Kabupaten Klaten,"[""k"", 7, 0]",727591.1371771783
+medan,KNN,Kabupaten Klaten,"[""k"", 15, 0]",900657.8788328645
+medan,KNN,Kabupaten Sragen,"[""k"", 3, 0]",741961.2101874442
+medan,KNN,Kabupaten Sragen,"[""k"", 5, 0]",749568.3438490642
+medan,KNN,Kabupaten Sragen,"[""k"", 7, 0]",783070.7318397975
+medan,KNN,Kabupaten Sragen,"[""k"", 15, 0]",921048.2686001976
+medan,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",617715.0943127943
+medan,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",606255.6921588747
+medan,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",626409.6576845624
+medan,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",748468.1534128925
+medan,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",726112.3020097623
+medan,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",729605.681908855
+medan,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",786962.2456781534
+medan,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",922511.4741216124
+medan,KNN,Kota Surakarta,"[""k"", 3, 0]",454794.3440525211
+medan,KNN,Kota Surakarta,"[""k"", 5, 0]",489627.8178738694
+medan,KNN,Kota Surakarta,"[""k"", 7, 0]",511155.4697387501
+medan,KNN,Kota Surakarta,"[""k"", 15, 0]",558492.5644324201
+medan,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1241908.7931438037
+medan,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",1110562.8786684223
+medan,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1193855.6263924825
+medan,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",606485.2095750096
+medan,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",636339.4586322202
+medan,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",577995.8461333239
+medan,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",931630.0981841912
+medan,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",699456.1508808357
+medan,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",778920.2709257116
+medan,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",752750.6811451864
+medan,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",752353.8617438584
+medan,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",732231.0921266364
+medan,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",971947.8203067959
+medan,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",745919.4319247075
+medan,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",825498.3875530835
+medan,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",1043111.8960084732
+medan,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",874774.8607657602
+medan,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",894734.3997352377
+medan,Pohon,Kota Surakarta,"[""depth"", 2, 0]",570567.9914768403
+medan,Pohon,Kota Surakarta,"[""depth"", 4, 0]",598172.2241525195
+medan,Pohon,Kota Surakarta,"[""depth"", 6, 0]",611137.3811230701
+wisata,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",31539515.115848567
+wisata,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",48396895.60059203
+wisata,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",9786398.946011452
+wisata,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",39916334.81017642
+wisata,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",43805696.43822701
+wisata,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",8646311.719977554
+wisata,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",583972525.3102999
+wisata,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",133447504.77839334
+wisata,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",33739664.80553063
+wisata,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",14837980.479778392
+wisata,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",31212826.399149932
+wisata,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",7883976.879356471
+wisata,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",60392589.47987888
+wisata,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",73650397.91025364
+wisata,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",10626698.453988196
+wisata,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",30749827.060508836
+wisata,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",52371065.44501019
+wisata,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",10320192.269366724
+wisata,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",678430.8427257912
+wisata,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",494097.1279622646
+wisata,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",490178.54758931504
+wisata,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",41724085.64171612
+wisata,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",46475060.64503367
+wisata,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",14819436.749136731
+wisata,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",30620727.067882244
+wisata,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",49164401.523725376
+wisata,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",11685678.678196566
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",38513817.79872617
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",40075387.57131951
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",14064824.740253333
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",35063006.49696517
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",51220421.674385495
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",13872902.413390955
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",31162089.77341806
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",49707878.954151206
+wisata,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",12318962.599864732
+wisata,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",42110436.64085936
+wisata,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",36805026.40428667
+wisata,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",10575754.358239228
+wisata,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",39708721.128007345
+wisata,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",44406441.406389356
+wisata,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",9883488.81956335
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",42101361.05325478
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",35763818.68883978
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",10406022.17737155
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",40036473.936170116
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",43194406.096708104
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",10852048.17457765
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",39715845.37162041
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",44349627.684770934
+wisata,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",10291966.563088587
+wisata,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",38975964.21789996
+wisata,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",44206796.51048153
+wisata,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",28231190.673161894
+wisata,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",382493983.0692104
+wisata,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",111855801.31949525
+wisata,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",37438308.598145925
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",14579621.96047849
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",27668858.502955455
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",21487184.446828913
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",175690475.0709017
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",82303127.54573797
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",37061351.776873134
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",328649499.8836159
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",105557023.31771977
+wisata,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",37970194.61283614
+wisata,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",3735291.9902009955
+wisata,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",13001019.983198948
+wisata,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",7480745.093580755
+wisata,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",11526722.305885352
+wisata,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",28177162.808060057
+wisata,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",8506417.35657479
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",2232982.3758780793
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",8860037.349039683
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",6574181.232254808
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",7486921.9718782855
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",21537680.378429055
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",8568250.31417989
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",10485117.771963589
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",26845141.379771844
+wisata,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",8640109.872393632
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",67998366.19451228
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",116739031.62018386
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",21335330.757258303
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",58430519.13712195
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",78873368.54797988
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",12486860.313458752
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",67258781.15819086
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",116562041.85771713
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",21205421.398018334
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",60286822.4717617
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",90934214.46571326
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",15387455.056523366
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",58660820.348988436
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",82528605.69205946
+wisata,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",13421166.766082251
+wisata,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",26628750.100469902
+wisata,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",40763639.73035557
+wisata,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",12719816.41979203
+wisata,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",31477277.449949708
+wisata,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",51935717.74794235
+wisata,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",11066258.364993166
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",18884310.403027188
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",32325680.288579468
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",11905671.774669942
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",31074725.305338908
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",47784240.04454155
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",12437454.404440342
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",31732433.80497773
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",51033377.98143168
+wisata,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",11596670.654817078
+wisata,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",790756.0241057957
+wisata,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",651322.356376007
+wisata,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",560837.3317860408
+wisata,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",692165.7441228515
+wisata,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",513355.4209415692
+wisata,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",503042.33029952226
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",787679.8623746021
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",638647.5872047389
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",531283.9577516607
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",737006.803470089
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",557546.3287581672
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",505813.95881438535
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",702786.0666197207
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",520150.39828960964
+wisata,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",495953.52703271434
+wisata,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",695295.2027517526
+wisata,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",664394.7318031066
+wisata,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",713267.9023419262
+wisata,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",856354.4211140611
+wisata,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",651162.8252397318
+wisata,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",658220.056890691
+wisata,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",684191.2413582082
+wisata,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",784628.7781271995
+wisata,KNN,Kabupaten Klaten,"[""k"", 3, 0]",710161.8006413816
+wisata,KNN,Kabupaten Klaten,"[""k"", 5, 0]",675470.54805305
+wisata,KNN,Kabupaten Klaten,"[""k"", 7, 0]",731699.2493389477
+wisata,KNN,Kabupaten Klaten,"[""k"", 15, 0]",891443.9767084123
+wisata,KNN,Kabupaten Sragen,"[""k"", 3, 0]",755027.4455151808
+wisata,KNN,Kabupaten Sragen,"[""k"", 5, 0]",746162.7529322081
+wisata,KNN,Kabupaten Sragen,"[""k"", 7, 0]",774610.1834580919
+wisata,KNN,Kabupaten Sragen,"[""k"", 15, 0]",921679.406015939
+wisata,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",634528.422761256
+wisata,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",606526.3148581854
+wisata,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",617691.1304808571
+wisata,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",741156.8832477774
+wisata,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",741222.9562802333
+wisata,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",750487.3395616757
+wisata,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",771535.8533480401
+wisata,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",938763.5732496942
+wisata,KNN,Kota Surakarta,"[""k"", 3, 0]",454941.0805795565
+wisata,KNN,Kota Surakarta,"[""k"", 5, 0]",490337.2362266104
+wisata,KNN,Kota Surakarta,"[""k"", 7, 0]",507905.50131588406
+wisata,KNN,Kota Surakarta,"[""k"", 15, 0]",552000.710473017
+wisata,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1252458.4103458384
+wisata,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",1037237.9478819913
+wisata,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1039101.6466660466
+wisata,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",824029.3987633749
+wisata,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",792320.4761928644
+wisata,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",788871.4977165029
+wisata,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",931630.0981841919
+wisata,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",705254.2472199167
+wisata,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",719069.9093975066
+wisata,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",765550.3221219581
+wisata,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",766629.3334312959
+wisata,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",783337.8207065456
+wisata,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",973681.0311445321
+wisata,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",814082.3886716851
+wisata,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",814827.4451264685
+wisata,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",1054294.86967716
+wisata,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",841433.8557614811
+wisata,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",885254.90397088
+wisata,Pohon,Kota Surakarta,"[""depth"", 2, 0]",593748.1914747377
+wisata,Pohon,Kota Surakarta,"[""depth"", 4, 0]",646730.2398369181
+wisata,Pohon,Kota Surakarta,"[""depth"", 6, 0]",622803.790748435
+kampus,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",13872338.72217446
+kampus,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",34091901.07351731
+kampus,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",9283721.126373155
+kampus,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",13654648.352772815
+kampus,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",22737533.440187085
+kampus,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",7427351.58219389
+kampus,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",13189994.786569463
+kampus,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",34135436.783368856
+kampus,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",23932995.427297805
+kampus,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",8860729.8652861
+kampus,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",23951699.687676523
+kampus,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",7590410.697215716
+kampus,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",25843168.480328307
+kampus,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",45004932.13459245
+kampus,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",9683242.86599661
+kampus,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",14352859.74867489
+kampus,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",32559278.623042203
+kampus,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",8600827.070227822
+kampus,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",698495.9160937336
+kampus,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",512369.71637665963
+kampus,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",462014.3024619808
+kampus,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",10359183.888574136
+kampus,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",25390152.97708292
+kampus,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",12268182.858830687
+kampus,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",11720532.818625359
+kampus,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",31833516.12663021
+kampus,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",10549497.332645591
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",9270616.118759114
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",21721330.238073997
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",11578367.65406342
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",10311824.442518627
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",29268957.55327198
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",11820415.76428427
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",11149361.129095657
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",31062782.42998451
+kampus,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",10922645.366960077
+kampus,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",12997522.088597545
+kampus,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",21206392.739292882
+kampus,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",8954563.155453054
+kampus,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",13049995.087396568
+kampus,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",22790660.991843637
+kampus,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",8303900.744545375
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",12934270.252899308
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",20749073.256236922
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",8817604.56103175
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",12576413.574448435
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",22625995.67814377
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",9034667.937233685
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",12820735.031889156
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",22759466.266207296
+kampus,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",8591891.917963319
+kampus,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",3279956.752271605
+kampus,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",16202348.402794108
+kampus,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",20888688.76388601
+kampus,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",10305992.865674322
+kampus,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",28882742.415562104
+kampus,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",25254509.125221416
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",2052221.7253417661
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",11839415.986558648
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",17020848.20470794
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",7060113.092784313
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",23486709.93889761
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",24855594.850910965
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",9535710.964899331
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",27601024.44015378
+kampus,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",25376749.288220577
+kampus,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",2621619.379122345
+kampus,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",9907326.386444643
+kampus,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",6727914.956892457
+kampus,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",6832813.151632428
+kampus,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",20907982.21422421
+kampus,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",7920511.478193062
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",1689760.5549667785
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",6914375.635948645
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",5953710.998497944
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",4532128.680725916
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",15656581.372787014
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",7719885.906936192
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",6177411.190923531
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",19669763.522590242
+kampus,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",7945996.450193309
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",35634339.61437223
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",66752398.37053043
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",17533498.799605526
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",24582519.876406856
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",45954443.30341786
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",10898907.139366195
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",35623295.488103315
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",66705612.952366084
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",17420175.273097098
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",26078892.701525792
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",50487926.4499477
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",12868966.460845366
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",24587339.840409424
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",46976893.10693751
+kampus,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",11499154.507120162
+kampus,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",11931452.169736521
+kampus,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",24177853.12761032
+kampus,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",10313205.683364313
+kampus,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",14497551.306695864
+kampus,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",31749579.26617899
+kampus,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",9161623.799813548
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",8031285.89090929
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",18701890.30719674
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",9716614.862778123
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",14054586.055181557
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",28565777.059670635
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",10145825.24189207
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",14492587.083990205
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",30872806.9306764
+kampus,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",9551826.36484394
+kampus,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",662198.1299094511
+kampus,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",593825.5378864248
+kampus,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",517676.83035831735
+kampus,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",682343.1430211182
+kampus,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",527544.7869405303
+kampus,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",469001.34049449844
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",652446.4285875037
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",575542.0596054975
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",490105.84838343016
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",665005.545388992
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",536134.6870019848
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",468287.3556751038
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",676882.6014381428
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",524051.02207807766
+kampus,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",461625.5027272078
+kampus,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",645654.4062409801
+kampus,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",698427.5736419553
+kampus,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",725153.7344759242
+kampus,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",877058.0080841158
+kampus,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",637165.2771937122
+kampus,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",683388.1267117832
+kampus,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",684916.2524328216
+kampus,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",788017.4286837055
+kampus,KNN,Kabupaten Klaten,"[""k"", 3, 0]",627862.5846327661
+kampus,KNN,Kabupaten Klaten,"[""k"", 5, 0]",648411.2672630978
+kampus,KNN,Kabupaten Klaten,"[""k"", 7, 0]",700035.9418612097
+kampus,KNN,Kabupaten Klaten,"[""k"", 15, 0]",863515.6675509054
+kampus,KNN,Kabupaten Sragen,"[""k"", 3, 0]",706467.4897854103
+kampus,KNN,Kabupaten Sragen,"[""k"", 5, 0]",721839.7767819136
+kampus,KNN,Kabupaten Sragen,"[""k"", 7, 0]",767086.6961923265
+kampus,KNN,Kabupaten Sragen,"[""k"", 15, 0]",914756.8357173257
+kampus,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",611762.6094337368
+kampus,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",615406.8191719035
+kampus,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",631015.5578305672
+kampus,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",757807.8325934442
+kampus,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",701527.7558789253
+kampus,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",728626.3618631455
+kampus,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",780650.8275350004
+kampus,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",927379.501859501
+kampus,KNN,Kota Surakarta,"[""k"", 3, 0]",429034.6489437511
+kampus,KNN,Kota Surakarta,"[""k"", 5, 0]",479507.3396486687
+kampus,KNN,Kota Surakarta,"[""k"", 7, 0]",512767.0194755142
+kampus,KNN,Kota Surakarta,"[""k"", 15, 0]",560446.8513661477
+kampus,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1231277.944395913
+kampus,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",985469.9197547346
+kampus,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1055757.2234312051
+kampus,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",680854.4008431064
+kampus,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",598951.9650780882
+kampus,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",658564.2234740789
+kampus,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",938963.6078518061
+kampus,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",659587.7161553998
+kampus,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",745514.9723192134
+kampus,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",761274.3834842272
+kampus,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",751477.8979937359
+kampus,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",744738.8652696002
+kampus,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",953035.254214389
+kampus,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",711221.3842943147
+kampus,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",868104.8362624805
+kampus,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",983535.8804790004
+kampus,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",823345.9071256988
+kampus,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",871507.7926676647
+kampus,Pohon,Kota Surakarta,"[""depth"", 2, 0]",565628.2205684095
+kampus,Pohon,Kota Surakarta,"[""depth"", 4, 0]",629876.8461513852
+kampus,Pohon,Kota Surakarta,"[""depth"", 6, 0]",619202.6588382563
+akses,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",23847737.050360315
+akses,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",40040351.03955635
+akses,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",8654080.19995404
+akses,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",13782566.586926766
+akses,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",23313020.03387048
+akses,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",7178861.73058382
+akses,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",60120893.27392459
+akses,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",40326613.84605878
+akses,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",20436046.51215416
+akses,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",11206269.96767021
+akses,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",24826874.707188204
+akses,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",6977810.867323964
+akses,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",34314565.35474261
+akses,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",47789144.28146143
+akses,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",8909737.609961968
+akses,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",17599474.26875173
+akses,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",35809183.96084297
+akses,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",8647186.38483058
+akses,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",648777.1831692697
+akses,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",493064.60012759495
+akses,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",454386.9452497521
+akses,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",15058430.887627024
+akses,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",28094671.95826105
+akses,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",12124772.11502956
+akses,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",20621936.638500303
+akses,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",38129006.55139618
+akses,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",10075889.960736753
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",11502557.225713681
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",22931544.816304244
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",11461901.135899281
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",18428987.225915473
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",35363749.27703276
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",11615995.210399412
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",19861143.470192716
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",37480007.86261334
+akses,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",10532333.074610015
+akses,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",11006455.749073144
+akses,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",20825336.92974479
+akses,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",8927855.164646573
+akses,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",12543535.808986226
+akses,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",23012824.594963953
+akses,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",8124283.3602621015
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",11025581.41795574
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",20464624.000002243
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",8799790.857517254
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",11127370.353025451
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",22331286.81402232
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",8960432.958737124
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",12012944.456714613
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",22814149.462503027
+akses,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",8450730.833613578
+akses,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",4075155.23064913
+akses,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",16342323.087919613
+akses,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",20399561.575918697
+akses,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",34215161.74293206
+akses,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",32911420.76068207
+akses,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",22421328.79229478
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",2184788.6708799824
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",11875315.179061368
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",16841746.085893262
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",13800847.434608864
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",24821939.886471648
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",23326898.29357571
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",28277004.776093613
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",30959895.76250878
+akses,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",22822302.45298727
+akses,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",2595753.0754884635
+akses,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",9964928.166636907
+akses,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",6593054.968673636
+akses,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",8457598.498777617
+akses,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",21854419.775763117
+akses,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",7470842.8389850445
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",1681211.5635728594
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",6967531.671934625
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",5845604.053644334
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",5151843.466346029
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",16233827.430047296
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",7514028.110199322
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",7572230.755934117
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",20611341.261542704
+akses,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",7577205.023060093
+akses,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",30056445.90618258
+akses,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",66476562.44289264
+akses,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",17356061.069307707
+akses,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",30194801.72259034
+akses,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",48178097.518245116
+akses,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",10279996.060225196
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",29857586.88014954
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",66533287.22094689
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",17259826.01152295
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",27468113.323742863
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",51778853.84990815
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",12506606.786967585
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",28862444.45307876
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",48968664.771074526
+akses,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",10979942.755460616
+akses,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",11146148.640818663
+akses,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",24125832.46097699
+akses,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",10207237.562755179
+akses,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",16840419.98134348
+akses,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",34180567.60352874
+akses,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",9163054.18904933
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",7284906.635630469
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",18613892.493520875
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",9635625.994621284
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",14257747.286773043
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",29229903.532185752
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",10057603.554335628
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",16069712.403831933
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",32644920.812837966
+akses,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",9520842.870304734
+akses,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",711454.2825431341
+akses,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",610112.7939704981
+akses,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",498726.25958546804
+akses,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",644400.6167445199
+akses,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",503297.45226328605
+akses,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",456232.47742758674
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",707767.4781086938
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",597990.3618690915
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",477798.64141899545
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",671499.2075162086
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",532463.8928616884
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",458185.4567530245
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",655766.9345644447
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",510819.80625405617
+akses,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",451487.2613769651
+akses,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",657997.9565874411
+akses,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",679043.9561146323
+akses,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",722628.5383792394
+akses,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",865707.4995618208
+akses,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",668433.3272426652
+akses,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",676905.1371141205
+akses,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",691697.2300236367
+akses,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",790106.7781977999
+akses,KNN,Kabupaten Klaten,"[""k"", 3, 0]",659146.4188314766
+akses,KNN,Kabupaten Klaten,"[""k"", 5, 0]",670532.7819970339
+akses,KNN,Kabupaten Klaten,"[""k"", 7, 0]",710901.2848855898
+akses,KNN,Kabupaten Klaten,"[""k"", 15, 0]",860574.3818797711
+akses,KNN,Kabupaten Sragen,"[""k"", 3, 0]",709691.8253695616
+akses,KNN,Kabupaten Sragen,"[""k"", 5, 0]",742188.5234994098
+akses,KNN,Kabupaten Sragen,"[""k"", 7, 0]",763804.2141895845
+akses,KNN,Kabupaten Sragen,"[""k"", 15, 0]",912844.5468406422
+akses,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",634995.9345639435
+akses,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",608924.9786955524
+akses,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",621705.4129831531
+akses,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",753491.287997819
+akses,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",715921.804852681
+akses,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",729830.3593579406
+akses,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",769413.1787920186
+akses,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",949434.521811766
+akses,KNN,Kota Surakarta,"[""k"", 3, 0]",426073.2323963096
+akses,KNN,Kota Surakarta,"[""k"", 5, 0]",479694.21781675494
+akses,KNN,Kota Surakarta,"[""k"", 7, 0]",514580.4667443609
+akses,KNN,Kota Surakarta,"[""k"", 15, 0]",550468.1249710178
+akses,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1234214.8814398784
+akses,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",1124396.3036958675
+akses,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1063037.1102857043
+akses,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",749660.2074952774
+akses,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",869043.6595726764
+akses,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",810391.8506428903
+akses,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",938963.6078518061
+akses,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",679771.44390715
+akses,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",779147.3783229904
+akses,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",761274.3834842278
+akses,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",761352.7885442021
+akses,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",749611.512071614
+akses,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",950742.3984835084
+akses,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",708451.3271024326
+akses,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",828151.0137955882
+akses,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",983535.8804789999
+akses,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",818797.7141991125
+akses,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",911473.7458034434
+akses,Pohon,Kota Surakarta,"[""depth"", 2, 0]",593793.1959488846
+akses,Pohon,Kota Surakarta,"[""depth"", 4, 0]",609696.2568296193
+akses,Pohon,Kota Surakarta,"[""depth"", 6, 0]",598782.3336134588
+gabungan,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",28274291.244460825
+gabungan,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",45431637.53336138
+gabungan,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",9077971.754192844
+gabungan,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",8030140.011008613
+gabungan,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",18713604.627623685
+gabungan,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",6521413.326883131
+gabungan,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",65871990.023695976
+gabungan,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",40485946.39970558
+gabungan,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",20079957.604685556
+gabungan,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",14174303.860012611
+gabungan,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",28679738.071394496
+gabungan,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",7018925.217422592
+gabungan,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",46179951.8454232
+gabungan,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",57480235.783866294
+gabungan,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",9272436.72702887
+gabungan,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",50818411.918784335
+gabungan,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",56683695.66706473
+gabungan,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",9621653.375934139
+gabungan,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",685772.6216425488
+gabungan,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",516777.3854759237
+gabungan,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",457093.3930780257
+gabungan,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",22592950.25470276
+gabungan,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",31413864.865525763
+gabungan,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",12407395.185925754
+gabungan,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",28942029.078640446
+gabungan,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",45923901.188613616
+gabungan,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",10688683.565215848
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",16217763.764804382
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",24696929.525639914
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",11615442.050846616
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",29691309.606071
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",43084534.41136328
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",12248101.677594628
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",29268635.113617193
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",45682604.56176852
+gabungan,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",11183915.945374602
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",9206998.082454568
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",20169879.03152847
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",8850983.604726471
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",7416050.513233329
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",19209145.10708415
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",7595630.010166595
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",9406522.0366914
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",19927300.345470794
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",8730593.286350448
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",7417254.13254463
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",20044982.138585757
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",8667356.51824669
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",7279702.837815236
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",19459172.44738023
+gabungan,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",7993694.175807359
+gabungan,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",4300638.778686921
+gabungan,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",16276457.78797232
+gabungan,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",20395337.57606558
+gabungan,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",41066093.91555177
+gabungan,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",33824742.45392764
+gabungan,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",22346310.36038492
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",2237273.4778289576
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",11677270.16247904
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",16827644.86635327
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",16840621.317921557
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",25782000.485559713
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",23429092.483632438
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",34434044.038737245
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",31993198.474176515
+gabungan,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",22815305.401945382
+gabungan,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",4277793.301061621
+gabungan,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",11255567.707158985
+gabungan,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",6660227.222700126
+gabungan,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",12301674.141186703
+gabungan,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",26475508.649309378
+gabungan,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",7627174.004894269
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",2355675.155793426
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",7515418.918687396
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",5883758.548431251
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",9239540.892573692
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",20031830.916980725
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",7684617.334128016
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",11671434.105871258
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",25303096.582724154
+gabungan,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",7756346.523669668
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",60376633.77968647
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",77675682.8665432
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",17893472.819212385
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",48113867.11288127
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",62137137.6665994
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",10903992.587271126
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",59707294.436583154
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",77401312.40300317
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",17790130.128161702
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",54535258.17220214
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",68844809.79068302
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",13283929.704196298
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",49909140.03926974
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",64537927.12525244
+gabungan,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",11690522.275778892
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",18049890.992576264
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",27288119.864978235
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",10407750.93194324
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",44724782.03415487
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",50683120.8800084
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",9989676.315313764
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",9591656.999887548
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",19711078.379848577
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",9724702.524132278
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",29703976.92064067
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",37038156.16696948
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",10492220.941944784
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",39656463.82280515
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",45912553.92271729
+gabungan,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",10218698.675800495
+gabungan,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",712036.5367248899
+gabungan,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",608372.066551196
+gabungan,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",504192.1810557361
+gabungan,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",669853.1179720468
+gabungan,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",527396.174821303
+gabungan,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",461124.40945093206
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",710985.1785089893
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",613196.3934676948
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",486017.2881834942
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",707891.8232171007
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",559417.2999149638
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",463635.61580219195
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",693491.5794800856
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",539040.4934510381
+gabungan,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",455253.9384189811
+gabungan,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",676894.0897874653
+gabungan,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",677991.44515281
+gabungan,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",723387.8709261593
+gabungan,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",871386.6312877188
+gabungan,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",686448.0071864849
+gabungan,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",693862.4421824507
+gabungan,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",711646.988632836
+gabungan,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",799940.1435220496
+gabungan,KNN,Kabupaten Klaten,"[""k"", 3, 0]",654762.1969933215
+gabungan,KNN,Kabupaten Klaten,"[""k"", 5, 0]",668103.6779245537
+gabungan,KNN,Kabupaten Klaten,"[""k"", 7, 0]",714885.2025829859
+gabungan,KNN,Kabupaten Klaten,"[""k"", 15, 0]",869320.6890766028
+gabungan,KNN,Kabupaten Sragen,"[""k"", 3, 0]",720519.7801428839
+gabungan,KNN,Kabupaten Sragen,"[""k"", 5, 0]",739701.9555021352
+gabungan,KNN,Kabupaten Sragen,"[""k"", 7, 0]",763980.5382323937
+gabungan,KNN,Kabupaten Sragen,"[""k"", 15, 0]",922670.0484295523
+gabungan,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",631081.4931006191
+gabungan,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",614838.1206539677
+gabungan,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",628535.934966149
+gabungan,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",761106.7449083963
+gabungan,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",721074.6106433423
+gabungan,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",758369.0837706287
+gabungan,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",786679.8635946335
+gabungan,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",954056.8443179978
+gabungan,KNN,Kota Surakarta,"[""k"", 3, 0]",430416.0488161544
+gabungan,KNN,Kota Surakarta,"[""k"", 5, 0]",496523.5157028938
+gabungan,KNN,Kota Surakarta,"[""k"", 7, 0]",515238.66706092923
+gabungan,KNN,Kota Surakarta,"[""k"", 15, 0]",554096.0275463342
+gabungan,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1234214.881439878
+gabungan,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",1132121.564643011
+gabungan,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1145507.0245573695
+gabungan,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",749660.2074952772
+gabungan,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",792926.8913218509
+gabungan,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",811404.8358432602
+gabungan,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",896096.6570466015
+gabungan,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",772253.8170207214
+gabungan,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",720424.0776672009
+gabungan,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",761274.3834842275
+gabungan,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",767356.1074145924
+gabungan,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",730334.5888530334
+gabungan,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",842246.1820176677
+gabungan,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",866048.1218003812
+gabungan,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",794750.1622685
+gabungan,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",983535.8804790005
+gabungan,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",837007.767197268
+gabungan,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",902335.7530345176
+gabungan,Pohon,Kota Surakarta,"[""depth"", 2, 0]",604376.1890071887
+gabungan,Pohon,Kota Surakarta,"[""depth"", 4, 0]",565974.246714021
+gabungan,Pohon,Kota Surakarta,"[""depth"", 6, 0]",607022.9992318134
+dasar_log1p,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",3091669.1832597
+dasar_log1p,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",4301332.811669205
+dasar_log1p,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",1080315.4995208655
+dasar_log1p,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",1638536.7016111258
+dasar_log1p,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",1944153.667998023
+dasar_log1p,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",798093.6130112392
+dasar_log1p,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",924858.966081599
+dasar_log1p,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",3198535.467286103
+dasar_log1p,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",1883670.8769291132
+dasar_log1p,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",1810389.1443539767
+dasar_log1p,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",2489123.4717438673
+dasar_log1p,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",991460.6248117257
+dasar_log1p,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",1225146.5769973067
+dasar_log1p,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",1782280.2731007407
+dasar_log1p,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",760108.1068304492
+dasar_log1p,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",2786745.763924287
+dasar_log1p,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",3711899.3965469957
+dasar_log1p,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",1222210.1567225533
+dasar_log1p,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",441615.48503020057
+dasar_log1p,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",453166.1527677536
+dasar_log1p,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",532008.6897999599
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",5544665.247599069
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",8030964.676225996
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",1811989.1734371688
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",3481485.180954865
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",5115835.161610131
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",1257888.068095481
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",5801644.486365226
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",8162852.552182437
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",1822472.591253537
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",4260056.032237001
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",6510257.610455463
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",1491833.7133606113
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",3642470.1534372666
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",5451749.621879634
+dasar_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",1314600.7383644294
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",3411104.5367085575
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",3762880.5273807873
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",1149383.7138971789
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",1902052.4674136708
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",2224354.811870651
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",875854.6368457542
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",3426972.3212725986
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",3817871.910688219
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",1141601.8621210486
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",2346538.6994828363
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",2688533.3047152422
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",972873.4910641629
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",2018729.586483387
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",2345796.8912473083
+dasar_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",906020.8245934162
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",2510179.884880726
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",4871481.046726221
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",2471394.9331877274
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",1122544.3537007626
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",3297853.384218699
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",2119192.8292003237
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",3244239.945720711
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",5567178.990384174
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",2369610.0498354407
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",1596227.0636392676
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",3795200.0589307263
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",2345695.0972583718
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",1189670.039035196
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",3362758.2029163567
+dasar_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",2172302.1226359536
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",2224472.4698677403
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",3098127.316456449
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",1186553.1765546326
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",2048027.4041078417
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",2774214.4783622925
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",1067692.7634541977
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",1816308.708565622
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",2852219.893827288
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",1190295.2233985087
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",2385489.3085313
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",3148255.3609919776
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",1154885.263476673
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",2142677.561996056
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",2874347.6963949385
+dasar_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",1090653.2783800028
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",2338010.6387636415
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",4152258.3261455377
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",1114858.1160795456
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",1356605.5838487712
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",2024880.2329825365
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",823828.7691906935
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",2224005.009284698
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",4008811.9744223785
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",1068786.0956589358
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",1573011.6737987027
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",2464399.9479355225
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",900155.5738856529
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",1419175.1425172663
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",2143465.206091392
+dasar_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",846190.6373258309
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",3890233.9225801015
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",5332091.446531068
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",1591519.3434137816
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",2995539.4358312148
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",3977178.9999038456
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",1287176.1852232995
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",4201756.048463404
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",5849822.690035495
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",1649694.7723837262
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",3507446.6631288505
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",4642549.927598483
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",1431873.8086326325
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",3182581.950774179
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",4170696.5210739695
+dasar_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",1326697.2115684005
+dasar_log1p,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",495183.2831247459
+dasar_log1p,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",444469.9046895885
+dasar_log1p,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",599788.2441160241
+dasar_log1p,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",451286.08081017603
+dasar_log1p,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",435961.7540440729
+dasar_log1p,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",547381.0565516311
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",463704.44306492567
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",417472.5085282689
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",557351.3679090193
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",444394.5487918555
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",415833.0880670419
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",543424.3573531907
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",447459.80345249246
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",437715.851607386
+dasar_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",535308.9989651239
+dasar_log1p,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",711919.7040873824
+dasar_log1p,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",710947.6212114503
+dasar_log1p,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",721172.8194023486
+dasar_log1p,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",820980.8459458227
+dasar_log1p,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",642849.9608988471
+dasar_log1p,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",658054.9855035974
+dasar_log1p,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",636734.2219847139
+dasar_log1p,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",743800.1907249276
+dasar_log1p,KNN,Kabupaten Klaten,"[""k"", 3, 0]",665451.569806857
+dasar_log1p,KNN,Kabupaten Klaten,"[""k"", 5, 0]",650323.3304303647
+dasar_log1p,KNN,Kabupaten Klaten,"[""k"", 7, 0]",681766.1881409901
+dasar_log1p,KNN,Kabupaten Klaten,"[""k"", 15, 0]",835696.0540639608
+dasar_log1p,KNN,Kabupaten Sragen,"[""k"", 3, 0]",751518.1431576665
+dasar_log1p,KNN,Kabupaten Sragen,"[""k"", 5, 0]",767073.8462699646
+dasar_log1p,KNN,Kabupaten Sragen,"[""k"", 7, 0]",755587.5042005762
+dasar_log1p,KNN,Kabupaten Sragen,"[""k"", 15, 0]",860510.9108441367
+dasar_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",592832.1211652651
+dasar_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",595762.8326327687
+dasar_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",615029.5025284772
+dasar_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",705347.1080840444
+dasar_log1p,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",781403.4341949397
+dasar_log1p,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",769898.7216016169
+dasar_log1p,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",802513.4444438729
+dasar_log1p,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",884835.0973150202
+dasar_log1p,KNN,Kota Surakarta,"[""k"", 3, 0]",511354.44419176783
+dasar_log1p,KNN,Kota Surakarta,"[""k"", 5, 0]",525129.2832684341
+dasar_log1p,KNN,Kota Surakarta,"[""k"", 7, 0]",522238.8994156228
+dasar_log1p,KNN,Kota Surakarta,"[""k"", 15, 0]",550592.3685978105
+dasar_log1p,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1241908.793143806
+dasar_log1p,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",1012302.7753202332
+dasar_log1p,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1087403.6016034912
+dasar_log1p,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",680854.400843107
+dasar_log1p,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",630487.1476181821
+dasar_log1p,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",625615.2406261165
+dasar_log1p,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",931630.0981841921
+dasar_log1p,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",693093.9544219475
+dasar_log1p,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",721146.7562323743
+dasar_log1p,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",752750.6811451862
+dasar_log1p,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",730227.2225476047
+dasar_log1p,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",731702.9249119424
+dasar_log1p,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",959131.4182074342
+dasar_log1p,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",807850.4431120076
+dasar_log1p,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",813252.3117370277
+dasar_log1p,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",1043111.8960084738
+dasar_log1p,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",836170.8654610828
+dasar_log1p,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",884771.8876098538
+dasar_log1p,Pohon,Kota Surakarta,"[""depth"", 2, 0]",565583.2160942625
+dasar_log1p,Pohon,Kota Surakarta,"[""depth"", 4, 0]",633103.6619929641
+dasar_log1p,Pohon,Kota Surakarta,"[""depth"", 6, 0]",605493.7304109826
+gabungan_log1p,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.01]",5400160.957022221
+gabungan_log1p,Ridge global,Kabupaten Boyolali,"[""global"", 0, 0.1]",6330658.810617588
+gabungan_log1p,Ridge global,Kabupaten Boyolali,"[""global"", 0, 1.0]",1504839.4935095967
+gabungan_log1p,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.01]",3790470.0909762713
+gabungan_log1p,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 0.1]",3419094.104525742
+gabungan_log1p,Ridge global,Kabupaten Karanganyar,"[""global"", 0, 1.0]",1023422.012238769
+gabungan_log1p,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.01]",1068965.2310754643
+gabungan_log1p,Ridge global,Kabupaten Klaten,"[""global"", 0, 0.1]",2425887.9689491484
+gabungan_log1p,Ridge global,Kabupaten Klaten,"[""global"", 0, 1.0]",1876089.2114014467
+gabungan_log1p,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.01]",3441862.6536879544
+gabungan_log1p,Ridge global,Kabupaten Sragen,"[""global"", 0, 0.1]",3660863.4386388576
+gabungan_log1p,Ridge global,Kabupaten Sragen,"[""global"", 0, 1.0]",1239058.5550744154
+gabungan_log1p,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.01]",2496484.501260426
+gabungan_log1p,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 0.1]",2684617.455312723
+gabungan_log1p,Ridge global,Kabupaten Sukoharjo,"[""global"", 0, 1.0]",947962.623199719
+gabungan_log1p,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.01]",4833395.765588346
+gabungan_log1p,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 0.1]",4476401.389020439
+gabungan_log1p,Ridge global,Kabupaten Wonogiri,"[""global"", 0, 1.0]",1439266.2910476215
+gabungan_log1p,Ridge global,Kota Surakarta,"[""global"", 0, 0.01]",485883.7434529924
+gabungan_log1p,Ridge global,Kota Surakarta,"[""global"", 0, 0.1]",459031.83192784595
+gabungan_log1p,Ridge global,Kota Surakarta,"[""global"", 0, 1.0]",497382.67401852255
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.01]",5073756.293466593
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 0.1]",8129049.474956884
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 15, 1.0]",2303796.6270845984
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.01]",5637759.759314679
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 0.1]",7309794.277547828
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""km"", 40, 1.0]",1796273.7352295506
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.01]",4115352.012598248
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 0.1]",7080523.256499566
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 12, 1.0]",2181833.132916464
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.01]",5639071.956564084
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 0.1]",8314231.904416143
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 32, 1.0]",2119469.8420166695
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.01]",5671817.830149038
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 0.1]",7630001.237325806
+gabungan_log1p,GWR ridge,Kabupaten Boyolali,"[""adaptif"", 64, 1.0]",1888095.389069088
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.01]",3157986.83314278
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 0.1]",3713819.056355718
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 15, 1.0]",1351304.1015340772
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.01]",3902899.253205055
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 0.1]",3638978.495731068
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""km"", 40, 1.0]",1134430.4337406973
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.01]",3053491.664452151
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 0.1]",3652551.7447627224
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 12, 1.0]",1335321.5335012958
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.01]",3710720.064284816
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 0.1]",3712656.094661482
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 32, 1.0]",1248341.4094252847
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.01]",3861198.9340559836
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 0.1]",3667303.214424292
+gabungan_log1p,GWR ridge,Kabupaten Karanganyar,"[""adaptif"", 64, 1.0]",1169273.5963878457
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.01]",1596709.4308880698
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 15, 0.1]",2939468.7445636815
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 15, 1.0]",2358347.0566164185
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.01]",1187780.6136776926
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 40, 0.1]",2446511.378230511
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""km"", 40, 1.0]",2066602.1629644122
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.01]",1532408.6087861084
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 0.1]",3275675.145040135
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 12, 1.0]",2305786.3048653305
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.01]",1425961.7813303173
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 0.1]",2574988.2051692093
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 32, 1.0]",2249322.732175889
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.01]",1206906.491398454
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 0.1]",2457067.93356802
+gabungan_log1p,GWR ridge,Kabupaten Klaten,"[""adaptif"", 64, 1.0]",2111847.9603069015
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.01]",1577636.3557095618
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 15, 0.1]",2788855.6165775745
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 15, 1.0]",1351994.2199421823
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.01]",3401649.802421954
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 40, 0.1]",3796346.618510765
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""km"", 40, 1.0]",1330383.5434964295
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.01]",1204167.602108002
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 0.1]",2425134.6051044166
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 12, 1.0]",1313401.524667032
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.01]",2754075.926430103
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 0.1]",3532622.2153361803
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 32, 1.0]",1390827.1630598358
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.01]",3324983.6116007026
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 0.1]",3793239.5348227825
+gabungan_log1p,GWR ridge,Kabupaten Sragen,"[""adaptif"", 64, 1.0]",1355402.1469405338
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.01]",2590728.8232882256
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 0.1]",4440918.865245498
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 15, 1.0]",1424944.7813085483
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.01]",2700844.3715279074
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 0.1]",2989307.8618861306
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""km"", 40, 1.0]",1047960.3015663129
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.01]",2527559.201808862
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 0.1]",4345060.115562513
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 12, 1.0]",1386599.2104805997
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.01]",2766220.694042794
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 0.1]",3356474.92442544
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 32, 1.0]",1163146.0595710007
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.01]",2752162.530968284
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 0.1]",3109485.312822407
+gabungan_log1p,GWR ridge,Kabupaten Sukoharjo,"[""adaptif"", 64, 1.0]",1083770.7984082836
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.01]",2878681.8139007
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 0.1]",4429035.252031884
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 15, 1.0]",1773471.1781030744
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.01]",4478206.141909677
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 0.1]",4502966.052409682
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""km"", 40, 1.0]",1510308.6565348543
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.01]",2157396.142636598
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 0.1]",4185862.891316551
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 12, 1.0]",1764033.1884987808
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.01]",3578770.0197607162
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 0.1]",4453708.738737184
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 32, 1.0]",1648708.237582553
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.01]",4187474.7654533107
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 0.1]",4488757.155181967
+gabungan_log1p,GWR ridge,Kabupaten Wonogiri,"[""adaptif"", 64, 1.0]",1549400.0002181942
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""km"", 15, 0.01]",493668.75538609346
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""km"", 15, 0.1]",456986.42487604474
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""km"", 15, 1.0]",504942.9224560679
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""km"", 40, 0.01]",494211.4865807545
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""km"", 40, 0.1]",459167.68688092974
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""km"", 40, 1.0]",491606.6852000945
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.01]",498834.50054650434
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 0.1]",461369.21097176283
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 12, 1.0]",480682.7000426292
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.01]",498057.945989026
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 0.1]",456127.81062705413
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 32, 1.0]",482077.3639522422
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.01]",491833.5335596096
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 0.1]",456236.8607715277
+gabungan_log1p,GWR ridge,Kota Surakarta,"[""adaptif"", 64, 1.0]",485763.3716056994
+gabungan_log1p,KNN,Kabupaten Boyolali,"[""k"", 3, 0]",659907.2280236763
+gabungan_log1p,KNN,Kabupaten Boyolali,"[""k"", 5, 0]",685529.9331243874
+gabungan_log1p,KNN,Kabupaten Boyolali,"[""k"", 7, 0]",720172.9877094083
+gabungan_log1p,KNN,Kabupaten Boyolali,"[""k"", 15, 0]",860875.8308467802
+gabungan_log1p,KNN,Kabupaten Karanganyar,"[""k"", 3, 0]",647148.1297434231
+gabungan_log1p,KNN,Kabupaten Karanganyar,"[""k"", 5, 0]",667548.7469704993
+gabungan_log1p,KNN,Kabupaten Karanganyar,"[""k"", 7, 0]",692998.0287649027
+gabungan_log1p,KNN,Kabupaten Karanganyar,"[""k"", 15, 0]",798135.720447699
+gabungan_log1p,KNN,Kabupaten Klaten,"[""k"", 3, 0]",650982.1080415443
+gabungan_log1p,KNN,Kabupaten Klaten,"[""k"", 5, 0]",636854.0739985676
+gabungan_log1p,KNN,Kabupaten Klaten,"[""k"", 7, 0]",709141.2440466719
+gabungan_log1p,KNN,Kabupaten Klaten,"[""k"", 15, 0]",863282.5293851313
+gabungan_log1p,KNN,Kabupaten Sragen,"[""k"", 3, 0]",700668.5124429859
+gabungan_log1p,KNN,Kabupaten Sragen,"[""k"", 5, 0]",687003.9972460155
+gabungan_log1p,KNN,Kabupaten Sragen,"[""k"", 7, 0]",754621.2816890795
+gabungan_log1p,KNN,Kabupaten Sragen,"[""k"", 15, 0]",912170.023144062
+gabungan_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 3, 0]",610408.2871779371
+gabungan_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 5, 0]",602313.9602397056
+gabungan_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 7, 0]",657176.0741137032
+gabungan_log1p,KNN,Kabupaten Sukoharjo,"[""k"", 15, 0]",751019.9338667151
+gabungan_log1p,KNN,Kabupaten Wonogiri,"[""k"", 3, 0]",697800.3441687343
+gabungan_log1p,KNN,Kabupaten Wonogiri,"[""k"", 5, 0]",711307.4724083726
+gabungan_log1p,KNN,Kabupaten Wonogiri,"[""k"", 7, 0]",785976.2150310868
+gabungan_log1p,KNN,Kabupaten Wonogiri,"[""k"", 15, 0]",925508.084322174
+gabungan_log1p,KNN,Kota Surakarta,"[""k"", 3, 0]",480651.8882767528
+gabungan_log1p,KNN,Kota Surakarta,"[""k"", 5, 0]",479497.49180101405
+gabungan_log1p,KNN,Kota Surakarta,"[""k"", 7, 0]",502649.31352932326
+gabungan_log1p,KNN,Kota Surakarta,"[""k"", 15, 0]",564082.6096932234
+gabungan_log1p,Pohon,Kabupaten Boyolali,"[""depth"", 2, 0]",1234214.881439878
+gabungan_log1p,Pohon,Kabupaten Boyolali,"[""depth"", 4, 0]",1132121.564643011
+gabungan_log1p,Pohon,Kabupaten Boyolali,"[""depth"", 6, 0]",1145507.0245573695
+gabungan_log1p,Pohon,Kabupaten Karanganyar,"[""depth"", 2, 0]",749660.2074952772
+gabungan_log1p,Pohon,Kabupaten Karanganyar,"[""depth"", 4, 0]",793077.135919521
+gabungan_log1p,Pohon,Kabupaten Karanganyar,"[""depth"", 6, 0]",811555.0804409302
+gabungan_log1p,Pohon,Kabupaten Klaten,"[""depth"", 2, 0]",896096.6570466015
+gabungan_log1p,Pohon,Kabupaten Klaten,"[""depth"", 4, 0]",774297.9715287384
+gabungan_log1p,Pohon,Kabupaten Klaten,"[""depth"", 6, 0]",721249.8191619328
+gabungan_log1p,Pohon,Kabupaten Sragen,"[""depth"", 2, 0]",761274.3834842275
+gabungan_log1p,Pohon,Kabupaten Sragen,"[""depth"", 4, 0]",767356.1074145924
+gabungan_log1p,Pohon,Kabupaten Sragen,"[""depth"", 6, 0]",730334.5888530334
+gabungan_log1p,Pohon,Kabupaten Sukoharjo,"[""depth"", 2, 0]",842246.1820176677
+gabungan_log1p,Pohon,Kabupaten Sukoharjo,"[""depth"", 4, 0]",866048.1218003812
+gabungan_log1p,Pohon,Kabupaten Sukoharjo,"[""depth"", 6, 0]",794750.1622685
+gabungan_log1p,Pohon,Kabupaten Wonogiri,"[""depth"", 2, 0]",983535.8804790005
+gabungan_log1p,Pohon,Kabupaten Wonogiri,"[""depth"", 4, 0]",837007.767197268
+gabungan_log1p,Pohon,Kabupaten Wonogiri,"[""depth"", 6, 0]",902335.7530345176
+gabungan_log1p,Pohon,Kota Surakarta,"[""depth"", 2, 0]",604376.1890071887
+gabungan_log1p,Pohon,Kota Surakarta,"[""depth"", 4, 0]",560739.0050460338
+gabungan_log1p,Pohon,Kota Surakarta,"[""depth"", 6, 0]",601448.2110195552

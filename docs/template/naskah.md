@@ -227,6 +227,38 @@ Replikasi dengan koordinat kiriman menghasilkan MAE GWR Rp4.633.597/m² dan RMSE
 
 VIF deskriptif pada seluruh sampel mencapai 36,65 untuk proporsi terbangun dan 24,27 untuk tutupan pohon. Nilai ini menunjukkan redundansi linear antarprediktor dan membatasi interpretasi koefisien individual. Seluruh tujuh fitur tetap digunakan di setiap lipatan. Perbandingan model dilaporkan secara deskriptif karena kecamatan dalam satu blok berbagi wilayah uji dan lipatan menggunakan data latih yang tumpang tindih. Klaim signifikansi Wilcoxon per kecamatan dari notebook memerlukan penanganan ketergantungan tersebut.
 
+### 6.5 Akses wisata, kampus dan topografi
+
+Untuk menguji apakah galat di sekitar Tawangmangu juga muncul di wilayah lain, kami menambah empat variabel yang terukur untuk semua 127 kecamatan. Dari titik interior tiap kecamatan, kami hitung jarak lingkaran besar ke objek wisata dan kampus terpetakan terdekat, termasuk objek di luar batas kecamatan. Sumbernya © OpenStreetMap contributors, ekstrak Geofabrik Indonesia 1 Januari 2021. Klasifikasi, cakupan pemetaan dan posisi titik interior memengaruhi nilai jarak. Median elevasi dan kemiringan dihitung atas sel valid di dalam poligon BIG dari SRTM v4.1 CIAT. Untuk Tawangmangu, elevasi median mencapai 1.218 m, lereng median 15,1°, jarak wisata 0,14 km dan jarak kampus 22,44 km.
+
+Riswandha dan Wahyono (2017) mendokumentasikan perubahan penggunaan lahan di kawasan wisata Tawangmangu. Wang (2023) mempelajari kedekatan kampus dan harga rumah di Amerika Serikat. Huang dan Hewings (2021) menguji peran lereng terhadap harga tanah di Auckland. Perbedaan unit analisis dan pasar membatasi penerapan hasil studi tersebut ke Solo Raya.
+
+![Hubungan empat variabel baru dengan harga rata-rata kecamatan. Titik jingga menandai Tawangmangu. Korelasi dihitung pada angka asli dan peringkat, sedangkan sumbu vertikal logaritmik membantu membaca rentang harga.](../artifacts/akses_medan/akses_medan.png)
+
+Setiap konfigurasi diuji pada tujuh blok luar yang sama. Enam blok latih digunakan untuk memilih parameter dengan MAE gabungan pada validasi internal lintas wilayah. Model dilatih pada ln(harga). GWR menggunakan kernel Gaussian dengan bandwidth tetap (15 atau 40 km) atau adaptif (jarak ke tetangga latih ke-12, 32 atau 64). Ridge menstabilkan estimasi lokal ketika prediktor saling berkaitan (Wheeler, 2007). Bobot dinormalisasi agar jumlahnya satu, dengan penalti koefisien 0,01, 0,1 atau 1 dan intersep bebas penalti. Ridge global menyediakan pembanding dengan bobot seragam. Untuk KNN, k dipilih dari 3, 5, 7 atau 15. Kedalaman pohon dipilih dari 2, 4 atau 6, dengan sedikitnya tiga observasi per daun.
+
+Tabel menampilkan MAE dalam Rp/m². Setiap baris berangkat dari tujuh prediktor awal. Medan menambah elevasi dan lereng, akses menambah dua jarak, dan gabungan menambah keempat fitur. Dua baris log1p merupakan uji sensitivitas setelah melihat galat besar model regresi. Seluruh prediktor ditransformasi sebagai ln(1+x) sebelum standardisasi pada data latih.
+
+{{HASIL_AKSES}}
+
+Jarak kampus memberi perbaikan terbesar pada KNN dengan MAE Rp610.868/m² dan RMSE Rp1.263.634/m². Pada protokol tuning yang sama, KNN dasar menghasilkan MAE Rp633.139/m² dan RMSE Rp1.332.087/m². Di Tawangmangu galat absolut justru meningkat dari Rp1.627.410 menjadi Rp1.666.854/m². Sebaliknya, galat menurun di Ngargoyoso (Rp929.563 menjadi Rp923.471), Matesih (Rp575.507 menjadi Rp506.850), Grogol (Rp5.490.398 menjadi Rp4.579.782) dan Kartasura (Rp2.812.738 menjadi Rp1.720.349). Laweyan masih memiliki galat terbesar, Rp7.800.101/m². Jarak terdekat hanya mengukur satu dimensi akses. Intensitas kunjungan dan lokasi transaksi di dalam kecamatan tetap tidak teramati.
+
+Pada sebelas prediktor skala asli, GWR ridge menghasilkan RMSE Rp58.962.639/m². Saat Surakarta ditahan, MAE mencapai Rp215.847.140/m² meski bilangan kondisi maksimum sistem setelah penalti hanya 6,08. Sistem lokal berhasil diselesaikan, tetapi ekstrapolasi pada skala log menghasilkan prediksi rupiah yang sangat besar. Transformasi prediktor log1p menurunkan MAE GWR gabungan menjadi Rp3.801.444/m² dan RMSE menjadi Rp23.633.260/m². Ridge global pada transformasi yang sama tetap lebih baik. Dengan demikian, eksperimen ini belum menunjukkan manfaat tambahan pembobotan geografis untuk generalisasi lintas kabupaten/kota. Kandidat fitur muncul setelah peninjauan galat dan seluruh perbandingan memakai kembali tujuh blok yang sama. Validasi pada wilayah atau tahun independen diperlukan sebelum memilih spesifikasi untuk penggunaan baru.
+
+### 6.6 Kepadatan, konsentrasi wisata dan pengujian galat besar
+
+Dataset analisis menyatukan harga tahun 2020, kepadatan penduduk (jiwa/km²), lahan terbangun (%), jumlah objek wisata dalam 5 km, jarak wisata dan kampus terdekat (km), elevasi (m) dan kemiringan (derajat). Radius dihitung dari titik interior kecamatan dan dapat melintasi batas wilayah. Satu tujuan wisata dapat memiliki beberapa objek dalam arsip OSM. Sumber dan keterbatasan waktu mengikuti bagian 6.3 dan 6.5.
+
+{{UJI_KORELASI}}
+
+Pearson dan Spearman gabungan memakai 127 observasi. Untuk menguji hubungan di dalam wilayah, kedua variabel diubah ke peringkat gabungan dengan peringkat rata-rata untuk nilai seri, lalu peringkat dikurangi rerata kabupaten/kota masing-masing. Kolom dalam blok adalah korelasi kedua peringkat terpusat. Uji dua sisi memakai 9.999 pengacakan peringkat harga di dalam kabupaten/kota, koreksi tambah satu dan koreksi Bonferroni untuk tujuh pengujian. Interpretasi nilai p mengasumsikan peringkat dapat dipertukarkan di dalam blok. Autokorelasi spasial di antara kecamatan berdekatan masih dapat melanggar asumsi ini. Hasil korelasi memakai seluruh sampel dan tidak digunakan untuk menyetel model.
+
+Untuk menguji galat besar, Ridge global dan GWR Gaussian dilatih langsung pada harga dalam Rp/m². Prediksi negatif diberi batas bawah nol. Lima spesifikasi diuji: kepadatan saja, kepadatan dan lahan terbangun, tambahan ln(1+jumlah objek wisata), elevasi dan lereng, lalu alternatif dengan interaksi elevasi × ln(1+jumlah objek) atau tambahan kedua jarak. Penalti koefisien dipilih dari 0,01, 0,1 atau 1, dengan bandwidth GWR 15, 40 atau 80 km. Standardisasi dipasang ulang pada setiap bagian latih. Pembanding lima variabel memilih parameter melalui MAE internal. Prosedur seleksi RMSE memilih sekaligus spesifikasi, model dan parameter melalui RMSE gabungan enam blok internal. Harga wilayah uji luar hanya dipakai saat evaluasi. Tabel merangkum prediksi lintas tujuh wilayah.
+
+{{UJI_SELEKSI}}
+
+Di Tawangmangu, empat objek wisata berada dalam radius pengukuran. Ridge lima variabel memprediksi Rp1.376.791/m² terhadap harga aktual Rp1.767.344/m². Saat Karanganyar ditahan, seleksi internal memilih kepadatan dan lahan terbangun saja sehingga prediksi turun ke Rp385.175/m². Saat Surakarta ditahan, seleksi internal memilih GWR dua variabel dengan bandwidth 15 km. Prediksi Pasar Kliwon mencapai batas bawah nol. Galat besar ini menunjukkan risiko ekstrapolasi ke wilayah perkotaan yang lebih padat daripada seluruh data latih. Evaluasi bersifat eksploratif karena rancangan fitur berangkat dari peninjauan galat sebelumnya.
+
 ## 7. Kesimpulan
 
 Pada spesifikasi awal dua prediktor untuk 127 kecamatan Solo Raya tahun 2020, KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR Gaussian menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Pembobotan geografis pada spesifikasi yang diuji belum memberikan keunggulan prediktif konsisten dalam validasi lintas kabupaten/kota.
@@ -245,8 +277,20 @@ Lingkungan uji menggunakan Python 3.12 dan dependensi yang dicatat pada hasil/re
 
 {{REFERENCES}}
 
+Jarvis, A., Reuter, H. I., Nelson, A. & Guevara, E. (2008). Hole-filled seamless SRTM data V4. CIAT. https://srtm.csi.cgiar.org/srtmdata/
+
+OpenStreetMap contributors. Ekstrak Indonesia, Geofabrik, 1 Januari 2021. https://download.geofabrik.de/asia/indonesia-210101-free.shp.zip
+
+Riswandha, Y. & Wahyono, H. (2017). Pengaruh kegiatan wisata terhadap perubahan penggunaan lahan di Kecamatan Tawangmangu, Kabupaten Karanganyar. Teknik PWK 6(2), 131–141. https://doi.org/10.14710/tpwk.2017.18052
+
+Wang, B. (2023). The Effect of Proximity to Universities on House Prices after the COVID Outbreak. Journal of Risk and Financial Management 16(3), 167. https://doi.org/10.3390/jrfm16030167
+
+Huang, Y. & Hewings, G. (2021). More Reliable Land Price Index: Is There a Slope Effect? Land 10(3), 261. https://doi.org/10.3390/land10030261
+
+Wheeler, D. C. (2007). Diagnostic Tools and a Remedial Method for Collinearity in Geographically Weighted Regression. Environment and Planning A 39, 2464–2481. https://doi.org/10.1068/a38325
+
 ## Lampiran: Status dan Kontribusi Tim
 
-Naskah ini merupakan draf empiris berdasarkan eksperimen dua dan tujuh prediktor. Bagian 6.3 dan 6.4 melaporkan pengolahan data, eksperimen tujuh prediktor, dan uji sensitivitas koordinat. Identitas anggota dan kontribusi aktual perlu dilengkapi tim sebelum penyerahan.
+Naskah ini merupakan draf empiris berdasarkan eksperimen dua hingga sebelas prediktor. Bagian 6.3 dan 6.4 melaporkan pengolahan data, eksperimen tujuh prediktor, dan uji sensitivitas koordinat. Identitas anggota dan kontribusi aktual perlu dilengkapi tim sebelum penyerahan.
 
 {{CONTRIBUTIONS}}

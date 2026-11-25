@@ -350,6 +350,22 @@ def main():
         [[labels[r['variabel_x']], decimal_id(r['pearson'], 3), decimal_id(r['spearman'], 3)]
          for r in pairs if r['variabel_y'] == target and r['variabel_x'] != target])
 
+    akses = read_csv(ROOT / 'artifacts/akses_medan/metrik.csv')
+    review = ROOT / 'artifacts/review_kepadatan_wisata'
+    values['UJI_KORELASI'] = table(
+        ['Variabel', 'Pearson', 'Spearman', 'Dalam blok', 'p terkoreksi'],
+        [[r['variabel'], *[decimal_id(r[c], 4) for c in ('pearson', 'spearman', 'rho_dalam_blok', 'p_bonferroni')]]
+         for r in read_csv(review / 'korelasi.csv')])
+    values['UJI_SELEKSI'] = table(
+        ['Model', 'Spesifikasi', 'MAE (Rp/m²)', 'RMSE (Rp/m²)'],
+        [[r['model'], r['spesifikasi'], rupiah(r['MAE_Rp_m2']), rupiah(r['RMSE_Rp_m2'])]
+         for r in read_csv(review / 'metrik.csv') if r['spesifikasi'] in ('kota_wisata_medan','validasi internal')])
+    values['HASIL_AKSES'] = table(
+        ['Prediktor', 'KNN', 'Pohon', 'Ridge global', 'GWR ridge'],
+        [[spec] + [rupiah(next(r['MAE_Rp_m2'] for r in akses
+                              if r['spesifikasi'] == spec and r['model'] == model))
+                   for model in ('KNN', 'Pohon', 'Ridge global', 'GWR ridge')]
+         for spec in dict.fromkeys(r['spesifikasi'] for r in akses)])
     values['FIGUR_TUJUH_PREDIKTOR'] = '../artifacts/tujuh_prediktor_big/evaluasi.png'
     extended = ROOT / 'artifacts/tujuh_prediktor_big'
     replica = ROOT / 'artifacts/replikasi_notebook'

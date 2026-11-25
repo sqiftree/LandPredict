@@ -1,0 +1,245 @@
+{
+  "n_kunci": 127,
+  "wilayah": [
+    "Kabupaten Boyolali",
+    "Kabupaten Karanganyar",
+    "Kabupaten Klaten",
+    "Kabupaten Sragen",
+    "Kabupaten Sukoharjo",
+    "Kabupaten Wonogiri",
+    "Kota Surakarta"
+  ],
+  "jumlah_baris_wilayah": 224,
+  "fitur": {
+    "dasar": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional"
+    ],
+    "medan": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional",
+      "elevasi_median_m",
+      "lereng_median_derajat"
+    ],
+    "wisata": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional",
+      "jarak_wisata_km"
+    ],
+    "kampus": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional",
+      "jarak_kampus_km"
+    ],
+    "akses": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional",
+      "jarak_wisata_km",
+      "jarak_kampus_km"
+    ],
+    "gabungan": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional",
+      "elevasi_median_m",
+      "lereng_median_derajat",
+      "jarak_wisata_km",
+      "jarak_kampus_km"
+    ],
+    "dasar_log1p": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional"
+    ],
+    "gabungan_log1p": [
+      "kepadatan_penduduk_proksi",
+      "kepadatan_fasum_proksi",
+      "built_pct",
+      "tree_pct",
+      "cropland_pct",
+      "jumlah_penduduk",
+      "jumlah_fasum_regional",
+      "elevasi_median_m",
+      "lereng_median_derajat",
+      "jarak_wisata_km",
+      "jarak_kampus_km"
+    ]
+  },
+  "grid": {
+    "Ridge global": [
+      [
+        "global",
+        0,
+        0.01
+      ],
+      [
+        "global",
+        0,
+        0.1
+      ],
+      [
+        "global",
+        0,
+        1.0
+      ]
+    ],
+    "GWR ridge": [
+      [
+        "km",
+        15,
+        0.01
+      ],
+      [
+        "km",
+        15,
+        0.1
+      ],
+      [
+        "km",
+        15,
+        1.0
+      ],
+      [
+        "km",
+        40,
+        0.01
+      ],
+      [
+        "km",
+        40,
+        0.1
+      ],
+      [
+        "km",
+        40,
+        1.0
+      ],
+      [
+        "adaptif",
+        12,
+        0.01
+      ],
+      [
+        "adaptif",
+        12,
+        0.1
+      ],
+      [
+        "adaptif",
+        12,
+        1.0
+      ],
+      [
+        "adaptif",
+        32,
+        0.01
+      ],
+      [
+        "adaptif",
+        32,
+        0.1
+      ],
+      [
+        "adaptif",
+        32,
+        1.0
+      ],
+      [
+        "adaptif",
+        64,
+        0.01
+      ],
+      [
+        "adaptif",
+        64,
+        0.1
+      ],
+      [
+        "adaptif",
+        64,
+        1.0
+      ]
+    ],
+    "KNN": [
+      [
+        "k",
+        3,
+        0
+      ],
+      [
+        "k",
+        5,
+        0
+      ],
+      [
+        "k",
+        7,
+        0
+      ],
+      [
+        "k",
+        15,
+        0
+      ]
+    ],
+    "Pohon": [
+      [
+        "depth",
+        2,
+        0
+      ],
+      [
+        "depth",
+        4,
+        0
+      ],
+      [
+        "depth",
+        6,
+        0
+      ]
+    ]
+  },
+  "seleksi": "MAE gabungan enam blok validasi dalam",
+  "python": "3.14.4",
+  "numpy": "2.5.5",
+  "sklearn": "1.8.0",
+  "sha256": {
+    "data/processed/variabel_pendukung_2020.csv": "8cfde68231141e16bc6f2de63afbdf209c071d266e6c64b44036ffbe205ef900",
+    "data/processed/akses_medan/fitur.csv": "ce2ae6d68a63c5cc5a8be0d712accfc77f37aabfe10b974e428c0fa08d54c4be",
+    "data/koordinat.csv": "1e8e777f35e390ad95be9efba414ac7656381b942de55252219052d02026ef9b"
+  }
+}

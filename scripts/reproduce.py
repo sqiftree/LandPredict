@@ -22,6 +22,9 @@ COMMANDS = [
     ['scripts/check_regression.py', 'artifacts/tujuh_prediktor_big', 'hasil/tujuh_prediktor_big'],
     ['scripts/diagnostik_colab.py', 'hasil/tujuh_prediktor_big'],
     ['scripts/analisis_variabel.py', 'hasil/analisis_variabel'],
+    ['scripts/eksperimen_akses_medan.py', '--output', 'hasil/akses_medan'],
+    ['scripts/grafik_akses_medan.py', 'hasil/akses_medan'],
+    ['scripts/review_kepadatan_wisata.py'],
 ]
 
 

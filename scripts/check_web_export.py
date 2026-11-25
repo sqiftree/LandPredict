@@ -20,6 +20,10 @@ def main():
  with (ROOT/'artifacts/tujuh_prediktor_big/prediksi_uji.csv').open() as f:
   predictions=[[r['kab_kota'],r['kecamatan'],float(r['KNN'])] for r in csv.DictReader(f)]
  if json.loads((WEB/'prediksi_knn.json').read_text())!=predictions:raise ValueError('Stale web predictions')
+ review=ROOT/'artifacts/review_kepadatan_wisata'
+ for source,export in [('review.json','review.json'),('dataset.csv','dataset_wisata_medan.csv'),
+                       ('korelasi.csv','uji_korelasi.csv'),('prediksi_seleksi.csv','uji_prediksi.csv')]:
+  if (review/source).read_bytes()!=(WEB/export).read_bytes():raise ValueError(f'Stale web export: {export}')
  manifest=json.loads((WEB/'manifest.json').read_text())
  if hashlib.sha256((WEB/'variabel_pendukung_2020.csv').read_bytes()).hexdigest()!=manifest['csv_sha256']:raise ValueError('Dataset hash mismatch')
  with (WEB/'variabel_pendukung_2020.csv').open() as f:rows=list(csv.DictReader(f))
