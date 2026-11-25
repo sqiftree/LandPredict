@@ -7,6 +7,10 @@ __pycache__/
 .env
 .env.*
 !.env.example
+# Local coding-agent instructions, skills and task briefs.
+AGENTS.md
+SKILL.md
+/docs/tugas_agent*.md
 .agents/
 .codex/
 .aws/

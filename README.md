@@ -120,6 +120,8 @@ Daftar 25 kandidat bukan 25 variabel yang seluruhnya telah terkumpul. Kandidat s
 
 Ke-127 titik hasil perhitungan BIG berada dalam poligon padanannya. Titik dihitung dari geometri, tidak ditentukan oleh harga dan tidak mewakili lokasi transaksi. Tidak ada koordinat tebakan atau proyeksi harga ke tahun lain.
 
+[Tabel verifikasi sumber dan metode](artifacts/data_audit/verifikasi_sumber_dan_metode.csv) mencatat bukti, cakupan tahun, lisensi, dan status untuk 24 butir pemeriksaan.
+
 Audit masih mencatat perbedaan total fasilitas terhadap artikel pada tujuh wilayah dan penduduk pada tiga wilayah. Sebanyak 21 rujukan halaman CSV lama bertuliskan A-4, sedangkan nomor cetaknya B-1. [Dataset rujukan yang diperbaiki](artifacts/data_audit/dataset_2020_rujukan_terverifikasi.csv) mempertahankan angka sumber; eksperimen menggunakan CSV awal.
 
 Lihat [audit dataset](data/SUMBER_DATASET.md), [sumber koordinat](data/SUMBER_KOORDINAT.md), [audit ulang eksperimen](docs/AUDIT_ULANG_2026-11-18.md), dan [audit perubahan naskah](docs/AUDIT_CARBON_2026-11-18.md). Kecocokan transkripsi tidak sama dengan validasi pengukuran primer.
