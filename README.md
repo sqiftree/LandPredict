@@ -19,8 +19,8 @@ Wilayah penelitian mencakup Kota Surakarta serta Kabupaten Boyolali, Karanganyar
 | Dataset awal | 127 kecamatan; harga, penduduk, dan fasilitas umum regional dari Lampiran A Salim Aziz |
 | Audit transkripsi | 127 kunci dan 381 nilai numerik cocok dengan ekstraksi PDF sumber yang diarsipkan |
 | Eksperimen empat model | Selesai dengan **dua prediktor: penduduk dan fasilitas umum regional** |
-| Variabel pendukung | Lima variabel tambahan sudah diolah untuk 127 kecamatan |
-| Eksplorasi korelasi | Pearson dan Spearman tersedia; belum ada uji signifikansi atau klaim kausal |
+| Variabel pendukung | Notebook memakai dua prediktor awal ditambah lima fitur kepadatan dan tutupan lahan. Tabel korelasi atlas menguji tujuh variabel kepadatan, lahan terbangun, akses dan medan pada 127 kecamatan |
+| Eksplorasi korelasi | Pearson dan Spearman gabungan tersedia. Bagian 6.6 melaporkan uji peringkat dalam wilayah dengan koreksi Bonferroni atas tujuh pengujian |
 | Model dengan variabel tambahan | Empat model tujuh prediktor diverifikasi pada tujuh blok, termasuk replikasi notebook dan sensitivitas titik BIG |
 | Atlas interaktif | Aktif di GitHub Pages |
 | Batas historis 2020 dan pengukuran primer harga | Belum sepenuhnya terverifikasi |
