@@ -130,6 +130,87 @@ def prefer_hasil(hasil_rel, artifact_rel):
     return candidate if candidate.exists() else ROOT / artifact_rel
 
 
+def _preds_val_eq(a, b):
+    return math.isclose(float(a), float(b), rel_tol=0.0, abs_tol=1e-9)
+
+
+def verify_sensitivity_stdlib(folder):
+    """Verify GWR sensitivity CSVs and audit.json using stdlib only."""
+    if not __debug__:
+        raise RuntimeError('Jalankan verifikasi tanpa python -O agar assertions aktif.')
+    audit = json.loads((folder / 'audit.json').read_text(encoding='utf-8'))
+    assert audit.get('status') == 'complete', 'Analisis sensitivitas GWR belum selesai.'
+    assert audit.get('protocol') == 'gwr_sensitivity_v1'
+
+    source = read_csv(ROOT / 'data/harga_tanah_2020.csv')
+    preds = read_csv(folder / 'prediksi_4fitur_linear.csv')
+    ringkasan = read_csv(folder / 'ringkasan_loro.csv')
+    per_wilayah = read_csv(folder / 'per_wilayah_4fitur_linear.csv')
+    enam = read_csv(folder / 'enam_kabupaten_loro.csv')
+    strat = read_csv(folder / 'stratified_cv.csv')
+
+    assert len(source) == len(preds) == 127
+    pred_by_key = {(r['kab_kota'], r['kecamatan']): r for r in preds}
+    src_by_key = {(r['kab_kota'], r['kecamatan']): r for r in source}
+    assert len(pred_by_key) == 127 and set(pred_by_key) == set(src_by_key)
+    for key, srow in src_by_key.items():
+        assert _preds_val_eq(pred_by_key[key]['harga_tanah_rata_rata_rp_m2'], srow['harga_tanah_rata_rata_rp_m2'])
+
+    regions = {r['kab_kota'] for r in preds}
+    assert len(regions) == 7 and len(audit['outer_folds']) == 7
+    for entry in audit['outer_folds']:
+        held = entry['test_region']
+        assert held not in entry['train_regions']
+        assert set(entry['train_regions']) == regions - {held}
+
+    models_4f = [
+        'OLS', 'KNN (k=5)', 'Decision Tree (d=4)',
+        'GWR Fixed Gauss (lam=0)', 'GWR Fixed Gauss + Ridge',
+        'GWR Adap Gauss (lam=0)', 'GWR Adap Gauss + Ridge', 'GWR Adap Bisq + Ridge',
+    ]
+    assert len(per_wilayah) == 7 * len(models_4f)
+    ring_4f = {r['model']: r for r in ringkasan if r['fitur'] == '4_fitur_vif' and r['target'] == 'linear'}
+    assert set(ring_4f) == set(models_4f)
+
+    def _stats(rows, model):
+        ys = [float(r['harga_tanah_rata_rata_rp_m2']) for r in rows]
+        ps = [float(r[model]) for r in rows]
+        assert all(math.isfinite(v) for v in ps)
+        errs = [y - p for y, p in zip(ys, ps)]
+        mae = sum(abs(e) for e in errs) / len(errs)
+        rmse = math.sqrt(sum(e ** 2 for e in errs) / len(errs))
+        mean_y = sum(ys) / len(ys)
+        ss_tot = sum((y - mean_y) ** 2 for y in ys)
+        r2 = 1.0 - sum(e ** 2 for e in errs) / ss_tot
+        return mae, rmse, r2, sum(1 for p in ps if p < 0)
+
+    no_solo = [r for r in preds if r['kab_kota'] != 'Kota Surakarta']
+    solo = [r for r in preds if r['kab_kota'] == 'Kota Surakarta']
+    for model in models_4f:
+        mae127, rmse127, r2_127, neg = _stats(preds, model)
+        mae122, rmse122, r2_122, _ = _stats(no_solo, model)
+        mae_solo, _, _, _ = _stats(solo, model)
+        row = ring_4f[model]
+        assert math.isclose(mae127, float(row['MAE_127']), rel_tol=1e-10)
+        assert math.isclose(rmse127, float(row['RMSE_127']), rel_tol=1e-10)
+        assert math.isclose(r2_127, float(row['R2_127']), rel_tol=1e-10)
+        assert math.isclose(mae122, float(row['MAE_122_tanpa_solo']), rel_tol=1e-10)
+        assert math.isclose(rmse122, float(row['RMSE_122_tanpa_solo']), rel_tol=1e-10)
+        assert math.isclose(r2_122, float(row['R2_122_tanpa_solo']), rel_tol=1e-10)
+        assert math.isclose(mae_solo, float(row['MAE_surakarta']), rel_tol=1e-10)
+        assert neg == int(row['prediksi_negatif'])
+        block = {r['wilayah_uji']: r for r in per_wilayah if r['model'] == model}
+        assert set(block) == regions
+        for region in regions:
+            reg_rows = [r for r in preds if r['kab_kota'] == region]
+            rmae, rrmse, rr2, _ = _stats(reg_rows, model)
+            assert int(block[region]['n']) == len(reg_rows)
+            assert math.isclose(rmae, float(block[region]['MAE_Rp_m2']), rel_tol=1e-10)
+            assert math.isclose(rrmse, float(block[region]['RMSE_Rp_m2']), rel_tol=1e-10)
+            assert math.isclose(rr2, float(block[region]['R2']), rel_tol=1e-10)
+    assert len(enam) == 12 and len(strat) == 18
+
+
 def main():
     audit_dataset()
     sys.path.insert(0, str(ROOT))
@@ -299,9 +380,9 @@ def main():
         ]),
         'CONTRIBUTIONS': table(['Anggota', 'Rencana kontribusi; konfirmasi aktual oleh tim'], [
             ['Yashif Victoriawan', 'Integrasi program dan reproduksi eksperimen'],
-            ['[Nama anggota 2]', 'Audit sumber harga dan variabel'],
-            ['[Nama anggota 3]', 'Audit geometri dan data tambahan'],
-            ['[Nama anggota 4]', 'Analisis galat dan penulisan pembahasan'],
+            ['Queen Nika Prahara Mutiara Phasya', 'Audit sumber harga dan variabel'],
+            ['Syaikhasril Maulana Firdaus', 'Audit geometri, data tambahan, dan analisis sensitivitas GWR'],
+            ['Azzaral Aswad Asshiddiqy', 'Analisis galat dan penulisan pembahasan'],
         ]),
     }
 
@@ -397,6 +478,85 @@ def main():
     values['COLAB_METRICS'] = table(['Model', 'MAE (Rp/m²)', 'RMSE (Rp/m²)', 'MAPE (%)', 'R²'],
         [[r['model'], rupiah(r['MAE_Rp_m2']), rupiah(r['RMSE_Rp_m2']),
           decimal_id(r['MAPE_pct']), decimal_id(r['R2'], 3)] for r in ext_scores])
+
+    sens_dir = ROOT / 'artifacts/sensitivitas_gwr'
+    verify_sensitivity_stdlib(sens_dir)
+    ringkasan_rows = read_csv(sens_dir / 'ringkasan_loro.csv')
+    ring_map = {(r['fitur'], r['target'], r['model']): r for r in ringkasan_rows}
+    sens_items = [
+        ('7_fitur', 'log', 'OLS', '7 fitur (log) — OLS'),
+        ('7_fitur', 'log', 'KNN (k=5)', '7 fitur (log) — KNN (k=5)'),
+        ('7_fitur', 'log', 'Decision Tree (d=4)', '7 fitur (log) — Decision Tree (d=4)'),
+        ('7_fitur', 'log', 'GWR Fixed Gauss (lam=1e-3, notebook)', '7 fitur (log) — GWR Fixed (notebook)'),
+        ('7_fitur', 'log', 'GWR Adap Gauss + Ridge', '7 fitur (log) — GWR Adap Gauss + Ridge'),
+        ('7_fitur', 'log', 'GWR Adap Bisq + Ridge', '7 fitur (log) — GWR Adap Bisq + Ridge'),
+        ('7_fitur', 'linear', 'OLS', '7 fitur (linear) — OLS'),
+        ('7_fitur', 'linear', 'KNN (k=5)', '7 fitur (linear) — KNN (k=5)'),
+        ('7_fitur', 'linear', 'GWR Fixed Gauss + Ridge', '7 fitur (linear) — GWR Fixed + Ridge'),
+        ('7_fitur', 'linear', 'GWR Adap Gauss + Ridge', '7 fitur (linear) — GWR Adap Gauss + Ridge'),
+        ('4_fitur_vif', 'linear', 'OLS', '4 fitur VIF (linear) — OLS'),
+        ('4_fitur_vif', 'linear', 'KNN (k=5)', '4 fitur VIF (linear) — KNN (k=5)'),
+        ('4_fitur_vif', 'linear', 'Decision Tree (d=4)', '4 fitur VIF (linear) — Decision Tree (d=4)'),
+        ('4_fitur_vif', 'linear', 'GWR Fixed Gauss + Ridge', '4 fitur VIF (linear) — GWR Fixed + Ridge'),
+        ('4_fitur_vif', 'linear', 'GWR Adap Gauss + Ridge', '4 fitur VIF (linear) — GWR Adap Gauss + Ridge'),
+        ('4_fitur_vif', 'linear', 'GWR Adap Bisq + Ridge', '4 fitur VIF (linear) — GWR Adap Bisq + Ridge'),
+    ]
+    values['GWR_SENSITIVITY_TABLE'] = table(
+        ['Spesifikasi & Model', 'MAE 127 (Rp/m²)', 'RMSE 127 (Rp/m²)', 'R² 127 (Neg.)', 'MAE 122 / Solo (Rp/m²)'],
+        [
+            [
+                label,
+                rupiah(ring_map[k]['MAE_127']),
+                rupiah(ring_map[k]['RMSE_127']),
+                f"{decimal_id(ring_map[k]['R2_127'], 3)} ({ring_map[k]['prediksi_negatif']})",
+                f"{rupiah(ring_map[k]['MAE_122_tanpa_solo'])} / {rupiah(ring_map[k]['MAE_surakarta'])}",
+            ]
+            for *k_parts, label in sens_items
+            for k in [tuple(k_parts)]
+        ],
+    )
+
+    wilayah_4f = {(r['wilayah_uji'], r['model']): r for r in read_csv(sens_dir / 'per_wilayah_4fitur_linear.csv')}
+    def _short_param(p):
+        return p.replace('bw=', '').replace(';lambda=', ', λ=')
+    values['GWR_REGIONAL_4FITUR'] = table(
+        ['Wilayah uji', 'n', 'OLS (Rp/m²)', 'KNN k=5 (Rp/m²)', 'GWR Fixed+R', 'GWR Adap+R'],
+        [
+            [
+                region,
+                wilayah_4f[region, 'OLS']['n'],
+                rupiah(wilayah_4f[region, 'OLS']['MAE_Rp_m2']),
+                rupiah(wilayah_4f[region, 'KNN (k=5)']['MAE_Rp_m2']),
+                f"{rupiah(wilayah_4f[region, 'GWR Fixed Gauss + Ridge']['MAE_Rp_m2'])} ({_short_param(wilayah_4f[region, 'GWR Fixed Gauss + Ridge']['parameter'])})",
+                f"{rupiah(wilayah_4f[region, 'GWR Adap Gauss + Ridge']['MAE_Rp_m2'])} ({_short_param(wilayah_4f[region, 'GWR Adap Gauss + Ridge']['parameter'])})",
+            ]
+            for region in regions
+        ],
+    )
+
+    enam_map = {(r['fitur'], r['target'], r['model']): r for r in read_csv(sens_dir / 'enam_kabupaten_loro.csv')}
+    strat_map = {(r['fitur'], r['target'], r['model']): r for r in read_csv(sens_dir / 'stratified_cv.csv')}
+    domain_models = ['OLS', 'KNN (k=5)', 'Decision Tree (d=4)', 'GWR Fixed Gauss + Ridge', 'GWR Adap Gauss + Ridge', 'GWR Adap Bisq + Ridge']
+    domain_rows = []
+    for feat, scale, tag in [('7_fitur', 'log', '7 fitur (log)'), ('4_fitur_vif', 'linear', '4 fitur VIF (linear)')]:
+        for model in domain_models:
+            loro_model = 'GWR Fixed Gauss (lam=1e-3, notebook)' if (feat == '7_fitur' and model == 'GWR Fixed Gauss + Ridge') else model
+            r_loro = ring_map[feat, scale, loro_model]
+            r_enam = enam_map[feat, scale, model]
+            r_strat = strat_map[feat, scale, model]
+            suffix = '*' if loro_model != model else ''
+            domain_rows.append([
+                f'{tag} — {model}{suffix}',
+                f"{rupiah(r_loro['MAE_127'])} ({decimal_id(r_loro['R2_127'], 3)})",
+                f"{rupiah(r_enam['MAE_122'])} ({decimal_id(r_enam['R2_122'], 3)})",
+                f"{rupiah(r_strat['MAE_127'])} ({decimal_id(r_strat['R2_127'], 3)})",
+                f"{r_loro['prediksi_negatif']} / {r_enam['prediksi_negatif']} / {r_strat['prediksi_negatif']}",
+            ])
+    values['GWR_DOMAIN_SHIFT_TABLE'] = table(
+        ['Spesifikasi & Model', 'LORO 127 MAE (R²)', 'LORO 122 latih ulang MAE (R²)', 'Stratified 5-Fold MAE (R²)', 'Neg. (127/122/Strat)'],
+        domain_rows,
+    )
+
     prior = (ROOT / 'docs/arsip/draf_revisi_harga_tanah.md').read_text(encoding='utf-8')
     base_refs = [
         line.strip()

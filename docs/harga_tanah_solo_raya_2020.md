@@ -119,7 +119,7 @@ KNN menggunakan jarak Euclidean pada ruang dua prediktor yang distandardisasi. K
 
 ### 3.4. Geographically Weighted Regression
 
-GWR membentuk regresi lokal untuk lokasi uji s menggunakan seluruh observasi latih dan bobot yang menurun menurut jarak. Model menggunakan intersep serta dua prediktor terstandardisasi.
+Model GWR yang digunakan pada eksperimen utama adalah **GWR klasik (Standard/Basic GWR, Brunsdon dkk., 1996)** berbasis *Locally Weighted Least Squares* (WLS) dengan **kernel Fixed Gaussian** (satu bandwidth jarak tetap dalam kilometer untuk seluruh prediktor; bukan Multiscale GWR maupun Geographically and Temporally Weighted Regression). GWR membentuk regresi lokal untuk lokasi uji s menggunakan seluruh observasi latih dan bobot yang menurun menurut jarak. Model pada eksperimen awal menggunakan intersep serta dua prediktor terstandardisasi.
 
 > ŷ(s) = β̂₀(s) + β̂₁(s)x₁(s) + β̂₂(s)x₂(s)
 
@@ -424,17 +424,75 @@ Berbeda dari eksperimen dua prediktor pada bagian 4 yang mempertahankan nilai ne
 
 Di Tawangmangu, empat objek wisata berada dalam radius pengukuran. Ridge lima variabel memprediksi Rp1.376.791/m² terhadap harga aktual Rp1.767.344/m². Saat Karanganyar ditahan, seleksi internal memilih kepadatan dan lahan terbangun saja sehingga prediksi turun ke Rp385.175/m². Saat Surakarta ditahan, seleksi internal memilih GWR dua variabel dengan bandwidth 15 km. Prediksi Pasar Kliwon mencapai batas bawah nol. Galat besar ini menunjukkan risiko ekstrapolasi ke wilayah perkotaan yang lebih padat daripada seluruh data latih. Evaluasi bersifat eksploratif karena rancangan fitur berangkat dari peninjauan galat sebelumnya.
 
+### 6.7. Analisis Sensitivitas GWR: Multikolinearitas, Skala Target, Bandwidth Adaptif, dan Domain Shift
+
+Hasil eksperimen tujuh prediktor pada bagian 6.4 memunculkan dugaan bahwa buruknya kinerja GWR dan regresi linear disebabkan oleh penggunaan *fixed bandwidth* pada sebaran kecamatan yang tidak merata, multikolinearitas antarprediktor, serta pergeseran karakteristik perkotaan Kota Surakarta terhadap enam kabupaten yang lebih bersifat pedesaan (*domain shift*). Untuk menguji dugaan tersebut secara terukur tanpa menyembunyikan lipatan tersulit, dijalankan eksperimen sensitivitas terkendali (`tanah/sensitivity.py`, keluaran di `artifacts/sensitivitas_gwr/`) yang membandingkan: (1) tujuh fitur penuh (VIF maks 36,65) melawan empat fitur non-kolinear ber-VIF rendah (`built_pct`, `cropland_pct`, `jumlah_penduduk`, `jumlah_fasum_regional`; VIF masing-masing 1,96; 1,06; 2,05; 1,88); (2) target `ln(harga)` melawan target linear `Rp/m²`; serta (3) varian Classic GWR dengan *Fixed Gaussian*, *Adaptive Gaussian*, dan *Adaptive Bisquare* yang dipadukan dengan penalti Ridge lokal (kandidat λ ∈ {0, 0,01, 0,1, 1, 10}) **tanpa mempenalti intersep** dan disetel murni di dalam validasi internal.
+
+| Spesifikasi & Model | MAE 127 (Rp/m²) | RMSE 127 (Rp/m²) | R² 127 (Neg.) | MAE 122 / Solo (Rp/m²) |
+| --- | --- | --- | --- | --- |
+| 7 fitur (log) — OLS | 25.741.669 | 218.841.334 | -11.549,956 (0) | 565.277 / 640.045.638 |
+| 7 fitur (log) — KNN (k=5) | 619.531 | 1.309.859 | 0,586 (0) | 482.708 / 3.958.006 |
+| 7 fitur (log) — Decision Tree (d=4) | 724.774 | 1.328.450 | 0,574 (0) | 606.862 / 3.601.846 |
+| 7 fitur (log) — GWR Fixed (notebook) | 5.377.444 | 36.519.930 | -320,676 (0) | 819.063 / 116.601.940 |
+| 7 fitur (log) — GWR Adap Gauss + Ridge | 25.902.625 | 192.829.675 | -8.967,235 (0) | 568.977 / 644.043.632 |
+| 7 fitur (log) — GWR Adap Bisq + Ridge | 1.549.986 | 5.133.638 | -5,356 (0) | 641.278 / 23.722.459 |
+| 7 fitur (linear) — OLS | 555.382 | 1.034.282 | 0,742 (25) | 439.426 / 3.384.703 |
+| 7 fitur (linear) — KNN (k=5) | 574.918 | 1.182.342 | 0,663 (0) | 442.782 / 3.799.041 |
+| 7 fitur (linear) — GWR Fixed + Ridge | 565.799 | 1.090.022 | 0,713 (11) | 443.928 / 3.539.449 |
+| 7 fitur (linear) — GWR Adap Gauss + Ridge | 581.486 | 1.212.604 | 0,645 (12) | 445.421 / 3.901.476 |
+| 4 fitur VIF (linear) — OLS | 512.702 | 880.000 | 0,813 (17) | 425.248 / 2.646.569 |
+| 4 fitur VIF (linear) — KNN (k=5) | 539.872 | 1.078.519 | 0,719 (0) | 428.884 / 3.247.967 |
+| 4 fitur VIF (linear) — Decision Tree (d=4) | 669.970 | 1.201.739 | 0,652 (0) | 570.756 / 3.090.795 |
+| 4 fitur VIF (linear) — GWR Fixed + Ridge | 519.091 | 937.260 | 0,788 (10) | 421.179 / 2.908.146 |
+| 4 fitur VIF (linear) — GWR Adap Gauss + Ridge | 520.261 | 923.902 | 0,794 (9) | 424.890 / 2.847.320 |
+| 4 fitur VIF (linear) — GWR Adap Bisq + Ridge | 600.401 | 999.850 | 0,759 (2) | 503.251 / 2.970.856 |
+
+Tiga temuan utama muncul dari tabel sensitivitas di atas. Pertama, mengganti *fixed bandwidth* menjadi *adaptive bandwidth* **saja** pada spesifikasi `7 fitur (log)` tidak menyelesaikan masalah ledakan galat: MAE GWR Adaptive Gaussian + Ridge tetap mencapai Rp25,90 juta/m² (dengan Surakarta MAE Rp644,04 juta/m²) karena koefisien lokal tidak stabil akibat multikolinearitas (VIF maks 36,65) dan proyeksi eksponensial `exp(ŷ)` saat ekstrapolasi ke wilayah berproporsi terbangun tinggi. Kedua, pemindahan skala target ke linear `Rp/m²` langsung memutus ledakan eksponensial tersebut bahkan pada tujuh fitur penuh (MAE GWR Fixed + Ridge turun menjadi Rp565.799/m²). Ketiga, ketika redundansi kolinear dihilangkan menjadi empat fitur (VIF maks 2,05) pada skala target linear, kinerja seluruh model meningkat tajam pada evaluasi penuh 127 kecamatan: OLS mencapai MAE Rp512.702/m² (R² 0,813), GWR Fixed Gaussian + Ridge Rp519.091/m² (R² 0,788), GWR Adaptive Gaussian + Ridge Rp520.261/m² (R² 0,794), mengungguli KNN (MAE Rp539.872/m²) dan Decision Tree (MAE Rp669.970/m²). Perlu dicatat secara jujur bahwa prediksi skala linear tetap memunculkan sejumlah kecil nilai negatif pada kecamatan berharga rendah (17 untuk OLS, 10 untuk GWR Fixed + Ridge, 9 untuk GWR Adaptive Gaussian + Ridge, 2 untuk Adaptive Bisquare + Ridge, dan 0 untuk KNN/Tree).
+
+| Wilayah uji | n | OLS (Rp/m²) | KNN k=5 (Rp/m²) | GWR Fixed+R | GWR Adap+R |
+| --- | --- | --- | --- | --- | --- |
+| Kabupaten Boyolali | 22 | 341.483 | 374.855 | 324.286 (80km, λ=10) | 327.371 (80nn, λ=10) |
+| Kabupaten Karanganyar | 17 | 484.119 | 814.081 | 475.213 (80km, λ=10) | 471.472 (80nn, λ=10) |
+| Kabupaten Klaten | 26 | 598.104 | 354.881 | 556.462 (80km, λ=10) | 562.676 (80nn, λ=10) |
+| Kabupaten Sragen | 20 | 269.179 | 217.236 | 276.874 (80km, λ=10) | 287.757 (80nn, λ=10) |
+| Kabupaten Sukoharjo | 12 | 838.202 | 977.222 | 811.771 (80km, λ=10) | 803.854 (80nn, λ=10) |
+| Kabupaten Wonogiri | 25 | 205.797 | 197.575 | 256.966 (80km, λ=10) | 263.538 (80nn, λ=10) |
+| Kota Surakarta | 5 | 2.646.569 | 3.247.967 | 2.908.146 (15km, λ=1) | 2.847.320 (25nn, λ=1) |
+
+Tabel per wilayah untuk spesifikasi empat fitur linear menunjukkan pola penting di balik angka GWR. Pada enam dari tujuh lipatan kabupaten, validasi internal memilih batas atas bandwidth (`80 km` untuk Fixed dan `80 tetangga terdekat` untuk Adaptive) disertai penalti Ridge `λ = 10`, sehingga GWR menyusut mendekati regresi linear global. Hanya ketika menguji Kota Surakarta validasi internal memilih bandwidth lokal yang lebih sempit (`15 km` untuk Fixed dan `25 tetangga` untuk Adaptive, `λ = 1`), di mana GWR Adaptive Gaussian + Ridge memperoleh MAE Surakarta sedikit lebih baik (Rp2.847.320/m²) dibanding GWR Fixed + Ridge (Rp2.908.146/m²) maupun KNN (Rp3.247.967/m²), meskipun masih sedikit di belakang OLS (Rp2.646.569/m²). Dengan demikian, bandwidth adaptif memang membantu menstabilkan estimasi lokal di klaster padat dibandingkan bandwidth jarak tetap sempit, namun keunggulan utama tetap berasal dari pengendalian kolinearitas dan penghindaran ekstrapolasi eksponensial.
+
+Untuk menjawab persoalan perbedaan karakteristik perkotaan (Kota Surakarta) dan pedesaan/semi-perkotaan tanpa melakukan *cherry-picking* terhadap evaluasi utama, tabel berikut membandingkan tiga skema evaluasi: (a) 7-fold LORO penuh 127 kecamatan (evaluasi utama), (b) 6-fold LORO yang dilatih ulang hanya pada 122 kecamatan tanpa Kota Surakarta, dan (c) Stratified 5-Fold CV pada 127 kecamatan di mana data latih selalu mencakup campuran kecamatan urban dan rural dari seluruh kabupaten/kota.
+
+| Spesifikasi & Model | LORO 127 MAE (R²) | LORO 122 latih ulang MAE (R²) | Stratified 5-Fold MAE (R²) | Neg. (127/122/Strat) |
+| --- | --- | --- | --- | --- |
+| 7 fitur (log) — OLS | 25.741.669 (-11.549,956) | 859.809 (-4,581) | 2.171.625 (-63,347) | 0 / 0 / 0 |
+| 7 fitur (log) — KNN (k=5) | 619.531 (0,586) | 477.460 (0,584) | 530.535 (0,728) | 0 / 0 / 0 |
+| 7 fitur (log) — Decision Tree (d=4) | 724.774 (0,574) | 629.377 (0,289) | 632.079 (0,608) | 0 / 0 / 0 |
+| 7 fitur (log) — GWR Fixed Gauss + Ridge* | 5.377.444 (-320,676) | 830.895 (-2,023) | 651.780 (0,567) | 0 / 0 / 0 |
+| 7 fitur (log) — GWR Adap Gauss + Ridge | 25.902.625 (-8.967,235) | 704.864 (-1,735) | 1.261.055 (-7,523) | 0 / 0 / 0 |
+| 7 fitur (log) — GWR Adap Bisq + Ridge | 1.549.986 (-5,356) | 736.579 (-1,067) | 620.118 (0,602) | 0 / 0 / 0 |
+| 4 fitur VIF (linear) — OLS | 512.702 (0,813) | 442.962 (0,779) | 512.851 (0,817) | 17 / 25 / 15 |
+| 4 fitur VIF (linear) — KNN (k=5) | 539.872 (0,719) | 414.426 (0,736) | 483.126 (0,799) | 0 / 0 / 0 |
+| 4 fitur VIF (linear) — Decision Tree (d=4) | 669.970 (0,652) | 533.157 (0,571) | 529.550 (0,763) | 0 / 0 / 0 |
+| 4 fitur VIF (linear) — GWR Fixed Gauss + Ridge | 519.091 (0,788) | 489.719 (0,745) | 512.616 (0,790) | 10 / 24 / 8 |
+| 4 fitur VIF (linear) — GWR Adap Gauss + Ridge | 520.261 (0,794) | 477.795 (0,758) | 528.012 (0,800) | 9 / 30 / 10 |
+| 4 fitur VIF (linear) — GWR Adap Bisq + Ridge | 600.401 (0,759) | 475.254 (0,765) | 536.381 (0,777) | 2 / 32 / 6 |
+
+Catatan: tanda `*` pada baris `7 fitur (log) — GWR Fixed Gauss` menunjukkan bahwa kolom LORO 127 menggunakan `λ = 10⁻³` sesuai protokol notebook, sedangkan kolom LORO 122 dan Stratified memakai tuning Ridge.
+
+Hasil pembanding lintas skema mengonfirmasi dua hal. Pertama, mengeluarkan Kota Surakarta dari data latih dan uji (LORO 122 kecamatan) menghilangkan kasus ekstrapolasi paling ekstrem sehingga MAE menyusut ke kisaran Rp414–490 ribu/m² pada spesifikasi empat fitur linear; namun demikian, pola peringkatnya tetap konsisten (OLS dan KNN terendah, GWR Adaptive sedikit lebih baik daripada GWR Fixed pada 122 kecamatan). Karena itu, Kota Surakarta tetap dipertahankan pada evaluasi utama 127 kecamatan agar ukuran kinerja tidak bias oleh penghapusan kasus tersulit. Kedua, pada skema Stratified 5-Fold CV—di mana data latih berisi kecamatan urban dan rural secara berimbang—kinerja KNN membaik drastis dari MAE Rp539.872/m² menjadi Rp483.126/m² (R² 0,799), sedangkan GWR Adaptive Gaussian + Ridge mencapai MAE Rp528.012/m² (R² 0,800). Hal ini menunjukkan bahwa kesenjangan kinerja di Kota Surakarta terutama merupakan persoalan *domain shift* lintas tipe wilayah, bukan sekadar pemilihan kernel tetap vs adaptif.
+
 ## 7. Kesimpulan
 
-Pada spesifikasi awal dua prediktor untuk 127 kecamatan Solo Raya tahun 2020, KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR Gaussian menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Pembobotan geografis pada spesifikasi yang diuji belum memberikan keunggulan prediktif konsisten dalam validasi lintas kabupaten/kota.
+Pada spesifikasi awal dua prediktor untuk 127 kecamatan Solo Raya tahun 2020, KNN menghasilkan MAE terendah sebesar Rp732.073/m², sedangkan regresi linear menghasilkan RMSE terendah sebesar Rp1.355.435/m². GWR Classic Fixed Gaussian menghasilkan MAE Rp802.227/m² dan RMSE Rp1.409.692/m². Pembobotan geografis pada spesifikasi awal tersebut belum memberikan keunggulan prediktif konsisten dalam validasi lintas kabupaten/kota.
 
-Eksperimen menghasilkan 127 prediksi uji per model, tujuh lipatan per model, dan 28 baris evaluasi wilayah. Dalam eksperimen tujuh prediktor, KNN berbobot mencatat MAE dan RMSE gabungan terendah. Hasil pembanding KNN menunjukkan bahwa kepadatan dan tutupan lahan secara bersama membantu prediksi lintas wilayah pada data ini. Pengembangan berikutnya perlu mengutamakan audit sumber harga dan batas historis, penambahan prediktor yang terukur, serta pengujian sensitivitas koordinat dan bandwidth. Kesimpulan tidak digunakan untuk harga bidang tanah atau prediksi harga tahun berjalan.
+Eksperimen lanjutan dengan lima variabel pendukung ESA WorldCover dan BIG memperlihatkan dua temuan penting. Pada spesifikasi tujuh prediktor dengan target `ln(harga)` dari replikasi notebook, multikolinearitas (VIF hingga 36,65) dan retransformasi eksponensial memicu ledakan galat ekstrem bagi OLS dan GWR saat memprediksi Kota Surakarta, sehingga model nonparametrik KNN berbobot unggul jauh (MAE Rp619.531/m²). Sebaliknya, analisis sensitivitas pada bagian 6.7 membuktikan bahwa penyaringan kolinearitas menjadi empat fitur non-redundan (VIF ≤ 2,05), penggunaan skala target linear `Rp/m²`, serta penalti Ridge lokal tanpa mempenalti intersep menurunkan MAE GWR secara drastis menjadi Rp519.091/m² (Fixed Gaussian + Ridge) dan Rp520.261/m² (Adaptive Gaussian + Ridge, R² 0,794) pada evaluasi penuh 127 kecamatan. Meski demikian, validasi internal cenderung memilih bandwidth lebar yang mendekatkan GWR pada OLS global, dan *domain shift* urban–rural Kota Surakarta tetap menjadi tantangan utama yang terkonfirmasi lewat pembanding 122 kecamatan dan Stratified 5-Fold CV. Pengembangan berikutnya perlu mengutamakan audit sumber harga dan batas historis, penambahan prediktor aksesibilitas yang terukur, serta pemodelan berkendala nonnegatif. Kesimpulan tetap dibatasi untuk rata-rata kecamatan tahun 2020, bukan harga bidang tanah individual atau prediksi tahun berjalan.
 
 ## 8. Ketersediaan Kode, Data, dan Reproduksi
 
-Repository penelitian: https://github.com/sqiftree/LandPredict. Kode disusun dalam package tanah: config untuk konfigurasi, data untuk validasi input, models untuk estimator, selection untuk validasi internal, experiment untuk orkestrasi, verification untuk pemeriksaan hasil, coordinates dan spatial_audit untuk geometri, reporting dan diagnostics untuk artefak paper, serta provenance untuk hash dan lingkungan. Skrip CLI lama tetap tersedia sebagai adapter.
+Repository penelitian: https://github.com/sqiftree/LandPredict. Kode disusun dalam package tanah: config untuk konfigurasi, data untuk validasi input, models untuk estimator, selection untuk validasi internal, experiment untuk orkestrasi, verification untuk pemeriksaan hasil, colab dan colab_models untuk replikasi tujuh prediktor, sensitivity untuk uji sensitivitas GWR, coordinates dan spatial_audit untuk geometri, reporting dan diagnostics untuk artefak paper, serta provenance untuk hash dan lingkungan. Skrip CLI lama tetap tersedia sebagai adapter.
 
-Tiga keluaran utama adalah metrik.csv, per_wilayah.csv, dan prediksi_uji.csv. Catatan audit menyimpan versi pustaka, hash sumber, grid parameter, skor validasi internal, dan lipatan. Folder artifacts menyimpan hasil acuan yang dapat dibandingkan dengan eksekusi ulang. Geometri diarsipkan dalam gzip beserta hash untuk dekompresi tanpa jaringan. Tanggal pengambilan arsip mengikuti catatan sesi sebelumnya dan belum didukung log unduhan bertimestamp yang independen.
+Tiga keluaran utama adalah metrik.csv, per_wilayah.csv, dan prediksi_uji.csv. Catatan audit menyimpan versi pustaka, hash sumber, grid parameter, skor validasi internal, dan lipatan. Folder artifacts menyimpan hasil acuan yang dapat dibandingkan dengan eksekusi ulang, termasuk hasil analisis sensitivitas di artifacts/sensitivitas_gwr/. Geometri diarsipkan dalam gzip beserta hash untuk dekompresi tanpa jaringan. Tanggal pengambilan arsip mengikuti catatan sesi sebelumnya dan belum didukung log unduhan bertimestamp yang independen.
 
 Lingkungan uji menggunakan Python 3.12 dan dependensi yang dicatat pada hasil/requirements-resolved.txt. Reproduksi dijalankan dengan python scripts/reproduce.py setelah dependensi Python dan GDAL tersedia, atau melalui container Docker sesuai README. Pipeline memulihkan geometri, menghitung ulang titik, menjalankan baseline dan GWR, memverifikasi hasil, lalu membuat peta dan diagnostik. Pipeline berhenti ketika pemeriksaan gagal.
 
@@ -488,11 +546,18 @@ Zhang, P., Hu, S., Li, W., Zhang, C., Yang, S., & Qu, S. (2021). Modeling fine-s
 
 ## Lampiran: Status dan Kontribusi Tim
 
-Naskah ini merupakan draf empiris berdasarkan eksperimen dua hingga sebelas prediktor. Bagian 6.3 dan 6.4 melaporkan pengolahan data, eksperimen tujuh prediktor, dan uji sensitivitas koordinat. Identitas anggota dan kontribusi aktual perlu dilengkapi tim sebelum penyerahan.
+Naskah ini merupakan draf empiris berdasarkan eksperimen dua hingga sebelas prediktor dan analisis sensitivitas GWR. Bagian 6.3–6.7 melaporkan pengolahan data pendukung, replikasi tujuh prediktor, uji akses wisata/kampus/topografi, uji korelasi/seleksi, reduksi multikolinearitas, bandwidth adaptif, serta diagnostik *domain shift*. Daftar anggota tim dan pembagian kontribusi disajikan berikut ini.
 
 | Anggota | Rencana kontribusi; konfirmasi aktual oleh tim |
 | --- | --- |
 | Yashif Victoriawan | Integrasi program dan reproduksi eksperimen |
-| [Nama anggota 2] | Audit sumber harga dan variabel |
-| [Nama anggota 3] | Audit geometri dan data tambahan |
-| [Nama anggota 4] | Analisis galat dan penulisan pembahasan |
+| Queen Nika Prahara Mutiara Phasya | Audit sumber harga dan variabel |
+| Syaikhasril Maulana Firdaus | Audit geometri, data tambahan, dan analisis sensitivitas GWR |
+| Azzaral Aswad Asshiddiqy | Analisis galat dan penulisan pembahasan |
+
+| Anggota | Rencana kontribusi; konfirmasi aktual oleh tim |
+| --- | --- |
+| Yashif Victoriawan | Integrasi program dan reproduksi eksperimen |
+| Queen Nika Prahara Mutiara Phasya | Audit sumber harga dan variabel |
+| Syaikhasril Maulana Firdaus | Audit geometri, data tambahan, dan analisis sensitivitas GWR |
+| Azzaral Aswad Asshiddiqy | Analisis galat dan penulisan pembahasan |

@@ -4,7 +4,8 @@ import importlib
 import sys
 
 COMMANDS = {
-    'run': 'experiment', 'colab': 'colab', 'verify': 'verification', 'coordinates': 'coordinates',
+    'run': 'experiment', 'colab': 'colab', 'sensitivity': 'sensitivity',
+    'verify': 'verification', 'coordinates': 'coordinates',
     'audit': 'spatial_audit', 'paper': 'reporting',
 }
 

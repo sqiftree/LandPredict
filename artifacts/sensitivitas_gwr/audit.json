@@ -1,0 +1,526 @@
+{
+  "status": "complete",
+  "python": "3.14.10",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0",
+    "threadpoolctl": "3.6.0"
+  },
+  "data_sha256": "b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66",
+  "coordinates_sha256": "1e8e777f35e390ad95be9efba414ac7656381b942de55252219052d02026ef9b",
+  "code_sha256": {
+    "tanah/__init__.py": "03be8233187f72616d2c6a61085b7982d8f9d7f7d6290f6f484bc94f78b141a0",
+    "tanah/__main__.py": "e3482ebdf3579db680be17fda290b91019a9ad8d6b813213aa0266a9cb40d793",
+    "tanah/colab.py": "4366b66c2466dc0581faf606165f812dac4cecb50bcb76f3d0a50a66fd8dee6a",
+    "tanah/colab_models.py": "2b3b885692c331f7f8cb96b25b1146fceed8b821199470305c59cbe870103ac6",
+    "tanah/config.py": "93c1df1662ed9da3572c6329d036266ad44777513aa15eb4daa4b5314954c9fd",
+    "tanah/coordinates.py": "64e473b435163e16df73e6150941cd1b0fb3b4a3234ff161dfccb405bcae01d9",
+    "tanah/data.py": "65422155e037223744095c5bcddcf8f0363367ded82f0a24d3acab596fadfc02",
+    "tanah/diagnostics.py": "da89afc4011345bee8063ffcb51dcecaaae2c1e4337bc7bbbf9138a8b1149db8",
+    "tanah/experiment.py": "5a93d7eccf6fd6f5c94495de6b9adfa1293660a6fa6db96ef53abfe55be91345",
+    "tanah/models.py": "65c0514e276b839c68786643ef713b6279b474539e52205c47be3f15c6525c27",
+    "tanah/provenance.py": "3bced914b3db5f476141d8962ce5d04766c625b1272f63db9a65f538ae39356d",
+    "tanah/reporting.py": "c02402c2a9748d414b79d3c4f81cef5e24338aced8f28a1a614f2a10dfa1c162",
+    "tanah/selection.py": "a7716f51553a47796d9364fc3ed9aa7fde370ec7ab21efb3bb275c811f2c893d",
+    "tanah/sensitivity.py": "0c09778533ea92b35a4bb17b085cd82aa91de4a1b09133111cb1c0de096af4b7",
+    "tanah/spatial_audit.py": "f4807d44503e42d1a5a3365e082fbfa8b4809dab0cccb587705ecd4363d7441d",
+    "tanah/verification.py": "70399bb8810508e0d2f9f2a58cf49a83a65f1dfd82d631657eb1087afb289a63"
+  },
+  "features": [
+    "jumlah_penduduk",
+    "jumlah_fasum_regional"
+  ],
+  "candidate_parameters": {
+    "FIXED_BWS_km": [
+      5,
+      10,
+      15,
+      25,
+      40,
+      60,
+      80
+    ],
+    "ADAP_GAUSS_BWS_nn": [
+      15,
+      25,
+      40,
+      60,
+      80
+    ],
+    "ADAP_BISQ_BWS_nn": [
+      20,
+      30,
+      45,
+      60,
+      80
+    ],
+    "RIDGE_LAMBDAS": [
+      0.0,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "kernel": "Gaussian",
+  "distance_unit": "km",
+  "geometry_2020_status": "unverified_historical_boundaries",
+  "inner_selection": "pooled RMSE in Rp/m2 on outer training set (no intercept penalty)",
+  "outer_folds": [
+    {
+      "test_region": "Kabupaten Boyolali",
+      "train_regions": [
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "n_test": 22
+    },
+    {
+      "test_region": "Kabupaten Karanganyar",
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "n_test": 17
+    },
+    {
+      "test_region": "Kabupaten Klaten",
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "n_test": 26
+    },
+    {
+      "test_region": "Kabupaten Sragen",
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "n_test": 20
+    },
+    {
+      "test_region": "Kabupaten Sukoharjo",
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Wonogiri",
+        "Kota Surakarta"
+      ],
+      "n_test": 12
+    },
+    {
+      "test_region": "Kabupaten Wonogiri",
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kota Surakarta"
+      ],
+      "n_test": 25
+    },
+    {
+      "test_region": "Kota Surakarta",
+      "train_regions": [
+        "Kabupaten Boyolali",
+        "Kabupaten Karanganyar",
+        "Kabupaten Klaten",
+        "Kabupaten Sragen",
+        "Kabupaten Sukoharjo",
+        "Kabupaten Wonogiri"
+      ],
+      "n_test": 5
+    }
+  ],
+  "inner_scores": [],
+  "singular_failures": [],
+  "protocol": "gwr_sensitivity_v1",
+  "supporting_sha256": "8cfde68231141e16bc6f2de63afbdf209c071d266e6c64b44036ffbe205ef900",
+  "features_7": [
+    "kepadatan_penduduk_proksi",
+    "kepadatan_fasum_proksi",
+    "built_pct",
+    "tree_pct",
+    "cropland_pct",
+    "jumlah_penduduk",
+    "jumlah_fasum_regional"
+  ],
+  "features_4_vif": [
+    "built_pct",
+    "cropland_pct",
+    "jumlah_penduduk",
+    "jumlah_fasum_regional"
+  ],
+  "vif_7_fitur": {
+    "kepadatan_penduduk_proksi": 15.390162960425924,
+    "kepadatan_fasum_proksi": 11.10691341251877,
+    "built_pct": 36.64835372487607,
+    "tree_pct": 24.274546092377488,
+    "cropland_pct": 12.87608559509465,
+    "jumlah_penduduk": 2.4095718329448648,
+    "jumlah_fasum_regional": 5.857345355417396
+  },
+  "vif_4_fitur": {
+    "built_pct": 1.9592323685472972,
+    "cropland_pct": 1.0631480314487916,
+    "jumlah_penduduk": 2.0527174648971913,
+    "jumlah_fasum_regional": 1.8782361542382984
+  },
+  "selected_parameters": {
+    "7_fitur__log": {
+      "OLS": {
+        "Kabupaten Boyolali": "1e-08",
+        "Kabupaten Karanganyar": "1e-08",
+        "Kabupaten Klaten": "1e-08",
+        "Kabupaten Sragen": "1e-08",
+        "Kabupaten Sukoharjo": "1e-08",
+        "Kabupaten Wonogiri": "1e-08",
+        "Kota Surakarta": "1e-08"
+      },
+      "KNN (k=5)": {
+        "Kabupaten Boyolali": "k=5",
+        "Kabupaten Karanganyar": "k=5",
+        "Kabupaten Klaten": "k=5",
+        "Kabupaten Sragen": "k=5",
+        "Kabupaten Sukoharjo": "k=5",
+        "Kabupaten Wonogiri": "k=5",
+        "Kota Surakarta": "k=5"
+      },
+      "Decision Tree (d=4)": {
+        "Kabupaten Boyolali": "depth=4",
+        "Kabupaten Karanganyar": "depth=4",
+        "Kabupaten Klaten": "depth=4",
+        "Kabupaten Sragen": "depth=4",
+        "Kabupaten Sukoharjo": "depth=4",
+        "Kabupaten Wonogiri": "depth=4",
+        "Kota Surakarta": "depth=4"
+      },
+      "GWR Fixed Gauss (lam=1e-3, notebook)": {
+        "Kabupaten Boyolali": "bw=5km;lambda=0.001",
+        "Kabupaten Karanganyar": "bw=40km;lambda=0.001",
+        "Kabupaten Klaten": "bw=5km;lambda=0.001",
+        "Kabupaten Sragen": "bw=10km;lambda=0.001",
+        "Kabupaten Sukoharjo": "bw=5km;lambda=0.001",
+        "Kabupaten Wonogiri": "bw=5km;lambda=0.001",
+        "Kota Surakarta": "bw=10km;lambda=0.001"
+      },
+      "GWR Adap Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=40nn;lambda=0",
+        "Kabupaten Karanganyar": "bw=15nn;lambda=10",
+        "Kabupaten Klaten": "bw=15nn;lambda=0.1",
+        "Kabupaten Sragen": "bw=15nn;lambda=0",
+        "Kabupaten Sukoharjo": "bw=60nn;lambda=0",
+        "Kabupaten Wonogiri": "bw=15nn;lambda=0",
+        "Kota Surakarta": "bw=15nn;lambda=10"
+      },
+      "GWR Adap Bisq + Ridge": {
+        "Kabupaten Boyolali": "bw=20nn;lambda=10",
+        "Kabupaten Karanganyar": "bw=20nn;lambda=10",
+        "Kabupaten Klaten": "bw=20nn;lambda=10",
+        "Kabupaten Sragen": "bw=60nn;lambda=0",
+        "Kabupaten Sukoharjo": "bw=20nn;lambda=10",
+        "Kabupaten Wonogiri": "bw=20nn;lambda=10",
+        "Kota Surakarta": "bw=20nn;lambda=10"
+      }
+    },
+    "7_fitur__linear": {
+      "OLS": {
+        "Kabupaten Boyolali": "1e-08",
+        "Kabupaten Karanganyar": "1e-08",
+        "Kabupaten Klaten": "1e-08",
+        "Kabupaten Sragen": "1e-08",
+        "Kabupaten Sukoharjo": "1e-08",
+        "Kabupaten Wonogiri": "1e-08",
+        "Kota Surakarta": "1e-08"
+      },
+      "KNN (k=5)": {
+        "Kabupaten Boyolali": "k=5",
+        "Kabupaten Karanganyar": "k=5",
+        "Kabupaten Klaten": "k=5",
+        "Kabupaten Sragen": "k=5",
+        "Kabupaten Sukoharjo": "k=5",
+        "Kabupaten Wonogiri": "k=5",
+        "Kota Surakarta": "k=5"
+      },
+      "Decision Tree (d=4)": {
+        "Kabupaten Boyolali": "depth=4",
+        "Kabupaten Karanganyar": "depth=4",
+        "Kabupaten Klaten": "depth=4",
+        "Kabupaten Sragen": "depth=4",
+        "Kabupaten Sukoharjo": "depth=4",
+        "Kabupaten Wonogiri": "depth=4",
+        "Kota Surakarta": "depth=4"
+      },
+      "GWR Fixed Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=80km;lambda=10",
+        "Kabupaten Karanganyar": "bw=80km;lambda=10",
+        "Kabupaten Klaten": "bw=80km;lambda=1",
+        "Kabupaten Sragen": "bw=80km;lambda=10",
+        "Kabupaten Sukoharjo": "bw=80km;lambda=10",
+        "Kabupaten Wonogiri": "bw=80km;lambda=10",
+        "Kota Surakarta": "bw=25km;lambda=0.1"
+      },
+      "GWR Adap Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=80nn;lambda=10",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=10",
+        "Kabupaten Klaten": "bw=80nn;lambda=1",
+        "Kabupaten Sragen": "bw=40nn;lambda=1",
+        "Kabupaten Sukoharjo": "bw=80nn;lambda=10",
+        "Kabupaten Wonogiri": "bw=80nn;lambda=10",
+        "Kota Surakarta": "bw=15nn;lambda=0.1"
+      },
+      "GWR Adap Bisq + Ridge": {
+        "Kabupaten Boyolali": "bw=80nn;lambda=1",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=1",
+        "Kabupaten Klaten": "bw=80nn;lambda=1",
+        "Kabupaten Sragen": "bw=80nn;lambda=1",
+        "Kabupaten Sukoharjo": "bw=80nn;lambda=1",
+        "Kabupaten Wonogiri": "bw=80nn;lambda=1",
+        "Kota Surakarta": "bw=80nn;lambda=0.1"
+      }
+    },
+    "4_fitur_vif__log": {
+      "OLS": {
+        "Kabupaten Boyolali": "1e-08",
+        "Kabupaten Karanganyar": "1e-08",
+        "Kabupaten Klaten": "1e-08",
+        "Kabupaten Sragen": "1e-08",
+        "Kabupaten Sukoharjo": "1e-08",
+        "Kabupaten Wonogiri": "1e-08",
+        "Kota Surakarta": "1e-08"
+      },
+      "KNN (k=5)": {
+        "Kabupaten Boyolali": "k=5",
+        "Kabupaten Karanganyar": "k=5",
+        "Kabupaten Klaten": "k=5",
+        "Kabupaten Sragen": "k=5",
+        "Kabupaten Sukoharjo": "k=5",
+        "Kabupaten Wonogiri": "k=5",
+        "Kota Surakarta": "k=5"
+      },
+      "Decision Tree (d=4)": {
+        "Kabupaten Boyolali": "depth=4",
+        "Kabupaten Karanganyar": "depth=4",
+        "Kabupaten Klaten": "depth=4",
+        "Kabupaten Sragen": "depth=4",
+        "Kabupaten Sukoharjo": "depth=4",
+        "Kabupaten Wonogiri": "depth=4",
+        "Kota Surakarta": "depth=4"
+      },
+      "GWR Fixed Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=5km;lambda=10",
+        "Kabupaten Karanganyar": "bw=5km;lambda=10",
+        "Kabupaten Klaten": "bw=5km;lambda=10",
+        "Kabupaten Sragen": "bw=5km;lambda=10",
+        "Kabupaten Sukoharjo": "bw=5km;lambda=10",
+        "Kabupaten Wonogiri": "bw=5km;lambda=10",
+        "Kota Surakarta": "bw=10km;lambda=10"
+      },
+      "GWR Adap Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=15nn;lambda=10",
+        "Kabupaten Karanganyar": "bw=15nn;lambda=10",
+        "Kabupaten Klaten": "bw=15nn;lambda=10",
+        "Kabupaten Sragen": "bw=15nn;lambda=10",
+        "Kabupaten Sukoharjo": "bw=15nn;lambda=10",
+        "Kabupaten Wonogiri": "bw=15nn;lambda=10",
+        "Kota Surakarta": "bw=15nn;lambda=10"
+      }
+    },
+    "4_fitur_vif__linear": {
+      "OLS": {
+        "Kabupaten Boyolali": "1e-08",
+        "Kabupaten Karanganyar": "1e-08",
+        "Kabupaten Klaten": "1e-08",
+        "Kabupaten Sragen": "1e-08",
+        "Kabupaten Sukoharjo": "1e-08",
+        "Kabupaten Wonogiri": "1e-08",
+        "Kota Surakarta": "1e-08"
+      },
+      "KNN (k=5)": {
+        "Kabupaten Boyolali": "k=5",
+        "Kabupaten Karanganyar": "k=5",
+        "Kabupaten Klaten": "k=5",
+        "Kabupaten Sragen": "k=5",
+        "Kabupaten Sukoharjo": "k=5",
+        "Kabupaten Wonogiri": "k=5",
+        "Kota Surakarta": "k=5"
+      },
+      "Decision Tree (d=4)": {
+        "Kabupaten Boyolali": "depth=4",
+        "Kabupaten Karanganyar": "depth=4",
+        "Kabupaten Klaten": "depth=4",
+        "Kabupaten Sragen": "depth=4",
+        "Kabupaten Sukoharjo": "depth=4",
+        "Kabupaten Wonogiri": "depth=4",
+        "Kota Surakarta": "depth=4"
+      },
+      "GWR Fixed Gauss (lam=0)": {
+        "Kabupaten Boyolali": "bw=80km;lambda=0",
+        "Kabupaten Karanganyar": "bw=80km;lambda=0",
+        "Kabupaten Klaten": "bw=80km;lambda=0",
+        "Kabupaten Sragen": "bw=80km;lambda=0",
+        "Kabupaten Sukoharjo": "bw=80km;lambda=0",
+        "Kabupaten Wonogiri": "bw=80km;lambda=0",
+        "Kota Surakarta": "bw=15km;lambda=0"
+      },
+      "GWR Fixed Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=80km;lambda=10",
+        "Kabupaten Karanganyar": "bw=80km;lambda=10",
+        "Kabupaten Klaten": "bw=80km;lambda=10",
+        "Kabupaten Sragen": "bw=80km;lambda=10",
+        "Kabupaten Sukoharjo": "bw=80km;lambda=10",
+        "Kabupaten Wonogiri": "bw=80km;lambda=10",
+        "Kota Surakarta": "bw=15km;lambda=1"
+      },
+      "GWR Adap Gauss (lam=0)": {
+        "Kabupaten Boyolali": "bw=80nn;lambda=0",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=0",
+        "Kabupaten Klaten": "bw=80nn;lambda=0",
+        "Kabupaten Sragen": "bw=80nn;lambda=0",
+        "Kabupaten Sukoharjo": "bw=80nn;lambda=0",
+        "Kabupaten Wonogiri": "bw=80nn;lambda=0",
+        "Kota Surakarta": "bw=25nn;lambda=0"
+      },
+      "GWR Adap Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=80nn;lambda=10",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=10",
+        "Kabupaten Klaten": "bw=80nn;lambda=10",
+        "Kabupaten Sragen": "bw=80nn;lambda=10",
+        "Kabupaten Sukoharjo": "bw=80nn;lambda=10",
+        "Kabupaten Wonogiri": "bw=80nn;lambda=10",
+        "Kota Surakarta": "bw=25nn;lambda=1"
+      },
+      "GWR Adap Bisq + Ridge": {
+        "Kabupaten Boyolali": "bw=80nn;lambda=10",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=10",
+        "Kabupaten Klaten": "bw=80nn;lambda=10",
+        "Kabupaten Sragen": "bw=80nn;lambda=10",
+        "Kabupaten Sukoharjo": "bw=80nn;lambda=10",
+        "Kabupaten Wonogiri": "bw=80nn;lambda=10",
+        "Kota Surakarta": "bw=80nn;lambda=1"
+      }
+    },
+    "no_solo_7_fitur__log": {
+      "OLS": {
+        "Kabupaten Boyolali": "1e-08",
+        "Kabupaten Karanganyar": "1e-08",
+        "Kabupaten Klaten": "1e-08",
+        "Kabupaten Sragen": "1e-08",
+        "Kabupaten Sukoharjo": "1e-08",
+        "Kabupaten Wonogiri": "1e-08"
+      },
+      "KNN (k=5)": {
+        "Kabupaten Boyolali": "k=5",
+        "Kabupaten Karanganyar": "k=5",
+        "Kabupaten Klaten": "k=5",
+        "Kabupaten Sragen": "k=5",
+        "Kabupaten Sukoharjo": "k=5",
+        "Kabupaten Wonogiri": "k=5"
+      },
+      "Decision Tree (d=4)": {
+        "Kabupaten Boyolali": "depth=4",
+        "Kabupaten Karanganyar": "depth=4",
+        "Kabupaten Klaten": "depth=4",
+        "Kabupaten Sragen": "depth=4",
+        "Kabupaten Sukoharjo": "depth=4",
+        "Kabupaten Wonogiri": "depth=4"
+      },
+      "GWR Fixed Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=15km;lambda=10",
+        "Kabupaten Karanganyar": "bw=40km;lambda=10",
+        "Kabupaten Klaten": "bw=5km;lambda=10",
+        "Kabupaten Sragen": "bw=10km;lambda=10",
+        "Kabupaten Sukoharjo": "bw=25km;lambda=1",
+        "Kabupaten Wonogiri": "bw=10km;lambda=10"
+      },
+      "GWR Adap Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=15nn;lambda=10",
+        "Kabupaten Karanganyar": "bw=40nn;lambda=10",
+        "Kabupaten Klaten": "bw=15nn;lambda=10",
+        "Kabupaten Sragen": "bw=15nn;lambda=10",
+        "Kabupaten Sukoharjo": "bw=15nn;lambda=1",
+        "Kabupaten Wonogiri": "bw=15nn;lambda=10"
+      },
+      "GWR Adap Bisq + Ridge": {
+        "Kabupaten Boyolali": "bw=30nn;lambda=10",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=10",
+        "Kabupaten Klaten": "bw=20nn;lambda=10",
+        "Kabupaten Sragen": "bw=20nn;lambda=10",
+        "Kabupaten Sukoharjo": "bw=45nn;lambda=1",
+        "Kabupaten Wonogiri": "bw=20nn;lambda=10"
+      }
+    },
+    "no_solo_4_fitur_vif__linear": {
+      "OLS": {
+        "Kabupaten Boyolali": "1e-08",
+        "Kabupaten Karanganyar": "1e-08",
+        "Kabupaten Klaten": "1e-08",
+        "Kabupaten Sragen": "1e-08",
+        "Kabupaten Sukoharjo": "1e-08",
+        "Kabupaten Wonogiri": "1e-08"
+      },
+      "KNN (k=5)": {
+        "Kabupaten Boyolali": "k=5",
+        "Kabupaten Karanganyar": "k=5",
+        "Kabupaten Klaten": "k=5",
+        "Kabupaten Sragen": "k=5",
+        "Kabupaten Sukoharjo": "k=5",
+        "Kabupaten Wonogiri": "k=5"
+      },
+      "Decision Tree (d=4)": {
+        "Kabupaten Boyolali": "depth=4",
+        "Kabupaten Karanganyar": "depth=4",
+        "Kabupaten Klaten": "depth=4",
+        "Kabupaten Sragen": "depth=4",
+        "Kabupaten Sukoharjo": "depth=4",
+        "Kabupaten Wonogiri": "depth=4"
+      },
+      "GWR Fixed Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=15km;lambda=1",
+        "Kabupaten Karanganyar": "bw=80km;lambda=10",
+        "Kabupaten Klaten": "bw=80km;lambda=1",
+        "Kabupaten Sragen": "bw=40km;lambda=1",
+        "Kabupaten Sukoharjo": "bw=80km;lambda=10",
+        "Kabupaten Wonogiri": "bw=15km;lambda=1"
+      },
+      "GWR Adap Gauss + Ridge": {
+        "Kabupaten Boyolali": "bw=15nn;lambda=1",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=10",
+        "Kabupaten Klaten": "bw=80nn;lambda=1",
+        "Kabupaten Sragen": "bw=40nn;lambda=1",
+        "Kabupaten Sukoharjo": "bw=80nn;lambda=10",
+        "Kabupaten Wonogiri": "bw=25nn;lambda=1"
+      },
+      "GWR Adap Bisq + Ridge": {
+        "Kabupaten Boyolali": "bw=45nn;lambda=1",
+        "Kabupaten Karanganyar": "bw=80nn;lambda=1",
+        "Kabupaten Klaten": "bw=80nn;lambda=1",
+        "Kabupaten Sragen": "bw=80nn;lambda=1",
+        "Kabupaten Sukoharjo": "bw=80nn;lambda=10",
+        "Kabupaten Wonogiri": "bw=80nn;lambda=1"
+      }
+    }
+  }
+}

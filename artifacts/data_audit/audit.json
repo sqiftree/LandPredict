@@ -1,7 +1,7 @@
 {
   "tanggal_audit": "2026-11-26",
   "status_kode": "passed_transcription",
-  "pdf_lokal_diperiksa": true,
+  "pdf_lokal_diperiksa": false,
   "pemeriksaan_visual_terakhir": "2026-11-17",
   "jumlah_kunci": 127,
   "sel_numerik_dibandingkan": 381,

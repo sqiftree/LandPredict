@@ -39,6 +39,27 @@ Untuk presentasi, hasil utama membandingkan keempat model dengan dua prediktor i
 
 Empat variabel baru tersedia untuk 127 kecamatan. KNN dengan tambahan jarak kampus mencapai MAE Rp610.868/m² dan RMSE Rp1.263.634/m² pada tujuh blok luar. Pembanding tujuh fitur dengan penyetelan yang sama mencapai MAE Rp633.139/m². Di Tawangmangu galat masih besar. Bagian 6.5 paper memuat perbandingan delapan spesifikasi, pemeriksaan GWR ridge dan contoh kecamatan yang membaik maupun memburuk. [Dataset dan sumber](data/processed/akses_medan/README.md) · [Prediksi per kecamatan](artifacts/akses_medan/prediksi_uji.csv) · [Metrik](artifacts/akses_medan/metrik.csv) · [Korelasi dan diagram sebar](artifacts/akses_medan/akses_medan.png).
 
+### Analisis sensitivitas GWR (VIF, bandwidth adaptif, & domain shift)
+
+Model GWR yang digunakan di seluruh proyek adalah **Classic GWR (Locally Weighted Least Squares)** dengan satu bandwidth tunggal (bukan MGWR atau GTWR). Analisis lanjutan di [`tanah/sensitivity.py`](tanah/sensitivity.py) dan [`artifacts/sensitivitas_gwr/`](artifacts/sensitivitas_gwr/) (Bagian 6.7 naskah) menguji mengapa GWR tujuh prediktor (`ln(harga)`) meledak di Surakarta dan membandingkan Fixed Gaussian, Adaptive Gaussian, dan Adaptive Bisquare + Ridge (tanpa penalti intersep):
+
+- Mengubah bandwidth menjadi *adaptive* saja pada 7 fitur (`ln(harga)`) tidak menyembuhkan ledakan ekstrapolasi karena multikolinearitas tinggi (`VIF` maks `36,65`) dan transformasi balik `exp(ŷ)` (MAE GWR Adaptive Gaussian + Ridge `Rp25.902.625/m²`).
+- Menyaring prediktor menjadi 4 fitur rendah kolinearitas (`built_pct`, `cropland_pct`, `jumlah_penduduk`, `jumlah_fasum_regional`; `VIF` maks `2,05`) dengan target linear `Rp/m²` dan Ridge lokal menurunkan MAE evaluasi penuh 127 kecamatan secara drastis: **OLS `Rp512.702/m²` (R² `0,813`)**, **GWR Fixed Gaussian + Ridge `Rp519.091/m²` (R² `0,788`)**, **GWR Adaptive Gaussian + Ridge `Rp520.261/m²` (R² `0,794`)**, mengungguli **KNN `Rp539.872/m²`**.
+- Kota Surakarta **tidak dibuang** dari evaluasi utama 127 kecamatan; evaluasi 6 kabupaten tanpa Surakarta (122 kecamatan) serta Stratified 5-Fold CV disertakan sebagai pembanding *domain shift* urban–rural.
+
+Jalankan ulang dan verifikasi analisis sensitivitas dengan:
+
+```bash
+python -m tanah sensitivity --output artifacts/sensitivitas_gwr
+python -m tanah sensitivity --verify --output artifacts/sensitivitas_gwr
+```
+
+### Notebook 3 model default *from scratch*, dataset bersih, & audit koordinat
+
+- [Dataset gabungan bersih](data/processed/dataset_solo_raya_2020_bersih.csv) (`127 × 18` tanpa kolom duplikat/konstan nol/metadata administratif) dibangun oleh [`scripts/build_clean_dataset.py`](scripts/build_clean_dataset.py).
+- [Audit & verifikasi daring 127 koordinat](docs/LAPORAN_VERIFIKASI_KOORDINAT_127.md) ([CSV audit](data/processed/audit_koordinat_127.csv), [`scripts/verifikasi_koordinat_internet.py`](scripts/verifikasi_koordinat_internet.py)) membandingkan BIG KSP Satu Peta (`127/127` interior), Kemendagri, BPS/HDX, GADM v4.1, dan OSM Nominatim.
+- [Notebook perbandingan 3 model default *from scratch*](notebooks/perbandingan_3_model_default.ipynb) (GWR, KNN, Decision Tree tanpa pustaka ML eksternal) beserta 7 grafik presentasi PNG tersedia di [`figures/presentasi_3_model/`](figures/presentasi_3_model/).
+
 ## Atlas interaktif
 
 **https://sqiftree.github.io/LandPredict/**
