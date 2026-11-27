@@ -13,10 +13,9 @@ RUN apt-get update \
 WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
-COPY *.py ./
 COPY tanah/ ./tanah/
 COPY tests/ ./tests/
 COPY scripts/ ./scripts/
 COPY data/harga_tanah_2020.csv ./data/harga_tanah_2020.csv
 
-CMD ["python", "eksperimen_tanah.py", "--output", "/app/hasil/baseline"]
+CMD ["python", "-m", "tanah", "run", "--output", "/app/hasil/baseline"]

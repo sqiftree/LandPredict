@@ -52,25 +52,23 @@ Semua 127 kunci unik, 127 prediksi finite per model, tujuh blok per model, dan 2
 Dari direktori proyek, setelah memasang Python 3.12, GDAL/ogr2ogr dan requirements.txt:
 
 ```bash
-python eksperimen_tanah.py --output hasil/baseline
-python verifikasi_hasil.py hasil/baseline
-python siapkan_koordinat.py data/jawa_tengah_big.geojson --kab wadmkk --kec wadmkc --padanan data/padanan_nama.csv --output data/koordinat.csv
-python audit_spasial.py
-python eksperimen_tanah.py --koordinat data/koordinat.csv --output hasil/spasial
-python verifikasi_hasil.py hasil/spasial --spasial
-python siapkan_paper.py
+python -m tanah run --output hasil/baseline
+python -m tanah verify hasil/baseline
+python -m tanah coordinates data/jawa_tengah_big.geojson --kab wadmkk --kec wadmkc --padanan data/padanan_nama.csv --output data/koordinat.csv
+python -m tanah audit
+python -m tanah run --koordinat data/koordinat.csv --output hasil/spasial
+python -m tanah verify hasil/spasial --spasial
+python -m tanah paper
 ```
 
 Reproduksi awal 17 November 2026 memakai image lokal gwr-solo-raya:local (ID e979288ea0c0), Python 3.12.16, numpy 2.3.5, pandas 2.2.3, scikit-learn 1.8.0. Untuk menjalankan perintah di atas dalam Docker, build image lalu awali setiap perintah dengan:
 
 ```bash
 docker build -t gwr-solo-raya:local .
-docker run --rm --network none --user "$(id -u):$(id -g)" -v "$PWD:/app" -w /app gwr-solo-raya:local python siapkan_paper.py
+docker run --rm --network none --user "$(id -u):$(id -g)" -v "$PWD:/app" -w /app gwr-solo-raya:local python -m tanah paper
 ```
 
-Ganti bagian `python siapkan_paper.py` dengan masing-masing perintah sesuai urutan. Mount direktori proyek memastikan kode terkini dan keluaran tersedia di host. Build membutuhkan jaringan; eksekusi memakai arsip lokal dan tidak membutuhkan jaringan. Dependensi transitif dapat berubah saat rebuild; gunakan hasil/requirements-resolved.txt untuk mereplikasi versi sesi ini.
-
-Audit 18 November 2026 menggunakan Python 3.12.16 terisolasi dan versi pustaka sesuai artifacts/requirements-resolved.txt, karena Docker/GDAL tidak tersedia pada sesi tersebut. Baseline dan empat model dijalankan ulang; koordinat arsip diperiksa kembali dengan Shapely terhadap geometri BIG, tanpa mengklaim pengulangan langkah ekspor GDAL. Rincian: docs/AUDIT_ULANG_2026-11-18.md.
+Ganti bagian `python -m tanah paper` dengan masing-masing perintah sesuai urutan. Mount direktori proyek memastikan kode terkini dan keluaran tersedia di host. Build membutuhkan jaringan; eksekusi memakai arsip lokal dan tidak membutuhkan jaringan. Dependensi transitif dapat berubah saat rebuild; gunakan `artifacts/requirements-resolved.txt` untuk mereplikasi versi pustaka acuan.
 
 
 ## Eksperimen tujuh prediktor, 24 November 2026

@@ -69,17 +69,17 @@ Tidak ada benturan kunci dalam padanan yang dipilih; PDF lampiran halaman 2 tela
 
 ## 4. Ekstraksi Titik Representatif Spasial
 
-Titik representatif dihasilkan menggunakan script `siapkan_koordinat.py` dengan prosedur:
+Titik representatif dihasilkan menggunakan perintah `python -m tanah coordinates` dengan prosedur:
 1. Memproyeksikan poligon kecamatan WGS84 (EPSG:4326) ke UTM Zona 49S (EPSG:32749).
 2. Melakukan penggabungan poligon per kecamatan (`ST_Union`).
 3. Mengambil titik permukaan terjamin di dalam poligon (`ST_PointOnSurface`).
 4. Mentransformasikan kembali koordinat titik ke WGS84 derajat desimal (`lat`, `lon`).
 
-### Hasil Audit Spasial (`audit_spasial.py`)
+### Hasil Audit Spasial (`python -m tanah audit`)
 * **In-Polygon Check**: **127 dari 127 titik (100%)** berada di dalam poligon kecamatan masing-masing.
 * **Jarak Minimum ke Batas Poligon**: **383,02 meter** (Kecamatan Serengan, Kota Surakarta; luas wilayah 3,06 km²).
 * **Selisih Point-on-Surface**: audit ulang 18 November 2026 menghasilkan maksimum sekitar 3,26e-9 meter, di bawah 1e-8 meter (konsisten numerik). Klaim lama <1e-9 meter telah dikoreksi.
-* **Peta Audit**: Visualisasi visual 127 titik dan batas administratif tersimpan di `hasil/audit_spasial/peta_audit.png` dan `hasil/audit_spasial/peta_audit.pdf`.
+* **Peta Audit**: Visualisasi visual 127 titik dan batas administratif tersimpan pada arsip `artifacts/padanan_dan_titik.csv` (dan `hasil/audit_spasial/` saat skrip audit dijalankan).
 
 ## 5. Koreksi audit 17 November 2026 dan batas penggunaan
 

@@ -13,6 +13,9 @@ SKILL.md
 /docs/tugas_agent*.md
 .agents/
 .codex/
+.omo/
+.codegraph/
+.~lock.*
 .aws/
 hasil/
 hasil_spasial/

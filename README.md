@@ -47,11 +47,13 @@ Model GWR yang digunakan di seluruh proyek adalah **Classic GWR (Locally Weighte
 - Menyaring prediktor menjadi 4 fitur rendah kolinearitas (`built_pct`, `cropland_pct`, `jumlah_penduduk`, `jumlah_fasum_regional`; `VIF` maks `2,05`) dengan target linear `Rp/m²` dan Ridge lokal menurunkan MAE evaluasi penuh 127 kecamatan secara drastis: **OLS `Rp512.702/m²` (R² `0,813`)**, **GWR Fixed Gaussian + Ridge `Rp519.091/m²` (R² `0,788`)**, **GWR Adaptive Gaussian + Ridge `Rp520.261/m²` (R² `0,794`)**, mengungguli **KNN `Rp539.872/m²`**.
 - Kota Surakarta **tidak dibuang** dari evaluasi utama 127 kecamatan; evaluasi 6 kabupaten tanpa Surakarta (122 kecamatan) serta Stratified 5-Fold CV disertakan sebagai pembanding *domain shift* urban–rural.
 
-Jalankan ulang dan verifikasi analisis sensitivitas dengan:
+Jalankan ulang dan verifikasi analisis sensitivitas serta diagnostik metodologis lanjutan (bootstrap blok kabupaten/kota, *Area of Applicability*, Moran's I/LISA residual, koreksi Duan smearing, Quasi-Poisson QMLE, benchmark protokol setara, dan sensitivitas 4 titik representatif) dengan:
 
 ```bash
 python -m tanah sensitivity --output artifacts/sensitivitas_gwr
 python -m tanah sensitivity --verify --output artifacts/sensitivitas_gwr
+python -m tanah rigor --output artifacts/diagnostik_lanjut
+python -m tanah rigor --verify --output artifacts/diagnostik_lanjut
 ```
 
 ### Notebook 3 model default *from scratch*, dataset bersih, & audit koordinat
@@ -145,7 +147,7 @@ Ke-127 titik hasil perhitungan BIG berada dalam poligon padanannya. Titik dihitu
 
 Audit masih mencatat perbedaan total fasilitas terhadap artikel pada tujuh wilayah dan penduduk pada tiga wilayah. Sebanyak 21 rujukan halaman CSV lama bertuliskan A-4, sedangkan nomor cetaknya B-1. [Dataset rujukan yang diperbaiki](artifacts/data_audit/dataset_2020_rujukan_terverifikasi.csv) mempertahankan angka sumber; eksperimen menggunakan CSV awal.
 
-Lihat [audit dataset](data/SUMBER_DATASET.md), [sumber koordinat](data/SUMBER_KOORDINAT.md), [audit ulang eksperimen](docs/AUDIT_ULANG_2026-11-18.md), dan [audit perubahan naskah](docs/AUDIT_CARBON_2026-11-18.md). Kecocokan transkripsi tidak sama dengan validasi pengukuran primer.
+Lihat [audit dataset](data/SUMBER_DATASET.md), [sumber koordinat](data/SUMBER_KOORDINAT.md), dan [laporan verifikasi 127 koordinat](docs/LAPORAN_VERIFIKASI_KOORDINAT_127.md). Kecocokan transkripsi tidak sama dengan validasi pengukuran primer.
 
 ## Menjalankan eksperimen
 
@@ -238,12 +240,11 @@ artifacts/replikasi_notebook/    Hasil pembanding dengan koordinat notebook
 hasil/                      Keluaran eksekusi lokal yang dapat dibuat ulang
 docs/                       Naskah Word dan Markdown, ringkasan, serta panduan
 docs/template/              Templat naskah dan sampul Word
-docs/arsip/                 Draf dan laporan historis
 web/landpredict/            Situs statis yang diterbitkan ke GitHub Pages
 .github/workflows/          Pemeriksaan dan deployment atlas
 ```
 
-Skrip CLI lama tetap tersedia sebagai adapter. Arsip geometri BIG disimpan dalam gzip dengan hash untuk pemulihan. PDF sumber lokal tidak diterbitkan bersama repository. Checkout layanan Sites terdahulu terpisah; GitHub Pages menggunakan `web/landpredict`.
+Arsip geometri BIG disimpan dalam gzip dengan hash untuk pemulihan. PDF sumber lokal tidak diterbitkan bersama repository. Checkout layanan Sites terdahulu terpisah; GitHub Pages menggunakan `web/landpredict`.
 
 ## Penggunaan data dan atribusi
 

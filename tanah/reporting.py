@@ -77,8 +77,7 @@ def main():
     fig.savefig(out / 'peta_harga_dan_prediksi.pdf')
     plt.close(fig)
     files = ['data/harga_tanah_2020.csv', 'data/jawa_tengah_big.geojson', 'data/koordinat.csv',
-             'data/padanan_nama.csv', 'eksperimen_tanah.py', 'siapkan_koordinat.py',
-             'audit_spasial.py', 'verifikasi_hasil.py', 'siapkan_paper.py',
+             'data/padanan_nama.csv',
              'hasil/spasial/metrik.csv', 'hasil/spasial/per_wilayah.csv', 'hasil/spasial/prediksi_uji.csv']
     files.extend(str(p.relative_to(ROOT)) for p in sorted((ROOT / 'tanah').glob('*.py')))
     (out / 'sha256.json').write_text(json.dumps({p: hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in files}, indent=2))

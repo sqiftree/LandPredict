@@ -17,5 +17,5 @@ services:
     network_mode: none
     volumes:
       - ./data:/app/data
-    entrypoint: ["python", "siapkan_koordinat.py"]
+    entrypoint: ["python", "-m", "tanah", "coordinates"]
     command: ["--help"]
