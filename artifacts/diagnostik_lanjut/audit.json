@@ -1,0 +1,53 @@
+{
+  "status": "complete",
+  "python": "3.12.13",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.18.1",
+    "threadpoolctl": "3.6.0"
+  },
+  "data_sha256": "b86e3c363db243a4cbb7ccfe38f6868bd3300898f1eeea6eee38752b57f0ae66",
+  "coordinates_sha256": "1e8e777f35e390ad95be9efba414ac7656381b942de55252219052d02026ef9b",
+  "code_sha256": {
+    "tanah/__init__.py": "03be8233187f72616d2c6a61085b7982d8f9d7f7d6290f6f484bc94f78b141a0",
+    "tanah/__main__.py": "d4e9f553963551a3d49d991e189b547c414727ea7a8257ce8a7f1833ddc971ba",
+    "tanah/colab.py": "4366b66c2466dc0581faf606165f812dac4cecb50bcb76f3d0a50a66fd8dee6a",
+    "tanah/colab_models.py": "2b3b885692c331f7f8cb96b25b1146fceed8b821199470305c59cbe870103ac6",
+    "tanah/config.py": "93c1df1662ed9da3572c6329d036266ad44777513aa15eb4daa4b5314954c9fd",
+    "tanah/coordinates.py": "64e473b435163e16df73e6150941cd1b0fb3b4a3234ff161dfccb405bcae01d9",
+    "tanah/data.py": "65422155e037223744095c5bcddcf8f0363367ded82f0a24d3acab596fadfc02",
+    "tanah/diagnostics.py": "da89afc4011345bee8063ffcb51dcecaaae2c1e4337bc7bbbf9138a8b1149db8",
+    "tanah/experiment.py": "5a93d7eccf6fd6f5c94495de6b9adfa1293660a6fa6db96ef53abfe55be91345",
+    "tanah/models.py": "65c0514e276b839c68786643ef713b6279b474539e52205c47be3f15c6525c27",
+    "tanah/provenance.py": "3bced914b3db5f476141d8962ce5d04766c625b1272f63db9a65f538ae39356d",
+    "tanah/reporting.py": "c02402c2a9748d414b79d3c4f81cef5e24338aced8f28a1a614f2a10dfa1c162",
+    "tanah/rigor.py": "df59a14c97ffab3271dc2359ad360e4d3edd60972de38dd110b6421300c1c55e",
+    "tanah/selection.py": "a7716f51553a47796d9364fc3ed9aa7fde370ec7ab21efb3bb275c811f2c893d",
+    "tanah/sensitivity.py": "0c09778533ea92b35a4bb17b085cd82aa91de4a1b09133111cb1c0de096af4b7",
+    "tanah/spatial_audit.py": "f4807d44503e42d1a5a3365e082fbfa8b4809dab0cccb587705ecd4363d7441d",
+    "tanah/verification.py": "70399bb8810508e0d2f9f2a58cf49a83a65f1dfd82d631657eb1087afb289a63"
+  },
+  "features": [
+    "jumlah_penduduk",
+    "jumlah_fasum_regional"
+  ],
+  "candidate_parameters": {
+    "bootstrap_reps": 10000,
+    "moran_perms": 9999
+  },
+  "kernel": "Gaussian",
+  "distance_unit": "km",
+  "geometry_2020_status": "unverified_historical_boundaries",
+  "inner_selection": "pooled MAE of leave-one-region-out predictions on outer training data",
+  "outer_folds": [],
+  "inner_scores": [],
+  "singular_failures": [],
+  "protocol": "rigor_diagnostics_v1",
+  "spasial_pred_sha256": "e113940d6c9bfce3e056c95fa2e0a5578e6278c4f91e1f55b5e85fded78433d3",
+  "sens_pred_sha256": "20ce01f2e158d8acdb292446ce6c471e9622b6eb3a5500b439fbc8ead7361a7d",
+  "queen_neighbors_min": 2,
+  "queen_neighbors_median": 5.0,
+  "queen_neighbors_max": 9
+}

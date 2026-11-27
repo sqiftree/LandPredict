@@ -1,0 +1,11 @@
+spesifikasi,model,jumlah_negatif,persen_negatif,min_prediksi_Rp,median_negatif_Rp,rerata_aktual_terdampak_Rp,wilayah_terdampak,contoh_kecamatan_ekstrem
+2 fitur utama (Bagian 4),Linear,17,13.385826771653543,-450352.5744051768,-152893.88219248666,120543.76470588235,Wonogiri (7); Boyolali (5); Sragen (3); Klaten (1); Karanganyar (1),Paranggupito (-Rp450.353); Batuwarno (-Rp445.958); Kebonarum (-Rp432.086)
+2 fitur utama (Bagian 4),KNN,0,0.0,69481.33679733326,0.0,0.0,Tidak ada,Tidak ada
+2 fitur utama (Bagian 4),Decision Tree,0,0.0,100416.0,0.0,0.0,Tidak ada,Tidak ada
+2 fitur utama (Bagian 4),GWR,15,11.811023622047244,-469120.225754711,-210833.62128467183,129075.6,Wonogiri (7); Boyolali (5); Klaten (1); Sragen (1); Karanganyar (1),Paranggupito (-Rp469.120); Kebonarum (-Rp449.455); Batuwarno (-Rp446.772)
+4 fitur VIF linear (Bagian 6.7),OLS,17,13.385826771653543,-484572.3876517594,-87888.4187162071,114799.88235294117,Sragen (7); Wonogiri (7); Boyolali (3),Jenar (-Rp484.572); Tangen (-Rp266.329); Sukodono (-Rp241.149)
+4 fitur VIF linear (Bagian 6.7),KNN (k=5),0,0.0,64729.72665157987,0.0,0.0,Tidak ada,Tidak ada
+4 fitur VIF linear (Bagian 6.7),Decision Tree (d=4),0,0.0,94515.88888888888,0.0,0.0,Tidak ada,Tidak ada
+4 fitur VIF linear (Bagian 6.7),GWR Fixed Gauss + Ridge,10,7.874015748031496,-390732.1896784867,-108807.41403725116,93768.9,Wonogiri (5); Sragen (4); Boyolali (1),Jenar (-Rp390.732); Tangen (-Rp192.105); Sukodono (-Rp171.636)
+4 fitur VIF linear (Bagian 6.7),GWR Adap Gauss + Ridge,9,7.086614173228346,-375003.77430960303,-126476.63658452113,89434.77777777778,Wonogiri (5); Sragen (4),Jenar (-Rp375.004); Tangen (-Rp174.270); Sukodono (-Rp147.467)
+4 fitur VIF linear (Bagian 6.7),GWR Adap Bisq + Ridge,2,1.5748031496062993,-26636.463761540905,-25949.553849109292,131549.0,Wonogiri (2),Nguntoronadi (-Rp26.636); Wuryantoro (-Rp25.263)

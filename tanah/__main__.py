@@ -5,7 +5,7 @@ import sys
 
 COMMANDS = {
     'run': 'experiment', 'colab': 'colab', 'sensitivity': 'sensitivity',
-    'verify': 'verification', 'coordinates': 'coordinates',
+    'rigor': 'rigor', 'verify': 'verification', 'coordinates': 'coordinates',
     'audit': 'spatial_audit', 'paper': 'reporting',
 }
 

@@ -50,14 +50,21 @@ class ManuscriptVerificationTests(unittest.TestCase):
     def test_generated_manuscript_consistency(self):
         manuscript = (ROOT / 'docs/harga_tanah_solo_raya_2020.md').read_text(encoding='utf-8')
         refs = manuscript.split('## Referensi', 1)[1].split('## Lampiran', 1)[0]
+        appendix = manuscript.split('## Lampiran', 1)[1]
         self.assertEqual(refs.count('Huang, Y., & Hewings, G. (2021)'), 1)
         self.assertNotIn('Huang, Y. & Hewings, G. (2021)', refs)
         self.assertIn('Zanaga, D.', refs)
+        self.assertIn('Meyer, H., & Pebesma, E. (2021)', refs)
+        self.assertIn('Duan, N. (1983)', refs)
+        self.assertIn('Anselin, L. (1995)', refs)
         self.assertNotIn('61.7%', manuscript)
         self.assertNotIn('64.1%', manuscript)
         self.assertIn('61,7%', manuscript)
         self.assertIn('64,1%', manuscript)
         self.assertIn('19/127', manuscript)
+        # Ensure team contribution table is not duplicated in appendix
+        self.assertEqual(appendix.count('Yashif Victoriawan'), 1)
+        self.assertNotIn('{{', manuscript)
 
 
 if __name__ == '__main__':

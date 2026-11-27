@@ -41,9 +41,19 @@ def inputs(coordinates):
 
 
 def containment(frame):
-    # Use the complete geometries exported by the canonical BIG audit.
-    polygons = json.loads((ROOT / 'hasil/audit_spasial/solo_raya.geojson').read_text())
-    lookup = {tuple(f['properties'][k] for k in KEY): shape(f['geometry']) for f in polygons['features']}
+    # Use the complete geometries exported by the canonical BIG audit (or directly from archived BIG GeoJSON).
+    audit_geojson = ROOT / 'hasil/audit_spasial/solo_raya.geojson'
+    if audit_geojson.exists():
+        polygons = json.loads(audit_geojson.read_text())
+        lookup = {tuple(f['properties'][k] for k in KEY): shape(f['geometry']) for f in polygons['features']}
+    else:
+        from shapely.geometry import Polygon
+        from shapely.ops import unary_union
+        from .rigor import _load_solo_polygons
+        lookup = {
+            k: unary_union([Polygon(rings[0], rings[1:]) for rings in multipoly])
+            for k, multipoly in _load_solo_polygons().items()
+        }
     return [[r.kab_kota, r.kecamatan] for r in frame.itertuples()
             if not lookup[r.kab_kota, r.kecamatan].contains(Point(r.lon, r.lat))]
 

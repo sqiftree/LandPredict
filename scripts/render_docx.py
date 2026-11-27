@@ -1,7 +1,8 @@
 """Render the project's Markdown subset into a DOCX while preserving its cover.
 
-Supports paragraphs, three heading levels, pipe tables, equations as quoted
-paragraphs, and local PNG figures. No external office automation is required.
+Supports paragraphs with inline bold/italic/code runs, three heading levels,
+pipe tables, equations as quoted paragraphs, and local PNG figures. No external
+office automation is required.
 """
 import argparse
 from copy import deepcopy
@@ -21,9 +22,36 @@ A = 'http://schemas.openxmlformats.org/drawingml/2006/main'
 PIC = 'http://schemas.openxmlformats.org/drawingml/2006/picture'
 q = lambda tag: f'{{{W}}}{tag}'
 
+INLINE_TOKEN_RE = re.compile(r'(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`\n]+`)')
+COVER_REPLACEMENTS = (
+    (b'[Nama Dosen Pengampu]', b'Shaifudin Zuhdi M.Cs'),
+    (b'[Nama anggota 2]', b'Queen Nika Prahara Mutiara Phasya'),
+    (b'[Nama anggota 3]', b'Syaikhasril Maulana Firdaus'),
+    (b'[Nama anggota 4]', b'Azzaral Aswad Asshiddiqy'),
+    (b'([NIM])', b'([NIM dihapus])'),
+)
+
 
 def node(parent, tag, attributes=None):
     return E.SubElement(parent, q(tag), {q(k): str(v) for k, v in (attributes or {}).items()})
+
+
+def _append_run(p, text, small=False, level=0, bold=False, italic=False, mono=False):
+    if text == '':
+        return
+    run = node(p, 'r')
+    run_props = node(run, 'rPr')
+    font = 'Courier New' if mono else 'Times New Roman'
+    node(run_props, 'rFonts', {'ascii': font, 'hAnsi': font, 'cs': font})
+    sz = 18 if (small and mono) else (19 if small else (28 if level == 1 else (21 if mono else 24)))
+    node(run_props, 'sz', {'val': sz})
+    if level or bold:
+        node(run_props, 'b')
+    if italic:
+        node(run_props, 'i')
+    t = node(run, 't')
+    t.set('{http://www.w3.org/XML/1998/namespace}space', 'preserve')
+    t.text = text
 
 
 def paragraph(text, level=0, small=False, bold=False, centered=False, first=False):
@@ -38,22 +66,28 @@ def paragraph(text, level=0, small=False, bold=False, centered=False, first=Fals
     node(props, 'spacing', {'before': 180 if level else 0, 'after': 100,
                            'line': 260 if small else 320, 'lineRule': 'auto'})
     node(props, 'jc', {'val': 'center' if centered else ('left' if level or small else 'both')})
-    run = node(p, 'r')
-    run_props = node(run, 'rPr')
-    node(run_props, 'rFonts', {'ascii': 'Times New Roman', 'hAnsi': 'Times New Roman', 'cs': 'Times New Roman'})
-    node(run_props, 'sz', {'val': 19 if small else (28 if level == 1 else 24)})
-    if level or bold:
-        node(run_props, 'b')
-    t = node(run, 't')
-    t.set('{http://www.w3.org/XML/1998/namespace}space', 'preserve')
-    t.text = text
+    if not text:
+        _append_run(p, '', small=small, level=level, bold=bold)
+        return p
+    parts = INLINE_TOKEN_RE.split(text)
+    for part in parts:
+        if not part:
+            continue
+        if part.startswith('**') and part.endswith('**') and len(part) > 4:
+            _append_run(p, part[2:-2], small=small, level=level, bold=True)
+        elif part.startswith('*') and part.endswith('*') and len(part) > 2:
+            _append_run(p, part[1:-1], small=small, level=level, bold=bold, italic=True)
+        elif part.startswith('`') and part.endswith('`') and len(part) > 2:
+            _append_run(p, part[1:-1], small=small, level=level, bold=bold, mono=True)
+        else:
+            _append_run(p, part, small=small, level=level, bold=bold)
     return p
 
 
 def table(rows):
     n = len(rows[0])
     if any(len(row) != n for row in rows):
-        raise ValueError('Jumlah kolom tabel tidak konsisten.')
+        raise ValueError(f'Jumlah kolom tabel tidak konsisten pada tabel header: {rows[0]}')
     tbl = E.Element(q('tbl'))
     props = node(tbl, 'tblPr')
     node(props, 'tblW', {'w': 9026, 'type': 'dxa'})
@@ -63,11 +97,17 @@ def table(rows):
     node(props, 'tblLayout', {'type': 'fixed'})
     margins = node(props, 'tblCellMar')
     for edge in ('top', 'left', 'bottom', 'right'):
-        node(margins, edge, {'w': 75, 'type': 'dxa'})
-    if n == 7:
-        widths = [1950, 420, 1250, 1956, 1250, 950, 1250]
+        node(margins, edge, {'w': 70, 'type': 'dxa'})
+    if n == 8:
+        widths = [1850, 950, 950, 950, 1050, 1050, 1100, 1126]
+    elif n == 7:
+        widths = [1950, 520, 1250, 1856, 1250, 950, 1250]
     elif n == 6:
-        widths = [2600, 550, 1469, 1469, 1469, 1469]
+        widths = [2350, 900, 1444, 1444, 1444, 1444]
+    elif n == 5:
+        widths = [2450, 1644, 1644, 1644, 1644]
+    elif n == 4:
+        widths = [2500, 2175, 2175, 2176]
     elif n == 3:
         widths = [2100, 3463, 3463]
     elif n == 2:
@@ -133,10 +173,13 @@ def render(source: Path, markdown: Path, output: Path):
     with ZipFile(source) as archive:
         entries = [(info, archive.read(info.filename)) for info in archive.infolist()]
     content = {info.filename: data for info, data in entries}
-    # Public manuscript omits student identifiers; source archive is untouched.
+    # Public manuscript omits student identifiers and fills cover placeholders cleanly; source archive is untouched.
     for name, data in content.items():
         if name.endswith('.xml'):
-            content[name] = re.sub(rb'\b[A-Z][0-9]{7,}\b', b'[NIM dihapus]', data)
+            updated_xml = re.sub(rb'\b[A-Z][0-9]{7,}\b', b'[NIM dihapus]', data)
+            for old_bytes, new_bytes in COVER_REPLACEMENTS:
+                updated_xml = updated_xml.replace(old_bytes, new_bytes)
+            content[name] = updated_xml
     raw = content['word/document.xml']
     for _, (prefix, uri) in E.iterparse(io.BytesIO(raw), events=['start-ns']):
         if not re.fullmatch(r'ns\d+', prefix):
